@@ -78,11 +78,11 @@ export default function BrowseClient({ papers }: Props) {
         .sort((a, b) => b[1] - a[1])
         .map(([value, count]) => (
           <li key={value}>
-            <label class="flex items-center justify-between gap-2 text-sm">
-              <span>
+            <label class="flex items-center justify-between gap-2 rounded-2xl border border-transparent px-2 py-1 text-sm text-slate-600 transition hover:border-indigo-100 hover:bg-indigo-50/60 dark:text-slate-300 dark:hover:border-indigo-500/40 dark:hover:bg-indigo-900/20">
+              <span class="flex items-center">
                 <input
                   type="checkbox"
-                  class="mr-2"
+                  class="mr-2 h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 dark:border-slate-600 dark:bg-slate-800 dark:checked:bg-indigo-500"
                   checked={selected.includes(value)}
                   onChange={() =>
                     setState({
@@ -93,43 +93,54 @@ export default function BrowseClient({ papers }: Props) {
                 />
                 {value}
               </span>
-              <span class="text-xs text-slate-500">{count}</span>
+              <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">{count}</span>
             </label>
           </li>
         ))}
     </ul>
   );
 
-  const quickFilterButtons = Object.keys(QUICK_FILTERS).map((label) => (
-    <button
-      key={label}
-      type="button"
-      class={`rounded-full border px-3 py-1 text-sm transition ${state.quickFilter === label ? 'border-blue-600 bg-blue-100 text-blue-700 dark:border-blue-400 dark:bg-blue-900/40 dark:text-blue-200' : 'border-slate-300 bg-white text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200'}`}
-      aria-pressed={state.quickFilter === label}
-      onClick={() =>
-        setState({
-          ...state,
-          quickFilter: state.quickFilter === label ? undefined : label
-        })
-      }
-    >
-      {label}
-    </button>
-  ));
+  const quickFilterButtons = Object.keys(QUICK_FILTERS).map((label) => {
+    const isActive = state.quickFilter === label;
+    const base =
+      'rounded-full px-3 py-1.5 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-300';
+    const active =
+      'border border-indigo-500 bg-indigo-100/80 text-indigo-700 shadow-sm dark:border-indigo-400 dark:bg-indigo-900/40 dark:text-indigo-200';
+    const inactive =
+      'border border-slate-200/80 bg-white/70 text-slate-600 hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200';
+    return (
+      <button
+        key={label}
+        type="button"
+        class={`${base} ${isActive ? active : inactive}`}
+        aria-pressed={isActive}
+        onClick={() =>
+          setState({
+            ...state,
+            quickFilter: isActive ? undefined : label
+          })
+        }
+      >
+        {label}
+      </button>
+    );
+  });
 
   return (
-    <div class="flex flex-col gap-6 lg:flex-row">
-      <aside class="lg:w-72 lg:flex-none">
-        <div class="space-y-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+    <div class="flex flex-col gap-8 lg:flex-row">
+      <aside class="lg:w-80 lg:flex-none">
+        <div
+          class="space-y-6 rounded-3xl border border-indigo-100/80 bg-white/95 p-5 shadow-xl ring-1 ring-indigo-50 backdrop-blur dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80"
+        >
           <div>
-            <p class="mb-2 text-sm font-semibold">Quick filters</p>
+            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Quick filters</p>
             <div class="flex flex-wrap gap-2">{quickFilterButtons}</div>
           </div>
 
           <div>
-            <p class="mb-2 text-sm font-semibold">Year range</p>
+            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Year range</p>
             <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs text-slate-600 dark:text-slate-300">
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-300">
                 <span>{state.years[0]}</span>
                 <span>{state.years[1]}</span>
               </div>
@@ -141,6 +152,7 @@ export default function BrowseClient({ papers }: Props) {
                   value={state.years[0]}
                   onInput={handleYearChange(0)}
                   aria-label="Start year"
+                  class="w-full accent-indigo-600"
                 />
                 <input
                   type="range"
@@ -149,41 +161,42 @@ export default function BrowseClient({ papers }: Props) {
                   value={state.years[1]}
                   onInput={handleYearChange(1)}
                   aria-label="End year"
+                  class="w-full accent-indigo-600"
                 />
               </div>
             </div>
           </div>
 
           <div>
-            <p class="mb-2 text-sm font-semibold">Domain</p>
+            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Domain</p>
             {buildFacetList(facets.domains, state.domains, 'domains')}
           </div>
 
           <div>
-            <p class="mb-2 text-sm font-semibold">Setting</p>
+            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Setting</p>
             {buildFacetList(facets.settings, state.settings, 'settings')}
           </div>
 
           <div>
-            <p class="mb-2 text-sm font-semibold">Design</p>
+            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Design</p>
             {buildFacetList(facets.designs, state.designs, 'designs')}
           </div>
 
           <div>
-            <p class="mb-2 text-sm font-semibold">Country</p>
+            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Country</p>
             {buildFacetList(facets.countries, state.countries, 'countries')}
           </div>
 
           <div>
-            <p class="mb-2 text-sm font-semibold">Journal</p>
+            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Journal</p>
             {buildFacetList(facets.journals, state.journals, 'journals')}
           </div>
         </div>
       </aside>
 
-      <section class="flex-1 space-y-4">
-        <div class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-          <label htmlFor="search" class="mb-2 block text-sm font-semibold">
+      <section class="flex-1 space-y-5">
+        <div class="rounded-3xl border border-indigo-100/80 bg-white/95 p-6 shadow-xl ring-1 ring-indigo-50 backdrop-blur dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
+          <label htmlFor="search" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">
             Search the repository
           </label>
           <input
@@ -194,16 +207,16 @@ export default function BrowseClient({ papers }: Props) {
             onInput={updateQuery}
           />
         </div>
-        <div class="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+        <div class="flex flex-col gap-3 rounded-3xl border border-indigo-100/80 bg-white/95 p-5 shadow-xl ring-1 ring-indigo-50 backdrop-blur sm:flex-row sm:items-center sm:justify-between dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
           <div>
-            <h2 class="text-lg font-semibold">{results.length} papers</h2>
+            <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100">{results.length} papers</h2>
             <p class="text-sm text-slate-600 dark:text-slate-300">
               Sorted by relevance, then year (newest first)
             </p>
           </div>
           <button
             type="button"
-            class="text-sm text-blue-600 hover:underline dark:text-blue-400"
+            class="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/70 px-4 py-1.5 text-sm font-semibold text-indigo-600 transition hover:border-indigo-200 hover:text-indigo-700 dark:border-slate-700 dark:bg-slate-900 dark:text-indigo-300"
             onClick={() => setState(defaultSearchState(papers))}
           >
             Reset filters
@@ -213,10 +226,13 @@ export default function BrowseClient({ papers }: Props) {
           {results.map((paper) => {
             const { display, remaining } = truncateAuthors(paper.normalizedAuthors);
             return (
-              <article key={paper.id} class="card">
+              <article
+                key={paper.id}
+                class="group rounded-3xl border border-white/70 bg-white/95 p-6 shadow-xl ring-1 ring-indigo-50 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-800/80 dark:bg-slate-900 dark:ring-slate-800/60"
+              >
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
-                    <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">
+                    <h3 class="text-lg font-semibold text-slate-900 transition group-hover:text-indigo-600 dark:text-slate-100">
                       <a href={getPaperUrl(paper)}>{paper.title}</a>
                     </h3>
                     <p class="text-sm text-slate-600 dark:text-slate-300">
@@ -239,23 +255,26 @@ export default function BrowseClient({ papers }: Props) {
                     <span>{paper.year}</span>
                   </div>
                 </div>
-                <p class="mt-3 text-sm text-slate-700 dark:text-slate-200">
+                <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-200">
                   {paper.abstract}
                   {paper.isAbstractTruncated && (
                     <span class="ml-1 text-xs uppercase text-orange-600">(Abstract truncated)</span>
                   )}
                 </p>
-                <div class="mt-3 flex flex-wrap gap-2">
+                <div class="mt-4 flex flex-wrap gap-2">
                   {(paper.domains ?? []).map((domain) => (
-                    <span key={domain} class="badge">
+                    <span
+                      key={domain}
+                      class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-200"
+                    >
                       {domain}
                     </span>
                   ))}
                 </div>
-                <div class="mt-4 flex flex-wrap gap-3 text-sm">
+                <div class="mt-5 flex flex-wrap gap-2 text-sm">
                   {paper.links.pubmed && (
                     <a
-                      class="btn-secondary"
+                      class="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700 transition hover:border-indigo-200 hover:bg-indigo-100 dark:border-indigo-500/40 dark:bg-indigo-900/20 dark:text-indigo-200"
                       href={paper.links.pubmed}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -265,7 +284,7 @@ export default function BrowseClient({ papers }: Props) {
                   )}
                   {paper.links.doi && (
                     <a
-                      class="btn-secondary"
+                      class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
                       href={paper.links.doi}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -275,7 +294,7 @@ export default function BrowseClient({ papers }: Props) {
                   )}
                   {paper.links.pmc && (
                     <a
-                      class="btn-secondary"
+                      class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
                       href={paper.links.pmc}
                       target="_blank"
                       rel="noopener noreferrer"
