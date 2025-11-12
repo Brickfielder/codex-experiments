@@ -15,6 +15,7 @@
     "validate": "node scripts/validate.js",
     "normalize": "tsx scripts/normalize.ts",
     "merge": "tsx scripts/merge.ts",
+    "add:paper": "tsx scripts/add-paper.ts",
     "prep:update": "npm run validate && npm run normalize",
     "lighthouse": "lhci autorun",
     "changelog": "tsx scripts/changelog.ts"
@@ -30,7 +31,8 @@
     "lunr": "^2.3.9",
     "preact": "^10.21.0",
     "remark-gfm": "^4.0.0",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "fast-xml-parser": "^4.5.1"
   },
   "devDependencies": {
     "@lhci/cli": "^0.13.0",
