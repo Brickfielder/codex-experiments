@@ -112,11 +112,9 @@ export const buildFacets = (papers: Paper[]): FacetBuckets => {
 };
 
 export const defaultSearchState = (papers: Paper[]): SearchState => {
-  const currentYear = new Date().getFullYear();
   const years = papers.map((paper) => paper.year);
-  const min = years.length ? Math.min(...years) : currentYear;
-  const maxPaperYear = years.length ? Math.max(...years) : currentYear;
-  const max = Math.max(maxPaperYear, currentYear);
+  const min = years.length ? Math.min(...years) : new Date().getFullYear();
+  const max = years.length ? Math.max(...years) : new Date().getFullYear();
   return {
     query: '',
     years: [min, max],
