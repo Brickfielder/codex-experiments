@@ -10,7 +10,6 @@ const {
 const homeHref = resolveWithBase('/');
 const browseHref = getBrowseUrl();
 const aboutHref = getAboutUrl();
-const addPaperHref = resolveWithBase('/addapaper');
 const rssHref = resolveWithBase('/feed.xml');
 const jsonFeedHref = resolveWithBase('/feed.json');
 const apiHref = resolveWithBase('/api/papers.json');
@@ -59,7 +58,6 @@ const apiHref = resolveWithBase('/api/papers.json');
             <nav class="hidden items-center gap-6 text-sm font-semibold text-white/90 md:flex" aria-label="Primary">
               <a class="transition hover:text-white" href={browseHref}>Browse</a>
               <a class="transition hover:text-white" href={aboutHref}>About</a>
-              <a class="transition hover:text-white" href={addPaperHref}>Add a paper</a>
             </nav>
             <div class="rounded-full border border-white/40 bg-white/10 p-1 shadow-inner">
               <ThemeToggle />
@@ -83,7 +81,6 @@ const apiHref = resolveWithBase('/api/papers.json');
         >
           <a class="rounded-xl bg-white/10 px-4 py-2 text-center transition hover:bg-white/20" href={browseHref}>Browse</a>
           <a class="rounded-xl bg-white/10 px-4 py-2 text-center transition hover:bg-white/20" href={aboutHref}>About</a>
-          <a class="rounded-xl bg-white/10 px-4 py-2 text-center transition hover:bg-white/20" href={addPaperHref}>Add a paper</a>
         </nav>
       </div>
     </header>
