@@ -3,12 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import papers from '../../../data/papers.normalized.json';
 import type { Paper } from '~/utils/types';
 import { getPaperUrl } from '~/utils/format';
-import { getPaperPermalink } from '~/utils/siteUrls';
+import { getPaperPermalink, getPaperSlug, parsePaperSlug } from '~/utils/siteUrls';
 export const getStaticPaths = () =>
-  (papers as Paper[]).map((paper) => ({ params: { id: paper.id } }));
+  (papers as Paper[]).map((paper) => ({ params: { id: getPaperSlug(paper.id) } }));
 const typedPapers = papers as Paper[];
-const { id } = Astro.params;
-const paper = typedPapers.find((item) => item.id === id);
+const slug = Astro.params.id;
+const paperId = slug ? parsePaperSlug(slug) : undefined;
+const paper = paperId ? typedPapers.find((item) => item.id === paperId) : undefined;
 if (!paper) {
   throw Astro.response(null, { status: 404, statusText: 'Paper not found' });
 }
