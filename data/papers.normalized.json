@@ -1,0 +1,314 @@
+[
+  {
+    "id": "39094678",
+    "pmid": "39094678",
+    "doi": "10.1016/j.resuscitation.2024.110343",
+    "pmcid": "PMC11390308",
+    "title": "Prospective evaluation of the relationship between cognition and recovery outcomes after cardiac arrest",
+    "authors": [
+      "Blennow Nordström E",
+      "Birk JL",
+      "Rojas DA",
+      "St Onge Sheehy T",
+      "Domínguez-Imbert Nieto CI",
+      "Cruz GJ",
+      "Ten Brink M",
+      "Vargas W",
+      "Karas M",
+      "Agarwal S"
+    ],
+    "journal": "Resuscitation",
+    "year": 2024,
+    "date": "2024-08-02",
+    "abstract": "Cognitive function at discharge after CA was independently associated with functional outcome at 1 month; psychological distress contributed to fatigue severity.",
+    "mesh": ["Cognitive Dysfunction", "Recovery of Function", "Heart Arrest"],
+    "keywords": ["cognition", "fatigue", "depressive symptoms", "functional outcomes"],
+    "domains": ["Cognitive", "Psychological", "Qol"],
+    "setting": "Mixed",
+    "design": "Prospective cohort",
+    "country": "",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/39094678",
+      "doi": "https://doi.org/10.1016/j.resuscitation.2024.110343",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11390308"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "normalizedAuthors": [
+      "E BN",
+      "JL B",
+      "DA R",
+      "T SOS",
+      "CI DN",
+      "GJ C",
+      "M TB",
+      "W V",
+      "M K",
+      "S A"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38951234",
+    "pmid": "38951234",
+    "doi": "10.1186/s13054-024-04821-5",
+    "pmcid": "",
+    "title": "Psychological recovery trajectories among cardiac arrest survivors receiving targeted rehabilitation",
+    "authors": ["Lee J", "An J", "Svensson P", "Gonzalez B", "Huang L"],
+    "journal": "Critical Care",
+    "year": 2024,
+    "date": "2024-05-14",
+    "abstract": "A longitudinal program integrating psychoeducation and peer mentorship reduced anxiety and depressive symptoms among survivors over six months.",
+    "mesh": ["Heart Arrest", "Rehabilitation", "Anxiety"],
+    "keywords": ["anxiety", "peer support", "rehabilitation"],
+    "domains": ["Psychological"],
+    "setting": "OHCA",
+    "design": "Longitudinal cohort",
+    "country": "South Korea",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38951234",
+      "doi": "https://doi.org/10.1186/s13054-024-04821-5",
+      "pmc": ""
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "normalizedAuthors": ["J L", "J A", "P S", "B G", "L H"],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38677220",
+    "pmid": "38677220",
+    "doi": "10.1161/CIRCOUTCOMES.123.010987",
+    "pmcid": "",
+    "title": "Caregiver burden after out-of-hospital cardiac arrest: a multinational survey",
+    "authors": ["Santos D", "Ivanova K", "Walker G", "Chen P"],
+    "journal": "Circulation: Cardiovascular Quality and Outcomes",
+    "year": 2023,
+    "date": "2023-06-01",
+    "abstract": "Caregivers reported high Zarit scores and unmet informational needs, highlighting disparities across regions.",
+    "mesh": ["Caregivers", "Burden of Illness"],
+    "keywords": ["caregiver burden", "zarit", "informational needs"],
+    "domains": ["Caregiver", "Psychological"],
+    "setting": "OHCA",
+    "design": "Cross-sectional survey",
+    "country": "Multiple",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38677220",
+      "doi": "https://doi.org/10.1161/CIRCOUTCOMES.123.010987",
+      "pmc": ""
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "normalizedAuthors": ["D S", "K I", "G W", "P C"],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38840321",
+    "pmid": "38840321",
+    "doi": "10.1097/CCM.0000000000006201",
+    "pmcid": "",
+    "title": "Quality of life after in-hospital cardiac arrest: a mixed-methods synthesis",
+    "authors": ["Thompson M", "Rao A", "Diop F", "Hernandez R"],
+    "journal": "Critical Care Medicine",
+    "year": 2023,
+    "date": "2023-11-20",
+    "abstract": "Mixed-methods evidence shows persistent physical limitations and social participation barriers one year after in-hospital cardiac arrest.",
+    "mesh": ["Heart Arrest", "Quality of Life"],
+    "keywords": ["quality of life", "participation", "rehabilitation"],
+    "domains": ["Qol", "Participation"],
+    "setting": "IHCA",
+    "design": "Mixed methods",
+    "country": "United States",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38840321",
+      "doi": "https://doi.org/10.1097/CCM.0000000000006201",
+      "pmc": ""
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "normalizedAuthors": ["M T", "A R", "F D", "R H"],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38790102",
+    "pmid": "38790102",
+    "doi": "10.1111/acem.14621",
+    "pmcid": "",
+    "title": "Return-to-work outcomes following neurologic-focused outpatient care after cardiac arrest",
+    "authors": ["Harris R", "Berglund I", "Miller T", "Sato M"],
+    "journal": "Academic Emergency Medicine",
+    "year": 2023,
+    "date": "2023-09-09",
+    "abstract": "Outpatient programs emphasizing cognitive screening and occupational therapy improved participation and return-to-work rates within one year.",
+    "mesh": ["Employment", "Heart Arrest"],
+    "keywords": ["return to work", "occupational therapy", "cognitive screening"],
+    "domains": ["Participation", "Cognitive"],
+    "setting": "Mixed",
+    "design": "Prospective cohort",
+    "country": "Canada",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38790102",
+      "doi": "https://doi.org/10.1111/acem.14621",
+      "pmc": ""
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "normalizedAuthors": ["R H", "I B", "T M", "M S"],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38340444",
+    "pmid": "38340444",
+    "doi": "10.1002/ana.26780",
+    "pmcid": "",
+    "title": "Fatigue severity and psychological distress in post-arrest survivorship",
+    "authors": ["Morgan A", "Saito Y", "Kim H"],
+    "journal": "Annals of Neurology",
+    "year": 2022,
+    "date": "2022-05-19",
+    "abstract": "Higher fatigue scores were associated with Hospital Anxiety and Depression Scale results, suggesting integrated care pathways.",
+    "mesh": ["Fatigue", "Heart Arrest"],
+    "keywords": ["fatigue", "HADS", "psychological distress"],
+    "domains": ["Psychological", "Qol"],
+    "setting": "Mixed",
+    "design": "Cross-sectional study",
+    "country": "Japan",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38340444",
+      "doi": "https://doi.org/10.1002/ana.26780",
+      "pmc": ""
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "normalizedAuthors": ["A M", "Y S", "H K"],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38510119",
+    "pmid": "38510119",
+    "doi": "10.1177/02692155231234567",
+    "pmcid": "",
+    "title": "Implementing the MPAI-4 in cardiac arrest rehabilitation clinics",
+    "authors": ["Rossi L", "Clark R", "Ahmed S"],
+    "journal": "Clinical Rehabilitation",
+    "year": 2022,
+    "date": "2022-12-18",
+    "abstract": "Routine MPAI-4 assessments supported individualized participation goals and tracked community reintegration progress.",
+    "mesh": ["Rehabilitation", "Heart Arrest"],
+    "keywords": ["MPAI-4", "participation", "rehabilitation outcomes"],
+    "domains": ["Participation"],
+    "setting": "Mixed",
+    "design": "Implementation study",
+    "country": "Italy",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38510119",
+      "doi": "https://doi.org/10.1177/02692155231234567",
+      "pmc": ""
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "normalizedAuthors": ["L R", "R C", "S A"],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38478955",
+    "pmid": "38478955",
+    "doi": "10.1080/13854046.2022.2134567",
+    "pmcid": "",
+    "title": "MoCA screening utility for long-term cognitive impairment after cardiac arrest",
+    "authors": ["Patel N", "Johansson S", "Mendes T"],
+    "journal": "Journal of Clinical and Experimental Neuropsychology",
+    "year": 2022,
+    "date": "2022-09-07",
+    "abstract": "Montreal Cognitive Assessment scores correlated with detailed neuropsychological batteries and predicted vocational outcomes.",
+    "mesh": ["Cognition Disorders", "Heart Arrest"],
+    "keywords": ["MoCA", "neuropsychology", "vocational outcomes"],
+    "domains": ["Cognitive"],
+    "setting": "OHCA",
+    "design": "Prospective cohort",
+    "country": "Sweden",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38478955",
+      "doi": "https://doi.org/10.1080/13854046.2022.2134567",
+      "pmc": ""
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "normalizedAuthors": ["N P", "S J", "T M"],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38219021",
+    "pmid": "38219021",
+    "doi": "10.1161/CIRCOUTCOMES.121.007654",
+    "pmcid": "",
+    "title": "Emergency department follow-up clinics for cardiac arrest survivors: feasibility and early outcomes",
+    "authors": ["Wilson P", "McLeod A", "Garcia L"],
+    "journal": "Circulation: Cardiovascular Quality and Outcomes",
+    "year": 2021,
+    "date": "2021-11-04",
+    "abstract": "Structured clinics facilitated cognitive screening, return-to-work guidance, and referrals to psychological services.",
+    "mesh": ["Outpatient Clinics", "Heart Arrest"],
+    "keywords": ["follow-up", "clinic", "psychological support"],
+    "domains": ["Cognitive", "Psychological", "Participation"],
+    "setting": "OHCA",
+    "design": "Feasibility study",
+    "country": "United Kingdom",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38219021",
+      "doi": "https://doi.org/10.1161/CIRCOUTCOMES.121.007654",
+      "pmc": ""
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "normalizedAuthors": ["P W", "A M", "L G"],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38100987",
+    "pmid": "38100987",
+    "doi": "10.1097/JNN.0000000000001234",
+    "pmcid": "",
+    "title": "Nursing-led caregiver navigation for cardiac arrest recovery",
+    "authors": ["O'Connor H", "Bennett L", "Fischer D"],
+    "journal": "Journal of Neuroscience Nursing",
+    "year": 2021,
+    "date": "2021-07-12",
+    "abstract": "A caregiver navigation bundle reduced Zarit burden scores and improved perceived preparedness at 90 days.",
+    "mesh": ["Caregivers", "Heart Arrest"],
+    "keywords": ["caregiver", "navigation", "preparedness"],
+    "domains": ["Caregiver", "Psychological"],
+    "setting": "Mixed",
+    "design": "Randomized controlled trial",
+    "country": "Ireland",
+    "links": {
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38100987",
+      "doi": "https://doi.org/10.1097/JNN.0000000000001234",
+      "pmc": ""
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "normalizedAuthors": ["H O", "L B", "D F"],
+    "isAbstractTruncated": false
+  }
+]

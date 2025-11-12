@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paper",
+  "type": "object",
+  "required": ["id", "title", "authors", "journal", "year", "abstract", "links"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Use pmid if available, else slug"
+    },
+    "pmid": {
+      "type": "string"
+    },
+    "doi": {
+      "type": "string"
+    },
+    "pmcid": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "journal": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "string",
+      "description": "YYYY-MM-DD if known"
+    },
+    "abstract": {
+      "type": "string"
+    },
+    "mesh": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "e.g., cognitive, psychological, QoL, participation, caregiver"
+    },
+    "setting": {
+      "type": "string",
+      "enum": ["OHCA", "IHCA", "Mixed", "Unclear"]
+    },
+    "design": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "pubmed": {
+          "type": "string"
+        },
+        "doi": {
+          "type": "string"
+        },
+        "pmc": {
+          "type": "string"
+        }
+      }
+    },
+    "flags": {
+      "type": "object",
+      "properties": {
+        "open_access": {
+          "type": "boolean"
+        },
+        "has_fulltext": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<button id="theme-toggle" class="btn-secondary" type="button" aria-pressed="false">
+  <span class="sr-only">Toggle color scheme</span>
+  <svg
+    aria-hidden="true"
+    class="h-5 w-5"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364 6.364-1.414-1.414M7.05 7.05 5.636 5.636m12.728 0-1.414 1.414M7.05 16.95l-1.414 1.414M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"
+    ></path>
+  </svg>
+</button>
+<script is:inline>
+  const root = document.documentElement;
+  const button = document.getElementById('theme-toggle');
+  const stored = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const apply = (theme) => {
+    root.classList.toggle('dark', theme === 'dark');
+    button?.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+  };
+  const initial = stored || (prefersDark ? 'dark' : 'light');
+  apply(initial);
+  button?.addEventListener('click', () => {
+    const next = root.classList.contains('dark') ? 'light' : 'dark';
+    apply(next);
+    localStorage.setItem('theme', next);
+  });
+</script>

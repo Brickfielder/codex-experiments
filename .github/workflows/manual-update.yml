@@ -1,0 +1,65 @@
+name: Manual Update
+
+on:
+  workflow_dispatch:
+    inputs:
+      summary:
+        description: 'Short note for the PR (optional)'
+        required: false
+        type: string
+      mode:
+        description: 'Update type'
+        required: true
+        default: 'bi-monthly'
+        type: choice
+        options:
+          - bi-monthly
+          - hotfix
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run validate
+      - run: npm run normalize
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run test
+      - run: npm run build
+      - run: npm run lighthouse
+      - name: Generate changelog entry
+        run: npm run changelog -- --mode=${{ inputs.mode }} --summary="${{ inputs.summary }}"
+      - name: Capture metadata
+        run: |
+          echo "UPDATE_MONTH=$(date +%Y-%m)" >> $GITHUB_ENV
+          echo "PR_LABEL=mode:${{ inputs.mode }}" >> $GITHUB_ENV
+          NOTES="${{ inputs.summary }}"
+          if [ -z "$NOTES" ]; then NOTES="n/a"; fi
+          echo "SUMMARY_NOTES=$NOTES" >> $GITHUB_ENV
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: update/${{ env.UPDATE_MONTH }}/${{ inputs.mode }}
+          commit-message: 'chore: manual update'
+          title: 'Update ${{ env.UPDATE_MONTH }} (${{ inputs.mode }})'
+          body: |
+            ## Summary
+            - Mode: ${{ inputs.mode }}
+            - Notes: ${{ env.SUMMARY_NOTES }}
+
+            Generated via workflow_dispatch.
+          labels: ${{ env.PR_LABEL }}
+          signoff: false

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "types": ["astro/client", "node", "jest"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+      "@data/*": ["data/*"]
+    },
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "resolveJsonModule": true
+  },
+  "include": ["src", "scripts", "__tests__", "*.d.ts", "astro.config.mjs"],
+  "exclude": ["node_modules", "dist"]
+}

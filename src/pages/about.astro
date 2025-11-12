@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="Background and update cadence for the OHCA Survivorship Repository"
+>
+  <h1 class="text-3xl font-bold">About the repository</h1>
+  <p class="mt-3 max-w-3xl text-slate-600 dark:text-slate-300">
+    The OHCA Survivorship Repository curates peer-reviewed research on life after cardiac arrest,
+    highlighting cognitive, psychological, quality-of-life, participation, and caregiver-focused
+    studies. The project is stewarded by clinicians, researchers, and survivor advisors who review
+    publications for relevance and rigor.
+  </p>
+  <p class="mt-3 max-w-3xl text-slate-600 dark:text-slate-300">
+    This repository is updated manually approximately every two months, with additional ad-hoc
+    updates if notable papers appear earlier. Each update includes validation against the shared
+    schema, deduplication, automated tagging, and a changelog summarizing new contributions.
+  </p>
+  <section class="mt-8 space-y-4">
+    <h2 class="text-2xl font-semibold">How we organize the content</h2>
+    <ul class="list-disc space-y-2 pl-6 text-slate-600 dark:text-slate-300">
+      <li>
+        Domains capture thematic emphasis such as cognitive outcomes, psychological health,
+        participation, quality of life, and caregiver perspectives.
+      </li>
+      <li>
+        Facet filters allow browsing by study design, setting, geography, journal, and publication
+        year.
+      </li>
+      <li>
+        Paper detail pages expose export formats (APA, Vancouver, BibTeX, RIS) and link to PubMed,
+        DOI, and PMC where available.
+      </li>
+      <li>
+        Related papers leverage abstract similarity so readers can discover comparable studies
+        quickly.
+      </li>
+    </ul>
+  </section>
+</BaseLayout>

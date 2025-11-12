@@ -1,0 +1,325 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import papers from '../../../data/papers.normalized.json';
+import type { Paper } from '~/utils/types';
+import { getPaperUrl } from '~/utils/format';
+export const getStaticPaths = () =>
+  (papers as Paper[]).map((paper) => ({ params: { id: paper.id } }));
+const typedPapers = papers as Paper[];
+const { id } = Astro.params;
+const paper = typedPapers.find((item) => item.id === id);
+if (!paper) {
+  throw Astro.response(null, { status: 404, statusText: 'Paper not found' });
+}
+
+const tokenize = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+
+const documents = typedPapers.map((item) => {
+  const tokens = tokenize(item.abstract);
+  const tf = new Map<string, number>();
+  tokens.forEach((token) => {
+    tf.set(token, (tf.get(token) ?? 0) + 1);
+  });
+  return { paper: item, tokens: new Set(tokens), tf };
+});
+
+const vocabulary = new Set<string>();
+documents.forEach((doc) => {
+  doc.tokens.forEach((token) => vocabulary.add(token));
+});
+
+const docCount = documents.length;
+const idf = new Map<string, number>();
+vocabulary.forEach((token) => {
+  const containing = documents.filter((doc) => doc.tokens.has(token)).length;
+  idf.set(token, Math.log((docCount + 1) / (containing + 1)) + 1);
+});
+
+const vectorize = (doc: { tokens: Set<string>; tf: Map<string, number> }) => {
+  const vector = new Map<string, number>();
+  const tokenCount = Array.from(doc.tf.values()).reduce((sum, value) => sum + value, 0);
+  doc.tf.forEach((count, token) => {
+    const weight = (count / tokenCount) * (idf.get(token) ?? 0);
+    vector.set(token, weight);
+  });
+  return vector;
+};
+
+const cosine = (a: Map<string, number>, b: Map<string, number>) => {
+  let dot = 0;
+  let magA = 0;
+  let magB = 0;
+  a.forEach((value, token) => {
+    if (b.has(token)) {
+      dot += value * (b.get(token) ?? 0);
+    }
+    magA += value * value;
+  });
+  b.forEach((value) => {
+    magB += value * value;
+  });
+  const denom = Math.sqrt(magA) * Math.sqrt(magB);
+  return denom === 0 ? 0 : dot / denom;
+};
+
+const targetDoc = documents.find((doc) => doc.paper.id === paper.id)!;
+const targetVector = vectorize(targetDoc);
+
+const similarity = documents
+  .filter((doc) => doc.paper.id !== paper.id)
+  .map((doc) => ({
+    paper: doc.paper,
+    score: cosine(targetVector, vectorize(doc))
+  }))
+  .sort((a, b) => b.score - a.score);
+
+let related = similarity
+  .filter((item) => item.score > 0.05)
+  .slice(0, 4)
+  .map((item) => item.paper);
+
+if (related.length === 0) {
+  related = typedPapers
+    .filter((doc) => doc.id !== paper.id)
+    .filter((doc) => {
+      const sameDomain = paper.domains?.some((domain) => doc.domains?.includes(domain)) ?? false;
+      const withinYear = Math.abs(doc.year - paper.year) <= 2;
+      return sameDomain && withinYear;
+    })
+    .slice(0, 4);
+}
+
+const makeCitation = (style: 'apa' | 'vancouver') => {
+  const authors = paper.normalizedAuthors.join(style === 'apa' ? ', ' : ', ');
+  const year = paper.year;
+  if (style === 'apa') {
+    return `${authors} (${year}). ${paper.title}. ${paper.journal}.`;
+  }
+  return `${authors}. ${paper.title}. ${paper.journal}. ${year}.`;
+};
+
+const makeBibtex = () =>
+  `@article{${paper.id},\n  title={${paper.title}},\n  author={${paper.normalizedAuthors.join(' and ')}},\n  journal={${paper.journal}},\n  year={${paper.year}},\n  doi={${paper.doi ?? ''}}\n}`;
+
+const makeRis = () =>
+  `TY  - JOUR\nTI  - ${paper.title}\nAU  - ${paper.normalizedAuthors.join('\nAU  - ')}\nPY  - ${paper.year}\nJO  - ${paper.journal}\nDO  - ${paper.doi ?? ''}\nER  - `;
+---
+
+<BaseLayout title={paper.title} description={paper.abstract.slice(0, 140)}>
+  <article class="prose max-w-none dark:prose-invert">
+    <header>
+      <p class="text-sm uppercase tracking-wide text-blue-600 dark:text-blue-400">Paper</p>
+      <h1>{paper.title}</h1>
+      <p class="text-base text-slate-600 dark:text-slate-300">
+        {paper.normalizedAuthors.join(', ')}
+      </p>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
+        {paper.journal} • {paper.year}
+      </p>
+    </header>
+
+    <section
+      class="not-prose mt-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+    >
+      <h2 class="text-lg font-semibold">Abstract</h2>
+      <p class="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-200">
+        {paper.abstract}
+        {
+          paper.isAbstractTruncated && (
+            <span class="ml-1 text-xs uppercase text-orange-600">(Abstract truncated)</span>
+          )
+        }
+      </p>
+    </section>
+
+    <section class="not-prose mt-8 grid gap-6 md:grid-cols-2">
+      <div
+        class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+      >
+        <h2 class="text-lg font-semibold">Metadata</h2>
+        <dl class="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-200">
+          <div class="flex gap-2">
+            <dt class="w-28 font-semibold">Setting</dt>
+            <dd>{paper.setting ?? '—'}</dd>
+          </div>
+          <div class="flex gap-2">
+            <dt class="w-28 font-semibold">Design</dt>
+            <dd>{paper.design ?? '—'}</dd>
+          </div>
+          <div class="flex gap-2">
+            <dt class="w-28 font-semibold">Country</dt>
+            <dd>{paper.country ?? '—'}</dd>
+          </div>
+          <div class="flex gap-2">
+            <dt class="w-28 font-semibold">Domains</dt>
+            <dd>{(paper.domains ?? []).join(', ') || '—'}</dd>
+          </div>
+          <div class="flex gap-2">
+            <dt class="w-28 font-semibold">Keywords</dt>
+            <dd>{(paper.keywords ?? []).join(', ') || '—'}</dd>
+          </div>
+          <div class="flex gap-2">
+            <dt class="w-28 font-semibold">MeSH</dt>
+            <dd>{(paper.mesh ?? []).join(', ') || '—'}</dd>
+          </div>
+        </dl>
+      </div>
+      <div
+        class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+      >
+        <h2 class="text-lg font-semibold">Access & exports</h2>
+        <div class="mt-4 space-y-3 text-sm">
+          <div class="flex flex-wrap gap-3">
+            {
+              paper.links.pubmed && (
+                <a
+                  class="btn-secondary"
+                  href={paper.links.pubmed}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  PubMed
+                </a>
+              )
+            }
+            {
+              paper.links.doi && (
+                <a
+                  class="btn-secondary"
+                  href={paper.links.doi}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  DOI
+                </a>
+              )
+            }
+            {
+              paper.links.pmc && (
+                <a
+                  class="btn-secondary"
+                  href={paper.links.pmc}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  PMC
+                </a>
+              )
+            }
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <button class="btn-secondary" type="button" data-copy={makeCitation('apa')}
+              >Copy APA</button
+            >
+            <button class="btn-secondary" type="button" data-copy={makeCitation('vancouver')}
+              >Copy Vancouver</button
+            >
+            <button class="btn-secondary" type="button" data-copy={makeBibtex()}>Copy BibTeX</button
+            >
+            <button
+              class="btn-secondary"
+              type="button"
+              data-ris={makeRis()}
+              data-filename={paper.id}>Download RIS</button
+            >
+          </div>
+          <div class="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300">
+            <span class="font-semibold">Permalink:</span>
+            <button
+              class="text-blue-600 underline-offset-2 hover:underline dark:text-blue-400"
+              type="button"
+              data-permalink
+            >
+              Copy link
+            </button>
+            <span class="truncate text-slate-500">{Astro.url.href}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="not-prose mt-10">
+      <h2 class="text-lg font-semibold">Related papers</h2>
+      <div class="mt-4 grid gap-4 md:grid-cols-2">
+        {
+          related.map((item) => (
+            <article class="card" key={item.id}>
+              <h3 class="text-base font-semibold text-blue-700 dark:text-blue-300">
+                <a href={getPaperUrl(item)}>{item.title}</a>
+              </h3>
+              <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                {item.normalizedAuthors.slice(0, 3).join(', ')} et al.
+              </p>
+              <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                {item.journal} • {item.year}
+              </p>
+            </article>
+          ))
+        }
+        {
+          related.length === 0 && (
+            <p class="text-sm text-slate-600 dark:text-slate-300">No related papers found.</p>
+          )
+        }
+      </div>
+    </section>
+  </article>
+
+  <script is:inline>
+    const copyButtons = document.querySelectorAll('[data-copy]');
+    copyButtons.forEach((button) => {
+      button.addEventListener('click', async () => {
+        const text = button.getAttribute('data-copy');
+        if (!text) return;
+        try {
+          await navigator.clipboard.writeText(text);
+          button.classList.add('bg-green-600', 'text-white');
+          const original = button.textContent ?? '';
+          button.textContent = 'Copied!';
+          setTimeout(() => {
+            button.classList.remove('bg-green-600', 'text-white');
+            button.textContent = original;
+          }, 1500);
+        } catch (error) {
+          console.error('Copy failed', error);
+        }
+      });
+    });
+
+    const risButton = document.querySelector('[data-ris]');
+    risButton?.addEventListener('click', () => {
+      const content = risButton.getAttribute('data-ris');
+      if (!content) return;
+      const blob = new Blob([content], { type: 'application/x-research-info-systems' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      const filename = risButton.getAttribute('data-filename') ?? 'citation';
+      link.download = `${encodeURIComponent(filename)}.ris`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    });
+
+    const permalinkButton = document.querySelector('[data-permalink]');
+    permalinkButton?.addEventListener('click', async () => {
+      const url = window.location.href;
+      try {
+        await navigator.clipboard.writeText(url);
+        const original = permalinkButton.textContent ?? 'Copy link';
+        permalinkButton.textContent = 'Link copied!';
+        setTimeout(() => {
+          permalinkButton.textContent = original;
+        }, 1500);
+      } catch (error) {
+        console.error('Unable to copy permalink', error);
+      }
+    });
+  </script>
+</BaseLayout>

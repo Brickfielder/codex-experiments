@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrowseClient from '../components/browse/BrowseClient.tsx';
+import papers from '../../data/papers.normalized.json';
+import type { Paper } from '~/utils/types';
+const typedPapers = papers as Paper[];
+---
+
+<BaseLayout
+  title="Browse papers"
+  description="Searchable repository of OHCA survivorship literature"
+>
+  <h1 class="text-3xl font-bold">Browse papers</h1>
+  <p class="mt-2 max-w-3xl text-slate-600 dark:text-slate-300">
+    Use the search, facets, and quick filters to explore survivorship literature by domain, setting,
+    study design, geography, and more. Results update instantly as you refine criteria, and the URL
+    captures your selections for easy sharing.
+  </p>
+  <div class="mt-8">
+    <BrowseClient client:load papers={typedPapers} />
+  </div>
+</BaseLayout>
