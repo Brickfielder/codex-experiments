@@ -28,15 +28,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Ensure PR automation token is available
+      - name: Check PR automation token availability
         env:
           PR_AUTOMATION_TOKEN: ${{ secrets.ACTIONS_PR_TOKEN }}
         run: |
           if [ -z "$PR_AUTOMATION_TOKEN" ]; then
-            echo "::error::The ACTIONS_PR_TOKEN secret is not configured."
-            echo "::error::Add a fine-grained personal access token with Contents: Read & Write and Pull requests: Read & Write scopes to secrets as ACTIONS_PR_TOKEN so workflows can open pull requests."
-            echo "::error::Alternatively, enable the repository setting 'Allow GitHub Actions to create and approve pull requests'."
-            exit 1
+            echo "::warning::The ACTIONS_PR_TOKEN secret is not configured. Falling back to the workflow GITHUB_TOKEN."
+            echo "::notice::Add a fine-grained personal access token with Contents: Read & Write and Pull requests: Read & Write scopes to secrets as ACTIONS_PR_TOKEN so workflows can open pull requests without additional repository settings."
+            echo "::notice::Alternatively, enable the repository setting 'Allow GitHub Actions to create and approve pull requests' to allow the fallback token to create PRs."
           fi
       - uses: actions/setup-node@v4
         with:
@@ -62,7 +61,7 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.ACTIONS_PR_TOKEN }}
+          token: ${{ secrets.ACTIONS_PR_TOKEN || github.token }}
           branch: update/${{ env.UPDATE_MONTH }}/${{ inputs.mode }}
           commit-message: 'chore: manual update'
           title: 'Update ${{ env.UPDATE_MONTH }} (${{ inputs.mode }})'
