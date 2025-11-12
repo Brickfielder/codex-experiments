@@ -19,6 +19,7 @@ Open <http://localhost:4321> to explore the development build. Use `npm run buil
 - `npm run validate` – validate `data/papers.json` against `data/papers.schema.json`
 - `npm run normalize` – deduplicate, infer tags, and produce `data/papers.normalized.json`
 - `npm run merge data/papers.to-merge.json` – merge curated additions into `data/papers.json`
+- `npm run add:paper -- --doi <doi>|--pmid <pmid>` – fetch metadata for a DOI or PMID and append it to the dataset
 - `npm run test` – run Jest unit tests for data hygiene helpers
 - `npm run lint` – run ESLint
 - `npm run typecheck` – run the TypeScript compiler in no-emit mode
