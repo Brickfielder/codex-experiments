@@ -9,9 +9,36 @@ const joinUrl = (base: string, path = ''): string => {
   return normalizedPath ? `${normalizedBase}${normalizedPath}` : normalizedBase;
 };
 
+const hasBuffer = typeof Buffer !== 'undefined';
+
+const encodeBase64 = (value: string): string => {
+  if (hasBuffer) {
+    return Buffer.from(value, 'utf8').toString('base64');
+  }
+  const encoder = new TextEncoder();
+  const bytes = encoder.encode(value);
+  let binary = '';
+  bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+  return btoa(binary);
+};
+
+const decodeBase64 = (value: string): string => {
+  if (hasBuffer) {
+    return Buffer.from(value, 'base64').toString('utf8');
+  }
+  const binary = atob(value);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) {
+    bytes[index] = binary.charCodeAt(index);
+  }
+  const decoder = new TextDecoder();
+  return decoder.decode(bytes);
+};
+
 const encodePaperId = (paperId: string): string =>
-  Buffer.from(paperId, 'utf8')
-    .toString('base64')
+  encodeBase64(paperId)
     .replace(/\+/g, '-')
     .replace(/\//g, '_')
     .replace(/=+$/g, '');
@@ -22,7 +49,7 @@ const decodePaperSlug = (slug: string): string => {
   if (padding) {
     normalized = normalized.padEnd(normalized.length + (4 - padding), '=');
   }
-  return Buffer.from(normalized, 'base64').toString('utf8');
+  return decodeBase64(normalized);
 };
 
 export const parsePaperSlug = (slug: string): string => decodePaperSlug(slug);
