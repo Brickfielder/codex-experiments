@@ -10,6 +10,7 @@ const CROSSREF_USER_AGENT =
 const PUBMED_TOOL_NAME = process.env.PUBMED_TOOL_NAME ?? 'ohca-survivorship-repo';
 const PUBMED_TOOL_EMAIL =
   process.env.PUBMED_TOOL_EMAIL ?? 'opensource@ohca-survivorship.example.com';
+const NCBI_API_KEY = process.env.NCBI_API_KEY;
 
 type Fetcher = (input: RequestInfo, init?: RequestInit) => Promise<Response>;
 
@@ -26,6 +27,58 @@ export class PaperLookupError extends Error {
     this.name = 'PaperLookupError';
   }
 }
+
+export const resolvePmidFromPmcid = async (
+  pmcid: string,
+  fetcher: Fetcher = defaultFetch
+): Promise<string> => {
+  const trimmed = pmcid.trim();
+  if (!trimmed) {
+    throw new PaperLookupError('A PMCID is required.');
+  }
+  const normalized = trimmed.toUpperCase().startsWith('PMC')
+    ? trimmed.toUpperCase()
+    : `PMC${trimmed}`;
+  const target = new URL('https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi');
+  target.searchParams.set('dbfrom', 'pmc');
+  target.searchParams.set('db', 'pubmed');
+  target.searchParams.set('retmode', 'json');
+  target.searchParams.set('id', normalized);
+  target.searchParams.set('tool', PUBMED_TOOL_NAME);
+  target.searchParams.set('email', PUBMED_TOOL_EMAIL);
+  if (NCBI_API_KEY) {
+    target.searchParams.set('api_key', NCBI_API_KEY);
+  }
+  const response = await fetcher(target.toString(), {
+    headers: { Accept: 'application/json' }
+  });
+  if (!response.ok) {
+    throw new PaperLookupError(
+      `PMCID lookup failed (${response.status} ${response.statusText})`
+    );
+  }
+  const payload = (await response.json()) as {
+    linksets?: {
+      linksetdbs?: {
+        dbto?: string;
+        links?: (string | number)[];
+      }[];
+    }[];
+  };
+  const linksets = payload.linksets ?? [];
+  for (const set of linksets) {
+    const databases = set.linksetdbs ?? [];
+    for (const db of databases) {
+      if (db.dbto && db.dbto.toLowerCase() !== 'pubmed') continue;
+      const first = db.links?.[0];
+      if (first) {
+        const pmid = String(first).trim();
+        if (pmid) return pmid;
+      }
+    }
+  }
+  throw new PaperLookupError(`Unable to resolve PMCID ${normalized} to a PubMed ID.`);
+};
 
 const stripHtml = (value?: string): string => {
   if (!value) return '';
@@ -427,12 +480,16 @@ const mergeRecords = (preferred: RawPaper, fallback: RawPaper): RawPaper => {
 };
 
 export const fetchPaperByIdentifier = async (
-  options: { doi?: string; pmid?: string },
+  options: { doi?: string; pmid?: string; pmcid?: string },
   fetcher: Fetcher = defaultFetch
 ): Promise<RawPaper> => {
-  const { doi, pmid } = options;
-  if (!doi && !pmid) {
-    throw new PaperLookupError('A DOI or PubMed ID is required.');
+  const { doi, pmid, pmcid } = options;
+  if (!doi && !pmid && !pmcid) {
+    throw new PaperLookupError('A DOI, PubMed ID, or PubMed Central ID is required.');
+  }
+  if (pmcid) {
+    const resolvedPmid = await resolvePmidFromPmcid(pmcid, fetcher);
+    return fetchPubMedMetadata(resolvedPmid, fetcher);
   }
   if (pmid) {
     return fetchPubMedMetadata(pmid, fetcher);

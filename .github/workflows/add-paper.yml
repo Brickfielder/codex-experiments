@@ -1,0 +1,53 @@
+name: Add paper to repository
+
+on:
+  workflow_dispatch:
+    inputs:
+      id_type:
+        description: DOI | PMID | PMCID
+        required: true
+        default: DOI
+      identifier:
+        description: e.g. 10.1000/xyz123 or 37912345 or PMC11390308
+        required: true
+      preview_only:
+        description: true=don’t update datasets, just validate
+        required: true
+        default: "true"
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run add:paper
+        env:
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+        run: |
+          npm run add:paper -- \
+            --id-type "${{ github.event.inputs.id_type }}" \
+            --id "${{ github.event.inputs.identifier }}" \
+            --preview "${{ github.event.inputs.preview_only }}"
+
+      - name: Commit & push changes
+        if: ${{ success() }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore: add paper ${{ github.event.inputs.id_type }}=${{ github.event.inputs.identifier }}"
+            git push
+          else
+            echo "No changes to commit."
+          fi

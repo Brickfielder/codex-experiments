@@ -8,51 +8,82 @@ import { fetchPaperByIdentifier, PaperLookupError } from '../src/utils/paperFetc
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+type IdType = 'DOI' | 'PMID' | 'PMCID';
+
 interface CliOptions {
   doi?: string;
   pmid?: string;
+  pmcid?: string;
+  idType?: IdType;
+  identifier?: string;
+  preview?: boolean;
   dryRun?: boolean;
   pretty?: boolean;
 }
 
 const usage =
-  `Usage: npm run add:paper -- (--doi <value> | --pmid <value>) [--dry-run]\n\n` +
+  `Usage: npm run add:paper -- (--doi <value> | --pmid <value> | --pmcid <value>) [--dry-run]\n` +
+  `       npm run add:paper -- --id-type <DOI|PMID|PMCID> --id <value> [--preview <true|false>]\n\n` +
   `Fetches metadata from Crossref and/or PubMed and appends it to data/papers.json.\n` +
-  `Use --dry-run to print the derived record without modifying any files.`;
+  `Use --dry-run or --preview true to print the derived record without modifying any files.`;
 
 const parseArgs = (args: string[]): CliOptions => {
   const options: CliOptions = {};
   for (let i = 0; i < args.length; i += 1) {
     const token = args[i];
-    if (token === '--doi' && args[i + 1]) {
-      options.doi = args[i + 1];
-      i += 1;
-      continue;
-    }
-    if (token.startsWith('--doi=')) {
-      options.doi = token.split('=')[1];
-      continue;
-    }
-    if (token === '--pmid' && args[i + 1]) {
-      options.pmid = args[i + 1];
-      i += 1;
-      continue;
-    }
-    if (token.startsWith('--pmid=')) {
-      options.pmid = token.split('=')[1];
-      continue;
-    }
-    if (token === '--dry-run' || token === '--print') {
-      options.dryRun = true;
-      continue;
-    }
-    if (token === '--pretty') {
-      options.pretty = true;
-      continue;
-    }
-    if (token === '--help' || token === '-h') {
-      console.log(usage);
-      process.exit(0);
+    const [flag, inlineValue] = token.split('=');
+    const nextValue = args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : undefined;
+    const value = inlineValue ?? nextValue;
+
+    const consumeValue = () => {
+      if (value && value === nextValue) {
+        i += 1;
+      }
+      return value;
+    };
+
+    switch (flag) {
+      case '--doi':
+        options.doi = consumeValue();
+        continue;
+      case '--pmid':
+        options.pmid = consumeValue();
+        continue;
+      case '--pmcid':
+        options.pmcid = consumeValue();
+        continue;
+      case '--id-type': {
+        const raw = consumeValue();
+        if (raw) options.idType = raw.toUpperCase() as IdType;
+        continue;
+      }
+      case '--id':
+        options.identifier = consumeValue();
+        continue;
+      case '--preview': {
+        const raw = consumeValue();
+        if (raw === undefined) {
+          options.preview = true;
+        } else {
+          const normalized = raw.trim().toLowerCase();
+          options.preview = normalized === 'true' || normalized === '1';
+        }
+        continue;
+      }
+      case '--dry-run':
+      case '--print':
+        options.dryRun = true;
+        continue;
+      case '--pretty':
+        options.pretty = true;
+        continue;
+      case '--help':
+      case '-h':
+        console.log(usage);
+        process.exit(0);
+        break;
+      default:
+        break;
     }
   }
   return options;
@@ -76,9 +107,13 @@ const sortRecords = (records: RawPaper[]) => {
 const hasDuplicate = (records: RawPaper[], candidate: RawPaper): string | undefined => {
   const candidateDoi = candidate.doi?.toLowerCase();
   const candidatePmid = candidate.pmid?.toLowerCase();
+  const candidatePmcid = candidate.pmcid?.toLowerCase();
   for (const record of records) {
     if (record.id === candidate.id) return record.id;
     if (candidatePmid && record.pmid && record.pmid.toLowerCase() === candidatePmid) {
+      return record.id;
+    }
+    if (candidatePmcid && record.pmcid && record.pmcid.toLowerCase() === candidatePmcid) {
       return record.id;
     }
     if (candidateDoi && record.doi && record.doi.toLowerCase() === candidateDoi) {
@@ -90,13 +125,32 @@ const hasDuplicate = (records: RawPaper[], candidate: RawPaper): string | undefi
 
 const main = async () => {
   const options = parseArgs(process.argv.slice(2));
-  if (!options.doi && !options.pmid) {
+  const idType = options.idType ?? (options.doi ? 'DOI' : options.pmid ? 'PMID' : options.pmcid ? 'PMCID' : undefined);
+  const identifier =
+    options.identifier ?? options.doi ?? options.pmid ?? options.pmcid ?? undefined;
+  if (!idType || !identifier) {
     console.error(usage);
     process.exit(1);
   }
+  if (!['DOI', 'PMID', 'PMCID'].includes(idType)) {
+    console.error(`Invalid id type: ${idType}. Expected DOI, PMID, or PMCID.`);
+    process.exit(1);
+  }
   try {
-    const record = await fetchPaperByIdentifier({ doi: options.doi, pmid: options.pmid });
-    if (options.dryRun) {
+    const normalizedId = identifier.trim();
+    if (!normalizedId) {
+      console.error('Identifier must not be empty.');
+      process.exit(1);
+    }
+    const fetchOptions =
+      idType === 'DOI'
+        ? { doi: normalizedId }
+        : idType === 'PMID'
+        ? { pmid: normalizedId }
+        : { pmcid: normalizedId };
+    const preview = options.preview ?? options.dryRun ?? false;
+    const record = await fetchPaperByIdentifier(fetchOptions);
+    if (preview) {
       console.log(JSON.stringify(record, null, options.pretty ? 2 : undefined));
       return;
     }
