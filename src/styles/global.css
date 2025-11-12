@@ -11,7 +11,7 @@
 }
 
 body {
-  @apply bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased;
+  @apply bg-gradient-to-br from-slate-100 via-white to-slate-200 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100 font-sans antialiased;
 }
 
 a {
@@ -49,5 +49,5 @@ label {
 }
 
 main {
-  @apply mx-auto max-w-6xl px-4 pb-12 pt-8 sm:px-6 lg:px-8;
+  @apply mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8;
 }
