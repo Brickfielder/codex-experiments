@@ -29,6 +29,20 @@ describe('paper fetcher utilities', () => {
     }
   };
 
+  const crossrefNoPubmedId = {
+    message: {
+      DOI: '10.2000/example',
+      title: ['Another example study'],
+      abstract: '<jats:p>Abstract from Crossref.</jats:p>',
+      author: [{ given: 'Alex', family: 'Smith' }],
+      issued: { 'date-parts': [[2023, 5, 20]] },
+      subject: ['Testing'],
+      'container-title': ['Testing Journal'],
+      license: [{}],
+      link: [{ URL: 'https://example.test/fulltext2' }]
+    }
+  };
+
   const pubmedXml = `<?xml version="1.0"?>
   <PubmedArticleSet>
     <PubmedArticle>
@@ -88,6 +102,8 @@ describe('paper fetcher utilities', () => {
       </PubmedData>
     </PubmedArticle>
   </PubmedArticleSet>`;
+
+  const pubmedXmlAlternate = pubmedXml.replace(/10\.1000\/example/g, '10.2000/example');
 
   const expectBasicFields = (record: RawPaper) => {
     expect(record.title).toBe('Example cardiac arrest study');
@@ -158,5 +174,34 @@ describe('paper fetcher utilities', () => {
     expect(record.abstract).toBe('BACKGROUND: Background text.\nRESULTS: Results text.');
     expect(record.flags).toEqual({ open_access: true, has_fulltext: true });
     expectBasicFields(record);
+  });
+
+  it('falls back to resolving PubMed IDs via DOI when Crossref lacks the identifier', async () => {
+    const fetcher = jest.fn((input: RequestInfo) => {
+      const url = typeof input === 'string' ? input : input.toString();
+      if (url.startsWith('https://api.crossref.org')) {
+        return Promise.resolve(createJsonResponse(crossrefNoPubmedId));
+      }
+      if (url.includes('/esearch.fcgi')) {
+        return Promise.resolve(
+          createJsonResponse({
+            esearchresult: { idlist: ['87654321'] }
+          })
+        );
+      }
+      if (url.includes('/efetch.fcgi')) {
+        return Promise.resolve(createXmlResponse(pubmedXmlAlternate));
+      }
+      return Promise.reject(new Error(`Unexpected URL ${url}`));
+    });
+    const record = await fetchPaperByIdentifier({ doi: '10.2000/example' }, fetcher);
+    expect(fetcher).toHaveBeenCalledWith(
+      expect.stringContaining('term=10.2000%2Fexample%5Bdoi%5D'),
+      expect.anything()
+    );
+    expect(record.pmid).toBe('12345678');
+    expect(record.abstract).toBe('BACKGROUND: Background text.\nRESULTS: Results text.');
+    expect(record.links.pubmed).toBe('https://pubmed.ncbi.nlm.nih.gov/12345678');
+    expect(record.links.doi).toBe('https://doi.org/10.2000/example');
   });
 });

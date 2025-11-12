@@ -3,6 +3,7 @@ import type { RawPaper } from './types';
 
 const CROSSREF_ENDPOINT = 'https://api.crossref.org/works/';
 const PUBMED_EFETCH_ENDPOINT = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi';
+const PUBMED_ESEARCH_ENDPOINT = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi';
 
 const CROSSREF_USER_AGENT =
   process.env.CROSSREF_USER_AGENT ??
@@ -78,6 +79,42 @@ export const resolvePmidFromPmcid = async (
     }
   }
   throw new PaperLookupError(`Unable to resolve PMCID ${normalized} to a PubMed ID.`);
+};
+
+export const resolvePmidFromDoi = async (
+  doi: string,
+  fetcher: Fetcher = defaultFetch
+): Promise<string | undefined> => {
+  const trimmed = doi.trim();
+  if (!trimmed) {
+    throw new PaperLookupError('A DOI is required.');
+  }
+  const target = new URL(PUBMED_ESEARCH_ENDPOINT);
+  target.searchParams.set('db', 'pubmed');
+  target.searchParams.set('retmode', 'json');
+  target.searchParams.set('retmax', '1');
+  target.searchParams.set('term', `${trimmed}[doi]`);
+  target.searchParams.set('tool', PUBMED_TOOL_NAME);
+  target.searchParams.set('email', PUBMED_TOOL_EMAIL);
+  if (NCBI_API_KEY) {
+    target.searchParams.set('api_key', NCBI_API_KEY);
+  }
+  const response = await fetcher(target.toString(), {
+    headers: { Accept: 'application/json' }
+  });
+  if (!response.ok) {
+    throw new PaperLookupError(
+      `PubMed DOI lookup failed (${response.status} ${response.statusText})`
+    );
+  }
+  const payload = (await response.json()) as {
+    esearchresult?: { idlist?: (string | number | undefined)[] };
+  };
+  const ids = payload.esearchresult?.idlist ?? [];
+  const first = ids.find((value) => value !== undefined);
+  if (!first) return undefined;
+  const pmid = String(first).trim();
+  return pmid || undefined;
 };
 
 const stripHtml = (value?: string): string => {
@@ -506,6 +543,17 @@ export const fetchPaperByIdentifier = async (
       if (error instanceof PaperLookupError) {
         return crossref;
       }
+      throw error;
+    }
+  }
+  try {
+    const resolvedPmid = await resolvePmidFromDoi(crossref.doi ?? doi, fetcher);
+    if (resolvedPmid) {
+      const pubmed = await fetchPubMedMetadata(resolvedPmid, fetcher);
+      return mergeRecords(pubmed, crossref);
+    }
+  } catch (error) {
+    if (!(error instanceof PaperLookupError)) {
       throw error;
     }
   }
