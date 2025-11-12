@@ -2,12 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import papers from '../../data/papers.normalized.json';
 import { getPaperUrl } from '~/utils/format';
-import { resolveWithBase } from '~/utils/paths';
+import { getAboutUrl, getBrowseUrl } from '~/utils/siteUrls';
 import type { Paper } from '~/utils/types';
 const typedPapers = papers as Paper[];
 const featured = typedPapers.slice(0, 3);
-const browseHref = resolveWithBase('/browse');
-const aboutHref = resolveWithBase('/about');
+const browseHref = getBrowseUrl();
+const aboutHref = getAboutUrl();
 ---
 
 <BaseLayout
