@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -19,6 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - id: pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: astro
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -26,6 +31,9 @@ jobs:
       - run: npm ci
       - run: npm run normalize
       - run: npm run build
+        env:
+          ASTRO_BASE: ${{ steps.pages.outputs.base_path }}
+          ASTRO_SITE: ${{ steps.pages.outputs.base_url }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
