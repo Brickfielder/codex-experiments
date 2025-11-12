@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import papers from '../../../data/papers.normalized.json';
 import type { Paper } from '~/utils/types';
 import { getPaperUrl } from '~/utils/format';
+import { getPaperPermalink } from '~/utils/siteUrls';
 export const getStaticPaths = () =>
   (papers as Paper[]).map((paper) => ({ params: { id: paper.id } }));
 const typedPapers = papers as Paper[];
@@ -11,6 +12,8 @@ const paper = typedPapers.find((item) => item.id === id);
 if (!paper) {
   throw Astro.response(null, { status: 404, statusText: 'Paper not found' });
 }
+
+const permalink = getPaperPermalink(paper.id);
 
 const tokenize = (text: string) =>
   text
@@ -233,11 +236,11 @@ const makeRis = () =>
             <button
               class="text-blue-600 underline-offset-2 hover:underline dark:text-blue-400"
               type="button"
-              data-permalink
+              data-permalink={permalink}
             >
               Copy link
             </button>
-            <span class="truncate text-slate-500">{Astro.url.href}</span>
+            <span class="truncate text-slate-500">{permalink}</span>
           </div>
         </div>
       </div>
@@ -309,7 +312,8 @@ const makeRis = () =>
 
     const permalinkButton = document.querySelector('[data-permalink]');
     permalinkButton?.addEventListener('click', async () => {
-      const url = window.location.href;
+      const url = permalinkButton.getAttribute('data-permalink');
+      if (!url) return;
       try {
         await navigator.clipboard.writeText(url);
         const original = permalinkButton.textContent ?? 'Copy link';
