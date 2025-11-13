@@ -61,29 +61,97 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Run bulk add:paper
+        id: bulk_add
         env:
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           PREVIEW_ONLY: ${{ github.event.inputs.preview_only }}
         run: |
-          set -euo pipefail
+          set -uo pipefail
           preview=$(printf '%s\n' "$PREVIEW_ONLY" | tr '[:upper:]' '[:lower:]')
+          successes=()
+          failures=()
           while IFS= read -r doi; do
             [ -z "$doi" ] && continue
             echo "Adding DOI: $doi"
-            npm run add:paper -- --doi "$doi" --preview "$preview"
+            if npm run add:paper -- --doi "$doi" --preview "$preview"; then
+              successes+=("$doi")
+            else
+              echo "::error::Failed to add DOI: $doi" >&2
+              failures+=("$doi")
+            fi
           done <<'DOILIST'
 ${{ steps.doi_inputs.outputs.list }}
 DOILIST
+
+          success_count=${#successes[@]}
+          failure_count=${#failures[@]}
+
+          {
+            echo "## Bulk add summary"
+            echo
+            echo "Processed DOIs: $((success_count + failure_count))"
+            echo
+            echo "### Successful ($success_count)"
+            for doi in "${successes[@]}"; do
+              echo "- $doi"
+            done
+            if [ "$success_count" -eq 0 ]; then
+              echo "- none"
+            fi
+            echo
+            echo "### Failed ($failure_count)"
+            if [ "$failure_count" -eq 0 ]; then
+              echo "- none"
+            else
+              for doi in "${failures[@]}"; do
+                echo "- $doi"
+              done
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$success_count" -eq 0 ]; then
+            echo "No DOIs were processed successfully." >&2
+            exit 1
+          fi
+
+          {
+            printf 'success_count=%s\n' "$success_count"
+            printf 'failure_count=%s\n' "$failure_count"
+            printf 'success_bullets<<EOF\n'
+            for doi in "${successes[@]}"; do
+              printf -- '- %s\n' "$doi"
+            done
+            printf 'EOF\n'
+            printf 'failure_bullets<<EOF\n'
+            if [ "$failure_count" -eq 0 ]; then
+              printf -- '- none\n'
+            else
+              for doi in "${failures[@]}"; do
+                printf -- '- %s\n' "$doi"
+              done
+            fi
+            printf 'EOF\n'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Report failed DOIs
+        if: steps.bulk_add.outputs.failure_count != '0'
+        run: |
+          echo "The following DOIs could not be ingested:" >&2
+          printf '%s\n' "${{ steps.bulk_add.outputs.failure_bullets }}" >&2
 
       - name: Create PR with changes
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.ACTIONS_PR_TOKEN || github.token }}
-          commit-message: "chore: bulk add ${{ steps.doi_inputs.outputs.count }} papers"
+          commit-message: "chore: bulk add ${{ steps.bulk_add.outputs.success_count }} papers"
           branch: chore/bulk-add-papers-${{ github.run_id }}
-          title: "Bulk add papers (${{ steps.doi_inputs.outputs.count }})"
+          title: "Bulk add papers (${{ steps.bulk_add.outputs.success_count }})"
           body: |
             Automated bulk addition.
             Preview=${{ github.event.inputs.preview_only }}
-            First DOI=${{ steps.doi_inputs.outputs.first }}
+            Successfully processed:
+            ${{ steps.bulk_add.outputs.success_bullets }}
+
+            Failed lookups:
+            ${{ steps.bulk_add.outputs.failure_bullets }}
           delete-branch: true
