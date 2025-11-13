@@ -9,87 +9,128 @@ const browseHref = getBrowseUrl();
   description="Background and update cadence for the OHCA Survivorship Repository"
 >
   <section class="space-y-10">
-    <div class="rounded-3xl border border-white/70 bg-white/90 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur">
-      <p class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-sm font-semibold text-indigo-700">
-        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-white shadow-md">
-          <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" />
+    <div
+      class="rounded-3xl border border-white/70 bg-white/90 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur"
+    >
+      <p
+        class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-sm font-semibold text-indigo-700"
+      >
+        <span
+          class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-white shadow-md"
+        >
+          <svg
+            aria-hidden="true"
+            class="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"></path>
           </svg>
         </span>
         Our purpose & process
       </p>
-      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">About the OHCA Survivorship Repository</h1>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+        About the OHCA Survivorship Repository
+      </h1>
       <p class="mt-6 text-lg leading-relaxed text-slate-600">
-        The repository curates peer-reviewed research on life after out-of-hospital cardiac arrest, highlighting cognition,
-        psychological health, quality of life, participation, and caregiver-focused work. Each paper is reviewed for relevance,
-        tagged with a shared schema, and linked to external sources to help clinicians, researchers, and survivor partners act on
+        The repository curates peer-reviewed research on life after out-of-hospital cardiac arrest,
+        highlighting cognition, psychological health, quality of life, participation, and
+        caregiver-focused work. Each paper is reviewed for relevance, tagged with a shared schema,
+        and linked to external sources to help clinicians, researchers, and survivor partners act on
         the evidence.
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
-        <a class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-xl" href={browseHref}>
+        <a
+          class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-xl"
+          href={browseHref}
+        >
           Explore the papers
         </a>
-        <a class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-indigo-200 hover:text-indigo-700" href="mailto:info@ohca-repo.org">
+        <a
+          class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-indigo-200 hover:text-indigo-700"
+          href="mailto:info@ohca-repo.org"
+        >
           Contact the team
         </a>
       </div>
     </div>
 
     <section class="grid gap-6 md:grid-cols-2">
-      <div class="rounded-3xl border border-white/70 bg-white/90 p-6 shadow-xl ring-1 ring-indigo-100 backdrop-blur">
+      <div
+        class="rounded-3xl border border-white/70 bg-white/90 p-6 shadow-xl ring-1 ring-indigo-100 backdrop-blur"
+      >
         <h2 class="text-xl font-semibold text-slate-900">How we curate</h2>
         <ul class="mt-4 space-y-3 text-sm leading-relaxed text-slate-600">
           <li class="flex gap-3">
             <span class="mt-1 inline-flex h-2 w-2 rounded-full bg-indigo-500"></span>
-            Clinician-researchers and survivor advisors screen new publications for relevance and methodological rigor.
+            Clinician-researchers and survivor advisors screen new publications for relevance and methodological
+            rigor.
           </li>
           <li class="flex gap-3">
             <span class="mt-1 inline-flex h-2 w-2 rounded-full bg-purple-500"></span>
-            Each paper is normalized into a shared schema with consistent author formatting, domain tagging, and link validation.
+            Each paper is normalized into a shared schema with consistent author formatting, domain tagging,
+            and link validation.
           </li>
           <li class="flex gap-3">
             <span class="mt-1 inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
-            Automated scripts enrich abstracts, identify related studies, and flag duplicate entries before publishing updates.
+            Automated scripts enrich abstracts, identify related studies, and flag duplicate entries
+            before publishing updates.
           </li>
         </ul>
       </div>
-      <div class="rounded-3xl border border-white/70 bg-white/90 p-6 shadow-xl ring-1 ring-indigo-100 backdrop-blur">
+      <div
+        class="rounded-3xl border border-white/70 bg-white/90 p-6 shadow-xl ring-1 ring-indigo-100 backdrop-blur"
+      >
         <h2 class="text-xl font-semibold text-slate-900">Update cadence</h2>
         <p class="mt-4 text-sm leading-relaxed text-slate-600">
-          We refresh the repository every other month, with ad-hoc releases for notable publications. Releases include validation
-          against our JSON schema, changelog generation, and outreach to survivor networks who rely on the latest findings.
+          We refresh the repository every other month, with ad-hoc releases for notable
+          publications. Releases include validation against our JSON schema, changelog generation,
+          and outreach to survivor networks who rely on the latest findings.
         </p>
         <p class="mt-3 text-sm leading-relaxed text-slate-600">
-          To suggest papers or collaborate on tagging standards, please reach out via the contact link above.
+          To suggest papers or collaborate on tagging standards, please reach out via the contact
+          link above.
         </p>
       </div>
     </section>
 
-    <section class="rounded-3xl border border-white/70 bg-white/90 p-6 shadow-xl ring-1 ring-indigo-100 backdrop-blur">
+    <section
+      class="rounded-3xl border border-white/70 bg-white/90 p-6 shadow-xl ring-1 ring-indigo-100 backdrop-blur"
+    >
       <h2 class="text-xl font-semibold text-slate-900">Organization at a glance</h2>
       <div class="mt-4 grid gap-6 md:grid-cols-2">
         <div class="rounded-2xl bg-slate-50/80 p-4 shadow-inner">
           <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Domains</h3>
           <p class="mt-2 text-sm text-slate-600">
-            Cognitive outcomes, psychological health, quality of life, participation and return-to-work, caregiver perspectives.
+            Cognitive outcomes, psychological health, quality of life, participation and
+            return-to-work, caregiver perspectives.
           </p>
         </div>
         <div class="rounded-2xl bg-slate-50/80 p-4 shadow-inner">
           <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Facets</h3>
           <p class="mt-2 text-sm text-slate-600">
-            Filter by study design, setting, geography, journal, and publication year to find studies that match your question.
+            Filter by study design, setting, geography, journal, and publication year to find
+            studies that match your question.
           </p>
         </div>
         <div class="rounded-2xl bg-slate-50/80 p-4 shadow-inner">
-          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Paper detail pages</h3>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+            Paper detail pages
+          </h3>
           <p class="mt-2 text-sm text-slate-600">
-            Export citations in APA, Vancouver, BibTeX, or RIS formats. Access PubMed, DOI, and PMC links when available.
+            Export citations in APA, Vancouver, BibTeX, or RIS formats. Access PubMed, DOI, and PMC
+            links when available.
           </p>
         </div>
         <div class="rounded-2xl bg-slate-50/80 p-4 shadow-inner">
-          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Related research</h3>
+          <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+            Related research
+          </h3>
           <p class="mt-2 text-sm text-slate-600">
-            Abstract similarity surfaces adjacent studies so you can continue exploring survivor-focused literature.
+            Abstract similarity surfaces adjacent studies so you can continue exploring
+            survivor-focused literature.
           </p>
         </div>
       </div>

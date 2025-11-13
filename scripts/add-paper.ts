@@ -125,7 +125,9 @@ const hasDuplicate = (records: RawPaper[], candidate: RawPaper): string | undefi
 
 const main = async () => {
   const options = parseArgs(process.argv.slice(2));
-  const idType = options.idType ?? (options.doi ? 'DOI' : options.pmid ? 'PMID' : options.pmcid ? 'PMCID' : undefined);
+  const idType =
+    options.idType ??
+    (options.doi ? 'DOI' : options.pmid ? 'PMID' : options.pmcid ? 'PMCID' : undefined);
   const identifier =
     options.identifier ?? options.doi ?? options.pmid ?? options.pmcid ?? undefined;
   if (!idType || !identifier) {
@@ -146,8 +148,8 @@ const main = async () => {
       idType === 'DOI'
         ? { doi: normalizedId }
         : idType === 'PMID'
-        ? { pmid: normalizedId }
-        : { pmcid: normalizedId };
+          ? { pmid: normalizedId }
+          : { pmcid: normalizedId };
     const preview = options.preview ?? options.dryRun ?? false;
     const record = await fetchPaperByIdentifier(fetchOptions);
     if (preview) {

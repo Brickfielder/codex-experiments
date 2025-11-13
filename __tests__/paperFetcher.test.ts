@@ -158,9 +158,7 @@ describe('paper fetcher utilities', () => {
   });
 
   it('handles numeric month nodes in PubMed payloads', async () => {
-    const fetcher = jest
-      .fn()
-      .mockResolvedValue(createXmlResponse(pubmedXmlNumericMonths));
+    const fetcher = jest.fn().mockResolvedValue(createXmlResponse(pubmedXmlNumericMonths));
     const record = await fetchPubMedMetadata('12345678', fetcher);
     expect(record.date).toBe('2024-07-15');
   });
