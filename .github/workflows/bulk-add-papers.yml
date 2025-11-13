@@ -13,7 +13,7 @@ on:
       preview_only:
         description: true=don’t update datasets, just validate
         required: true
-        default: "true"
+        default: 'true'
 
 jobs:
   bulk-add:
@@ -79,9 +79,7 @@ jobs:
               echo "::error::Failed to add DOI: $doi" >&2
               failures+=("$doi")
             fi
-          done <<'DOILIST'
-${{ steps.doi_inputs.outputs.list }}
-DOILIST
+          done <<< "${{ steps.doi_inputs.outputs.list }}"
 
           success_count=${#successes[@]}
           failure_count=${#failures[@]}
@@ -143,9 +141,9 @@ DOILIST
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.ACTIONS_PR_TOKEN || github.token }}
-          commit-message: "chore: bulk add ${{ steps.bulk_add.outputs.success_count }} papers"
+          commit-message: 'chore: bulk add ${{ steps.bulk_add.outputs.success_count }} papers'
           branch: chore/bulk-add-papers-${{ github.run_id }}
-          title: "Bulk add papers (${{ steps.bulk_add.outputs.success_count }})"
+          title: 'Bulk add papers (${{ steps.bulk_add.outputs.success_count }})'
           body: |
             Automated bulk addition.
             Preview=${{ github.event.inputs.preview_only }}

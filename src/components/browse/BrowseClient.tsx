@@ -129,11 +129,11 @@ export default function BrowseClient({ papers }: Props) {
   return (
     <div class="flex flex-col gap-8 lg:flex-row">
       <aside class="lg:w-80 lg:flex-none">
-        <div
-          class="space-y-6 rounded-3xl border border-indigo-100/80 bg-white/95 p-5 shadow-xl ring-1 ring-indigo-50 backdrop-blur dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80"
-        >
+        <div class="space-y-6 rounded-3xl border border-indigo-100/80 bg-white/95 p-5 shadow-xl ring-1 ring-indigo-50 backdrop-blur dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
           <div>
-            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Quick filters</p>
+            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
+              Quick filters
+            </p>
             <div class="flex flex-wrap gap-2">{quickFilterButtons}</div>
           </div>
 
@@ -196,7 +196,10 @@ export default function BrowseClient({ papers }: Props) {
 
       <section class="flex-1 space-y-5">
         <div class="rounded-3xl border border-indigo-100/80 bg-white/95 p-6 shadow-xl ring-1 ring-indigo-50 backdrop-blur dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
-          <label htmlFor="search" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200">
+          <label
+            htmlFor="search"
+            class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-200"
+          >
             Search the repository
           </label>
           <input
@@ -209,7 +212,9 @@ export default function BrowseClient({ papers }: Props) {
         </div>
         <div class="flex flex-col gap-3 rounded-3xl border border-indigo-100/80 bg-white/95 p-5 shadow-xl ring-1 ring-indigo-50 backdrop-blur sm:flex-row sm:items-center sm:justify-between dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
           <div>
-            <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100">{results.length} papers</h2>
+            <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100">
+              {results.length} papers
+            </h2>
             <p class="text-sm text-slate-600 dark:text-slate-300">
               Sorted by relevance, then year (newest first)
             </p>

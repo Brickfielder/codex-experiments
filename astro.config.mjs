@@ -6,7 +6,8 @@ const repository = process.env.GITHUB_REPOSITORY?.split('/') ?? [];
 const [owner, repoName] = repository;
 
 const rawBase = process.env.ASTRO_BASE ?? (repoName ? `/${repoName}` : '/');
-const normalizedBase = rawBase === '/' ? '/' : `/${rawBase.replace(/^\/+/, '').replace(/\/+$/, '')}`;
+const normalizedBase =
+  rawBase === '/' ? '/' : `/${rawBase.replace(/^\/+/, '').replace(/\/+$/, '')}`;
 
 const site =
   process.env.ASTRO_SITE ??

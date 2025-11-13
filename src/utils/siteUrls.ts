@@ -38,10 +38,7 @@ const decodeBase64 = (value: string): string => {
 };
 
 const encodePaperId = (paperId: string): string =>
-  encodeBase64(paperId)
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/g, '');
+  encodeBase64(paperId).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
 
 const decodePaperSlug = (slug: string): string => {
   let normalized = slug.replace(/-/g, '+').replace(/_/g, '/');
@@ -61,4 +58,5 @@ export const getBrowseUrl = (): string => joinUrl(SITE_BASE_URL, 'browse');
 export const getAboutUrl = (): string => joinUrl(SITE_BASE_URL, 'about');
 export const getSiteUrl = (path = ''): string => joinUrl(SITE_BASE_URL, path);
 export const getPaperSlug = (paperId: string): string => encodePaperId(paperId);
-export const getPaperPermalink = (paperId: string): string => joinUrl(SITE_BASE_URL, `paper/${getPaperSlug(paperId)}`);
+export const getPaperPermalink = (paperId: string): string =>
+  joinUrl(SITE_BASE_URL, `paper/${getPaperSlug(paperId)}`);

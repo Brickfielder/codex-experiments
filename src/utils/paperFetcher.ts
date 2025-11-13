@@ -54,9 +54,7 @@ export const resolvePmidFromPmcid = async (
     headers: { Accept: 'application/json' }
   });
   if (!response.ok) {
-    throw new PaperLookupError(
-      `PMCID lookup failed (${response.status} ${response.statusText})`
-    );
+    throw new PaperLookupError(`PMCID lookup failed (${response.status} ${response.statusText})`);
   }
   const payload = (await response.json()) as {
     linksets?: {

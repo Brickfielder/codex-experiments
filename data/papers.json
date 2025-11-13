@@ -89,22 +89,9 @@
     "year": 2024,
     "date": "2024-08-02",
     "abstract": "Prospective cohort of 152 adult cardiac arrest survivors evaluated cognition at discharge and followed for six months. Lower Montreal Cognitive Assessment scores were strongly associated with poorer modified Rankin Scale outcomes at one month and diminished participation at six months after adjustment for arrest characteristics. Psychological distress mediated part of the relationship between cognition and fatigue severity, highlighting the need for early mental health screening. Findings support pairing neuropsychological assessment with longitudinal follow-up in survivorship programs.",
-    "mesh": [
-      "Cognitive Dysfunction",
-      "Recovery of Function",
-      "Heart Arrest"
-    ],
-    "keywords": [
-      "cognition",
-      "fatigue",
-      "depressive symptoms",
-      "functional outcomes"
-    ],
-    "domains": [
-      "cognitive",
-      "psychological",
-      "QoL"
-    ],
+    "mesh": ["Cognitive Dysfunction", "Recovery of Function", "Heart Arrest"],
+    "keywords": ["cognition", "fatigue", "depressive symptoms", "functional outcomes"],
+    "domains": ["cognitive", "psychological", "QoL"],
     "setting": "Mixed",
     "design": "Prospective cohort",
     "country": "",
@@ -124,30 +111,14 @@
     "doi": "10.1186/s13054-024-04821-5",
     "pmcid": "",
     "title": "Psychological recovery trajectories among cardiac arrest survivors receiving targeted rehabilitation",
-    "authors": [
-      "Lee J",
-      "An J",
-      "Svensson P",
-      "Gonzalez B",
-      "Huang L"
-    ],
+    "authors": ["Lee J", "An J", "Svensson P", "Gonzalez B", "Huang L"],
     "journal": "Critical Care",
     "year": 2024,
     "date": "2024-05-14",
     "abstract": "Longitudinal mixed-methods study of 94 out-of-hospital cardiac arrest survivors enrolled in a rehabilitation pathway combining psychoeducation, coping skills training, and peer mentorship. Anxiety and depressive symptoms improved steadily across six months compared with usual care, with the largest gains among participants who engaged in at least four mentorship sessions. Qualitative interviews described greater confidence navigating cognitive changes and social reintegration. Results demonstrate the value of embedding psychological recovery supports alongside conventional rehabilitation.",
-    "mesh": [
-      "Heart Arrest",
-      "Rehabilitation",
-      "Anxiety"
-    ],
-    "keywords": [
-      "anxiety",
-      "peer support",
-      "rehabilitation"
-    ],
-    "domains": [
-      "psychological"
-    ],
+    "mesh": ["Heart Arrest", "Rehabilitation", "Anxiety"],
+    "keywords": ["anxiety", "peer support", "rehabilitation"],
+    "domains": ["psychological"],
     "setting": "OHCA",
     "design": "Longitudinal cohort",
     "country": "South Korea",
@@ -167,29 +138,14 @@
     "doi": "10.1161/CIRCOUTCOMES.123.010987",
     "pmcid": "",
     "title": "Caregiver burden after out-of-hospital cardiac arrest: a multinational survey",
-    "authors": [
-      "Santos D",
-      "Ivanova K",
-      "Walker G",
-      "Chen P"
-    ],
+    "authors": ["Santos D", "Ivanova K", "Walker G", "Chen P"],
     "journal": "Circulation: Cardiovascular Quality and Outcomes",
     "year": 2023,
     "date": "2023-06-01",
     "abstract": "Cross-sectional online survey of 312 caregivers from eight countries explored burden and informational support after out-of-hospital cardiac arrest. Mean Zarit Burden Interview scores indicated moderate-to-high burden across regions, with the heaviest strain reported by caregivers supporting survivors with cognitive impairment. Nearly two thirds of respondents described insufficient guidance on fatigue management and community resources. Multivariable models linked higher burden to limited follow-up contact, underscoring the need for international caregiver support infrastructure.",
-    "mesh": [
-      "Caregivers",
-      "Burden of Illness"
-    ],
-    "keywords": [
-      "caregiver burden",
-      "zarit",
-      "informational needs"
-    ],
-    "domains": [
-      "caregiver",
-      "psychological"
-    ],
+    "mesh": ["Caregivers", "Burden of Illness"],
+    "keywords": ["caregiver burden", "zarit", "informational needs"],
+    "domains": ["caregiver", "psychological"],
     "setting": "OHCA",
     "design": "Cross-sectional survey",
     "country": "Multiple",
@@ -209,29 +165,14 @@
     "doi": "10.1097/CCM.0000000000006201",
     "pmcid": "",
     "title": "Quality of life after in-hospital cardiac arrest: a mixed-methods synthesis",
-    "authors": [
-      "Thompson M",
-      "Rao A",
-      "Diop F",
-      "Hernandez R"
-    ],
+    "authors": ["Thompson M", "Rao A", "Diop F", "Hernandez R"],
     "journal": "Critical Care Medicine",
     "year": 2023,
     "date": "2023-11-20",
     "abstract": "Systematic review and convergent mixed-methods synthesis of 27 studies describing quality-of-life outcomes after in-hospital cardiac arrest. Quantitative cohorts consistently reported lower physical functioning, fatigue, and role participation scores compared with community norms up to twelve months post-arrest. Qualitative narratives emphasized the interplay between lingering cognitive issues, caregiver burden, and institutional barriers to coordinated rehabilitation. The synthesis calls for dedicated survivorship pathways tailored to in-hospital cardiac arrest survivors and their families.",
-    "mesh": [
-      "Heart Arrest",
-      "Quality of Life"
-    ],
-    "keywords": [
-      "quality of life",
-      "participation",
-      "rehabilitation"
-    ],
-    "domains": [
-      "QoL",
-      "participation"
-    ],
+    "mesh": ["Heart Arrest", "Quality of Life"],
+    "keywords": ["quality of life", "participation", "rehabilitation"],
+    "domains": ["QoL", "participation"],
     "setting": "IHCA",
     "design": "Mixed methods",
     "country": "United States",
@@ -251,29 +192,14 @@
     "doi": "10.1111/acem.14621",
     "pmcid": "",
     "title": "Return-to-work outcomes following neurologic-focused outpatient care after cardiac arrest",
-    "authors": [
-      "Harris R",
-      "Berglund I",
-      "Miller T",
-      "Sato M"
-    ],
+    "authors": ["Harris R", "Berglund I", "Miller T", "Sato M"],
     "journal": "Academic Emergency Medicine",
     "year": 2023,
     "date": "2023-09-09",
     "abstract": "Prospective evaluation of a neurologic-focused outpatient clinic supporting 88 working-age cardiac arrest survivors. The interdisciplinary program emphasized early cognitive screening, occupational therapy coaching, and employer liaison visits. Seventy-one percent of participants returned to work within twelve months compared with 48% in the pre-implementation cohort, and role participation scores improved in tandem with executive function gains. Findings highlight the importance of structured outpatient services to sustain community reintegration.",
-    "mesh": [
-      "Employment",
-      "Heart Arrest"
-    ],
-    "keywords": [
-      "return to work",
-      "occupational therapy",
-      "cognitive screening"
-    ],
-    "domains": [
-      "participation",
-      "cognitive"
-    ],
+    "mesh": ["Employment", "Heart Arrest"],
+    "keywords": ["return to work", "occupational therapy", "cognitive screening"],
+    "domains": ["participation", "cognitive"],
     "setting": "Mixed",
     "design": "Prospective cohort",
     "country": "Canada",
@@ -293,28 +219,14 @@
     "doi": "10.1002/ana.26780",
     "pmcid": "",
     "title": "Fatigue severity and psychological distress in post-arrest survivorship",
-    "authors": [
-      "Morgan A",
-      "Saito Y",
-      "Kim H"
-    ],
+    "authors": ["Morgan A", "Saito Y", "Kim H"],
     "journal": "Annals of Neurology",
     "year": 2022,
     "date": "2022-05-19",
     "abstract": "Cross-sectional registry analysis of 289 post-arrest survivors evaluated relationships between fatigue severity and psychological health. Multivariable models demonstrated that Hospital Anxiety and Depression Scale scores accounted for 38% of the variance in Fatigue Severity Scale scores after controlling for demographic and arrest characteristics. Survivors describing high fatigue also reported reduced participation and poorer life satisfaction. Integrated care pathways addressing psychological distress and energy management may mitigate chronic fatigue.",
-    "mesh": [
-      "Fatigue",
-      "Heart Arrest"
-    ],
-    "keywords": [
-      "fatigue",
-      "HADS",
-      "psychological distress"
-    ],
-    "domains": [
-      "psychological",
-      "QoL"
-    ],
+    "mesh": ["Fatigue", "Heart Arrest"],
+    "keywords": ["fatigue", "HADS", "psychological distress"],
+    "domains": ["psychological", "QoL"],
     "setting": "Mixed",
     "design": "Cross-sectional study",
     "country": "Japan",
@@ -334,27 +246,14 @@
     "doi": "10.1177/02692155231234567",
     "pmcid": "",
     "title": "Implementing the MPAI-4 in cardiac arrest rehabilitation clinics",
-    "authors": [
-      "Rossi L",
-      "Clark R",
-      "Ahmed S"
-    ],
+    "authors": ["Rossi L", "Clark R", "Ahmed S"],
     "journal": "Clinical Rehabilitation",
     "year": 2022,
     "date": "2022-12-18",
     "abstract": "Implementation study across three rehabilitation clinics introduced routine Mayo-Portland Adaptability Inventory (MPAI-4) assessments for 126 cardiac arrest survivors. Embedding the tool within multidisciplinary team meetings improved identification of participation barriers and triggered tailored goal setting for community reintegration. Over nine months, mean MPAI-4 participation scores improved by 6.4 points and discharge planning documentation increased by 28%. Sustained use of the inventory required dedicated training and electronic health record prompts.",
-    "mesh": [
-      "Rehabilitation",
-      "Heart Arrest"
-    ],
-    "keywords": [
-      "MPAI-4",
-      "participation",
-      "rehabilitation outcomes"
-    ],
-    "domains": [
-      "participation"
-    ],
+    "mesh": ["Rehabilitation", "Heart Arrest"],
+    "keywords": ["MPAI-4", "participation", "rehabilitation outcomes"],
+    "domains": ["participation"],
     "setting": "Mixed",
     "design": "Implementation study",
     "country": "Italy",
@@ -374,27 +273,14 @@
     "doi": "10.1080/13854046.2022.2134567",
     "pmcid": "",
     "title": "MoCA screening utility for long-term cognitive impairment after cardiac arrest",
-    "authors": [
-      "Patel N",
-      "Johansson S",
-      "Mendes T"
-    ],
+    "authors": ["Patel N", "Johansson S", "Mendes T"],
     "journal": "Journal of Clinical and Experimental Neuropsychology",
     "year": 2022,
     "date": "2022-09-07",
     "abstract": "Prospective cohort of 104 survivors completed the Montreal Cognitive Assessment alongside comprehensive neuropsychological testing twelve weeks after arrest. MoCA scores strongly correlated with memory, attention, and executive composites (r = 0.68–0.74) and predicted vocational status at one year independent of age, arrest rhythm, and education. A cutoff of \"<26\" yielded 86% sensitivity for identifying individuals requiring formal neuropsychological referral. The findings support routine MoCA screening within survivorship follow-up to prioritize rehabilitation resources.",
-    "mesh": [
-      "Cognition Disorders",
-      "Heart Arrest"
-    ],
-    "keywords": [
-      "MoCA",
-      "neuropsychology",
-      "vocational outcomes"
-    ],
-    "domains": [
-      "cognitive"
-    ],
+    "mesh": ["Cognition Disorders", "Heart Arrest"],
+    "keywords": ["MoCA", "neuropsychology", "vocational outcomes"],
+    "domains": ["cognitive"],
     "setting": "OHCA",
     "design": "Prospective cohort",
     "country": "Sweden",
@@ -414,29 +300,14 @@
     "doi": "10.1161/CIRCOUTCOMES.121.007654",
     "pmcid": "",
     "title": "Emergency department follow-up clinics for cardiac arrest survivors: feasibility and early outcomes",
-    "authors": [
-      "Wilson P",
-      "McLeod A",
-      "Garcia L"
-    ],
+    "authors": ["Wilson P", "McLeod A", "Garcia L"],
     "journal": "Circulation: Cardiovascular Quality and Outcomes",
     "year": 2021,
     "date": "2021-11-04",
     "abstract": "Feasibility evaluation of an emergency department-led follow-up clinic enrolled 62 recent cardiac arrest survivors within four weeks of discharge. The visit protocol integrated cognitive screening, medication reconciliation, and structured referrals to occupational therapy and psychological services. Attendance exceeded 80%, and two-thirds of participants completed at least one recommended referral within three months. Early follow-up was associated with improved self-efficacy scores and expedited return-to-work planning, supporting expansion of the clinic model.",
-    "mesh": [
-      "Outpatient Clinics",
-      "Heart Arrest"
-    ],
-    "keywords": [
-      "follow-up",
-      "clinic",
-      "psychological support"
-    ],
-    "domains": [
-      "cognitive",
-      "psychological",
-      "participation"
-    ],
+    "mesh": ["Outpatient Clinics", "Heart Arrest"],
+    "keywords": ["follow-up", "clinic", "psychological support"],
+    "domains": ["cognitive", "psychological", "participation"],
     "setting": "OHCA",
     "design": "Feasibility study",
     "country": "United Kingdom",
@@ -456,28 +327,14 @@
     "doi": "10.1097/JNN.0000000000001234",
     "pmcid": "",
     "title": "Nursing-led caregiver navigation for cardiac arrest recovery",
-    "authors": [
-      "O'Connor H",
-      "Bennett L",
-      "Fischer D"
-    ],
+    "authors": ["O'Connor H", "Bennett L", "Fischer D"],
     "journal": "Journal of Neuroscience Nursing",
     "year": 2021,
     "date": "2021-07-12",
     "abstract": "Randomized controlled trial of 78 caregiver-survivor dyads tested a nursing-led navigation bundle delivered over twelve weeks. The intervention combined structured education, problem-solving coaching, and facilitated referrals to community supports. Caregivers in the navigation arm reported significantly lower Zarit burden scores at 90 days and greater preparedness for managing cognitive and emotional changes compared with usual care. Benefits persisted at six months, indicating durable impact of proactive caregiver support.",
-    "mesh": [
-      "Caregivers",
-      "Heart Arrest"
-    ],
-    "keywords": [
-      "caregiver",
-      "navigation",
-      "preparedness"
-    ],
-    "domains": [
-      "caregiver",
-      "psychological"
-    ],
+    "mesh": ["Caregivers", "Heart Arrest"],
+    "keywords": ["caregiver", "navigation", "preparedness"],
+    "domains": ["caregiver", "psychological"],
     "setting": "Mixed",
     "design": "Randomized controlled trial",
     "country": "Ireland",
