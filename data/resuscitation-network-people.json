@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Resuscitation Network — People",
+    "title": "Resuscitation Network - People",
     "updated_at": "2025-10-26",
     "fields": [
       "id",
@@ -27,7 +27,7 @@
       "country": "Sweden",
       "lat": 56.663444,
       "lng": 16.356779,
-      "interests": "OHCA follow‑up; QoL; psychological outcomes",
+      "interests": "OHCA follow-up; QoL; psychological outcomes",
       "tags": [
         "nursing",
         "research"
@@ -38,7 +38,7 @@
     {
       "name": "Katie Dainty, PhD",
       "email": "katie.dainty@utoronto.ca",
-      "role": "Research Chair in Patient‑Centred Outcomes",
+      "role": "Research Chair in Patient-Centred Outcomes",
       "org": "North York General Hospital & University of Toronto",
       "city": "Toronto",
       "country": "Canada",
@@ -132,7 +132,7 @@
       "country": "Sweden",
       "lat": 55.7047,
       "lng": 13.191,
-      "interests": "Rehabilitation after OHCA; patient‑centred outcomes",
+      "interests": "Rehabilitation after OHCA; patient-centred outcomes",
       "tags": [
         "physiotherapy",
         "research"
@@ -149,7 +149,7 @@
       "country": "Sweden",
       "lat": 58.4108,
       "lng": 15.6214,
-      "interests": "Family‑witnessed resuscitation; survivor needs",
+      "interests": "Family-witnessed resuscitation; survivor needs",
       "tags": [
         "nursing",
         "research"
@@ -158,7 +158,7 @@
       "updated_at": "2025-10-26"
     },
     {
-      "name": "Mette‑Kirstine Wagner",
+      "name": "Mette-Kirstine Wagner",
       "email": "mette.kirstine.wagner@regionh.dk",
       "role": "Cardiology; survivorship & mental health",
       "org": "Rigshospitalet, Capital Region of Denmark",
@@ -166,7 +166,7 @@
       "country": "Denmark",
       "lat": 55.6761,
       "lng": 12.5683,
-      "interests": "Return‑to‑work; mental health after cardiac arrest",
+      "interests": "Return-to-work; mental health after cardiac arrest",
       "tags": [
         "cardiology",
         "survivorship",
@@ -196,12 +196,12 @@
       "name": "Marco Mion, CPsychol",
       "email": "m.mion@nhs.net",
       "role": "Clinical Psychologist & Researcher",
-      "org": "Mid and South Essex NHS FT — Essex Cardiothoracic Centre",
+      "org": "Mid and South Essex NHS FT - Essex Cardiothoracic Centre",
       "city": "Basildon",
       "country": "United Kingdom",
       "lat": 51.5685,
       "lng": 0.4578,
-      "interests": "OHCA survivorship; neurorehabilitation; feedback systems; digital support (V‑CARE)",
+      "interests": "OHCA survivorship; neurorehabilitation; feedback systems; digital support (V-CARE)",
       "tags": [
         "psychology",
         "research",
@@ -227,5 +227,5 @@
       "id": "alexander-presciutti",
       "updated_at": "2025-10-26"
     }
-  }
+  ]
 }
