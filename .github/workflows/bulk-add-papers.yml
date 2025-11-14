@@ -47,14 +47,15 @@ jobs:
         run: |
           set -euo pipefail
 
-          # IDENTIFIERS comes in as a single string; newlines are usually flattened to spaces.
-          # Convert commas and whitespace into real newlines, trim, and drop empties.
+          # IDENTIFIERS comes in as a single string.
           sanitized=$(printf '%s\n' "$IDENTIFIERS")
+
+          # Convert commas, spaces, and tabs into newlines, trim, and drop empty lines.
           mapfile -t dois < <(
             printf '%s\n' "$sanitized" \
-            | tr ',\t ' '\n' \        # split on commas, spaces, and tabs
-            | sed 's/^[ \t]*//;s/[ \t]*$//' \
-            | awk 'length>0'
+              | tr ',\t ' '\n' \
+              | sed 's/^[ \t]*//;s/[ \t]*$//' \
+              | awk 'length>0'
           )
 
           if [ "${#dois[@]}" -eq 0 ]; then
@@ -70,6 +71,7 @@ jobs:
             printf 'file=%s\n' "$doi_file"
             printf 'first=%s\n' "${dois[0]}"
           } >> "$GITHUB_OUTPUT"
+
 
       - name: Run bulk add:paper
         id: bulk_add
