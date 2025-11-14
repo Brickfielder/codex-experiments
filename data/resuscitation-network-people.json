@@ -72,41 +72,6 @@
       "updated_at": "2025-10-26"
     },
     {
-      "name": "Victoria Wragg, RN",
-      "email": "Victoria.wragg@resus.org.uk",
-      "role": "Clinical Lead",
-      "org": "Resuscitation Council UK",
-      "city": "London",
-      "country": "United Kingdom",
-      "lat": 51.5074,
-      "lng": -0.1278,
-      "interests": "Survivor pathways; quality standards; aftercare",
-      "tags": [
-        "nursing",
-        "rcuk",
-        "clinical leadership"
-      ],
-      "id": "victoria-wragg-rn",
-      "updated_at": "2025-10-26"
-    },
-    {
-      "name": "Lorenzo Gamberini, MD",
-      "email": "lorenzo.gamberini@ausl.bologna.it",
-      "role": "Anaesthesia & ICU; Prehospital emergency",
-      "org": "Ospedale Maggiore Carlo Alberto Pizzardi",
-      "city": "Bologna",
-      "country": "Italy",
-      "lat": 44.494887,
-      "lng": 11.342616,
-      "interests": "OHCA; prehospital systems; advanced life support",
-      "tags": [
-        "anaesthesia",
-        "prehospital"
-      ],
-      "id": "lorenzo-gamberini-md",
-      "updated_at": "2025-10-26"
-    },
-    {
       "name": "Bo Gregers Winkel, MD DMSc",
       "email": "bowinkel@dadlnet.dk",
       "role": "Consultant cardiologist; Head of Research",
@@ -138,23 +103,6 @@
         "research"
       ],
       "id": "katarina-heimburg",
-      "updated_at": "2025-10-26"
-    },
-    {
-      "name": "Annette Waldemar",
-      "email": "annette.waldemar@liu.se",
-      "role": "Nurse specialist; researcher",
-      "org": "Linköping University / Region Östergötland",
-      "city": "Linköping",
-      "country": "Sweden",
-      "lat": 58.4108,
-      "lng": 15.6214,
-      "interests": "Family-witnessed resuscitation; survivor needs",
-      "tags": [
-        "nursing",
-        "research"
-      ],
-      "id": "annette-waldemar",
       "updated_at": "2025-10-26"
     },
     {
