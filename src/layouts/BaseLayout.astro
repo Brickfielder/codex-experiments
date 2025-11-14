@@ -1,13 +1,13 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro';
 import { resolveWithBase } from '~/utils/paths';
-import { getAboutUrl, getBrowseUrl, getCollaborateUrl } from '~/utils/siteUrls';
+import { getAboutUrl, getBrowseUrl, getCollaborateUrl, getSiteUrl } from '~/utils/siteUrls';
 import '../styles/global.css';
 const {
   title = 'OHCA Survivorship Repository',
   description = 'Knowledge hub for survivorship after cardiac arrest'
 } = Astro.props;
-const homeHref = resolveWithBase('/');
+const homeHref = getSiteUrl();
 const browseHref = getBrowseUrl();
 const aboutHref = getAboutUrl();
 const rssHref = resolveWithBase('/feed.xml');
