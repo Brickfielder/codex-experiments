@@ -46,14 +46,25 @@ jobs:
           IDENTIFIERS: ${{ github.event.inputs.identifiers }}
         run: |
           set -euo pipefail
-          sanitized=$(printf '%s\n' "$IDENTIFIERS" | tr '\r' '\n')
-          mapfile -t dois < <(printf '%s\n' "$sanitized" | sed 's/^[ \t]*//;s/[ \t]*$//' | awk 'length>0')
+
+          # IDENTIFIERS comes in as a single string; newlines are usually flattened to spaces.
+          # Convert commas and whitespace into real newlines, trim, and drop empties.
+          sanitized=$(printf '%s\n' "$IDENTIFIERS")
+          mapfile -t dois < <(
+            printf '%s\n' "$sanitized" \
+            | tr ',\t ' '\n' \        # split on commas, spaces, and tabs
+            | sed 's/^[ \t]*//;s/[ \t]*$//' \
+            | awk 'length>0'
+          )
+
           if [ "${#dois[@]}" -eq 0 ]; then
             echo "No DOIs provided" >&2
             exit 1
           fi
+
           doi_file="$RUNNER_TEMP/bulk_add_dois.txt"
           printf '%s\n' "${dois[@]}" > "$doi_file"
+
           {
             echo "count=${#dois[@]}"
             printf 'file=%s\n' "$doi_file"
