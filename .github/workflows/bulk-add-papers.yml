@@ -79,7 +79,8 @@ jobs:
           while IFS= read -r doi; do
             [ -z "$doi" ] && continue
             echo "Adding DOI: $doi"
-            if npm run add:paper -- --doi "$doi" --preview "$preview"; then
+            # Ensure npm does not consume the loop's stdin so all DOIs are processed.
+            if npm run add:paper -- --doi "$doi" --preview "$preview" < /dev/null; then
               successes+=("$doi")
             else
               echo "::error::Failed to add DOI: $doi" >&2
