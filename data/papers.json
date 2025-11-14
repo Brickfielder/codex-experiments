@@ -1,2 +1,109 @@
 [
+  {
+    "id": "38243608",
+    "pmid": "38243608",
+    "doi": "10.1093/eurjcn/zvad141",
+    "title": "Measuring care dependency in heart failure.",
+    "authors": [
+      "Vicky L Joshi",
+      "Rod S Taylor"
+    ],
+    "journal": "European journal of cardiovascular nursing",
+    "year": 2024,
+    "date": "2024-07-19",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1093/eurjcn/zvad141",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38243608"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Heart Failure"
+    ],
+    "country": "United Kingdom",
+    "corrCountryCode": "GB",
+    "corrCountryName": "United Kingdom"
+  },
+  {
+    "id": "38452993",
+    "pmid": "38452993",
+    "doi": "10.1016/j.resuscitation.2024.110162",
+    "title": "Observer-reported cognitive decline in out-of-hospital cardiac arrest survivors and its association with long-term survivor and relative outcomes.",
+    "authors": [
+      "Vicky L Joshi",
+      "Britt Borregaard",
+      "Tina Broby Mikkelsen",
+      "Lars H Tang",
+      "Erik Blennow Nordström",
+      "Sofie Moesgaard Bruvik",
+      "Anders Wieghorst",
+      "Ann-Dorthe Zwisler",
+      "Mette Kirstine Wagner"
+    ],
+    "journal": "Resuscitation",
+    "year": 2024,
+    "date": "2024-03-06",
+    "abstract": "AIM: Long-term cognitive decline after out-of-hospital cardiac arrest (OHCA) is still poorly understood. This study describes long-term observer-reported cognitive decline among Danish OHCA survivors, including differences in years since the event, and investigates characteristics and self-reported outcomes associated with observer-reported cognitive decline.\nMETHODS: Adults who survived an OHCA from 2016 to 2019, and their relatives, completed the national DANish Cardiac Arrest Survivorship survey. Relatives completed the Informant Questionnaire on Cognitive Decline in the Elderly, Cardiac Arrest version (IQCODE-CA), the Hospital Anxiety and Depression Scale (HADS) and the World Health Organisation-Five Well-being index; and survivors completed the Two Simple Questions (everyday activities and mental recovery), the Modified Fatigue Impact Scale, HADS, and the Short World Health Organisation Disability Assessment Schedule 2.0. Potential associations between survivor characteristics and the IQCODE-CA were investigated using a multivariable logistic regression model. Self-reported outcomes among survivors and relatives, and the association with IQCODE-CA scores were investigated using separate logistic regression models.\nRESULTS: Total median IQCODE-CA score was 3.04 (IQR: 3.00-3.27), with 47% having possible cognitive decline (score ≥ 3.04), consistent across time groups. Increasing age (OR 0.98, 95% CI: 0.97-0.99) and worse self-reported mental and physical outcomes for survivors and relatives, except 'everyday activities' were significantly associated with possible cognitive decline among survivors.\nCONCLUSIONS: Nearly half of OHCA survivors may suffer long-term cognitive decline. Worse self-reported mental and physical outcomes among survivors and their relatives are associated with potential cognitive decline emphasising the need for post-OHCA care to include systematic neurocognitive assessment, tailored support and effective rehabilitation.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2024.110162",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38452993"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Adult",
+      "Humans",
+      "Aged",
+      "Out-of-Hospital Cardiac Arrest",
+      "Cognitive Dysfunction",
+      "Surveys and Questionnaires",
+      "Self Report",
+      "Survivors"
+    ],
+    "country": "Denmark"
+  },
+  {
+    "id": "34475160",
+    "pmid": "34475160",
+    "doi": "10.1136/bmjopen-2020-047251",
+    "title": "Effectiveness of rehabilitation interventions on the secondary consequences of surviving a cardiac arrest: a systematic review and meta-analysis.",
+    "authors": [
+      "Vicky L Joshi",
+      "Jan Christensen",
+      "Esben Lejsgaard",
+      "Rod S Taylor",
+      "Ann Dorthe Zwisler",
+      "Lars H Tang"
+    ],
+    "journal": "BMJ open",
+    "year": 2021,
+    "date": "2021-09-02",
+    "abstract": "AIM: The aim of this systematic review was to assess the effectiveness of rehabilitation interventions on the secondary physical, neurological and psychological consequences of cardiac arrest (CA) for adult survivors.\nMETHODS: A literature search of electronic databases (MEDLINE, Allied and Complementary Medicine Database, Cumulative Index to Nursing and Allied Health Literature, Excerpta Medica database, Psychological Information Database, Web of Science and Cochrane Central Register of Controlled trials) was conducted for randomised controlled trials (RCTs) and observational studies up to 18 April 2021. The primary outcome was health-related quality of life (HRQoL) and main secondary outcome was neurological function with additional secondary outcomes being survival, rehospitalisation, safety (serious and non-serious adverse events), psychological well-being, fatigue, exercise capacity and physical capacity. Two authors independently screened studies for eligibility, extracted data and assessed risk of bias.\nRESULTS: Three RCTs and 11 observational studies were included (total 721 participants). Study duration ranged from 8 weeks to 2 years. Pooled data from two RCTs showed low-quality evidence for no effect on physical HRQoL (standardised mean difference (SMD) 0.19, (95% CI: -0.09 to 0.47)) and no effect on mental HRQoL (SMD 0.27 (95% CI: -0.01 to 0.55)).Regarding secondary outcomes, very low-quality evidence was found for improvement in neurological function associated with inpatient rehabilitation for CA survivors with acquired brain injury (SMD 0.71, (95% CI: 0.45 to 0.96)) from five observational studies. Two small observational studies found exercise-based rehabilitation interventions to be safe for CA survivors, reporting no serious or non-serious events.\nCONCLUSIONS: Given the overall low quality of evidence, this review cannot determine the effectiveness of rehabilitation interventions for CA survivors on HRQoL, neurological function or other included outcomes, and recommend further high-quality studies be conducted. In the interim, existing clinical guidelines on rehabilitation provision after CA should be followed to meet the high burden of secondary consequences suffered by CA survivors.\nPROSPERO REGISTRATION NUMBER: CRD42018110129.",
+    "links": {
+      "doi": "https://doi.org/10.1136/bmjopen-2020-047251",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/34475160",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413927"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC8413927",
+    "mesh": [
+      "Adult",
+      "Exercise Therapy",
+      "Fatigue",
+      "Heart Arrest",
+      "Humans",
+      "Quality of Life",
+      "Survivors"
+    ],
+    "country": "Denmark"
+  }
 ]
