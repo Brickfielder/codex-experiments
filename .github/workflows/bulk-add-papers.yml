@@ -52,11 +52,11 @@ jobs:
             echo "No DOIs provided" >&2
             exit 1
           fi
+          doi_file="$RUNNER_TEMP/bulk_add_dois.txt"
+          printf '%s\n' "${dois[@]}" > "$doi_file"
           {
             echo "count=${#dois[@]}"
-            printf 'list<<EOF\n'
-            printf '%s\n' "${dois[@]}"
-            echo 'EOF'
+            printf 'file=%s\n' "$doi_file"
             printf 'first=%s\n' "${dois[0]}"
           } >> "$GITHUB_OUTPUT"
 
@@ -65,9 +65,15 @@ jobs:
         env:
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           PREVIEW_ONLY: ${{ github.event.inputs.preview_only }}
+          DOI_FILE: ${{ steps.doi_inputs.outputs.file }}
         run: |
           set -uo pipefail
           preview=$(printf '%s\n' "$PREVIEW_ONLY" | tr '[:upper:]' '[:lower:]')
+          doi_file="$DOI_FILE"
+          if [ ! -f "$doi_file" ]; then
+            echo "Unable to locate DOI list file" >&2
+            exit 1
+          fi
           successes=()
           failures=()
           while IFS= read -r doi; do
@@ -79,7 +85,7 @@ jobs:
               echo "::error::Failed to add DOI: $doi" >&2
               failures+=("$doi")
             fi
-          done <<< "${{ steps.doi_inputs.outputs.list }}"
+          done < "$doi_file"
 
           success_count=${#successes[@]}
           failure_count=${#failures[@]}
