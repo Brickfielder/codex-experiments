@@ -215,13 +215,24 @@ interface CrossrefMessage {
   ['published-online']?: { 'date-parts'?: (number | undefined)[][] };
 }
 
+/**
+ * Crossref authors → full names.
+ * Prefer "given family" (e.g. "Victoria Louise Joshi").
+ * Fall back to whatever Crossref gives in `name`, or either part alone.
+ */
 const extractCrossrefAuthors = (authors?: CrossrefAuthor[]): string[] => {
   if (!authors) return [];
   return authors
     .map((author) => {
       if (author.name) return author.name.trim();
-      const parts = [author.family, author.given].filter(Boolean);
-      return parts.join(', ').trim();
+
+      const given = author.given?.trim();
+      const family = author.family?.trim();
+
+      if (given && family) return `${given} ${family}`;
+      if (family) return family;
+      if (given) return given;
+      return '';
     })
     .filter(Boolean);
 };
@@ -349,14 +360,36 @@ const parser = new XMLParser({
   removeNSPrefix: true
 });
 
+/**
+ * PubMed authors → full names.
+ * Prefer "ForeName LastName" (e.g. "Victoria Louise Joshi").
+ * Fall back gracefully to initials or last name only when needed.
+ */
 const buildAuthorName = (author: PubMedAuthor): string | undefined => {
+  // Group authors (e.g. "The TTM2 Investigators")
   if (author.CollectiveName) return author.CollectiveName.trim();
+
   const last = author.LastName?.trim();
-  if (!last) return undefined;
-  const initials = author.Initials?.trim();
-  if (initials) return `${last} ${initials}`;
   const fore = author.ForeName?.trim();
-  return fore ? `${last}, ${fore}` : last;
+  const initials = author.Initials?.trim();
+
+  // Prefer full ForeName + LastName
+  if (fore && last) {
+    return `${fore} ${last}`; // "Victoria Louise Joshi"
+  }
+
+  // If no ForeName, but we have initials + last
+  if (initials && last) {
+    return `${initials} ${last}`; // "VL Joshi"
+  }
+
+  // If only last name is present
+  if (last) return last;
+
+  // Last resort: just ForeName, if that's all we have
+  if (fore) return fore;
+
+  return undefined;
 };
 
 const buildAbstract = (abstractNode: unknown): string => {
