@@ -56,6 +56,7 @@ export const siteBaseUrl = SITE_BASE_URL;
 
 export const getBrowseUrl = (): string => joinUrl(SITE_BASE_URL, 'browse');
 export const getAboutUrl = (): string => joinUrl(SITE_BASE_URL, 'about');
+export const getHeatmapUrl = (): string => joinUrl(SITE_BASE_URL, 'heatmap');
 export const getSiteUrl = (path = ''): string => joinUrl(SITE_BASE_URL, path);
 export const getPaperSlug = (paperId: string): string => encodePaperId(paperId);
 export const getPaperPermalink = (paperId: string): string =>

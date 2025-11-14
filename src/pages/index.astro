@@ -2,12 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import papers from '../../data/papers.normalized.json';
 import { getPaperUrl } from '~/utils/format';
-import { getAboutUrl, getBrowseUrl } from '~/utils/siteUrls';
+import { getAboutUrl, getBrowseUrl, getHeatmapUrl } from '~/utils/siteUrls';
 import type { Paper } from '~/utils/types';
 const typedPapers = papers as Paper[];
 const featured = typedPapers.slice(0, 3);
 const browseHref = getBrowseUrl();
 const aboutHref = getAboutUrl();
+const heatmapHref = getHeatmapUrl();
 const totalPapers = typedPapers.length;
 const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year), 0);
 const recentlyAdded = Math.min(typedPapers.length, 15);
@@ -77,6 +78,12 @@ const stats = [
               href={aboutHref}
             >
               Learn about the project
+            </a>
+            <a
+              class="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-5 py-2.5 text-sm font-semibold text-indigo-700 transition hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-white"
+              href={heatmapHref}
+            >
+              Heat Map
             </a>
           </div>
         </div>
