@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import type { RawPaper } from '../src/utils/types';
 import { normalizeRecords } from '../src/utils/normalizer';
 import { fetchPaperByIdentifier, PaperLookupError } from '../src/utils/paperFetcher';
+import { enrichCountryForPaper } from '../src/utils/geoEnrichment';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -151,7 +152,8 @@ const main = async () => {
           ? { pmid: normalizedId }
           : { pmcid: normalizedId };
     const preview = options.preview ?? options.dryRun ?? false;
-    const record = await fetchPaperByIdentifier(fetchOptions);
+    const baseRecord = await fetchPaperByIdentifier(fetchOptions);
+    const record = await enrichCountryForPaper(baseRecord);
     if (preview) {
       console.log(JSON.stringify(record, null, options.pretty ? 2 : undefined));
       return;

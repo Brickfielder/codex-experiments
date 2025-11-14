@@ -26,6 +26,8 @@ export interface RawPaper {
   setting?: 'OHCA' | 'IHCA' | 'Mixed' | 'Unclear';
   design?: string;
   country?: string;
+  corrCountryCode?: string;
+  corrCountryName?: string;
   links: PaperLinks;
   flags?: PaperFlags;
 }
