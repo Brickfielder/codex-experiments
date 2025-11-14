@@ -1,7 +1,7 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro';
 import { resolveWithBase } from '~/utils/paths';
-import { getAboutUrl, getBrowseUrl } from '~/utils/siteUrls';
+import { getAboutUrl, getBrowseUrl, getCollaborateUrl } from '~/utils/siteUrls';
 import '../styles/global.css';
 const {
   title = 'OHCA Survivorship Repository',
@@ -13,6 +13,7 @@ const aboutHref = getAboutUrl();
 const rssHref = resolveWithBase('/feed.xml');
 const jsonFeedHref = resolveWithBase('/feed.json');
 const apiHref = resolveWithBase('/api/papers.json');
+const collaborateHref = getCollaborateUrl();
 ---
 
 <!doctype html>
@@ -68,6 +69,7 @@ const apiHref = resolveWithBase('/api/papers.json');
             >
               <a class="transition hover:text-white" href={browseHref}>Browse</a>
               <a class="transition hover:text-white" href={aboutHref}>About</a>
+              <a class="transition hover:text-white" href={collaborateHref}>Collaborate</a>
             </nav>
             <div class="rounded-full border border-white/40 bg-white/10 p-1 shadow-inner">
               <ThemeToggle />
@@ -99,6 +101,10 @@ const apiHref = resolveWithBase('/api/papers.json');
           <a
             class="rounded-xl bg-white/10 px-4 py-2 text-center transition hover:bg-white/20"
             href={aboutHref}>About</a
+          >
+          <a
+            class="rounded-xl bg-white/10 px-4 py-2 text-center transition hover:bg-white/20"
+            href={collaborateHref}>Collaborate</a
           >
         </nav>
       </div>

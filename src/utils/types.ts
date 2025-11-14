@@ -47,3 +47,18 @@ export interface SearchState {
   journals: string[];
   quickFilter?: string;
 }
+
+export interface Collaborator {
+  id: string;
+  name: string;
+  email?: string;
+  role?: string;
+  org?: string;
+  city?: string;
+  country?: string;
+  lat?: number;
+  lng?: number;
+  interests?: string;
+  tags?: string[];
+  updated_at?: string;
+}
