@@ -15,7 +15,7 @@ const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year),
 const recentlyAdded = Math.min(typedPapers.length, 15);
 const journals = new Set(typedPapers.map((paper) => paper.journal));
 const stats = [
-  { label: 'Total papers', value: totalPapers.toLocaleString() },
+  { label: 'Total papers', value: totalPapers },
   { label: 'Latest publication year', value: latestYear },
   { label: 'Recently added', value: recentlyAdded },
   { label: 'Journals represented', value: journals.size }
@@ -130,7 +130,13 @@ const stats = [
               class="flex flex-col items-center rounded-2xl bg-slate-50/80 px-4 py-6 text-center shadow-inner"
               key={item.label}
             >
-              <span class="text-3xl font-bold text-indigo-600">{item.value}</span>
+              <span
+                class="text-3xl font-bold text-indigo-600"
+                data-countup
+                data-count-to={item.value}
+              >
+                {item.value.toLocaleString()}
+              </span>
               <span class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                 {item.label}
               </span>
@@ -139,6 +145,91 @@ const stats = [
         }
       </div>
     </section>
+
+    <script is:inline>
+      const initCountups = () => {
+        const counters = Array.from(
+          document.querySelectorAll('[data-countup]:not([data-countup-ready="true"])')
+        );
+
+        if (!counters.length) {
+          return;
+        }
+
+        const numberFormatter = new Intl.NumberFormat();
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const setFinalValue = (element, target) => {
+          element.textContent = numberFormatter.format(Math.round(target));
+        };
+
+        const animateValue = (element, target) => {
+          const duration = Number(element.getAttribute('data-count-duration')) || 1200;
+          const startTimestamp = performance.now();
+
+          const step = (timestamp) => {
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const currentValue = target * progress;
+            element.textContent = numberFormatter.format(Math.round(currentValue));
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            }
+          };
+
+          element.textContent = numberFormatter.format(0);
+          requestAnimationFrame(step);
+        };
+
+        if (prefersReducedMotion) {
+          counters.forEach((counter) => {
+            const target = Number(counter.getAttribute('data-count-to'));
+            if (!Number.isFinite(target)) {
+              return;
+            }
+            counter.dataset.countupReady = 'true';
+            setFinalValue(counter, target);
+          });
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              observer.unobserve(entry.target);
+              const target = Number(entry.target.getAttribute('data-count-to'));
+              if (!Number.isFinite(target)) {
+                return;
+              }
+              animateValue(entry.target, target);
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        counters.forEach((counter) => {
+          counter.dataset.countupReady = 'true';
+          const target = Number(counter.getAttribute('data-count-to'));
+          if (!Number.isFinite(target)) {
+            return;
+          }
+          counter.textContent = numberFormatter.format(0);
+          observer.observe(counter);
+        });
+      };
+
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        initCountups();
+      } else {
+        document.addEventListener('DOMContentLoaded', initCountups, { once: true });
+      }
+
+      document.addEventListener('astro:page-load', initCountups);
+    </script>
 
     <section
       class="rounded-3xl border border-white/70 bg-white/90 p-8 shadow-xl ring-1 ring-indigo-100 backdrop-blur"
