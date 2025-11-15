@@ -10,9 +10,7 @@ const {
 const homeHref = getSiteUrl();
 const browseHref = getBrowseUrl();
 const aboutHref = getAboutUrl();
-const rssHref = resolveWithBase('/feed.xml');
-const jsonFeedHref = resolveWithBase('/feed.json');
-const apiHref = resolveWithBase('/api/papers.json');
+const privacyHref = resolveWithBase('/privacy');
 const collaborateHref = getCollaborateUrl();
 ---
 
@@ -127,9 +125,7 @@ const collaborateHref = getCollaborateUrl();
           </p>
         </div>
         <div class="flex flex-wrap gap-4 text-slate-400">
-          <a class="transition hover:text-white" href={rssHref}>RSS</a>
-          <a class="transition hover:text-white" href={jsonFeedHref}>JSON Feed</a>
-          <a class="transition hover:text-white" href={apiHref}>API</a>
+          <a class="transition hover:text-white" href={privacyHref}>Privacy</a>
         </div>
       </div>
     </footer>

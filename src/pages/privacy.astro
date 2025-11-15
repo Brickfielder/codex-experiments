@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const contactEmail = 'info@ohca-repo.org';
+---
+
+<BaseLayout
+  title="Privacy Notice"
+  description="Privacy commitment for the OHCA Survivorship Repository"
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+    <div
+      class="space-y-6 rounded-3xl border border-white/70 bg-white/95 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur"
+    >
+      <p
+        class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-sm font-semibold text-indigo-700"
+      >
+        Privacy commitment
+      </p>
+      <h1 class="text-4xl font-semibold tracking-tight text-slate-900">Privacy Notice</h1>
+      <div class="prose prose-slate max-w-none text-base leading-relaxed">
+        <p>
+          This website uses a privacy-friendly analytics tool to understand basic usage patterns
+          (for example, the number of visitors, page views, and referring websites).
+        </p>
+        <p>
+          The analytics are GDPR-compliant, do not use cookies, and do not track or identify
+          individual users. No personal data is collected, stored, or shared. The information we
+          gather is aggregated and anonymous, and is used solely to improve the content and
+          functionality of the site.
+        </p>
+        <p>This website is part of a non-commercial academic project.</p>
+        <p>
+          If you have any questions about this privacy notice, you can contact the site
+          administrator at: {contactEmail}.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
