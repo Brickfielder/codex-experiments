@@ -1,6 +1,5 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro';
-import { resolveWithBase } from '~/utils/paths';
 import { getAboutUrl, getBrowseUrl, getCollaborateUrl, getSiteUrl } from '~/utils/siteUrls';
 import '../styles/global.css';
 const {
@@ -10,7 +9,7 @@ const {
 const homeHref = getSiteUrl();
 const browseHref = getBrowseUrl();
 const aboutHref = getAboutUrl();
-const privacyHref = resolveWithBase('/privacy');
+const privacyHref = getSiteUrl('privacy');
 const collaborateHref = getCollaborateUrl();
 ---
 
