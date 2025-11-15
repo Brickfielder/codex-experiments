@@ -28,10 +28,7 @@
       "lat": 56.663444,
       "lng": 16.356779,
       "interests": "OHCA follow-up; QoL; psychological outcomes",
-      "tags": [
-        "nursing",
-        "research"
-      ],
+      "tags": ["nursing", "research"],
       "id": "johan-israelsson-rn-phd",
       "updated_at": "2025-10-26"
     },
@@ -45,11 +42,7 @@
       "lat": 43.6532,
       "lng": -79.3832,
       "interests": "Survivor & family experience; qualitative & mixed methods",
-      "tags": [
-        "research",
-        "patient-centred",
-        "qualitative"
-      ],
+      "tags": ["research", "patient-centred", "qualitative"],
       "id": "katie-dainty-phd",
       "updated_at": "2025-10-26"
     },
@@ -63,11 +56,7 @@
       "lat": 51.7356,
       "lng": 0.4686,
       "interests": "Peer support; lived experience; public engagement",
-      "tags": [
-        "survivor",
-        "advocacy",
-        "charity"
-      ],
+      "tags": ["survivor", "advocacy", "charity"],
       "id": "paul-swindell",
       "updated_at": "2025-10-26"
     },
@@ -81,10 +70,7 @@
       "lat": 55.6761,
       "lng": 12.5683,
       "interests": "Sudden cardiac death; OHCA outcomes",
-      "tags": [
-        "cardiology",
-        "research"
-      ],
+      "tags": ["cardiology", "research"],
       "id": "bo-gregers-winkel-md-dmsc",
       "updated_at": "2025-10-26"
     },
@@ -98,10 +84,7 @@
       "lat": 55.7047,
       "lng": 13.191,
       "interests": "Rehabilitation after OHCA; patient-centred outcomes",
-      "tags": [
-        "physiotherapy",
-        "research"
-      ],
+      "tags": ["physiotherapy", "research"],
       "id": "katarina-heimburg",
       "updated_at": "2025-10-26"
     },
@@ -115,11 +98,7 @@
       "lat": 55.6761,
       "lng": 12.5683,
       "interests": "Return-to-work; mental health after cardiac arrest",
-      "tags": [
-        "cardiology",
-        "survivorship",
-        "mental health"
-      ],
+      "tags": ["cardiology", "survivorship", "mental health"],
       "id": "mette-kirstine-wagner",
       "updated_at": "2025-10-26"
     },
@@ -133,10 +112,7 @@
       "lat": 55.8642,
       "lng": -4.2518,
       "interests": "OHCA survivorship; rehabilitation",
-      "tags": [
-        "physiotherapy",
-        "lecturer"
-      ],
+      "tags": ["physiotherapy", "lecturer"],
       "id": "vicky-v-l-joshi-phd",
       "updated_at": "2025-10-26"
     },
@@ -150,11 +126,7 @@
       "lat": 51.5685,
       "lng": 0.4578,
       "interests": "OHCA survivorship; neurorehabilitation; feedback systems; digital support (V-CARE)",
-      "tags": [
-        "psychology",
-        "research",
-        "neurorehab"
-      ],
+      "tags": ["psychology", "research", "neurorehab"],
       "id": "marco-mion-cpsychol",
       "updated_at": "2025-10-26"
     },
@@ -168,10 +140,7 @@
       "lat": 42.3364,
       "lng": -71.1046,
       "interests": "Resuscitation science; behavioural & outcomes research (details to confirm)",
-      "tags": [
-        "research",
-        "behavioural"
-      ],
+      "tags": ["research", "behavioural"],
       "id": "alexander-presciutti",
       "updated_at": "2025-10-26"
     }

@@ -129,9 +129,7 @@ const CollaboratorDirectory = ({ people }: CollaboratorDirectoryProps) => {
                 ))}
               </div>
             ) : null}
-            <p className="mt-4 text-xs text-slate-400">
-              Updated {person.updated_at ?? '—'}
-            </p>
+            <p className="mt-4 text-xs text-slate-400">Updated {person.updated_at ?? '—'}</p>
           </article>
         ))}
       </div>

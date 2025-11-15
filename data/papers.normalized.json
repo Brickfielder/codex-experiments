@@ -4,10 +4,7 @@
     "pmid": "38243608",
     "doi": "10.1093/eurjcn/zvad141",
     "title": "Measuring care dependency in heart failure.",
-    "authors": [
-      "Vicky L Joshi",
-      "Rod S Taylor"
-    ],
+    "authors": ["Vicky L Joshi", "Rod S Taylor"],
     "journal": "European journal of cardiovascular nursing",
     "year": 2024,
     "date": "2024-07-19",
@@ -20,19 +17,13 @@
       "open_access": false,
       "has_fulltext": false
     },
-    "mesh": [
-      "Humans",
-      "Heart Failure"
-    ],
+    "mesh": ["Humans", "Heart Failure"],
     "country": "United Kingdom",
     "corrCountryCode": "GB",
     "corrCountryName": "United Kingdom",
     "domains": [],
     "setting": "Unclear",
-    "normalizedAuthors": [
-      "Joshi VL",
-      "Taylor RS"
-    ],
+    "normalizedAuthors": ["Joshi VL", "Taylor RS"],
     "isAbstractTruncated": false
   },
   {
@@ -74,10 +65,7 @@
       "Survivors"
     ],
     "country": "Denmark",
-    "domains": [
-      "Cognitive",
-      "Psychological"
-    ],
+    "domains": ["Cognitive", "Psychological"],
     "setting": "OHCA",
     "normalizedAuthors": [
       "Joshi VL",
@@ -129,9 +117,7 @@
       "Survivors"
     ],
     "country": "Denmark",
-    "domains": [
-      "Qol"
-    ],
+    "domains": ["Qol"],
     "setting": "Mixed",
     "normalizedAuthors": [
       "Joshi VL",

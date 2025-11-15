@@ -4,13 +4,17 @@ import CountryHeatmap from '../components/CountryHeatmap';
 ---
 
 <BaseLayout title="OHCA Survivorship Map" description="Geographic distribution of curated papers.">
-  <section class="page-hero space-y-6 rounded-3xl border border-white/70 bg-white/90 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur">
+  <section
+    class="page-hero space-y-6 rounded-3xl border border-white/70 bg-white/90 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur"
+  >
     <div class="space-y-3 text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-500">Global overview</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-500">
+        Global overview
+      </p>
       <h1 class="text-3xl font-semibold text-slate-900">Papers by Country</h1>
       <p class="text-base text-slate-600">
-        This interactive heatmap aggregates every entry in the repository, preferring the corresponding
-        author's country when available.
+        This interactive heatmap aggregates every entry in the repository, preferring the
+        corresponding author's country when available.
       </p>
     </div>
     <CountryHeatmap client:only="react" />

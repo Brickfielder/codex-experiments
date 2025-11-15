@@ -5,12 +5,12 @@ const COUNTRY_ALIASES: { code: string; name: string; aliases: string[] }[] = [
   {
     code: 'US',
     name: 'United States',
-    aliases: ['United States', 'USA', 'U.S.A.', 'United States of America'],
+    aliases: ['United States', 'USA', 'U.S.A.', 'United States of America']
   },
   {
     code: 'GB',
     name: 'United Kingdom',
-    aliases: ['United Kingdom', 'UK', 'U.K.', 'England', 'Scotland', 'Wales', 'Northern Ireland'],
+    aliases: ['United Kingdom', 'UK', 'U.K.', 'England', 'Scotland', 'Wales', 'Northern Ireland']
   },
   { code: 'CA', name: 'Canada', aliases: ['Canada'] },
   { code: 'AU', name: 'Australia', aliases: ['Australia'] },
@@ -47,9 +47,8 @@ const COUNTRY_ALIASES: { code: string; name: string; aliases: string[] }[] = [
 
   // Middle East / others likely to appear
   { code: 'IL', name: 'Israel', aliases: ['Israel'] },
-  { code: 'TR', name: 'Turkey', aliases: ['Turkey', 'Türkiye'] },
+  { code: 'TR', name: 'Turkey', aliases: ['Turkey', 'Türkiye'] }
 ];
-
 
 function inferCountryFromAffiliationText(affiliation: string | undefined | null) {
   if (!affiliation) return null;
@@ -57,7 +56,7 @@ function inferCountryFromAffiliationText(affiliation: string | undefined | null)
   // 1) Try from the end of the affiliation, splitting on commas/semicolons.
   const chunks = affiliation
     .split(/[;,]/)
-    .map(c => c.trim())
+    .map((c) => c.trim())
     .filter(Boolean);
 
   for (let i = chunks.length - 1; i >= 0; i--) {
@@ -100,8 +99,8 @@ async function fetchCrossrefWork(doi: string): Promise<CrossrefWork | null> {
   const url = `https://api.crossref.org/works/${encodeURIComponent(doi)}`;
   const res = await fetch(url, {
     headers: {
-      'User-Agent': 'ohca-survivorship-repo/1.0 (mailto:your-email@example.com)',
-    },
+      'User-Agent': 'ohca-survivorship-repo/1.0 (mailto:your-email@example.com)'
+    }
   });
   if (!res.ok) {
     console.warn(`Crossref lookup failed for DOI ${doi}: ${res.status} ${res.statusText}`);
@@ -132,14 +131,14 @@ export async function enrichCountryForPaper(record: RawPaper): Promise<RawPaper>
       return record;
     }
 
-    const affText = lastAuthor.affiliation.map(a => a.name).join('; ');
+    const affText = lastAuthor.affiliation.map((a) => a.name).join('; ');
     const inferred = inferCountryFromAffiliationText(affText);
     if (!inferred) return record;
 
     return {
       ...record,
       corrCountryCode: inferred.code,
-      corrCountryName: inferred.name,
+      corrCountryName: inferred.name
     };
   } catch (err) {
     console.warn(`Failed to enrich country for ${record.doi}:`, err);

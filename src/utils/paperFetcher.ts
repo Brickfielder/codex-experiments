@@ -34,17 +34,19 @@ export class PaperLookupError extends Error {
  */
 const decodeHtmlEntities = (value?: string): string => {
   if (!value) return '';
-  return value
-    // decimal entities: &#246;
-    .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(Number(dec)))
-    // hex entities: &#xF6;
-    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
-    // a few common named entities
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'");
+  return (
+    value
+      // decimal entities: &#246;
+      .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(Number(dec)))
+      // hex entities: &#xF6;
+      .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+      // a few common named entities
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
+  );
 };
 
 export const resolvePmidFromPmcid = async (
@@ -594,8 +596,7 @@ export const fetchPubMedMetadata = async (
       if (typeof heading === 'string') return decodeHtmlEntities(heading.trim());
       const descriptor = heading.DescriptorName;
       if (!descriptor) return undefined;
-      const raw =
-        typeof descriptor === 'string' ? descriptor.trim() : descriptor.text?.trim();
+      const raw = typeof descriptor === 'string' ? descriptor.trim() : descriptor.text?.trim();
       return raw ? decodeHtmlEntities(raw) : undefined;
     })
     .filter((name): name is string => Boolean(name));

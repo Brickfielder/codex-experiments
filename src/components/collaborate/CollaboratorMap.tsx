@@ -20,7 +20,9 @@ const CollaboratorMap = ({ people }: CollaboratorMapProps) => {
       return undefined;
     }
 
-    const points = people.filter((person) => typeof person.lat === 'number' && typeof person.lng === 'number');
+    const points = people.filter(
+      (person) => typeof person.lat === 'number' && typeof person.lng === 'number'
+    );
 
     if (!points.length) {
       return undefined;
