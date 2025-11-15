@@ -117,7 +117,7 @@ const makeRis = () =>
 <BaseLayout title={paper.title} description={paper.abstract.slice(0, 140)}>
   <article class="space-y-10">
     <section
-      class="rounded-3xl border border-white/70 bg-white/90 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur"
+      class="page-hero rounded-3xl border border-white/70 bg-white/90 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur"
     >
       <p
         class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-indigo-700"
@@ -150,7 +150,7 @@ const makeRis = () =>
           ))
         }
       </div>
-      <div class="mt-6 flex flex-wrap gap-2 text-sm">
+      <div class="page-hero-actions mt-6 flex flex-wrap gap-2 text-sm">
         {
           paper.links.pubmed && (
             <a
