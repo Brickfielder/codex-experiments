@@ -15,10 +15,19 @@ import CountryHeatmap from '../components/CountryHeatmap';
         Global overview
       </p>
       <h1 class="text-3xl font-semibold text-slate-900">Papers by Country</h1>
-      <p class="text-base text-slate-600">
-        Explore the interactive heat map of every entry in the repository, prioritizing the
-        corresponding author's country of record whenever available.
-      </p>
+      <div class="space-y-4 text-base text-slate-600">
+        <p>
+          This map updates automatically whenever a new paper is added to the Survivorship Repository.
+          It uses the geographical location of the last author’s institutional affiliation as a proxy for the
+          study’s country of origin. We acknowledge that this is a heuristic: many studies involve international
+          teams, and last-author location does not fully capture the geographic diversity of all contributors.
+        </p>
+        <p>
+          Nevertheless, this approach offers a helpful overview of where survivorship research after cardiac arrest is
+          currently most represented — and highlights regions where further focus, collaboration, and investment may be
+          needed.
+        </p>
+      </div>
     </div>
     <CountryHeatmap client:only="react" />
   </section>
