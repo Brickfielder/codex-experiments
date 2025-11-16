@@ -5,7 +5,16 @@ interface CollaboratorDirectoryProps {
   people: Collaborator[];
 }
 
-const textFields: (keyof Collaborator)[] = ['name', 'role', 'org', 'city', 'country', 'interests'];
+const textFields: (keyof Collaborator)[] = [
+  'name',
+  'role',
+  'org',
+  'city',
+  'country',
+  'interests',
+  'offer',
+  'looking_to_collaborate_on'
+];
 
 const normalize = (value: string | undefined | null): string =>
   value?.toLowerCase().normalize('NFKD') ?? '';
@@ -116,6 +125,18 @@ const CollaboratorDirectory = ({ people }: CollaboratorDirectoryProps) => {
             </p>
             {person.interests ? (
               <p className="mt-3 text-sm text-slate-600">{person.interests}</p>
+            ) : null}
+            {person.offer ? (
+              <div className="mt-3 space-y-1">
+                <p className="text-sm font-semibold text-slate-700">What I can offer</p>
+                <p className="text-sm text-slate-600">{person.offer}</p>
+              </div>
+            ) : null}
+            {person.looking_to_collaborate_on ? (
+              <div className="mt-3 space-y-1">
+                <p className="text-sm font-semibold text-slate-700">Looking to collaborate on</p>
+                <p className="text-sm text-slate-600">{person.looking_to_collaborate_on}</p>
+              </div>
             ) : null}
             {person.tags?.length ? (
               <div className="mt-3 flex flex-wrap gap-2">
