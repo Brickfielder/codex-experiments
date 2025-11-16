@@ -14,7 +14,9 @@
       "lng",
       "interests",
       "tags",
-      "updated_at"
+      "updated_at",
+      "offer",
+      "looking_to_collaborate_on"
     ]
   },
   "people": [
@@ -127,6 +129,8 @@
       "lng": 0.4578,
       "interests": "OHCA survivorship; neurorehabilitation; feedback systems; digital support (V-CARE)",
       "tags": ["psychology", "research", "neurorehab"],
+      "offer": "Post-arrest outcome data and neuropsychology expertise; feedback models for EMS and cardiology services",
+      "looking_to_collaborate_on": "Harmonising PROs and follow-up pathways across centres",
       "id": "marco-mion-cpsychol",
       "updated_at": "2025-10-26"
     },

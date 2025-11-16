@@ -59,6 +59,8 @@ export interface Collaborator {
   lat?: number;
   lng?: number;
   interests?: string;
+  offer?: string;
+  looking_to_collaborate_on?: string;
   tags?: string[];
   updated_at?: string;
 }
