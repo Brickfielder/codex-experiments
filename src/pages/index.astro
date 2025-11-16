@@ -46,14 +46,16 @@ const stats = [
             </span>
             Survivor-centered evidence hub
           </p>
-          <h1 class="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-            Out-of-hospital cardiac arrest survivorship repository
-          </h1>
-          <p class="text-lg leading-relaxed text-slate-600">
-            Explore curated research on cognition, psychological health, quality of life,
-            participation, and caregiver experiences after cardiac arrest. Search, filter, and
-            surface the evidence base to support multidisciplinary recovery pathways.
-          </p>
+          <section id="survivorship-hero" class="space-y-4">
+            <h1 class="text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+              Survivorship After Cardiac Arrest: A Living Research Repository
+            </h1>
+            <p class="text-lg leading-relaxed text-slate-600">
+              <strong>Mapping the evidence that tells us what life looks like <em>after</em> survival.</strong><br />
+              A curated, continuously updated collection of studies on cognitive, psychological,
+              social, and quality-of-life outcomes following cardiac arrest.
+            </p>
+          </section>
           <div class="page-hero-actions flex flex-wrap gap-3">
             <a
               class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-xl"
@@ -230,6 +232,78 @@ const stats = [
 
       document.addEventListener('astro:page-load', initCountups);
     </script>
+
+    <section
+      id="survivorship-methods"
+      class="space-y-6 rounded-3xl border border-white/70 bg-white/90 p-8 shadow-xl ring-1 ring-indigo-100 backdrop-blur"
+    >
+      <h2 class="text-2xl font-semibold text-slate-900">How we built the Survivorship Repository</h2>
+
+      <p class="text-base leading-relaxed text-slate-600">
+        To build a comprehensive and up-to-date repository of research on
+        <strong>survivorship and co-survivorship after out-of-hospital cardiac arrest</strong>, we conducted a structured
+        literature search across three major scientific databases: <strong>PubMed</strong>, <strong>CINAHL</strong>, and
+        <strong>Web of Science</strong>. The overarching aim of this project is to increase visibility for survivorship
+        research and provide the scientific community with a centralised, openly accessible collection of the work
+        published over the past five years.
+      </p>
+
+      <h3 class="text-xl font-semibold text-slate-900">Identification</h3>
+      <p class="text-base leading-relaxed text-slate-600">
+        A tailored search strategy&mdash;published in full for transparency and replicability&mdash; was applied to each
+        database. Together, these searches returned a large pool of records spanning medical, nursing, psychological, and
+        rehabilitation sciences. For each record, <strong>titles and abstracts were retrieved</strong>, except in cases where the
+        abstract was unavailable in the source database. You can access the full search strategy here:
+        <a class="text-indigo-600 underline decoration-dotted underline-offset-2" href="/path/to/search-strategy.pdf"
+          >detailed search strategy (replicable)</a
+        >.
+      </p>
+
+      <h3 class="text-xl font-semibold text-slate-900">Deduplication</h3>
+      <p class="text-base leading-relaxed text-slate-600">
+        All records were merged into a single dataset. Using a custom <strong>Python-based deduplication script</strong>,
+        duplicate entries were identified and removed through a combination of DOI matching, fuzzy title comparison, and
+        metadata harmonisation. The deduplicated set represented the total pool of unique publications eligible for
+        initial screening. The deduplication script is available here:
+        <a class="text-indigo-600 underline decoration-dotted underline-offset-2" href="/path/to/deduplication-script.py"
+          >deduplication Python script</a
+        >.
+      </p>
+
+      <h3 class="text-xl font-semibold text-slate-900">Semantic Prioritisation</h3>
+      <p class="text-base leading-relaxed text-slate-600">
+        To support efficient human review, abstracts were processed using a
+        <strong>sentence-transformer semantic model (all-MiniLM-L6-v2)</strong>. Each record received a semantic relevance score
+        reflecting its conceptual proximity to the defined survivorship domain. Papers were then
+        <strong>rank-ordered from most to least semantically aligned</strong>, but <strong>no automatic exclusions were made</strong>;
+        this step was designed purely to structure workflow, not to determine eligibility. In practice, this semantic system
+        tends to <strong>rank down studies focused exclusively on neuroprognostication, bystander interventions, survival-only
+        registry analyses, or simulation/education studies</strong>, while prioritising work addressing cognitive,
+        psychological, social, and quality-of-life outcomes. The semantic screening script is available here:
+        <a
+          class="text-indigo-600 underline decoration-dotted underline-offset-2"
+          href="/path/to/semantic-screening-script.py"
+          >semantic screening Python script</a
+        >.
+      </p>
+
+      <h3 class="text-xl font-semibold text-slate-900">Screening</h3>
+      <p class="text-base leading-relaxed text-slate-600">
+        Two independent reviewers manually screened every abstract <strong>one by one</strong>, starting from the highest-ranked
+        records. Eligibility was determined based on predefined <strong>Population / Intervention / Outcomes (P/I/O)</strong>
+        criteria specific to survivorship after cardiac arrest, covering cognitive, psychological, social, and quality-of-life
+        domains. Where needed, full texts were consulted to clarify eligibility.
+      </p>
+
+      <h3 class="text-xl font-semibold text-slate-900">Inclusion</h3>
+      <p class="text-base leading-relaxed text-slate-600">
+        Studies meeting inclusion criteria were added to the Survivorship Repository, with metadata harmonised across all
+        sources. Links to full texts (where available), DOIs, and abstracts were preserved to maximise accessibility. For
+        methodological transparency, we provide the <strong>Python scripts</strong> used for deduplication and semantic scoring,
+        along with the <strong>search strategy documents</strong>, so that other groups can replicate or adapt this workflow for
+        their own contexts.
+      </p>
+    </section>
 
     <section
       class="rounded-3xl border border-white/70 bg-white/90 p-8 shadow-xl ring-1 ring-indigo-100 backdrop-blur"
