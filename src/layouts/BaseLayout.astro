@@ -1,6 +1,6 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.astro';
-import { getAboutUrl, getBrowseUrl, getCollaborateUrl, getSiteUrl } from '~/utils/siteUrls';
+import { getAboutUrl, getBrowseUrl, getCollaborateUrl, getHeatmapUrl, getSiteUrl } from '~/utils/siteUrls';
 import '../styles/global.css';
 const {
   title = 'OHCA Survivorship Repository',
@@ -9,6 +9,7 @@ const {
 const homeHref = getSiteUrl();
 const browseHref = getBrowseUrl();
 const aboutHref = getAboutUrl();
+const heatmapHref = getHeatmapUrl();
 const privacyHref = getSiteUrl('privacy');
 const collaborateHref = getCollaborateUrl();
 ---
@@ -66,6 +67,7 @@ const collaborateHref = getCollaborateUrl();
             >
               <a class="text-white transition hover:text-white/90" href={browseHref}>Browse</a>
               <a class="text-white transition hover:text-white/90" href={aboutHref}>About</a>
+              <a class="text-white transition hover:text-white/90" href={heatmapHref}>Heat map</a>
               <a class="text-white transition hover:text-white/90" href={collaborateHref}
                 >Collaborate</a
               >
@@ -100,6 +102,10 @@ const collaborateHref = getCollaborateUrl();
           <a
             class="rounded-xl bg-white/10 px-4 py-2 text-center text-white transition hover:bg-white/20"
             href={aboutHref}>About</a
+          >
+          <a
+            class="rounded-xl bg-white/10 px-4 py-2 text-center text-white transition hover:bg-white/20"
+            href={heatmapHref}>Heat map</a
           >
           <a
             class="rounded-xl bg-white/10 px-4 py-2 text-center text-white transition hover:bg-white/20"
