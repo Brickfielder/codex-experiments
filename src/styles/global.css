@@ -55,6 +55,8 @@ main {
 .page-hero {
   margin-left: auto;
   margin-right: auto;
+  background-color: rgba(156, 63, 143, 0.75);
+  color: #fff;
 }
 
 @media (max-width: 640px) {
