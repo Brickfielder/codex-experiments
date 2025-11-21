@@ -13,6 +13,8 @@ interface NetworkPerson {
   lng: number;
   interests: string;
   tags: string[];
+  offer?: string;
+  looking_to_collaborate_on?: string;
   id: string;
   updated_at: string;
 }
@@ -31,7 +33,8 @@ const __dirname = path.dirname(__filename);
 
 const resolveRoot = (...segments: string[]) => path.resolve(__dirname, '..', ...segments);
 
-const usage = `Usage: npm run add:network-person -- --name "<name>" --email "<email>" --role "<role>" \\\n  --org "<organization>" --city "<city>" --country "<country>" [--interests "<text>"] [--tags "tag1,tag2"] [--lat <value> --lng <value>]`;
+const usage = `Usage: npm run add:network-person -- --name "<name>" --email "<email>" --role "<role>" \
+  --org "<organization>" --city "<city>" --country "<country>" [--interests "<text>"] [--tags "tag1,tag2"] [--offer "<text>"] [--looking_to_collaborate_on "<text>"] [--lat <value> --lng <value>]`;
 
 type ParsedArgs = Record<string, string | undefined>;
 
@@ -151,6 +154,8 @@ const main = async () => {
 
   const interests = (args.interests ?? '').trim();
   const tags = parseTags(args.tags);
+  const offer = (args.offer ?? '').trim();
+  const lookingToCollaborateOn = (args.looking_to_collaborate_on ?? '').trim();
 
   const latArg = parseNumber(args.lat, 'Latitude');
   const lngArg = parseNumber(args.lng, 'Longitude');
@@ -180,6 +185,8 @@ const main = async () => {
     lng: coordinates.lng,
     interests,
     tags,
+    ...(offer ? { offer } : {}),
+    ...(lookingToCollaborateOn ? { looking_to_collaborate_on: lookingToCollaborateOn } : {}),
     id,
     updated_at: today
   };

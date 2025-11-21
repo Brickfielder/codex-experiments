@@ -37,6 +37,16 @@ on:
         required: false
         type: string
         default: ''
+      offer:
+        description: 'What I can offer (optional)'
+        required: false
+        type: string
+        default: ''
+      looking_to_collaborate_on:
+        description: 'Looking to collaborate on (optional)'
+        required: false
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -86,6 +96,8 @@ jobs:
           PERSON_COUNTRY: ${{ inputs.country }}
           PERSON_INTERESTS: ${{ inputs.interests }}
           PERSON_TAGS: ${{ inputs.tags }}
+          PERSON_OFFER: ${{ inputs.offer }}
+          PERSON_LOOKING_TO_COLLABORATE_ON: ${{ inputs.looking_to_collaborate_on }}
         run: |
           set -euo pipefail
           npm run add:network-person -- \
@@ -96,7 +108,9 @@ jobs:
             --city "$PERSON_CITY" \
             --country "$PERSON_COUNTRY" \
             --interests "$PERSON_INTERESTS" \
-            --tags "$PERSON_TAGS"
+            --tags "$PERSON_TAGS" \
+            --offer "$PERSON_OFFER" \
+            --looking_to_collaborate_on "$PERSON_LOOKING_TO_COLLABORATE_ON"
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v5
