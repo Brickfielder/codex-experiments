@@ -2,11 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import papers from '../../data/papers.normalized.json';
 import { getPaperUrl } from '~/utils/format';
-import { getBrowseUrl } from '~/utils/siteUrls';
+import { getAboutUrl, getBrowseUrl } from '~/utils/siteUrls';
 import type { Paper } from '~/utils/types';
 
 const typedPapers = papers as Paper[];
 const browseHref = getBrowseUrl();
+const aboutHref = getAboutUrl();
 const totalPapers = typedPapers.length;
 const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year), 0);
 const recentlyAdded = Math.min(typedPapers.length, 15);
@@ -198,7 +199,7 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
             of Science.
           </p>
           <a
-            href={browseHref}
+            href={aboutHref}
             class="text-sm font-medium text-teal-300 hover:text-teal-200 flex items-center gap-1"
           >
             Read methodology <span class="text-lg">&rarr;</span>
