@@ -7,7 +7,7 @@ export type HeroCardProps = {
   primaryCta?: ReactNode;
   secondaryCta?: ReactNode;
   rightSlot?: ReactNode;
-  variant?: 'gradient' | 'surface';
+  variant?: 'gradient' | 'surface' | 'slate';
 };
 
 export default function HeroCard({
@@ -20,25 +20,34 @@ export default function HeroCard({
   variant = 'gradient'
 }: HeroCardProps) {
   const isGradient = variant === 'gradient';
+  const isSlate = variant === 'slate';
 
   const containerClasses = [
-    'relative overflow-hidden rounded-3xl p-8 sm:p-10 shadow-2xl transition',
+    'relative w-full overflow-hidden rounded-3xl p-8 sm:p-10 shadow-2xl transition',
     isGradient
       ? 'border border-white/60 bg-gradient-to-br from-indigo-600 via-violet-500 to-rose-400 text-white'
-      : 'border border-white/70 bg-white/95 ring-1 ring-indigo-100 text-slate-900 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-50 dark:ring-indigo-900/30'
+      : isSlate
+        ? 'border border-slate-800 bg-slate-900/95 text-white ring-1 ring-white/10'
+        : 'border border-white/70 bg-white/95 ring-1 ring-indigo-100 text-slate-900 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-50 dark:ring-indigo-900/30'
   ].join(' ');
 
   const eyebrowClasses = isGradient
     ? 'inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80 ring-1 ring-white/30'
-    : 'inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-indigo-700 ring-1 ring-indigo-100 dark:bg-indigo-900/40 dark:text-indigo-100 dark:ring-indigo-800/60';
+    : isSlate
+      ? 'inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80 ring-1 ring-white/20'
+      : 'inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-indigo-700 ring-1 ring-indigo-100 dark:bg-indigo-900/40 dark:text-indigo-100 dark:ring-indigo-800/60';
 
   const titleClasses = isGradient
     ? 'text-4xl font-semibold leading-tight text-white sm:text-5xl'
-    : 'text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl dark:text-white';
+    : isSlate
+      ? 'text-4xl font-semibold leading-tight text-white sm:text-5xl'
+      : 'text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl dark:text-white';
 
   const subtitleClasses = isGradient
     ? 'text-lg text-white/90'
-    : 'text-lg text-slate-600 dark:text-slate-200';
+    : isSlate
+      ? 'text-lg text-white/80'
+      : 'text-lg text-slate-600 dark:text-slate-200';
 
   return (
     <div className={containerClasses}>
