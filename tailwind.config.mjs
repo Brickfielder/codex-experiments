@@ -9,6 +9,14 @@ export default {
     extend: {
       fontFamily: {
         sans: ['"Inter var"', 'system-ui', 'sans-serif']
+      },
+      colors: {
+        slate: {
+          850: '#1e293b'
+        },
+        teal: {
+          450: '#2dd4bf'
+        }
       }
     }
   },
