@@ -107,17 +107,19 @@ const networkSnapshot = h(
   title="Collaborate on survivorship science"
   description="Map, directory, and Q&A for the survivorship & co-survivorship network"
 >
-  <section class="-mx-4 -mt-12 bg-slate-900 px-0 pb-0 text-white sm:-mx-6 lg:-mx-8">
-    <HeroCard
-      eyebrow="COLLABORATOR HUB"
-      title="Connecting the people improving life after cardiac arrest"
-      subtitle="Discover researchers, clinicians, survivors, and co-survivors. Find collaborators, share ideas, and accelerate survivorship science and services across borders."
-      primaryCta={collaboratePrimaryCta}
-      secondaryCta={collaborateSecondaryCta}
-      rightSlot={networkSnapshot}
-      variant="slate"
-    />
-  </section>
+  <Fragment slot="hero">
+    <div class="relative left-1/2 w-screen -translate-x-1/2 px-4 sm:px-6 lg:px-8">
+      <HeroCard
+        eyebrow="COLLABORATOR HUB"
+        title="Connecting the people improving life after cardiac arrest"
+        subtitle="Discover researchers, clinicians, survivors, and co-survivors. Find collaborators, share ideas, and accelerate survivorship science and services across borders."
+        primaryCta={collaboratePrimaryCta}
+        secondaryCta={collaborateSecondaryCta}
+        rightSlot={networkSnapshot}
+        variant="slate"
+      />
+    </div>
+  </Fragment>
 
   <section class="space-y-12 px-4 pb-12 pt-0 sm:px-6 lg:px-8">
     <section
