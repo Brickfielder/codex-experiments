@@ -7,6 +7,7 @@ import type { Paper } from '~/utils/types';
 
 const typedPapers = papers as Paper[];
 const browseHref = getBrowseUrl();
+const browseResultsHref = `${browseHref}#papers`;
 const aboutHref = getAboutUrl();
 const totalPapers = typedPapers.length;
 const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year), 0);
@@ -65,7 +66,7 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
       </div>
       <form
         class="relative flex items-center bg-white rounded-2xl p-2 shadow-xl"
-        action={browseHref}
+        action={browseResultsHref}
         method="get"
       >
         <div class="pl-4 text-slate-400">
@@ -104,7 +105,7 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
         {
           topicSuggestions.map((topic) => (
             <a
-              href={`${browseHref}?q=${encodeURIComponent(topic)}`}
+              href={`${browseResultsHref}?q=${encodeURIComponent(topic)}`}
               class="hover:text-teal-300 border-b border-dotted border-slate-600 hover:border-teal-300"
             >
               {topic}
