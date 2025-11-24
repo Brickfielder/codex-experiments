@@ -128,12 +128,12 @@ export default function BrowseClient({ papers }: Props) {
 
   return (
     <div class="space-y-6">
-      <div class="mx-auto max-w-4xl">
-        <div class="flex flex-col items-center gap-3 rounded-3xl border border-indigo-100/80 bg-white/95 p-6 text-center shadow-xl ring-1 ring-indigo-50 backdrop-blur dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
-          <span class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-sm font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-200">
-            Search the repository
-          </span>
-          <label htmlFor="search" class="sr-only">
+      <div class="flex justify-center">
+        <div class="w-full max-w-3xl rounded-3xl border border-indigo-100/80 bg-white/95 p-6 text-center shadow-xl ring-1 ring-indigo-50 backdrop-blur dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
+          <label
+            htmlFor="search"
+            class="mb-2 block text-sm font-semibold uppercase tracking-wide text-indigo-700 dark:text-indigo-200"
+          >
             Search the repository
           </label>
           <input
@@ -142,76 +142,75 @@ export default function BrowseClient({ papers }: Props) {
             placeholder="Search by title, abstract, keywords, or author"
             value={state.query}
             onInput={updateQuery}
-            class="max-w-2xl"
           />
         </div>
       </div>
 
-      <div class="flex flex-col gap-6 lg:flex-row">
+      <div class="flex flex-col gap-8 lg:flex-row">
         <aside class="lg:w-80 lg:flex-none">
           <div class="space-y-6 rounded-3xl border border-indigo-100/80 bg-white/95 p-5 shadow-xl ring-1 ring-indigo-50 backdrop-blur dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
             <div>
               <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
                 Quick filters
               </p>
-            <div class="flex flex-wrap gap-2">{quickFilterButtons}</div>
-          </div>
+              <div class="flex flex-wrap gap-2">{quickFilterButtons}</div>
+            </div>
 
-          <div>
-            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Year range</p>
-            <div class="space-y-3">
-              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-300">
-                <span>{state.years[0]}</span>
-                <span>{state.years[1] === currentYear ? 'Current' : state.years[1]}</span>
-              </div>
-              <div class="space-y-2">
-                <input
-                  type="range"
-                  min={yearRange[0]}
-                  max={yearRange[1]}
-                  value={state.years[0]}
-                  onInput={handleYearChange(0)}
-                  aria-label="Start year"
-                  class="w-full accent-indigo-600"
-                />
-                <input
-                  type="range"
-                  min={yearRange[0]}
-                  max={yearRange[1]}
-                  value={state.years[1]}
-                  onInput={handleYearChange(1)}
-                  aria-label="End year"
-                  class="w-full accent-indigo-600"
-                />
+            <div>
+              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Year range</p>
+              <div class="space-y-3">
+                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-300">
+                  <span>{state.years[0]}</span>
+                  <span>{state.years[1] === currentYear ? 'Current' : state.years[1]}</span>
+                </div>
+                <div class="space-y-2">
+                  <input
+                    type="range"
+                    min={yearRange[0]}
+                    max={yearRange[1]}
+                    value={state.years[0]}
+                    onInput={handleYearChange(0)}
+                    aria-label="Start year"
+                    class="w-full accent-indigo-600"
+                  />
+                  <input
+                    type="range"
+                    min={yearRange[0]}
+                    max={yearRange[1]}
+                    value={state.years[1]}
+                    onInput={handleYearChange(1)}
+                    aria-label="End year"
+                    class="w-full accent-indigo-600"
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
-          <div>
-            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Domain</p>
-            {buildFacetList(facets.domains, state.domains, 'domains')}
-          </div>
+            <div>
+              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Domain</p>
+              {buildFacetList(facets.domains, state.domains, 'domains')}
+            </div>
 
-          <div>
-            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Setting</p>
-            {buildFacetList(facets.settings, state.settings, 'settings')}
-          </div>
+            <div>
+              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Setting</p>
+              {buildFacetList(facets.settings, state.settings, 'settings')}
+            </div>
 
-          <div>
-            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Design</p>
-            {buildFacetList(facets.designs, state.designs, 'designs')}
-          </div>
+            <div>
+              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Design</p>
+              {buildFacetList(facets.designs, state.designs, 'designs')}
+            </div>
 
-          <div>
-            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Country</p>
-            {buildFacetList(facets.countries, state.countries, 'countries')}
-          </div>
+            <div>
+              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Country</p>
+              {buildFacetList(facets.countries, state.countries, 'countries')}
+            </div>
 
-          <div>
-            <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Journal</p>
-            {buildFacetList(facets.journals, state.journals, 'journals')}
+            <div>
+              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Journal</p>
+              {buildFacetList(facets.journals, state.journals, 'journals')}
+            </div>
           </div>
-        </div>
         </aside>
 
         <section class="flex-1 space-y-5">
@@ -234,90 +233,91 @@ export default function BrowseClient({ papers }: Props) {
           </div>
           <div class="space-y-4">
             {results.map((paper) => {
-            const { display, remaining } = truncateAuthors(paper.normalizedAuthors);
-            return (
-              <article
-                key={paper.id}
-                class="group rounded-3xl border border-white/70 bg-white/95 p-6 shadow-xl ring-1 ring-indigo-50 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-800/80 dark:bg-slate-900 dark:ring-slate-800/60"
-              >
-                <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <h3 class="text-lg font-semibold text-slate-900 transition group-hover:text-indigo-600 dark:text-slate-100">
-                      <a href={getPaperUrl(paper)}>{paper.title}</a>
-                    </h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-300">
-                      {display}
-                      {remaining.length > 0 && (
-                        <details class="inline">
-                          <summary class="ml-1 cursor-pointer text-blue-600 dark:text-blue-400">
-                            +{remaining.length} more
-                          </summary>
-                          <span class="ml-2 inline text-slate-600 dark:text-slate-300">
-                            {remaining.join(', ')}
-                          </span>
-                        </details>
-                      )}
-                    </p>
+              const { display, remaining } = truncateAuthors(paper.normalizedAuthors);
+              return (
+                <article
+                  key={paper.id}
+                  class="group rounded-3xl border border-white/70 bg-white/95 p-6 shadow-xl ring-1 ring-indigo-50 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-800/80 dark:bg-slate-900 dark:ring-slate-800/60"
+                >
+                  <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h3 class="text-lg font-semibold text-slate-900 transition group-hover:text-indigo-600 dark:text-slate-100">
+                        <a href={getPaperUrl(paper)}>{paper.title}</a>
+                      </h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-300">
+                        {display}
+                        {remaining.length > 0 && (
+                          <details class="inline">
+                            <summary class="ml-1 cursor-pointer text-blue-600 dark:text-blue-400">
+                              +{remaining.length} more
+                            </summary>
+                            <span class="ml-2 inline text-slate-600 dark:text-slate-300">
+                              {remaining.join(', ')}
+                            </span>
+                          </details>
+                        )}
+                      </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-sm text-slate-500 dark:text-slate-300">
+                      <span>{paper.journal}</span>
+                      <span aria-hidden="true">•</span>
+                      <span>{paper.year}</span>
+                    </div>
                   </div>
-                  <div class="flex flex-wrap gap-2 text-sm text-slate-500 dark:text-slate-300">
-                    <span>{paper.journal}</span>
-                    <span aria-hidden="true">•</span>
-                    <span>{paper.year}</span>
+                  <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-200">
+                    {paper.abstract}
+                    {paper.isAbstractTruncated && (
+                      <span class="ml-1 text-xs uppercase text-orange-600">(Abstract truncated)</span>
+                    )}
+                  </p>
+                  <div class="mt-4 flex flex-wrap gap-2">
+                    {(paper.domains ?? []).map((domain) => (
+                      <span
+                        key={domain}
+                        class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-200"
+                      >
+                        {domain}
+                      </span>
+                    ))}
                   </div>
-                </div>
-                <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-200">
-                  {paper.abstract}
-                  {paper.isAbstractTruncated && (
-                    <span class="ml-1 text-xs uppercase text-orange-600">(Abstract truncated)</span>
-                  )}
-                </p>
-                <div class="mt-4 flex flex-wrap gap-2">
-                  {(paper.domains ?? []).map((domain) => (
-                    <span
-                      key={domain}
-                      class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-200"
-                    >
-                      {domain}
-                    </span>
-                  ))}
-                </div>
-                <div class="mt-5 flex flex-wrap gap-2 text-sm">
-                  {paper.links.pubmed && (
-                    <a
-                      class="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700 transition hover:border-indigo-200 hover:bg-indigo-100 dark:border-indigo-500/40 dark:bg-indigo-900/20 dark:text-indigo-200"
-                      href={paper.links.pubmed}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      PubMed
-                    </a>
-                  )}
-                  {paper.links.doi && (
-                    <a
-                      class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
-                      href={paper.links.doi}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      DOI
-                    </a>
-                  )}
-                  {paper.links.pmc && (
-                    <a
-                      class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
-                      href={paper.links.pmc}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      PMC
-                    </a>
-                  )}
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
+                  <div class="mt-5 flex flex-wrap gap-2 text-sm">
+                    {paper.links.pubmed && (
+                      <a
+                        class="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700 transition hover:border-indigo-200 hover:bg-indigo-100 dark:border-indigo-500/40 dark:bg-indigo-900/20 dark:text-indigo-200"
+                        href={paper.links.pubmed}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        PubMed
+                      </a>
+                    )}
+                    {paper.links.doi && (
+                      <a
+                        class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
+                        href={paper.links.doi}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        DOI
+                      </a>
+                    )}
+                    {paper.links.pmc && (
+                      <a
+                        class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
+                        href={paper.links.pmc}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        PMC
+                      </a>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
