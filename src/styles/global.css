@@ -11,11 +11,11 @@
 }
 
 body {
-  @apply bg-gradient-to-br from-slate-100 via-white to-slate-200 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100 font-sans antialiased;
+  @apply bg-slate-50 text-slate-600 font-sans antialiased selection:bg-teal-200 selection:text-teal-900 dark:bg-slate-950 dark:text-slate-100;
 }
 
 a {
-  @apply text-blue-600 dark:text-blue-400 underline-offset-4;
+  @apply text-teal-700 underline-offset-4 transition hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200;
 }
 
 .btn {
@@ -49,7 +49,7 @@ label {
 }
 
 main {
-  @apply mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8;
+  @apply mx-auto max-w-7xl px-6 pb-16 pt-24 lg:px-8;
 }
 
 .page-hero {

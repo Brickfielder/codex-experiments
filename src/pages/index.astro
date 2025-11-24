@@ -2,416 +2,344 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import papers from '../../data/papers.normalized.json';
 import { getPaperUrl } from '~/utils/format';
-import { getAboutUrl, getBrowseUrl, getCollaborateUrl, getHeatmapUrl } from '~/utils/siteUrls';
+import { getBrowseUrl } from '~/utils/siteUrls';
 import type { Paper } from '~/utils/types';
+
 const typedPapers = papers as Paper[];
-const featured = typedPapers.slice(0, 3);
 const browseHref = getBrowseUrl();
-const aboutHref = getAboutUrl();
-const heatmapHref = getHeatmapUrl();
-const collaborateHref = getCollaborateUrl();
 const totalPapers = typedPapers.length;
 const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year), 0);
 const recentlyAdded = Math.min(typedPapers.length, 15);
-const journals = new Set(typedPapers.map((paper) => paper.journal));
 const stats = [
-  { label: 'Total papers', value: totalPapers },
-  { label: 'Latest publication year', value: latestYear },
-  { label: 'Recently added', value: recentlyAdded },
-  { label: 'Journals represented', value: journals.size }
+  { label: 'Total Papers', value: totalPapers.toLocaleString() },
+  { label: 'Latest Pub', value: latestYear },
+  { label: 'New This Month', value: recentlyAdded },
+  { label: 'Scope', value: 'Global' }
 ];
+const topicSuggestions = ['Cognition', 'Anxiety', 'Caregivers'];
+const recentPapers = typedPapers.slice(0, 3);
+
+const formatBadges = (paper: Paper): string[] => {
+  const pool = paper.domains?.length ? paper.domains : (paper.mesh ?? paper.keywords ?? []);
+  return pool.slice(0, 3);
+};
+
+const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } | null => {
+  if (paper.links?.pubmed) {
+    return { href: paper.links.pubmed, label: 'PubMed' };
+  }
+  if (paper.links?.doi) {
+    return { href: paper.links.doi, label: 'DOI' };
+  }
+  return null;
+};
 ---
 
 <BaseLayout
   title="OHCA Survivorship Repository"
   description="Evidence summaries for life after cardiac arrest"
 >
-  <section class="space-y-12">
-    <div class="overflow-hidden rounded-[28px] border border-white/60 bg-white shadow-2xl ring-1 ring-indigo-100">
-      <div class="bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-600 px-8 py-10 text-center text-white sm:px-10">
-        <div class="mx-auto inline-flex items-center gap-3 rounded-full bg-white/20 px-5 py-2 text-sm font-semibold backdrop-blur">
-          <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-indigo-600 shadow">
-            💙
-          </span>
-          Survivor-centered evidence hub
-        </div>
-        <section id="survivorship-hero" class="mx-auto mt-6 max-w-4xl space-y-3">
-          <h1 class="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            Survivorship After Cardiac Arrest
-          </h1>
-          <p class="text-lg font-medium text-white/90">A Living Research Repository</p>
-        </section>
-      </div>
-      <div class="p-8 sm:p-10">
-        <div class="grid gap-10 lg:grid-cols-[1.15fr,0.85fr] lg:items-start">
-          <div class="space-y-6">
-            <p class="text-base leading-relaxed text-slate-600">
-              <strong class="text-slate-900">Mapping the evidence that tells us what life looks like <em>after</em> survival.</strong>
-              <br />
-              A regularly updated collection of studies on cognitive, psychological, social, and quality-of-life outcomes following cardiac arrest.
-            </p>
+  <Fragment slot="hero">
+    <div
+      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-teal-400 text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur-sm"
+    >
+      <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+      Live Evidence Hub
+    </div>
+    <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6">
+      Survivorship After <br class="hidden md:block" />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-cyan-400"
+        >Cardiac Arrest</span
+      >
+    </h1>
+    <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-light">
+      Mapping the evidence that tells us what life looks like <em>after</em> survival. A living collection
+      of cognitive, psychological, and social outcomes.
+    </p>
 
-            <div class="grid gap-4 sm:grid-cols-2">
-              <a
-                class="col-span-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl sm:col-span-2"
-                href={browseHref}
-              >
-                <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18a7.5 7.5 0 006.15-3.35z" />
-                </svg>
-                🔍 Browse the repository
-              </a>
-              <a
-                class="inline-flex items-center justify-center rounded-2xl border-2 border-indigo-200 px-5 py-3 text-sm font-semibold text-indigo-600 transition hover:-translate-y-0.5 hover:border-indigo-400 hover:text-indigo-700"
-                href={aboutHref}
-              >
-                📘 Learn about the project
-              </a>
-              <a
-                class="inline-flex items-center justify-center rounded-2xl border-2 border-indigo-100 bg-indigo-50/70 px-5 py-3 text-sm font-semibold text-indigo-600 transition hover:-translate-y-0.5 hover:border-indigo-300 hover:bg-white"
-                href={heatmapHref}
-              >
-                🗺️ Research Heat Map
-              </a>
-              <a
-                class="inline-flex items-center justify-center rounded-2xl border-2 border-rose-200 px-5 py-3 text-sm font-semibold text-rose-600 transition hover:-translate-y-0.5 hover:border-rose-400 hover:text-rose-700"
-                href={collaborateHref}
-              >
-                🤝 Collaborate
-              </a>
+    <div class="max-w-2xl mx-auto relative group">
+      <div
+        class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl opacity-25 group-hover:opacity-50 blur transition duration-500"
+      >
+      </div>
+      <form
+        class="relative flex items-center bg-white rounded-2xl p-2 shadow-xl"
+        action={browseHref}
+        method="get"
+      >
+        <div class="pl-4 text-slate-400">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <label class="sr-only" htmlFor="homepage-search">Search papers</label>
+        <input
+          id="homepage-search"
+          name="q"
+          type="search"
+          class="flex-1 p-3 md:p-4 outline-none text-slate-900 placeholder-slate-400"
+          placeholder="Search for fatigue, cognition, return to work..."
+        />
+        <button
+          class="bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition shadow-lg"
+          type="submit"
+        >
+          Search
+        </button>
+      </form>
+
+      <div class="mt-4 flex flex-wrap justify-center gap-2 text-sm text-slate-300">
+        <span>Try:</span>
+        {
+          topicSuggestions.map((topic) => (
+            <a
+              href={`${browseHref}?q=${encodeURIComponent(topic)}`}
+              class="hover:text-teal-300 border-b border-dotted border-slate-600 hover:border-teal-300"
+            >
+              {topic}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </Fragment>
+
+  <section
+    class="-mt-12 -mx-6 divide-x divide-slate-100 overflow-hidden rounded-b-[2.5rem] border-b border-slate-200 bg-white shadow-2xl lg:-mx-8"
+  >
+    <div class="grid grid-cols-2 md:grid-cols-4">
+      {
+        stats.map((item) => (
+          <div class="py-6 text-center" key={item.label}>
+            <div class="text-3xl font-bold text-slate-900">{item.value}</div>
+            <div class="text-xs font-semibold uppercase text-slate-400 tracking-widest mt-1">
+              {item.label}
             </div>
           </div>
-          <div class="rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-6 shadow-inner">
-            <h2 class="text-lg font-semibold text-slate-900">Key themes we curate</h2>
-            <div class="mt-4 space-y-3 text-sm text-slate-600">
-              <div class="flex gap-3 rounded-xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-100">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-indigo-500"></span>
-                <span>Cognitive screening, neuropsychology, and rehabilitation</span>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="py-12 lg:py-16">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
+      <aside class="lg:col-span-4 space-y-8">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-1 h-6 bg-teal-500 rounded-full"></span>
+            Research Domains
+          </h2>
+          <p class="text-sm text-slate-500 mt-2 mb-4">Filter by primary outcome domains.</p>
+
+          <div class="grid gap-3">
+            <a
+              href={browseHref}
+              class="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl group-hover:bg-indigo-600 group-hover:text-white transition"
+              >
+                🧠
               </div>
-              <div class="flex gap-3 rounded-xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-100">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-purple-500"></span>
-                <span>Emotional recovery, fatigue, and psychological well-being</span>
+              <div>
+                <h3 class="font-semibold text-slate-900 group-hover:text-indigo-600">Cognition</h3>
+                <p class="text-xs text-slate-500 mt-1">Screening, memory, executive function.</p>
               </div>
-              <div class="flex gap-3 rounded-xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-100">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
-                <span>Participation, return-to-work, and quality of life</span>
+            </a>
+
+            <a
+              href={browseHref}
+              class="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center text-xl group-hover:bg-pink-600 group-hover:text-white transition"
+              >
+                ❤️
               </div>
-              <div class="flex gap-3 rounded-xl bg-white/80 p-3 shadow-sm ring-1 ring-slate-100">
-                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-amber-500"></span>
-                <span>Caregiver support, peer networks, and shared decision making</span>
+              <div>
+                <h3 class="font-semibold text-slate-900 group-hover:text-pink-600">Emotional</h3>
+                <p class="text-xs text-slate-500 mt-1">Depression, anxiety, PTSD, fatigue.</p>
               </div>
-            </div>
+            </a>
+
+            <a
+              href={browseHref}
+              class="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl group-hover:bg-emerald-600 group-hover:text-white transition"
+              >
+                🌱
+              </div>
+              <div>
+                <h3 class="font-semibold text-slate-900 group-hover:text-emerald-600">
+                  Quality of Life
+                </h3>
+                <p class="text-xs text-slate-500 mt-1">Return to work, social participation.</p>
+              </div>
+            </a>
           </div>
+        </div>
+
+        <div class="bg-slate-900 rounded-2xl p-6 text-white shadow-lg">
+          <h3 class="font-semibold mb-2">How we build this</h3>
+          <p class="text-sm text-slate-300 leading-relaxed mb-4">
+            We use a sentence-transformer model to semantic rank papers from PubMed, CINAHL, and Web
+            of Science.
+          </p>
+          <a
+            href={browseHref}
+            class="text-sm font-medium text-teal-300 hover:text-teal-200 flex items-center gap-1"
+          >
+            Read methodology <span class="text-lg">&rarr;</span>
+          </a>
+        </div>
+      </aside>
+
+      <div class="lg:col-span-8">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold text-slate-900">Recent Publications</h2>
+          <select
+            class="text-sm border-none bg-transparent font-semibold text-slate-600 focus:ring-0 cursor-pointer"
+          >
+            <option>Sort by: Newest</option>
+            <option>Sort by: Relevance</option>
+          </select>
+        </div>
+
+        <div class="space-y-6">
+          {
+            recentPapers.map((paper) => {
+              const badges = formatBadges(paper);
+              const primaryLink = getPrimaryExternalLink(paper);
+              return (
+                <article
+                  class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition group"
+                  key={paper.id}
+                >
+                  <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                    <div class="flex items-center gap-2">
+                      <span class="font-bold text-slate-700 bg-slate-100 px-2 py-1 rounded">
+                        {paper.journal}
+                      </span>
+                      <span>{paper.year}</span>
+                    </div>
+                    <span class="uppercase tracking-wider font-semibold text-slate-400">
+                      {paper.country || 'Global'}
+                    </span>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-teal-600 transition">
+                    <a href={getPaperUrl(paper)}>{paper.title}</a>
+                  </h3>
+
+                  <p class="text-sm text-slate-600 mb-4">{paper.normalizedAuthors.join(', ')}</p>
+
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    {badges.length === 0 ? (
+                      <span class="px-2 py-1 rounded-md bg-slate-50 text-slate-600 text-xs font-medium border border-slate-100">
+                        Evidence
+                      </span>
+                    ) : (
+                      badges.map((badge) => (
+                        <span
+                          class="px-2 py-1 rounded-md bg-slate-50 text-slate-600 text-xs font-medium border border-slate-100"
+                          key={`${paper.id}-${badge}`}
+                        >
+                          {badge}
+                        </span>
+                      ))
+                    )}
+                  </div>
+
+                  <details class="group/abstract">
+                    <summary class="flex items-center gap-2 text-sm font-semibold text-teal-600 cursor-pointer select-none hover:text-teal-800 transition">
+                      <span class="block group-open/abstract:hidden">Read abstract</span>
+                      <span class="hidden group-open/abstract:block">Hide abstract</span>
+                      <svg
+                        class="w-4 h-4 transition-transform group-open/abstract:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </summary>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed space-y-2">
+                      {paper.abstract ? (
+                        <p>{paper.abstract}</p>
+                      ) : (
+                        <p class="text-slate-500">No abstract provided.</p>
+                      )}
+                    </div>
+                  </details>
+
+                  <div class="mt-5 flex items-center gap-4 pt-4 border-t border-slate-100">
+                    <a
+                      class="text-sm font-bold text-slate-900 hover:underline"
+                      href={getPaperUrl(paper)}
+                    >
+                      View Full Details
+                    </a>
+                    {primaryLink && (
+                      <a
+                        class="text-sm font-medium text-slate-500 hover:text-blue-600 flex items-center gap-1"
+                        href={primaryLink.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {primaryLink.label}
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </article>
+              );
+            })
+          }
+        </div>
+
+        <div class="mt-10 flex justify-center gap-2">
+          <button class="px-4 py-2 rounded-lg bg-slate-200 text-slate-500 font-semibold" disabled
+            >Prev</button
+          >
+          <button class="px-4 py-2 rounded-lg bg-slate-900 text-white font-semibold">1</button>
+          <button
+            class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50"
+            >2</button
+          >
+          <button
+            class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50"
+            >3</button
+          >
+          <button
+            class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-700 font-semibold hover:bg-slate-50"
+            >Next</button
+          >
         </div>
       </div>
     </div>
-
-    <section
-      class="rounded-3xl border border-white/70 bg-white/90 p-6 shadow-xl ring-1 ring-indigo-100 backdrop-blur"
-    >
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {
-          stats.map((item) => (
-            <div
-              class="flex flex-col items-center rounded-2xl bg-slate-50/80 px-4 py-6 text-center shadow-inner"
-              key={item.label}
-            >
-              <span
-                class="text-3xl font-bold text-indigo-600"
-                data-countup
-                data-count-to={item.value}
-              >
-                {item.value.toLocaleString()}
-              </span>
-              <span class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                {item.label}
-              </span>
-            </div>
-          ))
-        }
-      </div>
-    </section>
-
-    <script is:inline>
-      const initCountups = () => {
-        const counters = Array.from(
-          document.querySelectorAll('[data-countup]:not([data-countup-ready="true"])')
-        );
-
-        if (!counters.length) {
-          return;
-        }
-
-        const numberFormatter = new Intl.NumberFormat();
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        const setFinalValue = (element, target) => {
-          element.textContent = numberFormatter.format(Math.round(target));
-        };
-
-        const animateValue = (element, target) => {
-          const duration = Number(element.getAttribute('data-count-duration')) || 1200;
-          const startTimestamp = performance.now();
-
-          const step = (timestamp) => {
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            const currentValue = target * progress;
-            element.textContent = numberFormatter.format(Math.round(currentValue));
-
-            if (progress < 1) {
-              requestAnimationFrame(step);
-            }
-          };
-
-          element.textContent = numberFormatter.format(0);
-          requestAnimationFrame(step);
-        };
-
-        if (prefersReducedMotion) {
-          counters.forEach((counter) => {
-            const target = Number(counter.getAttribute('data-count-to'));
-            if (!Number.isFinite(target)) {
-              return;
-            }
-            counter.dataset.countupReady = 'true';
-            setFinalValue(counter, target);
-          });
-          return;
-        }
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (!entry.isIntersecting) {
-                return;
-              }
-
-              observer.unobserve(entry.target);
-              const target = Number(entry.target.getAttribute('data-count-to'));
-              if (!Number.isFinite(target)) {
-                return;
-              }
-              animateValue(entry.target, target);
-            });
-          },
-          { threshold: 0.5 }
-        );
-
-        counters.forEach((counter) => {
-          counter.dataset.countupReady = 'true';
-          const target = Number(counter.getAttribute('data-count-to'));
-          if (!Number.isFinite(target)) {
-            return;
-          }
-          counter.textContent = numberFormatter.format(0);
-          observer.observe(counter);
-        });
-      };
-
-      if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        initCountups();
-      } else {
-        document.addEventListener('DOMContentLoaded', initCountups, { once: true });
-      }
-
-      document.addEventListener('astro:page-load', initCountups);
-    </script>
-
-    <section
-      id="survivorship-methods"
-      class="space-y-6 rounded-3xl border border-white/70 bg-white/90 p-8 shadow-xl ring-1 ring-indigo-100 backdrop-blur"
-    >
-      <h2 class="text-2xl font-semibold text-slate-900">How we built the Survivorship Repository</h2>
-
-      <p class="text-base leading-relaxed text-slate-600">
-        To build a comprehensive and up-to-date repository of research on
-        <strong>survivorship and co-survivorship after out-of-hospital cardiac arrest</strong>, we conducted a structured
-        literature search across three major scientific databases: <strong>PubMed</strong>, <strong>CINAHL</strong>, and
-        <strong>Web of Science</strong>.
-      </p>
-      <p class="text-base leading-relaxed text-slate-600">
-        The overarching aim of this project is to increase visibility for survivorship research and provide the scientific
-        community with a centralised, openly accessible collection of the work published over the past five years.
-      </p>
-      <p class="text-base leading-relaxed text-slate-600">
-        <a
-          class="text-indigo-600 underline decoration-dotted underline-offset-2"
-          href="https://brickfielder.github.io/codex-experiments/about/#search-strategy"
-        >
-          click here to find more about how we identified relevant papers
-        </a>
-      </p>
-    </section>
-
-    <section
-      class="rounded-3xl border border-white/70 bg-white/90 p-8 shadow-xl ring-1 ring-indigo-100 backdrop-blur"
-    >
-      <form class="space-y-6" action={browseHref} method="get">
-        <div class="flex flex-col gap-4 md:flex-row">
-          <label class="sr-only" htmlFor="home-search">Search the repository</label>
-          <input
-            id="home-search"
-            class="flex-1 rounded-2xl border-2 border-slate-200 bg-white px-5 py-3 text-base shadow-inner transition focus:border-indigo-400 focus:ring-indigo-200"
-            type="search"
-            name="q"
-            placeholder="Search papers by title, author, or keywords"
-            aria-label="Search papers"
-          />
-          <button
-            class="inline-flex items-center justify-center gap-2 rounded-2xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-xl"
-            type="submit"
-          >
-            <svg
-              aria-hidden="true"
-              class="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18a7.5 7.5 0 006.15-3.35z"></path>
-            </svg>
-            Search
-          </button>
-        </div>
-        <div class="grid gap-4 md:grid-cols-3">
-          <div>
-            <label class="mb-2 block text-sm font-semibold text-slate-600" htmlFor="home-year"
-              >Year</label
-            >
-            <select
-              id="home-year"
-              class="w-full rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-inner focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-              name="years"
-            >
-              <option value="">All years</option>
-              <option value={`${latestYear}:${latestYear}`}>{latestYear}</option>
-              <option value={`${latestYear - 1}:${latestYear}`}
-                >{latestYear - 1}–{latestYear}</option
-              >
-              <option value={`${latestYear - 4}:${latestYear}`}>Last 5 years</option>
-            </select>
-          </div>
-          <div>
-            <label class="mb-2 block text-sm font-semibold text-slate-600" htmlFor="home-domain"
-              >Topic</label
-            >
-            <select
-              id="home-domain"
-              class="w-full rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-inner focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-              name="domain"
-            >
-              <option value="">All topics</option>
-              <option value="Cognitive">Cognition</option>
-              <option value="Psychological">Psychological health</option>
-              <option value="Qol">Quality of life</option>
-              <option value="Participation">Participation & return-to-work</option>
-              <option value="Caregiver">Caregiver experience</option>
-            </select>
-          </div>
-          <div>
-            <label class="mb-2 block text-sm font-semibold text-slate-600" htmlFor="home-quick"
-              >Quick view</label
-            >
-            <select
-              id="home-quick"
-              class="w-full rounded-2xl border-2 border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-inner focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-200"
-              name="quick"
-            >
-              <option value="">Relevance & newest</option>
-              <option value="Cognitive">Highlight cognition</option>
-              <option value="Psychological">Highlight psychological</option>
-              <option value="QoL">Highlight quality of life</option>
-              <option value="Participation/RTW">Highlight participation</option>
-              <option value="Caregiver">Highlight caregiver</option>
-            </select>
-          </div>
-        </div>
-      </form>
-    </section>
-
-    <section class="space-y-6">
-      <div class="flex items-center justify-between">
-        <h2 class="text-2xl font-semibold text-slate-900">Recent publications</h2>
-        <a
-          class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition hover:text-indigo-500"
-          href={browseHref}
-        >
-          View all papers
-          <svg
-            aria-hidden="true"
-            class="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="grid gap-6 lg:grid-cols-3">
-        {
-          featured.map((paper) => (
-            <article
-              class="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/70 bg-white/90 p-6 shadow-xl ring-1 ring-indigo-100 transition hover:-translate-y-1 hover:shadow-2xl"
-              key={paper.id}
-            >
-              <div class="flex flex-wrap items-start justify-between gap-3">
-                <h3 class="text-lg font-semibold text-slate-900 transition group-hover:text-indigo-600">
-                  <a href={getPaperUrl(paper)}>{paper.title}</a>
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                  <span class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-700">
-                    {paper.year}
-                  </span>
-                  {(paper.domains ?? []).slice(0, 1).map((domain) => (
-                    <span
-                      class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600"
-                      key={domain}
-                    >
-                      {domain}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <p class="mt-3 text-sm text-slate-600">
-                {paper.normalizedAuthors.slice(0, 3).join(', ')} et al.
-              </p>
-              <p class="mt-2 text-sm font-medium text-indigo-700">{paper.journal}</p>
-              <p class="mt-3 line-clamp-4 text-sm leading-relaxed text-slate-600">
-                {paper.abstract}
-              </p>
-              <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200/70 pt-4">
-                <div class="flex flex-wrap gap-2">
-                  <a
-                    class="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700 transition hover:border-indigo-200 hover:bg-indigo-100"
-                    href={getPaperUrl(paper)}
-                  >
-                    View details
-                  </a>
-                  {paper.links?.pubmed && (
-                    <a
-                      class="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600"
-                      href={paper.links.pubmed}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      PubMed
-                    </a>
-                  )}
-                </div>
-                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                  {paper.country ?? 'Global'}
-                </span>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </section>
   </section>
 </BaseLayout>
