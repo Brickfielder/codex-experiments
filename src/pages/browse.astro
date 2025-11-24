@@ -7,15 +7,24 @@ import { h } from 'preact';
 import HeroCard from '~/components/HeroCard';
 const typedPapers = papers as Paper[];
 const totalPapers = typedPapers.length;
-const domains = Array.from(
-  new Set(typedPapers.flatMap((paper) => paper.domains ?? []).filter(Boolean))
-).length;
-const countries = Array.from(
+const uniqueCountries = Array.from(
   new Set(typedPapers.map((paper) => paper.country).filter(Boolean))
 ).length;
-const designs = Array.from(
-  new Set(typedPapers.map((paper) => paper.design).filter(Boolean))
-).length;
+const latestPaperDate = typedPapers.reduce<Date | null>((latest, paper) => {
+  if (!paper.date) return latest;
+
+  const parsedDate = new Date(paper.date);
+  if (Number.isNaN(parsedDate.getTime())) return latest;
+
+  if (!latest || parsedDate > latest) {
+    return parsedDate;
+  }
+
+  return latest;
+}, null);
+const lastUpdatedLabel = latestPaperDate
+  ? latestPaperDate.toLocaleString('en-US', { month: 'long', year: 'numeric' })
+  : 'Unknown';
 const evidenceSnapshot = h(
   'div',
   { class: 'rounded-2xl border border-white/20 bg-white/5 p-6 shadow-inner backdrop-blur' },
@@ -24,15 +33,15 @@ const evidenceSnapshot = h(
     h('dl', { class: 'mt-6 space-y-4 text-sm' }, [
       h('div', { class: 'flex items-baseline justify-between' }, [
         h('dt', { class: 'text-white/70' }, 'Papers'),
-        h('dd', { class: 'text-3xl font-semibold' }, '482')
+        h('dd', { class: 'text-3xl font-semibold' }, totalPapers.toLocaleString())
       ]),
       h('div', { class: 'flex items-baseline justify-between' }, [
         h('dt', { class: 'text-white/70' }, 'Countries'),
-        h('dd', { class: 'text-3xl font-semibold' }, '24')
+        h('dd', { class: 'text-3xl font-semibold' }, uniqueCountries)
       ]),
       h('div', { class: 'flex items-baseline justify-between' }, [
         h('dt', { class: 'text-white/70' }, 'Last update'),
-        h('dd', { class: 'text-xl font-semibold' }, 'March 2025')
+        h('dd', { class: 'text-xl font-semibold' }, lastUpdatedLabel)
       ])
     ])
   ]
@@ -53,48 +62,24 @@ const evidenceSnapshot = h(
     />
 
     <div class="rounded-3xl border border-white/70 bg-white/95 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur">
-      <div class="grid gap-10 lg:grid-cols-[1.15fr,0.85fr] lg:items-start">
-        <div class="space-y-6">
-          <p class="text-base leading-relaxed text-slate-600">
-            <strong class="text-slate-900">Navigate hundreds of survivorship studies in a single view.</strong>
-            Mix and match search, filters, and visual cues to zero-in on methods, populations, or outcomes that matter most.
-          </p>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-indigo-100 bg-indigo-50/70 p-4 shadow-sm">
-              <p class="text-sm font-semibold text-indigo-700">Instant refinement</p>
-              <p class="mt-1 text-sm text-indigo-900/80">Adjust facets and see results update without losing your spot in the evidence trail.</p>
-            </div>
-            <div class="rounded-2xl border border-purple-100 bg-purple-50/70 p-4 shadow-sm">
-              <p class="text-sm font-semibold text-purple-700">Shareable states</p>
-              <p class="mt-1 text-sm text-purple-900/80">Copy links that preserve every filter so collaborators can pick up where you left off.</p>
-            </div>
-            <div class="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4 shadow-sm sm:col-span-2">
-              <p class="text-sm font-semibold text-emerald-700">Signal-rich summaries</p>
-              <p class="mt-1 text-sm text-emerald-900/80">Surface key metadata—domains, geographies, designs—to contextualize findings at a glance.</p>
-            </div>
+      <div class="space-y-6">
+        <p class="text-base leading-relaxed text-slate-600">
+          <strong class="text-slate-900">Navigate hundreds of survivorship studies in a single view.</strong>
+          Mix and match search, filters, and visual cues to zero-in on methods, populations, or outcomes that matter most.
+        </p>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-indigo-100 bg-indigo-50/70 p-4 shadow-sm">
+            <p class="text-sm font-semibold text-indigo-700">Instant refinement</p>
+            <p class="mt-1 text-sm text-indigo-900/80">Adjust facets and see results update without losing your spot in the evidence trail.</p>
           </div>
-        </div>
-        <div class="rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-6 shadow-inner">
-          <h2 class="text-lg font-semibold text-slate-900">Repository by the numbers</h2>
-          <div class="mt-4 grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
-              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Papers</p>
-              <p class="mt-2 text-3xl font-bold text-indigo-600">{totalPapers.toLocaleString()}</p>
-            </div>
-            <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
-              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Domains</p>
-              <p class="mt-2 text-3xl font-bold text-indigo-600">{domains}</p>
-            </div>
-            <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
-              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Countries</p>
-              <p class="mt-2 text-3xl font-bold text-indigo-600">{countries}</p>
-            </div>
-            <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
-              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Designs</p>
-              <p class="mt-2 text-3xl font-bold text-indigo-600">{designs}</p>
-            </div>
+          <div class="rounded-2xl border border-purple-100 bg-purple-50/70 p-4 shadow-sm">
+            <p class="text-sm font-semibold text-purple-700">Shareable states</p>
+            <p class="mt-1 text-sm text-purple-900/80">Copy links that preserve every filter so collaborators can pick up where you left off.</p>
           </div>
-          <p class="mt-4 text-xs text-slate-500">Counts update automatically as new literature is curated.</p>
+          <div class="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4 shadow-sm sm:col-span-2">
+            <p class="text-sm font-semibold text-emerald-700">Signal-rich summaries</p>
+            <p class="mt-1 text-sm text-emerald-900/80">Surface key metadata—domains, geographies, designs—to contextualize findings at a glance.</p>
+          </div>
         </div>
       </div>
     </div>
