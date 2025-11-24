@@ -3,8 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BrowseClient from '../components/browse/BrowseClient.tsx';
 import papers from '../../data/papers.normalized.json';
 import type { Paper } from '~/utils/types';
-import { h } from 'preact';
-import HeroCard from '~/components/HeroCard';
+
 const typedPapers = papers as Paper[];
 const totalPapers = typedPapers.length;
 const uniqueCountries = Array.from(
@@ -25,78 +24,177 @@ const latestPaperDate = typedPapers.reduce<Date | null>((latest, paper) => {
 const lastUpdatedLabel = latestPaperDate
   ? latestPaperDate.toLocaleString('en-US', { month: 'long', year: 'numeric' })
   : 'Unknown';
-const evidenceSnapshot = h(
-  'div',
-  { class: 'rounded-2xl border border-white/20 bg-white/5 p-6 shadow-inner backdrop-blur' },
-  [
-    h('h2', { class: 'text-lg font-semibold' }, 'Evidence snapshot'),
-    h('dl', { class: 'mt-6 space-y-4 text-sm' }, [
-      h('div', { class: 'flex items-baseline justify-between' }, [
-        h('dt', { class: 'text-white/70' }, 'Papers'),
-        h('dd', { class: 'text-3xl font-semibold' }, totalPapers.toLocaleString())
-      ]),
-      h('div', { class: 'flex items-baseline justify-between' }, [
-        h('dt', { class: 'text-white/70' }, 'Countries'),
-        h('dd', { class: 'text-3xl font-semibold' }, uniqueCountries)
-      ]),
-      h('div', { class: 'flex items-baseline justify-between' }, [
-        h('dt', { class: 'text-white/70' }, 'Last update'),
-        h('dd', { class: 'text-xl font-semibold' }, lastUpdatedLabel)
-      ])
-    ])
-  ]
-);
+
+const quickTopics = ['Cognition', 'Return to work', 'Fatigue'];
+const highlightCards = [
+  {
+    title: 'Instant refinement',
+    body: 'Use search and filters together to hone in on methods, populations, or outcomes without losing context.'
+  },
+  {
+    title: 'Shareable states',
+    body: 'Copy links with every facet preserved so collaborators can reproduce your exact view.'
+  },
+  {
+    title: 'Signal-rich summaries',
+    body: 'Domain, geography, and design details stay visible to anchor each finding inside the evidence base.'
+  }
+];
 ---
 
 <BaseLayout
   title="Browse papers"
   description="Searchable repository of OHCA survivorship literature"
 >
-  <section class="space-y-12 px-4 py-12 sm:px-6 lg:px-8">
-    <HeroCard
-      eyebrow="Dynamic filtering workspace"
-      title="Browse the survivorship evidence base"
-      subtitle="Search functionality includes filtering by author, title, institution, and country, with abstracts (where available) and source links provided."
-      rightSlot={evidenceSnapshot}
-      variant="gradient"
-    />
+  <section class="relative isolate overflow-hidden bg-[#050a15]">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/60 via-slate-900 to-[#050a15]">
+    </div>
+    <div class="absolute -top-20 -right-24 h-80 w-80 rounded-full bg-purple-600/30 blur-3xl"></div>
+    <div class="absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div>
 
-    <div class="rounded-3xl border border-white/70 bg-white/95 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur">
-      <div class="space-y-6">
-        <p class="text-base leading-relaxed text-slate-600">
-          <strong class="text-slate-900">Navigate hundreds of survivorship studies in a single view.</strong>
-          Mix and match search, filters, and visual cues to zero-in on methods, populations, or outcomes that matter most.
-        </p>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-2xl border border-indigo-100 bg-indigo-50/70 p-4 shadow-sm">
-            <p class="text-sm font-semibold text-indigo-700">Instant refinement</p>
-            <p class="mt-1 text-sm text-indigo-900/80">Adjust facets and see results update without losing your spot in the evidence trail.</p>
+    <div class="relative mx-auto max-w-6xl px-6 py-12 lg:py-16 text-white space-y-10">
+      <div
+        class="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-wide text-purple-200"
+      >
+        <span
+          class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 ring-1 ring-white/10"
+        >
+          <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-300"></span>
+          Dynamic filtering workspace
+        </span>
+        <span
+          class="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-[11px] ring-1 ring-white/5"
+        >
+          Powered by {totalPapers.toLocaleString()} studies
+        </span>
+      </div>
+
+      <div class="grid items-start gap-10 lg:grid-cols-[1.15fr_0.9fr]">
+        <div class="space-y-6">
+          <h1 class="text-3xl font-bold leading-tight text-white sm:text-4xl">
+            Browse the survivorship evidence base
+            <span
+              class="block bg-gradient-to-r from-blue-300 via-cyan-200 to-purple-300 bg-clip-text text-transparent"
+            >
+              Search, filter, and share without breaking flow
+            </span>
+          </h1>
+          <p class="max-w-2xl text-base leading-relaxed text-slate-300">
+            Filter by author, title, institution, country, and more. Abstracts and source links
+            appear where available, so you can keep the signal of each study in view while
+            navigating the larger evidence trail.
+          </p>
+
+          <div class="flex flex-wrap gap-3 text-sm text-slate-200">
+            <span class="text-slate-400">Jump to:</span>
+            {
+              quickTopics.map((topic) => (
+                <a
+                  href={`#papers?q=${encodeURIComponent(topic)}`}
+                  class="rounded-full border border-white/20 bg-white/5 px-3 py-1 transition hover:-translate-y-0.5 hover:border-purple-200 hover:text-white"
+                >
+                  {topic}
+                </a>
+              ))
+            }
           </div>
-          <div class="rounded-2xl border border-purple-100 bg-purple-50/70 p-4 shadow-sm">
-            <p class="text-sm font-semibold text-purple-700">Shareable states</p>
-            <p class="mt-1 text-sm text-purple-900/80">Copy links that preserve every filter so collaborators can pick up where you left off.</p>
+
+          <div class="relative max-w-xl">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <input
+              type="search"
+              name="hero-search"
+              class="w-full rounded-2xl border border-white/20 bg-white/10 py-3 pl-12 pr-4 text-base text-white placeholder:text-slate-400 shadow-lg outline-none ring-1 ring-transparent transition focus:border-purple-300 focus:ring-purple-200"
+              placeholder="Search papers, authors, or keywords..."
+              aria-label="Search papers"
+            />
+            <div class="mt-3 flex items-center gap-3 text-xs text-slate-300">
+              <span class="inline-flex items-center gap-1 rounded-full bg-white/5 px-2 py-1">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
+                Results update instantly
+              </span>
+              <span class="inline-flex items-center gap-1 rounded-full bg-white/5 px-2 py-1">
+                🔗 Shareable filter links
+              </span>
+            </div>
           </div>
-          <div class="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4 shadow-sm sm:col-span-2">
-            <p class="text-sm font-semibold text-emerald-700">Signal-rich summaries</p>
-            <p class="mt-1 text-sm text-emerald-900/80">Surface key metadata—domains, geographies, designs—to contextualize findings at a glance.</p>
+
+        </div>
+
+        <div class="rounded-3xl border border-white/15 bg-white/10 p-6 shadow-2xl backdrop-blur">
+          <div class="flex items-center justify-between gap-3">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-slate-200">
+                Evidence snapshot
+              </p>
+              <p class="text-sm text-slate-300">Updated {lastUpdatedLabel}</p>
+            </div>
+            <div
+              class="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-semibold text-purple-100 ring-1 ring-purple-300/40"
+            >
+              Live
+            </div>
+          </div>
+          <dl class="mt-6 space-y-4 text-sm">
+            <div class="flex items-baseline justify-between rounded-2xl bg-white/5 px-4 py-3">
+              <dt class="text-slate-200">Papers</dt>
+              <dd class="text-3xl font-semibold text-white">{totalPapers.toLocaleString()}</dd>
+            </div>
+            <div class="flex items-baseline justify-between rounded-2xl bg-white/5 px-4 py-3">
+              <dt class="text-slate-200">Countries</dt>
+              <dd class="text-3xl font-semibold text-white">{uniqueCountries}</dd>
+            </div>
+            <div class="flex items-baseline justify-between rounded-2xl bg-white/5 px-4 py-3">
+              <dt class="text-slate-200">Last update</dt>
+              <dd class="text-xl font-semibold text-white">{lastUpdatedLabel}</dd>
+            </div>
+          </dl>
+          <div
+            class="mt-5 rounded-xl border border-white/10 bg-gradient-to-r from-indigo-500/30 via-purple-500/20 to-cyan-400/20 p-4 text-sm text-slate-100"
+          >
+            Adaptive filters keep your view responsive while preserving deep navy, purple, and blue
+            cues from the landing page.
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    {
-      /*
-        IMPORTANT:
-        - Below this comment, KEEP the existing code that renders the survivorship papers list,
-          filters, tables, or cards. Do not remove or change that logic.
-        - Only the hero + methods explanation above should be new.
-      */
-    }
+  <section
+    class="-mt-10 bg-gradient-to-b from-slate-100 via-white to-slate-50 px-4 py-12 text-slate-900 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 sm:px-6 lg:px-8"
+  >
+    <div class="mx-auto max-w-6xl space-y-8">
+      <div class="grid gap-4 md:grid-cols-3">
+        {
+          highlightCards.map((card) => (
+            <div class="rounded-2xl border border-slate-200/70 bg-white/80 p-5 shadow-lg shadow-slate-200/60 backdrop-blur transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800/80 dark:bg-slate-900/70 dark:shadow-none">
+              <p class="text-sm font-semibold text-indigo-700 dark:text-indigo-200">{card.title}</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-slate-200/90">{card.body}</p>
+            </div>
+          ))
+        }
+      </div>
 
-    <div
-      class="rounded-3xl border border-white/70 bg-white/95 p-6 shadow-2xl ring-1 ring-indigo-100 backdrop-blur"
-    >
-      <BrowseClient client:load papers={typedPapers} />
+      <div
+        id="papers"
+        class="rounded-3xl border border-slate-200/80 bg-white/95 p-6 shadow-2xl ring-1 ring-slate-100 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 dark:ring-slate-800"
+      >
+        <BrowseClient client:load papers={typedPapers} />
+      </div>
     </div>
-  </main>
+  </section>
 </BaseLayout>
