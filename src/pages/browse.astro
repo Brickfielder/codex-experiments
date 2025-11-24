@@ -25,7 +25,6 @@ const lastUpdatedLabel = latestPaperDate
   ? latestPaperDate.toLocaleString('en-US', { month: 'long', year: 'numeric' })
   : 'Unknown';
 
-const quickTopics = ['Cognition', 'Return to work', 'Fatigue'];
 const highlightCards = [
   {
     title: 'Instant refinement',
@@ -63,62 +62,6 @@ const highlightCards = [
       Filter by author, title, institution, country, and more. Abstracts and source links stay visible so you can keep the signal of
       each study in view while navigating the evidence trail.
     </p>
-
-    <div class="max-w-2xl mx-auto relative group">
-      <div
-        class="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 rounded-2xl opacity-25 group-hover:opacity-40 blur transition duration-500"
-      >
-      </div>
-      <form
-        class="relative flex items-center bg-white rounded-2xl p-2 shadow-xl"
-        action="/browse"
-        method="get"
-      >
-        <div class="pl-4 text-slate-400">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-        </div>
-        <label class="sr-only" htmlFor="browse-search">Search papers</label>
-        <input
-          id="browse-search"
-          name="q"
-          type="search"
-          class="flex-1 p-3 md:p-4 outline-none text-slate-900 placeholder-slate-400"
-          placeholder="Search papers, authors, or keywords..."
-        />
-        <button
-          class="bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition shadow-lg"
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
-
-      <div class="mt-4 flex flex-wrap justify-center gap-2 text-sm text-slate-300">
-        <span>Jump to:</span>
-        {
-          quickTopics.map((topic) => (
-            <a
-              href={`/browse?q=${encodeURIComponent(topic)}#papers`}
-              class="hover:text-indigo-200 border-b border-dotted border-slate-600 hover:border-indigo-200"
-            >
-              {topic}
-            </a>
-          ))
-        }
-      </div>
-    </div>
   </Fragment>
 
   <section class="-mt-12 -mx-6 px-6 pb-10 lg:-mx-8 lg:px-8">
