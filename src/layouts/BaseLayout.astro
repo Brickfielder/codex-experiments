@@ -1,5 +1,4 @@
 ---
-import ThemeToggle from '../components/ThemeToggle.astro';
 import {
   getAboutUrl,
   getBrowseUrl,
@@ -69,9 +68,6 @@ const collaborateHref = getCollaborateUrl();
               <a class="hover:text-white transition" href={heatmapHref}>Heat Map</a>
               <a class="hover:text-white transition" href={collaborateHref}>Collaborate</a>
             </div>
-            <div class="hidden md:flex">
-              <ThemeToggle />
-            </div>
             <button
               class="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 p-2 text-white shadow-inner transition hover:border-teal-200 md:hidden"
               type="button"
@@ -115,9 +111,6 @@ const collaborateHref = getCollaborateUrl();
             class="w-full rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
             href={collaborateHref}>Collaborate</a
           >
-        </div>
-        <div class="pt-1">
-          <ThemeToggle />
         </div>
       </nav>
       {
