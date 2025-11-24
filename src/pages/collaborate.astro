@@ -4,6 +4,8 @@ import CollaboratorMap from '~/components/collaborate/CollaboratorMap';
 import CollaboratorDirectory from '~/components/collaborate/CollaboratorDirectory';
 import collaboratorData from '../../data/resuscitation-network-people.json';
 import type { Collaborator } from '~/utils/types';
+import { Fragment, h } from 'preact';
+import HeroCard from '~/components/HeroCard';
 
 const { people = [], meta } = collaboratorData as {
   people: Collaborator[];
@@ -49,6 +51,56 @@ const qaItems = [
       'Use the “Add your entry” button to send details or submit a pull request for data/resuscitation-network-people.json. The editors check scope and consent, then publish the update.'
   }
 ];
+const collaboratePrimaryCta = h(
+  'a',
+  {
+    class:
+      'inline-flex items-center gap-2 rounded-2xl bg-white/90 px-5 py-2.5 text-sm font-semibold text-indigo-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-white',
+    href: '#map'
+  },
+  'View the map'
+);
+const collaborateSecondaryCta = h(Fragment, null, [
+  h(
+    'a',
+    {
+      class:
+        'inline-flex items-center gap-2 rounded-2xl bg-white/15 px-5 py-2.5 text-sm font-semibold text-white/90 shadow-lg ring-1 ring-white/40 transition hover:-translate-y-0.5 hover:bg-white/25',
+      href: '#directory'
+    },
+    'Explore the directory'
+  ),
+  h(
+    'a',
+    {
+      class:
+        'inline-flex items-center gap-2 rounded-2xl bg-rose-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-400',
+      href: 'mailto:ohcacare@gmail.com?subject=Add%20me%20to%20the%20OHCA%20survivorship%20map'
+    },
+    'Add your entry'
+  )
+]);
+const networkSnapshot = h(
+  'div',
+  { class: 'rounded-2xl border border-white/20 bg-white/5 p-6 shadow-inner backdrop-blur' },
+  [
+    h('h2', { class: 'text-lg font-semibold' }, 'Network snapshot'),
+    h('dl', { class: 'mt-6 space-y-4 text-sm' }, [
+      h('div', { class: 'flex items-baseline justify-between' }, [
+        h('dt', { class: 'text-white/70' }, 'Collaborators'),
+        h('dd', { class: 'text-3xl font-semibold' }, people.length)
+      ]),
+      h('div', { class: 'flex items-baseline justify-between' }, [
+        h('dt', { class: 'text-white/70' }, 'Countries'),
+        h('dd', { class: 'text-3xl font-semibold' }, totalCountries)
+      ]),
+      h('div', { class: 'flex items-baseline justify-between' }, [
+        h('dt', { class: 'text-white/70' }, 'Last update'),
+        h('dd', { class: 'text-xl font-semibold' }, meta?.updated_at ?? '—')
+      ])
+    ])
+  ]
+);
 ---
 
 <BaseLayout
@@ -56,67 +108,15 @@ const qaItems = [
   description="Map, directory, and Q&A for the survivorship & co-survivorship network"
 >
   <section class="space-y-12 px-4 py-12 sm:px-6 lg:px-8">
-    <div
-      class="page-hero relative overflow-hidden rounded-3xl border border-white/60 bg-gradient-to-br from-indigo-600 via-violet-500 to-rose-400 p-10 text-white shadow-2xl"
-    >
-      <div class="absolute inset-0 opacity-30" aria-hidden>
-        <div
-          class="h-full w-full bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.2),_transparent_70%)]"
-        >
-        </div>
-      </div>
-      <div class="relative grid gap-10 lg:grid-cols-[1.1fr,0.9fr]">
-        <div class="space-y-6">
-          <p class="text-sm font-semibold uppercase tracking-[0.4em] text-white/80">
-            Collaborator hub
-          </p>
-          <h1 class="text-4xl font-semibold leading-tight">
-            Connecting the people improving life after cardiac arrest
-          </h1>
-          <p class="text-lg text-white/90">
-            Discover researchers, clinicians, survivors, and co-survivors. Find collaborators, share
-            ideas, and accelerate survivorship science and services across borders.
-          </p>
-          <div class="page-hero-actions flex flex-wrap gap-3">
-            <a
-              class="inline-flex items-center gap-2 rounded-2xl bg-white/90 px-5 py-2.5 text-sm font-semibold text-indigo-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-white"
-              href="#map"
-            >
-              View the map
-            </a>
-            <a
-              class="inline-flex items-center gap-2 rounded-2xl bg-white/15 px-5 py-2.5 text-sm font-semibold text-white/90 shadow-lg ring-1 ring-white/40 transition hover:-translate-y-0.5 hover:bg-white/25"
-              href="#directory"
-            >
-              Explore the directory
-            </a>
-            <a
-              class="inline-flex items-center gap-2 rounded-2xl bg-rose-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-400"
-              href="mailto:ohcacare@gmail.com?subject=Add%20me%20to%20the%20OHCA%20survivorship%20map"
-            >
-              Add your entry
-            </a>
-          </div>
-        </div>
-        <div class="rounded-2xl border border-white/20 bg-white/5 p-6 shadow-inner backdrop-blur">
-          <h2 class="text-lg font-semibold">Network snapshot</h2>
-          <dl class="mt-6 space-y-4 text-sm">
-            <div class="flex items-baseline justify-between">
-              <dt class="text-white/70">Collaborators</dt>
-              <dd class="text-3xl font-semibold">{people.length}</dd>
-            </div>
-            <div class="flex items-baseline justify-between">
-              <dt class="text-white/70">Countries</dt>
-              <dd class="text-3xl font-semibold">{totalCountries}</dd>
-            </div>
-            <div class="flex items-baseline justify-between">
-              <dt class="text-white/70">Last update</dt>
-              <dd class="text-xl font-semibold">{meta?.updated_at ?? '—'}</dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    </div>
+    <HeroCard
+      eyebrow="COLLABORATOR HUB"
+      title="Connecting the people improving life after cardiac arrest"
+      subtitle="Discover researchers, clinicians, survivors, and co-survivors. Find collaborators, share ideas, and accelerate survivorship science and services across borders."
+      primaryCta={collaboratePrimaryCta}
+      secondaryCta={collaborateSecondaryCta}
+      rightSlot={networkSnapshot}
+      variant="gradient"
+    />
 
     <section
       id="map"

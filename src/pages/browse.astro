@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BrowseClient from '../components/browse/BrowseClient.tsx';
 import papers from '../../data/papers.normalized.json';
 import type { Paper } from '~/utils/types';
+import { h } from 'preact';
+import HeroCard from '~/components/HeroCard';
 const typedPapers = papers as Paper[];
 const totalPapers = typedPapers.length;
 const domains = Array.from(
@@ -14,76 +16,85 @@ const countries = Array.from(
 const designs = Array.from(
   new Set(typedPapers.map((paper) => paper.design).filter(Boolean))
 ).length;
+const evidenceSnapshot = h(
+  'div',
+  { class: 'rounded-2xl border border-white/20 bg-white/5 p-6 shadow-inner backdrop-blur' },
+  [
+    h('h2', { class: 'text-lg font-semibold' }, 'Evidence snapshot'),
+    h('dl', { class: 'mt-6 space-y-4 text-sm' }, [
+      h('div', { class: 'flex items-baseline justify-between' }, [
+        h('dt', { class: 'text-white/70' }, 'Papers'),
+        h('dd', { class: 'text-3xl font-semibold' }, '482')
+      ]),
+      h('div', { class: 'flex items-baseline justify-between' }, [
+        h('dt', { class: 'text-white/70' }, 'Countries'),
+        h('dd', { class: 'text-3xl font-semibold' }, '24')
+      ]),
+      h('div', { class: 'flex items-baseline justify-between' }, [
+        h('dt', { class: 'text-white/70' }, 'Last update'),
+        h('dd', { class: 'text-xl font-semibold' }, 'March 2025')
+      ])
+    ])
+  ]
+);
 ---
 
 <BaseLayout
   title="Browse papers"
   description="Searchable repository of OHCA survivorship literature"
 >
-  <section class="space-y-10">
-    <div class="overflow-hidden rounded-[28px] border border-white/70 bg-white shadow-2xl ring-1 ring-indigo-100">
-      <div class="bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-600 px-8 py-10 text-center text-white sm:px-10">
-        <div class="mx-auto inline-flex items-center gap-3 rounded-full bg-white/20 px-5 py-2 text-sm font-semibold backdrop-blur">
-          <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-indigo-600 shadow">
-            <svg aria-hidden="true" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"></path>
-            </svg>
-          </span>
-          Dynamic filtering workspace
-        </div>
-        <section class="mx-auto mt-6 max-w-3xl space-y-3">
-          <h1 class="text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-            Browse the survivorship evidence base
-          </h1>
-          <p class="text-lg font-medium text-white/90">
-            Search functionality includes filtering by author, title, institution, and country, with abstracts (where available) and source links provided.
+  <section class="space-y-12 px-4 py-12 sm:px-6 lg:px-8">
+    <HeroCard
+      eyebrow="Dynamic filtering workspace"
+      title="Browse the survivorship evidence base"
+      subtitle="Search functionality includes filtering by author, title, institution, and country, with abstracts (where available) and source links provided."
+      rightSlot={evidenceSnapshot}
+      variant="gradient"
+    />
+
+    <div class="rounded-3xl border border-white/70 bg-white/95 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur">
+      <div class="grid gap-10 lg:grid-cols-[1.15fr,0.85fr] lg:items-start">
+        <div class="space-y-6">
+          <p class="text-base leading-relaxed text-slate-600">
+            <strong class="text-slate-900">Navigate hundreds of survivorship studies in a single view.</strong>
+            Mix and match search, filters, and visual cues to zero-in on methods, populations, or outcomes that matter most.
           </p>
-        </section>
-      </div>
-      <div class="p-8 sm:p-10">
-        <div class="grid gap-10 lg:grid-cols-[1.15fr,0.85fr] lg:items-start">
-          <div class="space-y-6">
-            <p class="text-base leading-relaxed text-slate-600">
-              <strong class="text-slate-900">Navigate hundreds of survivorship studies in a single view.</strong>
-              Mix and match search, filters, and visual cues to zero-in on methods, populations, or outcomes that matter most.
-            </p>
-            <div class="grid gap-4 sm:grid-cols-2">
-              <div class="rounded-2xl border border-indigo-100 bg-indigo-50/70 p-4 shadow-sm">
-                <p class="text-sm font-semibold text-indigo-700">Instant refinement</p>
-                <p class="mt-1 text-sm text-indigo-900/80">Adjust facets and see results update without losing your spot in the evidence trail.</p>
-              </div>
-              <div class="rounded-2xl border border-purple-100 bg-purple-50/70 p-4 shadow-sm">
-                <p class="text-sm font-semibold text-purple-700">Shareable states</p>
-                <p class="mt-1 text-sm text-purple-900/80">Copy links that preserve every filter so collaborators can pick up where you left off.</p>
-              </div>
-              <div class="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4 shadow-sm sm:col-span-2">
-                <p class="text-sm font-semibold text-emerald-700">Signal-rich summaries</p>
-                <p class="mt-1 text-sm text-emerald-900/80">Surface key metadata—domains, geographies, designs—to contextualize findings at a glance.</p>
-              </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-indigo-100 bg-indigo-50/70 p-4 shadow-sm">
+              <p class="text-sm font-semibold text-indigo-700">Instant refinement</p>
+              <p class="mt-1 text-sm text-indigo-900/80">Adjust facets and see results update without losing your spot in the evidence trail.</p>
+            </div>
+            <div class="rounded-2xl border border-purple-100 bg-purple-50/70 p-4 shadow-sm">
+              <p class="text-sm font-semibold text-purple-700">Shareable states</p>
+              <p class="mt-1 text-sm text-purple-900/80">Copy links that preserve every filter so collaborators can pick up where you left off.</p>
+            </div>
+            <div class="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4 shadow-sm sm:col-span-2">
+              <p class="text-sm font-semibold text-emerald-700">Signal-rich summaries</p>
+              <p class="mt-1 text-sm text-emerald-900/80">Surface key metadata—domains, geographies, designs—to contextualize findings at a glance.</p>
             </div>
           </div>
-          <div class="rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-6 shadow-inner">
-            <h2 class="text-lg font-semibold text-slate-900">Repository by the numbers</h2>
-            <div class="mt-4 grid gap-4 sm:grid-cols-2">
-              <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Papers</p>
-                <p class="mt-2 text-3xl font-bold text-indigo-600">{totalPapers.toLocaleString()}</p>
-              </div>
-              <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Domains</p>
-                <p class="mt-2 text-3xl font-bold text-indigo-600">{domains}</p>
-              </div>
-              <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Countries</p>
-                <p class="mt-2 text-3xl font-bold text-indigo-600">{countries}</p>
-              </div>
-              <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Designs</p>
-                <p class="mt-2 text-3xl font-bold text-indigo-600">{designs}</p>
-              </div>
+        </div>
+        <div class="rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 via-white to-indigo-50 p-6 shadow-inner">
+          <h2 class="text-lg font-semibold text-slate-900">Repository by the numbers</h2>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
+              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Papers</p>
+              <p class="mt-2 text-3xl font-bold text-indigo-600">{totalPapers.toLocaleString()}</p>
             </div>
-            <p class="mt-4 text-xs text-slate-500">Counts update automatically as new literature is curated.</p>
+            <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
+              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Domains</p>
+              <p class="mt-2 text-3xl font-bold text-indigo-600">{domains}</p>
+            </div>
+            <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
+              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Countries</p>
+              <p class="mt-2 text-3xl font-bold text-indigo-600">{countries}</p>
+            </div>
+            <div class="rounded-2xl bg-white/80 p-4 text-center shadow">
+              <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">Designs</p>
+              <p class="mt-2 text-3xl font-bold text-indigo-600">{designs}</p>
+            </div>
           </div>
+          <p class="mt-4 text-xs text-slate-500">Counts update automatically as new literature is curated.</p>
         </div>
       </div>
     </div>

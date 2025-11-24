@@ -1,61 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getBrowseUrl } from '~/utils/siteUrls';
+import HeroCard from '~/components/HeroCard';
+import { h } from 'preact';
 const browseHref = getBrowseUrl();
+const aboutPrimaryCta = h(
+  'a',
+  {
+    class:
+      'inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-xl',
+    href: browseHref
+  },
+  'Explore the papers'
+);
+const aboutSecondaryCta = h(
+  'a',
+  {
+    class:
+      'inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-indigo-200 hover:text-indigo-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-50',
+    href: 'mailto:info@ohca-repo.org'
+  },
+  'Contact the team'
+);
 ---
 
 <BaseLayout
   title="About"
   description="Background and update cadence for the OHCA Survivorship Repository"
 >
-  <section class="space-y-10">
-    <div
-      class="page-hero rounded-3xl border border-white/70 bg-white/90 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur"
-    >
-      <p
-        class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-sm font-semibold text-indigo-700"
-      >
-        <span
-          class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-white shadow-md"
-        >
-          <svg
-            aria-hidden="true"
-            class="h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"></path>
-          </svg>
-        </span>
-        Our purpose & process
-      </p>
-      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-        About the cardiac arrest survivorship repository
-      </h1>
-      <p class="mt-6 text-lg leading-relaxed text-slate-600">
-        The repository organizes peer-reviewed research on life after out-of-hospital cardiac arrest,
-        highlighting cognition, psychological health, quality of life, participation, and
-        caregiver-focused work. Each paper is reviewed for relevance, tagged with a shared schema,
-        and linked to external sources to help clinicians, researchers, and survivor partners act on
-        the evidence.
-      </p>
-      <div class="page-hero-actions mt-6 flex flex-wrap gap-3">
-        <a
-          class="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-xl"
-          href={browseHref}
-        >
-          Explore the papers
-        </a>
-        <a
-          class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-indigo-200 hover:text-indigo-700"
-          href="mailto:info@ohca-repo.org"
-        >
-          Contact the team
-        </a>
-      </div>
-    </div>
+  <section class="space-y-12 px-4 py-12 sm:px-6 lg:px-8">
+    <HeroCard
+      eyebrow="Our purpose & process"
+      title="About the cardiac arrest survivorship repository"
+      subtitle="The repository organizes peer-reviewed research on life after out-of-hospital cardiac arrest, highlighting cognition, psychological health, quality of life, participation, and caregiver-focused work. Each paper is reviewed for relevance, tagged with a shared schema, and linked to external sources to help clinicians, researchers, and survivor partners act on the evidence."
+      primaryCta={aboutPrimaryCta}
+      secondaryCta={aboutSecondaryCta}
+      variant="surface"
+    />
 
     <section class="grid gap-6 md:grid-cols-2">
       <div
