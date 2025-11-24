@@ -69,29 +69,35 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
         action={browseResultsHref}
         method="get"
       >
-        <div class="flex items-center text-slate-400 sm:pl-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+        <div class="relative w-full flex-1 sm:pl-2">
+          <label class="sr-only" htmlFor="homepage-search">Search papers</label>
+          <span
+            class="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-400 shadow-sm ring-1 ring-slate-200"
+            aria-hidden="true"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 0 0114 0z"></path>
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 0 0114 0z"
+              ></path>
+            </svg>
+          </span>
+          <input
+            id="homepage-search"
+            name="q"
+            type="search"
+            class="w-full flex-1 p-3 md:p-4 pl-14 outline-none text-slate-900 placeholder-slate-400 rounded-xl border border-slate-100"
+            placeholder="Search for fatigue, cognition, return to work..."
+          />
         </div>
-        <label class="sr-only" htmlFor="homepage-search">Search papers</label>
-        <input
-          id="homepage-search"
-          name="q"
-          type="search"
-          class="w-full flex-1 p-3 md:p-4 outline-none text-slate-900 placeholder-slate-400"
-          placeholder="Search for fatigue, cognition, return to work..."
-        />
         <button
           class="w-full bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition shadow-lg sm:w-auto"
           type="submit"
