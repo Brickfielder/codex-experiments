@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Ongoing survivorship studies",
+    "updated_at": "2025-11-25"
+  },
+  "studies": [
+    {
+      "id": "enforcer",
+      "short_name": "ENFORCER",
+      "name": "ENFORCER – Internet-based follow-up after out-of-hospital cardiac arrest",
+      "status": "Recruiting / ongoing",
+      "countries": ["Multicentre (Europe)"],
+      "setting": ["Online", "Post-discharge"],
+      "population": "Adult out-of-hospital cardiac arrest (OHCA) survivors with cognitive and/or emotional difficulties",
+      "focus": ["Lifestyle", "Mental health", "Cognition"],
+      "design": "Multicentre randomized controlled trial",
+      "intervention": "Comprehensive internet-based lifestyle, cognitive and emotional support programme after cardiac arrest",
+      "comparator": "Usual care",
+      "follow_up": "Up to 12 months",
+      "tags": ["Survivor", "Online", "Lifestyle", "Psychological"],
+      "links": {
+        "protocol": "https://www.sciencedirect.com/science/article/pii/S2666520424002236",
+        "registry": "",
+        "study_page": "",
+        "lay_summary": ""
+      }
+    },
+    {
+      "id": "v-care",
+      "short_name": "V-CARE",
+      "name": "V-CARE – Virtual care after resuscitation",
+      "status": "Pilot RCT – ongoing",
+      "countries": ["UK", "Sweden"],
+      "setting": ["Virtual", "Hospital follow-up"],
+      "population": "Cardiac arrest survivors and their relatives",
+      "focus": ["Psychoeducation", "Peer support", "Adjustment"],
+      "design": "Comparative, single-blind randomized pilot trial",
+      "intervention": "Virtual group psychoeducation + peer support for survivors and relatives",
+      "comparator": "Digital information booklet only",
+      "follow_up": "Multiple timepoints over several months after discharge",
+      "tags": ["Survivor", "Co-survivor", "Virtual groups", "Psychoeducation"],
+      "links": {
+        "protocol": "https://pubmed.ncbi.nlm.nih.gov/40648804/",
+        "registry": "",
+        "study_page": "https://stepcare.org/substudies/substudy/v-care-virtual-care-after-resuscitation",
+        "lay_summary": ""
+      }
+    },
+    {
+      "id": "rock",
+      "short_name": "ROCK",
+      "name": "ROCK – Return to work after out-of-hospital cardiac arrest",
+      "status": "Randomized trial – ongoing",
+      "countries": ["Denmark"],
+      "setting": ["Hospital", "Community", "Rehabilitation"],
+      "population": "Working-age OHCA survivors",
+      "focus": ["Return to work", "Multidisciplinary rehabilitation"],
+      "design": "Pragmatic, parallel-group randomized controlled trial",
+      "intervention": "Structured multidisciplinary rehabilitation pathway focusing on return to work",
+      "comparator": "Usual follow-up / usual care",
+      "follow_up": "Follow-up for return-to-work and functional outcomes",
+      "tags": ["Survivor", "Rehabilitation", "Return to work", "Multidisciplinary"],
+      "links": {
+        "protocol": "https://link.springer.com/article/10.1186/s13063-024-07911-6",
+        "registry": "",
+        "study_page": "",
+        "lay_summary": ""
+      }
+    },
+    {
+      "id": "caressf",
+      "short_name": "CARESSf",
+      "name": "CARESSf – Community-based Aftercare and Rehabilitation for Cardiac Arrest Survivors and Families",
+      "status": "Feasibility study – in set-up / early delivery",
+      "countries": ["UK"],
+      "setting": ["Community", "Online", "NHS"],
+      "population": "Cardiac arrest survivors and co-survivors soon after discharge",
+      "focus": ["Early support", "Education", "Exercise", "Family support"],
+      "design": "Mixed-methods feasibility study",
+      "intervention": "Early online one-to-one and group education, exercise and support pathway for survivors and co-survivors",
+      "comparator": "Standard care",
+      "follow_up": "Feasibility outcomes over the early recovery period",
+      "tags": ["Survivor", "Co-survivor", "Online", "Feasibility"],
+      "links": {
+        "protocol": "",
+        "registry": "",
+        "study_page": "",
+        "lay_summary": "https://www.hra.nhs.uk/planning-and-improving-research/application-summaries/research-summaries/caressf-v11/"
+      }
+    }
+  ]
+}
