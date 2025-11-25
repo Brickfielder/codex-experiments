@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Illustration placeholder for Dr Vicky Joshi</title>
+  <desc id="desc">Initials VJ on a circular teal gradient background</desc>
+  <defs>
+    <linearGradient id="grad-vj" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="78" fill="url(#grad-vj)" />
+  <text
+    x="50%"
+    y="50%"
+    text-anchor="middle"
+    fill="#ffffff"
+    font-family="'Inter', system-ui, -apple-system, sans-serif"
+    font-size="44"
+    font-weight="700"
+    dy="14"
+  >
+    VJ
+  </text>
+</svg>
