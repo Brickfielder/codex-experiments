@@ -4,7 +4,7 @@ import CollaboratorMap from '~/components/collaborate/CollaboratorMap';
 import CollaboratorDirectory from '~/components/collaborate/CollaboratorDirectory';
 import collaboratorData from '../../data/resuscitation-network-people.json';
 import type { Collaborator } from '~/utils/types';
-import { Fragment, h } from 'preact';
+import { Fragment } from 'preact';
 import HeroCard from '~/components/HeroCard';
 
 const { people = [], meta } = collaboratorData as {
@@ -51,59 +51,11 @@ const qaItems = [
       'Use the “Add your entry” button to send details or submit a pull request for data/resuscitation-network-people.json. The editors check scope and consent, then publish the update.'
   }
 ];
-const collaboratePrimaryCta = h(
-  'a',
-  {
-    class:
-      'inline-flex items-center gap-2 rounded-2xl bg-white/90 px-5 py-2.5 text-sm font-semibold text-indigo-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-white',
-    href: '#map'
-  },
-  'View the map'
-);
-const collaborateSecondaryCta = h(Fragment, null, [
-  h(
-    'a',
-    {
-      class:
-        'inline-flex items-center gap-2 rounded-2xl bg-white/15 px-5 py-2.5 text-sm font-semibold text-white/90 shadow-lg ring-1 ring-white/40 transition hover:-translate-y-0.5 hover:bg-white/25',
-      href: '#directory'
-    },
-    'Explore the directory'
-  ),
-  h(
-    'a',
-    {
-      class:
-        'inline-flex items-center gap-2 rounded-2xl bg-rose-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-400',
-      href: 'mailto:ohcacare@gmail.com?subject=Add%20me%20to%20the%20OHCA%20survivorship%20map'
-    },
-    'Add your entry'
-  )
-]);
-const networkSnapshot = h(
-  'div',
-  {
-    class:
-      'rounded-2xl border border-slate-700/70 bg-slate-800/70 p-6 shadow-2xl shadow-slate-900/40 ring-1 ring-slate-700/70 backdrop-blur'
-  },
-  [
-    h('h2', { class: 'text-sm font-semibold uppercase tracking-[0.3em] text-slate-200' }, 'Network snapshot'),
-    h('dl', { class: 'mt-6 space-y-4 text-sm text-slate-100' }, [
-      h('div', { class: 'flex items-baseline justify-between rounded-xl bg-slate-900/40 px-3 py-2 ring-1 ring-slate-700/60' }, [
-        h('dt', { class: 'text-xs font-semibold uppercase tracking-[0.25em] text-slate-300' }, 'Collaborators'),
-        h('dd', { class: 'text-3xl font-bold text-white' }, people.length)
-      ]),
-      h('div', { class: 'flex items-baseline justify-between rounded-xl bg-slate-900/40 px-3 py-2 ring-1 ring-slate-700/60' }, [
-        h('dt', { class: 'text-xs font-semibold uppercase tracking-[0.25em] text-slate-300' }, 'Countries'),
-        h('dd', { class: 'text-3xl font-bold text-white' }, totalCountries)
-      ]),
-      h('div', { class: 'flex items-baseline justify-between rounded-xl bg-slate-900/40 px-3 py-2 ring-1 ring-slate-700/60' }, [
-        h('dt', { class: 'text-xs font-semibold uppercase tracking-[0.25em] text-slate-300' }, 'Last update'),
-        h('dd', { class: 'text-xl font-semibold text-indigo-100' }, meta?.updated_at ?? '—')
-      ])
-    ])
-  ]
-);
+const networkStats = [
+  { label: 'Collaborators', value: people.length.toLocaleString() },
+  { label: 'Countries', value: totalCountries.toLocaleString() },
+  { label: 'Last update', value: meta?.updated_at ?? '—' }
+];
 ---
 
 <BaseLayout
@@ -116,13 +68,39 @@ const networkSnapshot = h(
         eyebrow="COLLABORATOR HUB"
         title="Connecting the people improving life after cardiac arrest"
         subtitle="Discover researchers, clinicians, survivors, and co-survivors. Find collaborators, share ideas, and accelerate survivorship science and services across borders."
-        primaryCta={collaboratePrimaryCta}
-        secondaryCta={collaborateSecondaryCta}
-        rightSlot={networkSnapshot}
         variant="slate"
       />
     </div>
   </Fragment>
+
+  <section class="-mt-12 -mx-4 px-4 pb-10 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <div
+        class="flex flex-col gap-6 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-200/80"
+      >
+        <div class="flex flex-col gap-4 border-b border-slate-100 px-6 pt-6 pb-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Network snapshot</p>
+            <p class="text-sm text-slate-500">Updated {meta?.updated_at ?? '—'}</p>
+          </div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Live feed
+          </span>
+        </div>
+        <div class="grid gap-4 px-6 pb-6 md:grid-cols-3">
+          {
+            networkStats.map((stat) => (
+              <div class="rounded-2xl bg-slate-50 p-4 text-center shadow-sm" key={stat.label}>
+                <div class="text-3xl font-bold text-slate-900">{stat.value}</div>
+                <div class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">{stat.label}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="space-y-12 px-4 pb-12 pt-0 sm:px-6 lg:px-8">
     <section
