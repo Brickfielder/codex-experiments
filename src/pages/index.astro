@@ -8,6 +8,13 @@ import type { Paper } from '~/utils/types';
 const typedPapers = papers as Paper[];
 const browseHref = getBrowseUrl();
 const browseResultsHref = `${browseHref}#papers`;
+const getFilterHref = (filters: { domain?: string; quick?: string }) => {
+  const params = new URLSearchParams();
+  if (filters.domain) params.append('domain', filters.domain);
+  if (filters.quick) params.append('quick', filters.quick);
+  const query = params.toString();
+  return query ? `${browseHref}?${query}#papers` : browseResultsHref;
+};
 const aboutHref = getAboutUrl();
 const totalPapers = typedPapers.length;
 const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year), 0);
@@ -20,6 +27,43 @@ const stats = [
 ];
 const topicSuggestions = ['Cognition', 'Anxiety', 'Caregivers'];
 const recentPapers = typedPapers.slice(0, 3);
+const domainCards = [
+  {
+    title: 'Cognition',
+    description: 'Screening, memory, executive function.',
+    emoji: '🧠',
+    colorClasses: 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white',
+    href: getFilterHref({ domain: 'Cognitive' })
+  },
+  {
+    title: 'Emotional',
+    description: 'Depression, anxiety, PTSD, fatigue.',
+    emoji: '❤️',
+    colorClasses: 'bg-pink-50 text-pink-600 group-hover:bg-pink-600 group-hover:text-white',
+    href: getFilterHref({ domain: 'Psychological' })
+  },
+  {
+    title: 'Quality of Life',
+    description: 'Return to work, social participation.',
+    emoji: '🌱',
+    colorClasses: 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white',
+    href: getFilterHref({ domain: 'Qol' })
+  },
+  {
+    title: 'Return to Work',
+    description: 'Vocational outcomes and participation.',
+    emoji: '💼',
+    colorClasses: 'bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white',
+    href: getFilterHref({ quick: 'Return to Work' })
+  },
+  {
+    title: 'Family/Key Supporter',
+    description: 'Caregiver burden, needs, and wellbeing.',
+    emoji: '👪',
+    colorClasses: 'bg-violet-50 text-violet-600 group-hover:bg-violet-600 group-hover:text-white',
+    href: getFilterHref({ quick: 'Family/Key Supporter' })
+  }
+];
 
 const formatBadges = (paper: Paper): string[] => {
   const pool = paper.domains?.length ? paper.domains : (paper.mesh ?? paper.keywords ?? []);
@@ -150,52 +194,27 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
           <p class="text-sm text-slate-500 mt-2 mb-4">Filter by primary outcome domains.</p>
 
           <div class="grid gap-3">
-            <a
-              href={browseHref}
-              class="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200"
-            >
-              <div
-                class="w-10 h-10 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl group-hover:bg-indigo-600 group-hover:text-white transition"
-              >
-                🧠
-              </div>
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-indigo-600">Cognition</h3>
-                <p class="text-xs text-slate-500 mt-1">Screening, memory, executive function.</p>
-              </div>
-            </a>
-
-            <a
-              href={browseHref}
-              class="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200"
-            >
-              <div
-                class="w-10 h-10 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center text-xl group-hover:bg-pink-600 group-hover:text-white transition"
-              >
-                ❤️
-              </div>
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-pink-600">Emotional</h3>
-                <p class="text-xs text-slate-500 mt-1">Depression, anxiety, PTSD, fatigue.</p>
-              </div>
-            </a>
-
-            <a
-              href={browseHref}
-              class="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200"
-            >
-              <div
-                class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl group-hover:bg-emerald-600 group-hover:text-white transition"
-              >
-                🌱
-              </div>
-              <div>
-                <h3 class="font-semibold text-slate-900 group-hover:text-emerald-600">
-                  Quality of Life
-                </h3>
-                <p class="text-xs text-slate-500 mt-1">Return to work, social participation.</p>
-              </div>
-            </a>
+            {
+              domainCards.map((card) => (
+                <a
+                  key={card.title}
+                  href={card.href}
+                  class="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200"
+                >
+                  <div
+                    class={`w-10 h-10 rounded-full flex items-center justify-center text-xl transition transform group-hover:scale-110 group-hover:animate-bounce animate-pulse ${card.colorClasses}`}
+                  >
+                    {card.emoji}
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-slate-900 group-hover:text-indigo-600">
+                      {card.title}
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-1">{card.description}</p>
+                  </div>
+                </a>
+              ))
+            }
           </div>
         </div>
 

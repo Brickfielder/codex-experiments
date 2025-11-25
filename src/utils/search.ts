@@ -7,7 +7,9 @@ export const QUICK_FILTERS: Record<string, string[]> = {
   Psychological: ['psychological'],
   QoL: ['qol', 'quality of life'],
   'Participation/RTW': ['participation', 'return to work'],
-  Caregiver: ['caregiver']
+  Caregiver: ['caregiver'],
+  'Return to Work': ['return to work', 'vocational', 'employment'],
+  'Family/Key Supporter': ['caregiver', 'family', 'supporter']
 };
 
 const fuseOptions: IFuseOptions<Paper> = {
