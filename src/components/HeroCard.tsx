@@ -27,26 +27,26 @@ export default function HeroCard({
     isGradient
       ? 'border border-white/60 bg-gradient-to-br from-indigo-600 via-violet-500 to-rose-400 text-white'
       : isSlate
-        ? 'border border-slate-800 bg-slate-900/95 text-white ring-1 ring-white/10'
+        ? 'border border-slate-800 bg-slate-900/95 text-white ring-1 ring-slate-700/60'
         : 'border border-white/70 bg-white/95 ring-1 ring-indigo-100 text-slate-900 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-50 dark:ring-indigo-900/30'
   ].join(' ');
 
   const eyebrowClasses = isGradient
     ? 'inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80 ring-1 ring-white/30'
     : isSlate
-      ? 'inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/80 ring-1 ring-white/20'
+      ? 'inline-flex items-center gap-2 rounded-full bg-slate-800/80 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-purple-200 ring-1 ring-slate-700'
       : 'inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-indigo-700 ring-1 ring-indigo-100 dark:bg-indigo-900/40 dark:text-indigo-100 dark:ring-indigo-800/60';
 
   const titleClasses = isGradient
     ? 'text-4xl font-semibold leading-tight text-white sm:text-5xl'
     : isSlate
-      ? 'text-4xl font-semibold leading-tight text-white sm:text-5xl'
+      ? 'text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl'
       : 'text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl dark:text-white';
 
   const subtitleClasses = isGradient
     ? 'text-lg text-white/90'
     : isSlate
-      ? 'text-lg text-white/80'
+      ? 'text-lg text-slate-300 sm:text-xl sm:leading-relaxed'
       : 'text-lg text-slate-600 dark:text-slate-200';
 
   return (

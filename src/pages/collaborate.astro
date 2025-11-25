@@ -82,21 +82,24 @@ const collaborateSecondaryCta = h(Fragment, null, [
 ]);
 const networkSnapshot = h(
   'div',
-  { class: 'rounded-2xl border border-white/20 bg-white/5 p-6 shadow-inner backdrop-blur' },
+  {
+    class:
+      'rounded-2xl border border-slate-700/70 bg-slate-800/70 p-6 shadow-2xl shadow-slate-900/40 ring-1 ring-slate-700/70 backdrop-blur'
+  },
   [
-    h('h2', { class: 'text-lg font-semibold' }, 'Network snapshot'),
-    h('dl', { class: 'mt-6 space-y-4 text-sm' }, [
-      h('div', { class: 'flex items-baseline justify-between' }, [
-        h('dt', { class: 'text-white/70' }, 'Collaborators'),
-        h('dd', { class: 'text-3xl font-semibold' }, people.length)
+    h('h2', { class: 'text-sm font-semibold uppercase tracking-[0.3em] text-slate-200' }, 'Network snapshot'),
+    h('dl', { class: 'mt-6 space-y-4 text-sm text-slate-100' }, [
+      h('div', { class: 'flex items-baseline justify-between rounded-xl bg-slate-900/40 px-3 py-2 ring-1 ring-slate-700/60' }, [
+        h('dt', { class: 'text-xs font-semibold uppercase tracking-[0.25em] text-slate-300' }, 'Collaborators'),
+        h('dd', { class: 'text-3xl font-bold text-white' }, people.length)
       ]),
-      h('div', { class: 'flex items-baseline justify-between' }, [
-        h('dt', { class: 'text-white/70' }, 'Countries'),
-        h('dd', { class: 'text-3xl font-semibold' }, totalCountries)
+      h('div', { class: 'flex items-baseline justify-between rounded-xl bg-slate-900/40 px-3 py-2 ring-1 ring-slate-700/60' }, [
+        h('dt', { class: 'text-xs font-semibold uppercase tracking-[0.25em] text-slate-300' }, 'Countries'),
+        h('dd', { class: 'text-3xl font-bold text-white' }, totalCountries)
       ]),
-      h('div', { class: 'flex items-baseline justify-between' }, [
-        h('dt', { class: 'text-white/70' }, 'Last update'),
-        h('dd', { class: 'text-xl font-semibold' }, meta?.updated_at ?? '—')
+      h('div', { class: 'flex items-baseline justify-between rounded-xl bg-slate-900/40 px-3 py-2 ring-1 ring-slate-700/60' }, [
+        h('dt', { class: 'text-xs font-semibold uppercase tracking-[0.25em] text-slate-300' }, 'Last update'),
+        h('dd', { class: 'text-xl font-semibold text-indigo-100' }, meta?.updated_at ?? '—')
       ])
     ])
   ]
