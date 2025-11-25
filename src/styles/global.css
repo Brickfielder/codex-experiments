@@ -57,6 +57,53 @@ main {
   margin-right: auto;
 }
 
+.study-card {
+  border: 1px solid var(--border-subtle, #e0e0e0);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-surface, #fff);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.study-meta {
+  font-size: 0.95rem;
+  color: var(--text-muted, #666);
+  margin-bottom: 0.5rem;
+}
+
+.study-tags {
+  margin-top: 0.75rem;
+}
+
+.study-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle, #e0e0e0);
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
+  background-color: var(--bg-tag, #f8fafc);
+}
+
+.study-links ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  list-style: disc;
+}
+
+.table--studies {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table--studies th,
+.table--studies td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border-subtle, #e0e0e0);
+}
+
 @media (max-width: 640px) {
   .page-hero {
     text-align: center;
