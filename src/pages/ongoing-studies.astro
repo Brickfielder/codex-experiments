@@ -75,7 +75,8 @@ const normalizedBasePath = basePath.endsWith('/') ? basePath : `${basePath}/`;
   </div>
 
   <script is:inline>
-    window.__BASE_PATH__ = normalizedBasePath;
+    // Expose the resolved base path so the client script can build absolute URLs
+    window.__BASE_PATH__ = {JSON.stringify(normalizedBasePath)};
   </script>
   <script src={`${normalizedBasePath}assets/js/ongoing-studies.js`} defer></script>
 </BaseLayout>
