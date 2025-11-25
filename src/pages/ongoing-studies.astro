@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const basePath = import.meta.env.BASE_URL;
 const normalizedBasePath = basePath.endsWith('/') ? basePath : `${basePath}/`;
+const basePathJson = JSON.stringify(normalizedBasePath);
 ---
 
 <BaseLayout
@@ -74,9 +75,7 @@ const normalizedBasePath = basePath.endsWith('/') ? basePath : `${basePath}/`;
     </section>
   </div>
 
-  <script is:inline>
-    // Expose the resolved base path so the client script can build absolute URLs
-    window.__BASE_PATH__ = {JSON.stringify(normalizedBasePath)};
-  </script>
+  <script is:inline set:html={`// Expose the resolved base path so the client script can build absolute URLs
+window.__BASE_PATH__ = ${basePathJson};`}></script>
   <script src={`${normalizedBasePath}assets/js/ongoing-studies.js`} defer></script>
 </BaseLayout>
