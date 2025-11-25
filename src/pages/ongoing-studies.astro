@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const basePath = import.meta.env.BASE_URL;
+const normalizedBasePath = basePath.endsWith('/') ? basePath : `${basePath}/`;
 ---
 
 <BaseLayout
@@ -74,7 +75,7 @@ const basePath = import.meta.env.BASE_URL;
   </div>
 
   <script is:inline>
-    window.__BASE_PATH__ = import.meta.env.BASE_URL;
+    window.__BASE_PATH__ = normalizedBasePath;
   </script>
-  <script src={`${basePath}assets/js/ongoing-studies.js`} defer></script>
+  <script src={`${normalizedBasePath}assets/js/ongoing-studies.js`} defer></script>
 </BaseLayout>
