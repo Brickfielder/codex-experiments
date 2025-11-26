@@ -86,23 +86,28 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
   description="Evidence summaries for life after cardiac arrest"
 >
   <Fragment slot="hero">
-    <div
-      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-teal-400 text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur-sm"
-    >
-      <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-      Live Evidence Hub
-    </div>
-    <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6">
-      Survivorship After <br class="hidden md:block" />
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-cyan-400"
-        >Cardiac Arrest</span
-      >
-    </h1>
-    <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-light">
-      Mapping the evidence that tells us what life looks like <em>after</em> survival. A living collection
-      of cognitive, psychological, and social outcomes.
-    </p>
+    <section class="landing-hero">
+      <div class="landing-hero__text">
+        <p class="landing-hero__eyebrow">Live Evidence Hub</p>
 
+        <h1 class="landing-hero__title">
+          Cardiac Arrest Survivorship Research Hub
+        </h1>
+
+        <div class="landing-hero__mission">
+          <h2 class="landing-hero__mission-title">Our Mission</h2>
+          <p class="landing-hero__mission-body">
+            To strengthen cardiac arrest survivorship research by connecting people,
+            reducing duplication, and accelerating progress in aftercare science.
+          </p>
+        </div>
+
+        <p class="landing-hero__description">
+          Mapping the evidence that tells us what life looks like after survival,
+          with a focus on cognitive, psychological, social, and quality-of-life outcomes.
+        </p>
+      </div>
+    </section>
     <div class="max-w-2xl mx-auto relative group">
       <div
         class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl opacity-25 group-hover:opacity-50 blur transition duration-500"
