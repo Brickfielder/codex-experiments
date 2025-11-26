@@ -146,6 +146,12 @@ main {
   margin: 0.5rem 0 0.25rem;
 }
 
+.hero-title {
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
 .landing-hero__lead {
   max-width: 48rem;
   font-size: 1.15rem;
