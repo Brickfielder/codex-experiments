@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getBrowseUrl } from '~/utils/siteUrls';
+import { getBrowseUrl, getSiteUrl } from '~/utils/siteUrls';
 import HeroCard from '~/components/HeroCard';
 import { h } from 'preact';
 const browseHref = getBrowseUrl();
+const imageBase = getSiteUrl('assets/images/');
+const marcoMionSrc = `${imageBase}marco-mion.jpg`;
+const vickyJoshiSrc = `${imageBase}vicky-joshi.jpg`;
 const aboutPrimaryCta = h(
   'a',
   {
@@ -49,7 +52,7 @@ const aboutSecondaryCta = h(
           <div class="creator-photo-wrap">
             <picture>
               <img
-                src="/assets/images/marco-mion.jpg"
+                src={marcoMionSrc}
                 alt="Portrait of Dr Marco Mion"
                 class="creator-photo"
                 loading="lazy"
@@ -71,7 +74,7 @@ const aboutSecondaryCta = h(
           <div class="creator-photo-wrap">
             <picture>
               <img
-                src="/assets/images/vicky-joshi.jpg"
+                src={vickyJoshiSrc}
                 alt="Portrait of Dr Vicky Joshi"
                 class="creator-photo"
                 loading="lazy"
