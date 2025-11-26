@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getBrowseUrl } from '~/utils/siteUrls';
+import { getBrowseUrl, getSiteUrl } from '~/utils/siteUrls';
 import HeroCard from '~/components/HeroCard';
 import { h } from 'preact';
 const browseHref = getBrowseUrl();
+const imageBase = getSiteUrl('assets/images/');
+const marcoMionSrc = `${imageBase}marco-mion.jpg`;
+const vickyJoshiSrc = `${imageBase}vicky-joshi.jpg`;
 const aboutPrimaryCta = h(
   'a',
   {
@@ -47,12 +50,14 @@ const aboutSecondaryCta = h(
       <div class="creators-grid">
         <article class="creator">
           <div class="creator-photo-wrap">
-            <img
-              src="/assets/images/marco-mion.svg"
-              alt="Illustration of Dr Marco Mion"
-              class="creator-photo"
-              loading="lazy"
-            />
+            <picture>
+              <img
+                src={marcoMionSrc}
+                alt="Portrait of Dr Marco Mion"
+                class="creator-photo"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="creator-body">
             <h3>Dr Marco Mion</h3>
@@ -67,12 +72,14 @@ const aboutSecondaryCta = h(
 
         <article class="creator">
           <div class="creator-photo-wrap">
-            <img
-              src="/assets/images/vicky-joshi.svg"
-              alt="Illustration of Dr Vicky Joshi"
-              class="creator-photo"
-              loading="lazy"
-            />
+            <picture>
+              <img
+                src={vickyJoshiSrc}
+                alt="Portrait of Dr Vicky Joshi"
+                class="creator-photo"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="creator-body">
             <h3>Dr Vicky Joshi</h3>
