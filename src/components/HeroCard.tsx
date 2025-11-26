@@ -1,8 +1,13 @@
 import type { ReactNode } from 'react';
 
+export type HeroCardTitleLine = {
+  text: string;
+  gradient?: boolean;
+};
+
 export type HeroCardProps = {
   eyebrow?: string;
-  title: string;
+  title: string | HeroCardTitleLine[];
   subtitle: string;
   primaryCta?: ReactNode;
   secondaryCta?: ReactNode;
@@ -49,6 +54,24 @@ export default function HeroCard({
       ? 'text-lg text-slate-300 sm:text-xl sm:leading-relaxed'
       : 'text-lg text-slate-600 dark:text-slate-200';
 
+  const renderedTitle = Array.isArray(title)
+    ? title.map((line, index) => (
+        <span
+          key={`${index}-${line.text}`}
+          className={[
+            'block',
+            line.gradient
+              ? 'text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 via-cyan-200 to-purple-200'
+              : ''
+          ]
+            .filter(Boolean)
+            .join(' ')}
+        >
+          {line.text}
+        </span>
+      ))
+    : title;
+
   return (
     <div className={containerClasses}>
       {isGradient ? (
@@ -59,7 +82,7 @@ export default function HeroCard({
       <div className={rightSlot ? 'relative grid gap-10 lg:grid-cols-[1.1fr,0.9fr]' : 'relative space-y-6'}>
         <div className="space-y-6">
           {eyebrow ? <p className={eyebrowClasses}>{eyebrow}</p> : null}
-          <h1 className={titleClasses}>{title}</h1>
+          <h1 className={titleClasses}>{renderedTitle}</h1>
           <p className={subtitleClasses}>{subtitle}</p>
           {primaryCta || secondaryCta ? (
             <div className="flex flex-wrap gap-3">

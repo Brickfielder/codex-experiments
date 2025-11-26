@@ -64,12 +64,18 @@ const networkStats = [
 >
   <Fragment slot="hero">
     <div class="relative left-1/2 w-screen -translate-x-1/2 px-4 sm:px-6 lg:px-8">
-      <HeroCard
-        eyebrow="COLLABORATOR HUB"
-        title="Connecting the people improving life after cardiac arrest"
-        subtitle="Discover researchers, clinicians, survivors, and co-survivors. Find collaborators, share ideas, and accelerate survivorship science and services across borders."
-        variant="slate"
-      />
+        <HeroCard
+          eyebrow="COLLABORATOR HUB"
+          title={[
+            { text: 'Connecting the people improving life' },
+            {
+              text: 'after cardiac arrest',
+              gradient: true
+            }
+          ]}
+          subtitle="Discover researchers, clinicians, survivors, and co-survivors. Find collaborators, share ideas, and accelerate survivorship science and services across borders."
+          variant="slate"
+        />
     </div>
   </Fragment>
 
