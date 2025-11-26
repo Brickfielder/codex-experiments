@@ -46,7 +46,7 @@ export default function HeroCard({
     ? 'text-4xl font-semibold leading-tight text-white sm:text-5xl'
     : isSlate
       ? 'text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl'
-      : 'text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl dark:text-white';
+      : 'text-2xl font-semibold leading-tight text-slate-900 sm:text-3xl md:text-4xl dark:text-white';
 
   const subtitleClasses = isGradient
     ? 'text-lg text-white/90'
