@@ -106,6 +106,86 @@ main {
   margin-right: auto;
 }
 
+.landing-hero {
+  max-width: 52rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.landing-hero__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.landing-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5eead4;
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  background: rgba(15, 23, 42, 0.65);
+  border-radius: 9999px;
+  box-shadow: 0 10px 50px rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(10px);
+}
+
+.landing-hero__title {
+  font-size: clamp(2.25rem, 3.5vw + 1rem, 3.25rem);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.landing-hero__lead {
+  max-width: 48rem;
+  font-size: 1.15rem;
+  color: #cbd5e1;
+}
+
+.landing-hero__mission {
+  width: 100%;
+  max-width: 44rem;
+  margin-top: 0.75rem;
+  padding: 1.1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.12), rgba(14, 165, 233, 0.12));
+  border: 1px solid rgba(94, 234, 212, 0.25);
+  border-radius: 1.25rem;
+  box-shadow: 0 15px 60px rgba(14, 165, 233, 0.18);
+  text-align: left;
+}
+
+.landing-hero__mission-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #a5f3fc;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.landing-hero__mission-body {
+  margin: 0;
+  font-size: 1rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+.landing-hero__description {
+  max-width: 46rem;
+  font-size: 1rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
 .study-card {
   border: 1px solid var(--border-subtle, #e0e0e0);
   border-radius: 0.75rem;
