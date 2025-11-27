@@ -156,8 +156,8 @@ main {
 }
 
 .landing-hero {
-  max-width: 62.5rem;
-  margin: 0 auto 2.5rem;
+  width: 100%;
+  margin: 0 0 2.5rem;
   text-align: center;
   color: #e2e8f0;
 }
@@ -194,6 +194,7 @@ main {
   color: #ffffff;
   letter-spacing: -0.02em;
   margin: 0.5rem 0 0.25rem;
+  max-width: none;
 }
 
 .hero-title {
