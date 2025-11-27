@@ -56,7 +56,7 @@ const CountryHeatmap: React.FC = () => {
     ];
 
     const layout: Partial<Plotly.Layout> = {
-      title: 'Papers by Country',
+      title: 'Survivorship Research by Country',
       geo: {
         projection: { type: 'natural earth' }
       },
