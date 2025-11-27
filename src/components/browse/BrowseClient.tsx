@@ -129,20 +129,44 @@ export default function BrowseClient({ papers }: Props) {
   return (
     <div class="space-y-6">
       <div class="flex justify-center">
-        <div class="w-full max-w-3xl rounded-3xl border border-indigo-100/80 bg-white/95 p-6 text-center shadow-xl ring-1 ring-indigo-50 backdrop-blur dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
-          <label
-            htmlFor="search"
-            class="mb-2 block text-sm font-semibold uppercase tracking-wide text-indigo-700 dark:text-indigo-200"
-          >
+        <div class="w-full max-w-3xl rounded-3xl border border-indigo-200/70 bg-gradient-to-br from-white via-indigo-50/70 to-purple-50/60 p-6 text-center shadow-2xl shadow-indigo-100 ring-1 ring-indigo-100/80 backdrop-blur-lg transition dark:border-slate-800 dark:from-slate-900/90 dark:via-indigo-950/30 dark:to-slate-900/80 dark:shadow-none dark:ring-indigo-900/60">
+          <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-indigo-600/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-indigo-800 ring-1 ring-indigo-200 shadow-sm dark:bg-indigo-900/40 dark:text-indigo-100 dark:ring-indigo-800">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_0_6px_rgba(16,185,129,0.18)]"></span>
             Search the repository
-          </label>
-          <input
-            id="search"
-            type="search"
-            placeholder="Search by title, abstract, keywords, or author"
-            value={state.query}
-            onInput={updateQuery}
-          />
+          </div>
+          <div class="relative">
+            <div class="pointer-events-none absolute inset-y-0 left-4 flex items-center text-indigo-500 dark:text-indigo-200">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.8"
+                stroke="currentColor"
+                class="h-5 w-5"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-4.35-4.35m0 0a7 7 0 1 0-9.9-9.9 7 7 0 0 0 9.9 9.9Z"
+                />
+              </svg>
+            </div>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search by title, abstract, keywords, or author"
+              value={state.query}
+              onInput={updateQuery}
+              class="peer w-full rounded-2xl border border-indigo-200/80 bg-white/90 px-12 py-4 text-base font-semibold text-slate-800 shadow-lg shadow-indigo-100 transition duration-200 placeholder:font-medium placeholder:text-slate-400 focus:-translate-y-0.5 focus:border-indigo-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-indigo-200 focus:ring-offset-2 focus:ring-offset-indigo-50 dark:border-indigo-900/60 dark:bg-slate-950/80 dark:text-slate-100 dark:placeholder:text-slate-400 dark:focus:border-indigo-500 dark:focus:ring-indigo-700/60 dark:focus:ring-offset-slate-900"
+            />
+            <div class="pointer-events-none absolute inset-y-0 right-4 flex items-center text-xs font-semibold uppercase tracking-wide text-indigo-500 opacity-0 transition-opacity duration-200 peer-focus:opacity-100 dark:text-indigo-200">
+              Live match
+            </div>
+          </div>
+          <p class="mt-3 text-sm font-medium text-slate-600 dark:text-slate-300">
+            Instant results, filter-friendly, and ready to share via copied links.
+          </p>
         </div>
       </div>
 
