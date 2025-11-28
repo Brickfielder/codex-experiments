@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for helping expand the OHCA Survivorship Repository. This document explains the data pipeline and the manual workflows that keep the repository consistent and privacy-preserving.
+Thank you for helping expand the Cardiac Arrest Research Hub. This document explains the data pipeline and the manual workflows that keep the repository consistent and privacy-preserving.
 
 ## Data standards
 

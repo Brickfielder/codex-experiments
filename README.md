@@ -1,4 +1,4 @@
-# OHCA Survivorship Repository
+# Cardiac Arrest Research Hub
 
 A static Astro site that curates literature on survivorship after out-of-hospital cardiac arrest. The project delivers mobile-first browsing, advanced faceted search, and export tooling suitable for GitHub Pages hosting.
 

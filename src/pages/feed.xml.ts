@@ -8,8 +8,8 @@ export const GET: APIRoute = () => {
   const typed = papers as Paper[];
   const site = siteBaseUrl;
   return rss({
-    title: 'OHCA Survivorship Repository',
-    description: 'Latest additions to the OHCA Survivorship Repository',
+    title: 'Cardiac Arrest Research Hub',
+    description: 'Latest additions to the Cardiac Arrest Research Hub',
     site,
     items: typed.slice(0, 20).map((paper) => ({
       link: getPaperPermalink(paper.id),
