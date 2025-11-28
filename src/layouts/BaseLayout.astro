@@ -64,10 +64,10 @@ const ongoingStudiesHref = getOngoingStudiesUrl();
               class="hidden items-center gap-6 text-sm font-medium text-slate-200 md:flex"
               aria-label="Primary"
             >
-              <a class="hover:text-white transition" href={browseHref}>Browse</a>
               <a class="hover:text-white transition" href={aboutHref}>About the Team</a>
-              <a class="hover:text-white transition" href={heatmapHref}>Research Heat Map</a>
+              <a class="hover:text-white transition" href={browseHref}>Browse</a>
               <a class="hover:text-white transition" href={collaborateHref}>Collaborate</a>
+              <a class="hover:text-white transition" href={heatmapHref}>Research Heat Map</a>
               <a class="hover:text-white transition" href={ongoingStudiesHref}>Ongoing Studies</a>
             </div>
             <button
@@ -99,19 +99,19 @@ const ongoingStudiesHref = getOngoingStudiesUrl();
         <div class="grid grid-cols-1 gap-3">
           <a
             class="w-full rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
-            href={browseHref}>Browse</a
-          >
-          <a
-            class="w-full rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
             href={aboutHref}>About the Team</a
           >
           <a
             class="w-full rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
-            href={heatmapHref}>Research Heat Map</a
+            href={browseHref}>Browse</a
           >
           <a
             class="w-full rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
             href={collaborateHref}>Collaborate</a
+          >
+          <a
+            class="w-full rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
+            href={heatmapHref}>Research Heat Map</a
           >
           <a
             class="w-full rounded-2xl border border-white/15 bg-white/10 px-5 py-3 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/20"
