@@ -119,15 +119,11 @@ const ongoingStudiesHref = getOngoingStudiesUrl();
           >
         </div>
       </nav>
-      {
-        Astro.slots.has('hero') ? (
-          <div class="relative mx-auto max-w-5xl px-6 pb-20 pt-16 text-center lg:px-8">
-            <slot name="hero" />
-          </div>
-        ) : (
-          <div class="relative py-10" />
-        )
-      }
+      {Astro.slots.has('hero') && (
+        <div class="relative mx-auto max-w-5xl px-6 pb-20 pt-16 text-center lg:px-8">
+          <slot name="hero" />
+        </div>
+      )}
     </header>
     <main id="main" class="bg-slate-50 text-slate-600 dark:bg-slate-950 dark:text-slate-100">
       <slot />
