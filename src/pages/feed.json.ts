@@ -9,10 +9,10 @@ export const GET: APIRoute = () => {
   const feedUrl = getSiteUrl('feed.json');
   const feed = {
     version: 'https://jsonfeed.org/version/1.1',
-    title: 'OHCA Survivorship Repository',
+    title: 'Cardiac Arrest Research Hub',
     home_page_url: homeUrl,
     feed_url: feedUrl,
-    description: 'Latest additions to the OHCA Survivorship Repository',
+    description: 'Latest additions to the Cardiac Arrest Research Hub',
     items: typed.slice(0, 20).map((paper) => ({
       id: paper.id,
       url: getPaperPermalink(paper.id),
