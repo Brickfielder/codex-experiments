@@ -19,7 +19,6 @@ const heatmapHref = getHeatmapUrl();
 const privacyHref = getSiteUrl('privacy');
 const collaborateHref = getCollaborateUrl();
 const ongoingStudiesHref = getOngoingStudiesUrl();
-const hasHero = Astro.slots.has('hero');
 ---
 
 <!doctype html>
@@ -120,21 +119,13 @@ const hasHero = Astro.slots.has('hero');
           >
         </div>
       </nav>
-      {hasHero && (
+      {Astro.slots.has('hero') && (
         <div class="relative mx-auto max-w-5xl px-6 pb-20 pt-16 text-center lg:px-8">
           <slot name="hero" />
         </div>
       )}
     </header>
-    <main
-      id="main"
-      class:list={{
-        'bg-slate-50 text-slate-600 dark:bg-slate-950 dark:text-slate-100': true,
-        'mx-auto max-w-7xl px-6 pb-16 lg:px-8': true,
-        'pt-12 lg:pt-20': hasHero,
-        'pt-0 lg:pt-0': !hasHero
-      }}
-    >
+    <main id="main" class="bg-slate-50 text-slate-600 dark:bg-slate-950 dark:text-slate-100">
       <slot />
     </main>
     <footer
