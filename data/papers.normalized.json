@@ -227,7 +227,7 @@
       "Risk Factors",
       "Quality of Life"
     ],
-    "country": "Department of Physiotherapy and Occupational Therapy Aarhus University Hospital Aarhus Denmark",
+    "country": "Austria",
     "corrCountryCode": "AT",
     "corrCountryName": "Austria",
     "domains": [
@@ -573,7 +573,7 @@
       "has_fulltext": true
     },
     "pmcid": "PMC11847459",
-    "country": "Faculty of Health and Life Sciences Linnaeus University Kalmar Sweden",
+    "country": "Sweden",
     "corrCountryCode": "SE",
     "corrCountryName": "Sweden",
     "domains": [
@@ -1070,7 +1070,7 @@
       "Hospitals, University",
       "Aged, 80 and over"
     ],
-    "country": "Österreich",
+    "country": "Austria",
     "corrCountryCode": "AT",
     "corrCountryName": "Austria",
     "domains": [
@@ -2571,7 +2571,7 @@
       "Retrospective Studies",
       "Cost of Illness"
     ],
-    "country": "M.C.K.)",
+    "country": "United States",
     "corrCountryCode": "US",
     "corrCountryName": "United States",
     "domains": [],
@@ -2625,7 +2625,7 @@
       "Hospitals",
       "Inpatients"
     ],
-    "country": "Alabama",
+    "country": "United States",
     "corrCountryCode": "US",
     "corrCountryName": "United States",
     "domains": [],
@@ -2676,7 +2676,7 @@
       "Survivors",
       "Hospitals"
     ],
-    "country": "Lieutenant Colonel Charles S. Kettles VA Medical Center Center for Clinical Management Research Ann Arbor MI USA",
+    "country": "United States",
     "corrCountryCode": "US",
     "corrCountryName": "United States",
     "domains": [
@@ -3800,7 +3800,7 @@
       "Survivors",
       "Survivorship"
     ],
-    "country": "Department of Emergency Medicine University of Colorado School of Medicine Denver CO",
+    "country": "United States",
     "corrCountryCode": "US",
     "corrCountryName": "United States",
     "domains": [
@@ -4085,7 +4085,7 @@
       "has_fulltext": true
     },
     "pmcid": "PMC8901216",
-    "country": "MI",
+    "country": "United States",
     "corrCountryCode": "US",
     "corrCountryName": "United States",
     "domains": [],
