@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import papers from '../../../data/papers.normalized.json';
 import type { Paper } from '~/utils/types';
 import { getPaperUrl } from '~/utils/format';
-import { getPaperPermalink, getPaperSlug, parsePaperSlug } from '~/utils/siteUrls';
+import { getPaperSlug, parsePaperSlug } from '~/utils/siteUrls';
 export const getStaticPaths = () =>
   (papers as Paper[]).map((paper) => ({ params: { id: getPaperSlug(paper.id) } }));
 const typedPapers = papers as Paper[];
@@ -13,8 +13,6 @@ const paper = paperId ? typedPapers.find((item) => item.id === paperId) : undefi
 if (!paper) {
   throw Astro.response(null, { status: 404, statusText: 'Paper not found' });
 }
-
-const permalink = getPaperPermalink(paper.id);
 
 const tokenize = (text: string) =>
   text
@@ -271,17 +269,6 @@ const makeRis = () =>
               Download RIS
             </button>
           </div>
-          <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
-            <span class="font-semibold uppercase tracking-[0.3em] text-slate-400">Permalink</span>
-            <button
-              class="text-indigo-600 underline-offset-2 hover:underline"
-              type="button"
-              data-permalink={permalink}
-            >
-              Copy link
-            </button>
-            <span class="truncate text-slate-400">{permalink}</span>
-          </div>
         </div>
       </div>
     </section>
@@ -351,20 +338,5 @@ const makeRis = () =>
       URL.revokeObjectURL(url);
     });
 
-    const permalinkButton = document.querySelector('[data-permalink]');
-    permalinkButton?.addEventListener('click', async () => {
-      const url = permalinkButton.getAttribute('data-permalink');
-      if (!url) return;
-      try {
-        await navigator.clipboard.writeText(url);
-        const original = permalinkButton.textContent ?? 'Copy link';
-        permalinkButton.textContent = 'Link copied!';
-        setTimeout(() => {
-          permalinkButton.textContent = original;
-        }, 1500);
-      } catch (error) {
-        console.error('Unable to copy permalink', error);
-      }
-    });
   </script>
 </BaseLayout>
