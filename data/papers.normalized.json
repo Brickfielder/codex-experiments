@@ -402,6 +402,8 @@
       "Anxiety"
     ],
     "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
     "domains": [
       "Cognitive",
       "Psychological",
@@ -1449,9 +1451,9 @@
       "Prospective Studies",
       "Executive Function"
     ],
-    "country": "The Netherlands",
+    "country": "the Netherlands",
     "corrCountryCode": "NL",
-    "corrCountryName": "Netherlands",
+    "corrCountryName": "the Netherlands",
     "domains": [
       "Cognitive"
     ],
@@ -1555,6 +1557,8 @@
       "Cardiopulmonary Resuscitation"
     ],
     "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
     "domains": [
       "Cognitive",
       "Qol"
@@ -1596,6 +1600,8 @@
     },
     "pmcid": "PMC10847941",
     "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
     "domains": [
       "Cognitive",
       "Qol",
@@ -1964,7 +1970,9 @@
       "Neuropsychological Tests",
       "Time Factors"
     ],
-    "country": "The Netherlands",
+    "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
     "domains": [
       "Cognitive"
     ],
@@ -2424,6 +2432,8 @@
       "Survivors"
     ],
     "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
     "domains": [
       "Cognitive",
       "Psychological",
@@ -2522,7 +2532,9 @@
       "has_fulltext": true
     },
     "pmcid": "PMC10781901",
-    "country": "The Netherlands",
+    "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
     "domains": [
       "Cognitive"
     ],
@@ -4675,6 +4687,8 @@
       "Survivors"
     ],
     "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
     "domains": [
       "Psychological",
       "Qol"
@@ -4865,6 +4879,8 @@
       "Time Factors"
     ],
     "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
     "domains": [
       "Cognitive"
     ],
