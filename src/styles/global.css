@@ -79,6 +79,27 @@ a {
   max-width: 40rem;
 }
 
+.creator-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.orcid-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.orcid-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.creator-bio {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .creator-role {
   font-weight: 600;
   margin-bottom: 0.4rem;

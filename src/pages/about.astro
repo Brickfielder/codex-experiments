@@ -4,6 +4,7 @@ import { getSiteUrl } from '~/utils/siteUrls';
 const imageBase = getSiteUrl('assets/images/');
 const marcoMionSrc = `${imageBase}marco-mion.jpg`;
 const vickyJoshiSrc = `${imageBase}vicky-joshi.jpg`;
+const orcidIconSrc = getSiteUrl('assets/icons/orcid.svg');
 ---
 
 <BaseLayout
@@ -57,11 +58,22 @@ const vickyJoshiSrc = `${imageBase}vicky-joshi.jpg`;
             </picture>
           </div>
           <div class="creator-body">
-            <h3>Dr Marco Mion</h3>
+            <div class="creator-heading">
+              <h3>Dr Marco Mion</h3>
+              <a
+                class="orcid-link"
+                href="https://orcid.org/0000-0002-3656-5965"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Dr Marco Mion ORCID profile"
+              >
+                <img src={orcidIconSrc} alt="ORCID logo" class="orcid-icon" loading="lazy" />
+              </a>
+            </div>
             <p class="creator-role">
               Principal Clinical Psychologist, Essex Cardiothoracic Centre & King’s College Hospital
             </p>
-            <p>
+            <p class="creator-bio">
               Based at the Essex Cardiothoracic Centre and King's College Hospital (UK), Dr Marco
               Mion is a Clinical Psychologist and an Honorary Clinical Lecturer at Anglia Ruskin
               University. His research focuses on psychological, cognitive, and quality of life
@@ -85,16 +97,33 @@ const vickyJoshiSrc = `${imageBase}vicky-joshi.jpg`;
             </picture>
           </div>
           <div class="creator-body">
-            <h3>Dr Vicky Joshi</h3>
+            <div class="creator-heading">
+              <h3>Dr Vicky Joshi</h3>
+              <a
+                class="orcid-link"
+                href="https://orcid.org/0000-0003-3524-1990"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Dr Vicky Joshi ORCID profile"
+              >
+                <img src={orcidIconSrc} alt="ORCID logo" class="orcid-icon" loading="lazy" />
+              </a>
+            </div>
             <p class="creator-role">Lecturer in Physiotherapy, Glasgow Caledonian University</p>
-            <p>
-              Dr Vicky Joshi is a Lecturer in Physiotherapy at Glasgow Caledonian University. Vicky
-              is an internationally recognised researcher in cardiac arrest aftercare. She
-              previously worked in Denmark researching the needs of survivors and families after
-              cardiac arrest and currently leads the Save A Life for Scotland Recovery group
-              (SALFS-R). She is the chief investigator on the Bystander aftercare research project
-              investigating experiences of bystanders and is the co-ordinator for the SABRE
-              interventional collaboration (Support After Bystander Resuscitation).
+            <p class="creator-bio">
+              ‘Based at Glasgow Caledonian University, Dr Vicky Joshi is a Lecturer in Physiotherapy
+              and CSO (Chief Scientist Office, Scottish Government) Post-doctoral Fellow. Her
+              research is on cardiac arrest aftercare for survivors, family members and bystanders.
+              She is the Director for the Save A Life For Scotland Recovery group (SALFS-R),
+              Co-ordinates the SABRE network (Support After Bystander Resuscitation) and leads the
+              <a
+                href="https://www.cso.scot.nhs.uk/funded-research/fellowships/early-postdoctoral-fellowship-funding/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                CAROUSel
+              </a>
+              research project, developing cardiac arrest aftercare interventions in Scotland.
             </p>
           </div>
         </article>
