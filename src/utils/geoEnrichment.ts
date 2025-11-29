@@ -19,7 +19,7 @@ const COUNTRY_ALIASES: { code: string; name: string; aliases: string[] }[] = [
   { code: 'IT', name: 'Italy', aliases: ['Italy', 'Italia'] },
   { code: 'SE', name: 'Sweden', aliases: ['Sweden', 'Sverige'] },
   { code: 'NO', name: 'Norway', aliases: ['Norway', 'Norge'] },
-  { code: 'NL', name: 'Netherlands', aliases: ['Netherlands', 'The Netherlands', 'Nederland'] },
+  { code: 'NL', name: 'The Netherlands', aliases: ['Netherlands', 'The Netherlands', 'Nederland'] },
   { code: 'DK', name: 'Denmark', aliases: ['Denmark', 'Danmark'] },
 
   // More European countries likely to appear

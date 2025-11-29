@@ -1,7 +1,7 @@
 /** @jsxImportSource react */
 import React, { useEffect, useRef } from 'react';
 import Plotly from 'plotly.js-dist';
-import papers from '@data/papers.json';
+import papers from '@data/papers.normalized.json';
 
 type Paper = {
   country?: string;
