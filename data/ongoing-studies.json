@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Ongoing survivorship studies",
-    "updated_at": "2025-11-25"
+    "updated_at": "2025-11-29"
   },
   "studies": [
     {
@@ -94,11 +94,8 @@
       "name": "Effects of an Online Support Programme for Cardiac Arrest Survivors (CARDIS)",
       "status": "Not yet recruiting",
       "countries": ["Sweden"],
-      "setting": [
-        "Multi-region follow-up clinics",
-        "Web-based support programme + standard care (parallel-group RCT)"
-      ],
-      "population": "Adult cardiac arrest survivors (≥18 years), 1–3 months post-discharge with access to digital devices and sufficient Swedish",
+      "setting": ["Multi-region follow-up clinics", "Online, self-paced (12 weeks)", "Standard care"],
+      "population": "Adult cardiac arrest survivors (≥18 years), 1–3 months after discharge with access to digital devices and sufficient Swedish",
       "focus": [
         "Wellbeing",
         "Self-management",
