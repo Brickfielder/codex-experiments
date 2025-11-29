@@ -29,6 +29,18 @@ export const normalizeName = (name: string): string => {
 
 const containsAny = (text: string, terms: string[]) => terms.some((term) => text.includes(term));
 
+const sanitizeCountry = (country?: string | null) => {
+  if (!country) return country ?? undefined;
+  const cleaned = country
+    .replace(/\s*Electronic address:.*$/i, '')
+    .replace(/\s*E-?mail:.*$/i, '')
+    .replace(/\s*[.;]\s*[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\s*$/i, '')
+    .trim()
+    .replace(/[.;,]+$/, '')
+    .trim();
+  return cleaned || undefined;
+};
+
 export const inferDomains = (paper: RawPaper): string[] => {
   const seed = new Set((paper.domains ?? []).map((domain) => domain.toLowerCase()));
   const text = `${paper.title} ${paper.abstract} ${(paper.keywords ?? []).join(' ')}`.toLowerCase();
@@ -96,8 +108,10 @@ export const normalizeRecords = (papers: RawPaper[]): NormalizedPaper[] => {
       const domains = inferDomains(paper);
       const setting = inferSetting(paper);
       const design = inferDesign(paper) ?? paper.design;
+      const country = sanitizeCountry(paper.country) ?? paper.country;
       return {
         ...paper,
+        country,
         domains,
         setting,
         design,

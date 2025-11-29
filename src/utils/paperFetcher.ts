@@ -511,7 +511,12 @@ const inferCountryFromLastAuthor = (authors: PubMedAuthor[]): string | undefined
   const pickCountryFromAffStrings = (affStrings: string[]): string | undefined => {
     for (const rawAff of affStrings) {
       const decoded = decodeHtmlEntities(rawAff);
-      const parts = decoded.split(',').map((p) => p.trim().replace(/\.$/, ''));
+      const cleaned = decoded
+        // Drop trailing contact info that often follows the country (e.g. "Electronic address: ...")
+        .replace(/\s*Electronic address:.*$/i, '')
+        .replace(/\s*E-?mail:.*$/i, '')
+        .trim();
+      const parts = cleaned.split(',').map((p) => p.trim().replace(/\.$/, ''));
       const tail = parts[parts.length - 1];
       if (!tail) continue;
       if (!/[a-zA-Z]/.test(tail)) continue;
