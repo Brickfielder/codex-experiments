@@ -15,7 +15,7 @@ const getFilterHref = (filters: { domain?: string; quick?: string }) => {
   const query = params.toString();
   return query ? `${browseHref}?${query}#papers` : browseResultsHref;
 };
-const aboutHref = getAboutUrl();
+const aboutHref = `${getAboutUrl()}#search-strategy`;
 const totalPapers = typedPapers.length;
 const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year), 0);
 const recentlyAdded = Math.min(typedPapers.length, 15);
