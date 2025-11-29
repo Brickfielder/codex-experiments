@@ -228,6 +228,8 @@
       "Quality of Life"
     ],
     "country": "Department of Physiotherapy and Occupational Therapy Aarhus University Hospital Aarhus Denmark",
+    "corrCountryCode": "AT",
+    "corrCountryName": "Austria",
     "domains": [
       "Cognitive",
       "Qol"
@@ -572,6 +574,8 @@
     },
     "pmcid": "PMC11847459",
     "country": "Faculty of Health and Life Sciences Linnaeus University Kalmar Sweden",
+    "corrCountryCode": "SE",
+    "corrCountryName": "Sweden",
     "domains": [
       "Qol"
     ],
@@ -1067,6 +1071,8 @@
       "Aged, 80 and over"
     ],
     "country": "Österreich",
+    "corrCountryCode": "AT",
+    "corrCountryName": "Austria",
     "domains": [
       "Psychological",
       "Qol"
@@ -2566,6 +2572,8 @@
       "Cost of Illness"
     ],
     "country": "M.C.K.)",
+    "corrCountryCode": "US",
+    "corrCountryName": "United States",
     "domains": [],
     "setting": "OHCA",
     "design": "Retrospective cohort",
@@ -2618,6 +2626,8 @@
       "Inpatients"
     ],
     "country": "Alabama",
+    "corrCountryCode": "US",
+    "corrCountryName": "United States",
     "domains": [],
     "setting": "OHCA",
     "normalizedAuthors": [
@@ -3791,6 +3801,8 @@
       "Survivorship"
     ],
     "country": "Department of Emergency Medicine University of Colorado School of Medicine Denver CO",
+    "corrCountryCode": "US",
+    "corrCountryName": "United States",
     "domains": [
       "Caregiver"
     ],
@@ -4074,6 +4086,8 @@
     },
     "pmcid": "PMC8901216",
     "country": "MI",
+    "corrCountryCode": "US",
+    "corrCountryName": "United States",
     "domains": [],
     "setting": "Mixed",
     "normalizedAuthors": [

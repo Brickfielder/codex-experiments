@@ -29,6 +29,52 @@ export const normalizeName = (name: string): string => {
 
 const containsAny = (text: string, terms: string[]) => terms.some((term) => text.includes(term));
 
+type CountryCorrection = {
+  match: RegExp;
+  code: string;
+  name: string;
+};
+
+// These entries appear as free-form "country" strings in the raw data but should be
+// bucketed under a real country for aggregation/filters. Keep them focused and
+// conservative to avoid accidentally overriding legitimate country names.
+const COUNTRY_CORRECTIONS: CountryCorrection[] = [
+  {
+    match: /department of physiotherapy and occupational therapy aarhus university hospital aarhus denmark/i,
+    code: 'AT',
+    name: 'Austria'
+  },
+  {
+    match: /faculty of health and life sciences linnaeus university kalmar sweden/i,
+    code: 'SE',
+    name: 'Sweden'
+  },
+  { match: /österreich/i, code: 'AT', name: 'Austria' },
+  { match: /\bm\.c\.k\.\)/i, code: 'US', name: 'United States' },
+  { match: /^alabama$/i, code: 'US', name: 'United States' },
+  { match: /lieutenant colonel charles s\. kettles/i, code: 'US', name: 'United States' },
+  {
+    match: /department of emergency medicine university of colorado school of medicine denver co/i,
+    code: 'US',
+    name: 'United States'
+  },
+  { match: /^mi$/i, code: 'US', name: 'United States' }
+];
+
+const applyCountryCorrections = (country?: string | null): Partial<RawPaper> | undefined => {
+  if (!country) return undefined;
+  const cleaned = country.trim();
+  for (const correction of COUNTRY_CORRECTIONS) {
+    if (correction.match.test(cleaned)) {
+      return {
+        corrCountryCode: correction.code,
+        corrCountryName: correction.name
+      };
+    }
+  }
+  return undefined;
+};
+
 const sanitizeCountry = (country?: string | null) => {
   if (!country) return country ?? undefined;
   const cleaned = country
@@ -109,9 +155,11 @@ export const normalizeRecords = (papers: RawPaper[]): NormalizedPaper[] => {
       const setting = inferSetting(paper);
       const design = inferDesign(paper) ?? paper.design;
       const country = sanitizeCountry(paper.country) ?? paper.country;
+      const correctedCountry = applyCountryCorrections(country);
       return {
         ...paper,
         country,
+        ...(correctedCountry ?? {}),
         domains,
         setting,
         design,
