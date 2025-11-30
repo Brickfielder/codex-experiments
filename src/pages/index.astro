@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import papers from '../../data/papers.normalized.json';
 import { getPaperUrl } from '~/utils/format';
 import { getAboutUrl, getBrowseUrl } from '~/utils/siteUrls';
+import { isInCurrentMonth } from '~/utils/dates';
 import type { Paper } from '~/utils/types';
 
 const typedPapers = papers as Paper[];
@@ -18,11 +19,11 @@ const getFilterHref = (filters: { domain?: string; quick?: string }) => {
 const aboutHref = `${getAboutUrl()}#search-strategy`;
 const totalPapers = typedPapers.length;
 const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year), 0);
-const recentlyAdded = Math.min(typedPapers.length, 15);
+const newThisMonth = typedPapers.filter((paper) => isInCurrentMonth(paper.date)).length;
 const stats = [
   { label: 'Total Papers', value: totalPapers.toLocaleString() },
   { label: 'Latest Pub', value: latestYear },
-  { label: 'New This Month', value: recentlyAdded },
+  { label: 'New This Month', value: newThisMonth },
   { label: 'Scope', value: 'Global' }
 ];
 const topicSuggestions = ['Cognition', 'Anxiety', 'Caregivers'];

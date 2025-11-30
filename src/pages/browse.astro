@@ -3,11 +3,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BrowseClient from '../components/browse/BrowseClient.tsx';
 import papers from '../../data/papers.normalized.json';
 import type { Paper } from '~/utils/types';
+import { isInCurrentMonth } from '~/utils/dates';
 
 const typedPapers = papers as Paper[];
 const totalPapers = typedPapers.length;
-const uniqueCountries = Array.from(
-  new Set(typedPapers.map((paper) => paper.country).filter(Boolean))
+const countriesThisMonth = Array.from(
+  new Set(
+    typedPapers
+      .filter((paper) => isInCurrentMonth(paper.date))
+      .map((paper) => paper.country)
+      .filter(Boolean)
+  )
 ).length;
 const latestPaperDate = typedPapers.reduce<Date | null>((latest, paper) => {
   if (!paper.date) return latest;
@@ -101,11 +107,11 @@ const highlightCards = [
             </div>
           </div>
           <div class="rounded-2xl bg-slate-50 p-4 text-center shadow-sm dark:bg-slate-800/60">
-            <div class="text-3xl font-bold text-slate-900 dark:text-white">{uniqueCountries}</div>
+            <div class="text-3xl font-bold text-slate-900 dark:text-white">{countriesThisMonth}</div>
             <div
               class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-300"
             >
-              Countries
+              Countries (this month)
             </div>
           </div>
           <div class="rounded-2xl bg-slate-50 p-4 text-center shadow-sm dark:bg-slate-800/60">
