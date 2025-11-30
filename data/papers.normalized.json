@@ -244,6 +244,62 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "39988281",
+    "pmid": "39988281",
+    "doi": "10.1016/j.resuscitation.2025.110558",
+    "title": "Clinical utility of the 'Impact of Event Scale-Revised' for identifying Acute Stress Disorder in survivors of sudden out-of-hospital cardiac arrest: Results from the multicenter REVIVAL cohort.",
+    "authors": [
+      "M K Wagner",
+      "L F Hirsch",
+      "S K Berg",
+      "C Hassager",
+      "B Borregaard",
+      "T B Rasmussen",
+      "O Ekholm",
+      "D S Stenbæk"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-02-21",
+    "abstract": "OBJECTIVES: To evaluate the Danish patient-reported Impact of Event-Scale Revised (IES-R) as a screening tool for Acute Stress Disorder in a population of out-of-hospital cardiac arrest (OHCA) survivors.\nMETHODS: The REVIVAL study was designed as a multicenter cohort study of OHCA survivors in which survivors self-reported the IES-R. A subset of survivors underwent the clinician-rated Acute Stress Disorder Interview during hospitalization. Psychometric evaluation of the IES-R included reliability and validity testing. Structural validity was assessed using factor analysis. The receiver operating characteristic curve and the area under the curve were used to evaluate the discriminative ability of different IES-R thresholds in classifying probable Acute Stress Disorder, as determined by interview. Sensitivity and specificity were calculated for each cut-off value. The best performing IES-R threshold was applied to the total population to examine prevalence of probable Acute Stress Disorder.\nRESULTS: Overall, 244 survivors completed the IES-R, out of which 106 completed the Acute Stress Disorder Interview. Good internal consistency and convergent validity of the IES-R were observed. Factor analysis supported the original three-factor structure of the IES-R. An IES-R total cut-off score of ≥30 showed the best sensitivity-to-specificity ratio; the scale correctly classified 77% of the survivors with a sensitivity rate of 100% and a specificity rate of 75% (n = 106). Using this IES-R cut-off score, the prevalence of probable Acute Stress Disorder was 23% (n = 244).\nCONCLUSION: The IES-R appears to be a useful screening tool for Acute Stress Disorder during hospitalisation and helps clinicians make post-cardiac arrest diagnostic and treatment decisions.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2025.110558",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/39988281"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Female",
+      "Male",
+      "Out-of-Hospital Cardiac Arrest",
+      "Middle Aged",
+      "Survivors",
+      "Aged",
+      "Psychometrics",
+      "Reproducibility of Results",
+      "Stress Disorders, Traumatic, Acute",
+      "Denmark",
+      "Cohort Studies"
+    ],
+    "country": "Denmark",
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Wagner MK",
+      "Hirsch LF",
+      "Berg SK",
+      "Hassager C",
+      "Borregaard B",
+      "Rasmussen TB",
+      "Ekholm O",
+      "Stenbæk DS"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "41181996",
     "pmid": "41181996",
     "doi": "10.1161/JAHA.125.042637",
@@ -481,6 +537,58 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "40597994",
+    "pmid": "40597994",
+    "doi": "10.1186/s12909-025-07475-2",
+    "title": "Exploring nursing students' emotional experiences of patient cardiac arrest in the operating room: a descriptive phenomenological study.",
+    "authors": [
+      "Fatemeh Hesami",
+      "Zahra Yousefi",
+      "Mobin Mottahedi",
+      "Hossein Bagheri"
+    ],
+    "journal": "BMC medical education",
+    "year": 2025,
+    "date": "2025-07-01",
+    "abstract": "BACKGROUND: Witnessing cardiac arrest in the operating room presents significant emotional challenges for nursing students. As future healthcare providers, they must cultivate resilience while preserving empathy. Understanding their emotional responses during such critical events is essential to enhancing clinical education and developing effective psychological support systems.\nAIM: This study aimed to explore and describe the emotional experiences of nursing students who witnessed intraoperative cardiac arrest events, with the objective of informing educational and support strategies within high-stress clinical environments.\nMETHODS: A qualitative study using a descriptive phenomenological approach was conducted with fourteen final-year nursing students from Iran, purposively selected until data saturation. Participants had experienced at least one intraoperative cardiac arrest and were screened for mental well-being. Data were gathered through semi-structured, face-to-face interviews and analyzed using Colaizzi's seven-step method. Strategies to ensure trustworthiness included Lincoln and Guba's criteria-credibility, dependability, confirmability, and transferability-as well as bracketing, member-checking, and expert review.\nRESULTS: Seventy initial codes were extracted and organized into eleven sub-themes and four overarching themes: (1) Emotional Turmoil and Psychological Impact, (2) Professional Identity Formation, (3) Coping Mechanisms and Support Systems, and (4) Lessons for Clinical Practice.\nCONCLUSIONS: Intraoperative cardiac arrest elicits intense emotional reactions and identity-related struggles among nursing students. Incorporating structured debriefing, high-fidelity simulation with emotional components, and mentorship into clinical training could help transform these distressing experiences into valuable opportunities for resilience-building. Such interventions are critical for supporting students' emotional development and improving the quality of patient care.\nCLINICAL TRIAL NUMBER: Not applicable.",
+    "links": {
+      "doi": "https://doi.org/10.1186/s12909-025-07475-2",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40597994",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12210500"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC12210500",
+    "mesh": [
+      "Humans",
+      "Students, Nursing",
+      "Qualitative Research",
+      "Heart Arrest",
+      "Female",
+      "Male",
+      "Iran",
+      "Operating Rooms",
+      "Emotions",
+      "Adaptation, Psychological",
+      "Adult",
+      "Interviews as Topic",
+      "Young Adult",
+      "Stress, Psychological"
+    ],
+    "country": "Iran",
+    "domains": [],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Hesami F",
+      "Yousefi Z",
+      "Mottahedi M",
+      "Bagheri H"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "40499675",
     "pmid": "40499675",
     "doi": "10.1016/j.resuscitation.2025.110672",
@@ -601,6 +709,78 @@
       "Jones D",
       "Eastwood GM",
       "Charles-Nelson A",
+      "Hodgson CL"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "40187545",
+    "pmid": "40187545",
+    "doi": "10.1016/j.resuscitation.2025.110601",
+    "title": "Long-term health-related quality of life in survivors of extracorporeal cardiopulmonary resuscitation compared to conventional cardiopulmonary resuscitation- A cohort study using Australian and New Zealand extracorporeal membrane oxygenation registry and the Victorian Ambulance Cardiac Arrest Registry.",
+    "authors": [
+      "Vinodh Bhagyalakshmi Nanjayya",
+      "Bentley Fulcher",
+      "Emily Nehme",
+      "Ary Serpa Neto",
+      "Alistair Nichol",
+      "David M Kaye",
+      "D James Cooper",
+      "Ziad Nehme",
+      "Stephen Bernard",
+      "Vincent Pellegrino",
+      "Alisa M Higgins",
+      "Carol L Hodgson"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-04-03",
+    "abstract": "AIM: To compare the long-term health-related quality of life (HRQoL) between patients receiving extracorporeal cardiopulmonary resuscitation (ECPR) and conventional cardiopulmonary resuscitation (CCPR) for out-of-hospital cardiac arrest (OHCA).\nMETHODS AND SETTINGS: A retrospective cohort study using the Australian and New Zealand extracorporeal membrane oxygenation (EXCEL) registry for ECPR cases and the Victorian Ambulance Cardiac Arrest Registry (VACAR) for CCPR cases. All the adult patients with OHCA who had their cardiac arrest and 12-month HRQoL data recorded between July 2019 and July 2023 were eligible for inclusion. The primary outcomes were the 12-month EuroQol five-dimension (EQ-5D-5L) utility score and EuroQol visual analogue score (EQ-VAS).\nRESULTS: There were 33/122(28%) ECPR and 1,074/8,990(12%) CCPR OHCA survivors at 12 months. Of these, 24 (73%) ECPR and 754 (70%) CCPR survivors had HRQoL data. The ECPR cohort was younger [mean(SD) 50.4(13.46) vs 60.5(14.01) yrs, p < 0.01] and more likely to have received bystander CPR [19(79%) ECPR vs 397(52%) CCPR, p < 0.001]. Both cohorts had similar proportions of males, witnessed arrests and initial shockable rhythms. Median (IQR) arrest to ROSC/ECMO time was longer in ECPR than CCPR [61(41.5-97) vs 6(2-14) minutes, p < 0.001]. The median (IQR) EQ-5D-5L utility score [0.95 (0.72-1) ECPR vs 0.96 (0.86-1) CCPR, p = 0.64] and median (IQR) EQ-VAS at 12 months [80 (64.5-90) ECPR vs 75 (60-85) CCPR, p = 0.39] were similar. There were no significant differences in the EQ-5D-5L utility scores and EQ-VAS even after adjustment for baseline imbalances.\nCONCLUSIONS: Despite significant baseline differences between ECPR and CCPR, there were no differences in HRQoL at 12 months.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2025.110601",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40187545"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Quality of Life",
+      "Male",
+      "Female",
+      "Out-of-Hospital Cardiac Arrest",
+      "Extracorporeal Membrane Oxygenation",
+      "Cardiopulmonary Resuscitation",
+      "Middle Aged",
+      "Registries",
+      "Retrospective Studies",
+      "New Zealand",
+      "Australia",
+      "Aged",
+      "Ambulances",
+      "Adult",
+      "Survivors",
+      "Victoria"
+    ],
+    "country": "Australia",
+    "domains": [
+      "Qol"
+    ],
+    "setting": "OHCA",
+    "design": "Retrospective cohort",
+    "normalizedAuthors": [
+      "Nanjayya VB",
+      "Fulcher B",
+      "Nehme E",
+      "Neto AS",
+      "Nichol A",
+      "Kaye DM",
+      "Cooper DJ",
+      "Nehme Z",
+      "Bernard S",
+      "Pellegrino V",
+      "Higgins AM",
       "Hodgson CL"
     ],
     "isAbstractTruncated": false
@@ -735,6 +915,67 @@
       "Venkatesh B",
       "Tiainen M",
       "Hammond N"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "40286873",
+    "pmid": "40286873",
+    "doi": "10.1016/j.accpm.2025.101516",
+    "title": "Long-term quality of life after refractory cardiac arrest requiring ECLS: A 10 years single-center analysis.",
+    "authors": [
+      "Alexandre Behouche",
+      "Lucie Gaide-Chevronnay",
+      "Cecile Blacque",
+      "Stephane Priem",
+      "Geraldine Dessertaine",
+      "Timothee Abaziou",
+      "Amelie Hebrard",
+      "Fahd Bennani",
+      "Alexandre Sebestyen",
+      "Pierre Albaladejo"
+    ],
+    "journal": "Anaesthesia, critical care & pain medicine",
+    "year": 2025,
+    "date": "2025-04-24",
+    "abstract": "BACKGROUND: Impact of V-A ECMO to treat cardiac arrest on quality of life is unclear. a METHODS: In 2021, all patients treated in the intensive care unit (ICU) of our tertiary university hospital for cardiac arrest requiring V-A ECMO from 2006 to 2018, were contacted by mail and by phone in order to complete an SF-36 form. Quality of life was then compared with reference values (patients with cardiovascular diseases, patients with ischemic heart disease, ICU-survivor patients at 36 months after discharge, and cardiac arrest survivors not treated with V-A ECMO).\nRESULTS: Among 45 survivors, 25 patients completed the SF-36 form with a mean time for assessing quality of life of 6.9 ± 2.3 years. Sub-scores were globally comparable with those observed in referent cohorts.\nDISCUSSION: Cardiac arrest marks the beginning of a medical journey that includes intensive care management and the onset of cardiac disease, often of ischemic origin. Our data suggest that quality of life of patients treated with V-A ECMO for cardiac arrest is comparable to those reported in referent cohorts (ICU-survivors, patients with cardiovascular diseases of ischemic heart disease, and cardiac arrest survivors not treated with mechanical circulatory support).\nCONCLUSION: Survivor patients who experienced cardiac arrest and treated with V-A ECMO presented a good long-term quality of life. Decision regarding V-A ECMO implantation should not be limited by concerns about patients' future quality of life.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.accpm.2025.101516",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40286873"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Extracorporeal Membrane Oxygenation",
+      "Quality of Life",
+      "Female",
+      "Heart Arrest",
+      "Male",
+      "Middle Aged",
+      "Aged",
+      "Intensive Care Units",
+      "Survivors",
+      "Adult"
+    ],
+    "country": "France",
+    "domains": [
+      "Qol"
+    ],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Behouche A",
+      "Gaide-Chevronnay L",
+      "Blacque C",
+      "Priem S",
+      "Dessertaine G",
+      "Abaziou T",
+      "Hebrard A",
+      "Bennani F",
+      "Sebestyen A",
+      "Albaladejo P"
     ],
     "isAbstractTruncated": false
   },
@@ -940,6 +1181,46 @@
       "Agarwal S",
       "Stenbæk DS",
       "Blakoe M"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "40230369",
+    "pmid": "40230369",
+    "doi": "10.1016/j.resplu.2025.100941",
+    "title": "Psychological impact on first responders dispatched to out-of-hospital cardiac arrest via smartphone alerting system: A longitudinal survey-based study.",
+    "authors": [
+      "Julian Ganter",
+      "Ariane-Catherina Ruf",
+      "Stefan Bushuven",
+      "Ute Nowotny-Behrens",
+      "Michael Patick Müller",
+      "Hans-Jörg Busch"
+    ],
+    "journal": "Resuscitation plus",
+    "year": 2025,
+    "date": "2025-03-22",
+    "abstract": "BACKGROUND: Smartphone alerting systems designed to dispatch volunteer first responders to out-of-hospital cardiac arrest cases are progressing rapidly. Recently, growing attention has been given to understanding the impact of these operations on first responders, with a particular focus on safeguarding them from possible psychological challenges. This study investigates the psychological stress experienced by first responders following their involvement in an operation, analyzing specific stress factors to enhance opportunities for psychological support.\nMETHODS: two-stage questionnaire (Q1 and Q2) survey was conducted, with surveys administered one and four weeks after dispatched first responder arrived at the scene between October 9, 2023, and January 23, 2024. Screening questions based on the FAUST study assessed psychological stress, with ≥4 positive responses indicating at-risk individuals. Personal and operational variables were analyzed for their correlation with stress levels for identifying affected first responder. The study was approved by the Freiburg Ethics Committee (DRKS00032958).\nRESULTS: The response rates for the triggered questionnaires were 190/324 (59%) for Q1 and 132/322 (41%) for Q2. Fewer than 1% answered ≥4 screening questions positively, indicating a low measured prevalence of psychological stress. Situations involving resuscitation or already deceased patients but also first responders' feelings of insecurity were identified as significant factors of possible psychological stress, while regular CPR training appeared to significantly reduce the likelihood of stress.\nCONCLUSIONS: First responders who volunteer for such roles frequently encounter challenging situations. However, psychological stress is rarely reported. Integrating mechanisms into smartphone alerting systems to identify stress indicators and provide accessible support is essential.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resplu.2025.100941",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40230369",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11995795"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC11995795",
+    "country": "Germany",
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Ganter J",
+      "Ruf A",
+      "Bushuven S",
+      "Nowotny-Behrens U",
+      "Müller MP",
+      "Busch H"
     ],
     "isAbstractTruncated": false
   },
@@ -1656,6 +1937,53 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "38583740",
+    "pmid": "38583740",
+    "doi": "10.1016/j.resuscitation.2024.110208",
+    "title": "Follow up of cardiac arrest survivors: Survey of French intensivists practices.",
+    "authors": [
+      "Marine Paul",
+      "Julie Paquereau",
+      "Stéphane Legriel",
+      "Alain Cariou"
+    ],
+    "journal": "Resuscitation",
+    "year": 2024,
+    "date": "2024-04-05",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2024.110208",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38583740"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "France",
+      "Heart Arrest",
+      "Survivors",
+      "Surveys and Questionnaires",
+      "Critical Care",
+      "Cardiopulmonary Resuscitation",
+      "Practice Patterns, Physicians'",
+      "Follow-Up Studies",
+      "Intensive Care Units",
+      "Male"
+    ],
+    "country": "France",
+    "domains": [],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Paul M",
+      "Paquereau J",
+      "Legriel S",
+      "Cariou A"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "39449030",
     "pmid": "39449030",
     "doi": "10.1002/hbm.26769",
@@ -1721,6 +2049,53 @@
       "Delnoij TSR",
       "Hofmeijer J",
       "Helmich RC"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38844026",
+    "pmid": "38844026",
+    "doi": "10.1016/j.resuscitation.2024.110261",
+    "title": "Highlighting reported psychological issues of co-survivors post-delivery of CPR in Out-of-hospital Cardiac Arrest; a qualitative study.",
+    "authors": [
+      "Rupert F G Simpson",
+      "Marco Mion",
+      "Uzma Sajjad",
+      "Paul Swindell",
+      "Thomas R Keeble"
+    ],
+    "journal": "Resuscitation",
+    "year": 2024,
+    "date": "2024-06-04",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2024.110261",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38844026"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Out-of-Hospital Cardiac Arrest",
+      "Cardiopulmonary Resuscitation",
+      "Qualitative Research",
+      "Male",
+      "Female",
+      "Survivors",
+      "Middle Aged",
+      "Aged"
+    ],
+    "country": "United Kingdom",
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Simpson RFG",
+      "Mion M",
+      "Sajjad U",
+      "Swindell P",
+      "Keeble TR"
     ],
     "isAbstractTruncated": false
   },
@@ -1917,6 +2292,77 @@
       "Kroll T",
       "Frazer K",
       "Brindley PG"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38806961",
+    "pmid": "38806961",
+    "doi": "10.1007/s44192-024-00072-7",
+    "title": "Near-death experiences after cardiac arrest: a scoping review.",
+    "authors": [
+      "Joshua G Kovoor",
+      "Sanjana Santhosh",
+      "Brandon Stretton",
+      "Sheryn Tan",
+      "Hasti Gouldooz",
+      "Sylviya Moorthy",
+      "James Pietris",
+      "Christopher Hannemann",
+      "Long Kiu Yu",
+      "Rhys Johnson",
+      "Benjamin A Reddi",
+      "Aashray K Gupta",
+      "Morganne Wagner",
+      "Gregory J Page",
+      "Pramesh Kovoor",
+      "Tarun Bastiampillai",
+      "Ian Maddocks",
+      "Seth W Perry",
+      "Ma-Li Wong",
+      "Julio Licinio",
+      "Stephen Bacchi"
+    ],
+    "journal": "Discover mental health",
+    "year": 2024,
+    "date": "2024-05-28",
+    "abstract": "BACKGROUND: This scoping review aimed to characterise near-death experiences in the setting of cardiac arrest, a phenomenon that is poorly understood and may have clinical consequences.\nMETHOD: PubMed/MEDLINE was searched to 23 July 2023 for prospective studies describing near-death experiences in cardiac arrest. PRISMA-ScR guidelines were adhered to. Qualitative and quantitative data were synthesised. Meta-analysis was precluded due to data heterogeneity.\nRESULTS: 60 records were identified, of which 11 studies involving interviews were included from various countries. Sample size ranged from 28-344, and proportion of female patients (when reported) was 0-50%, with mean age (when reported) ranging 54-64 years. Comorbidities and reasons for cardiac arrest were heterogeneously reported. Incidence of near-death experiences in the included studies varied from 6.3% to 39.3%; with variation between in-hospital (6.3-39.3%) versus out-of-hospital (18.9-21.2%) cardiac arrest. Individual variables regarding patient characteristics demonstrated statistically significant association with propensity for near-death experiences. Reported content of near-death experiences tended to reflect the language of the questionnaires used, rather than the true language used by individual study participants. Three studies conducted follow-up, and all suggested a positive life attitude change, however one found significantly higher 30-day all-cause mortality in patients with near-death experiences versus those without, in non-controlled analysis.\nCONCLUSIONS: From prospective studies that have investigated the phenomenon, near-death experiences may occur in as frequent as over one-third of patients with cardiac arrest. Lasting effects may follow these events, however these could also be confounded by clinical characteristics.",
+    "links": {
+      "doi": "https://doi.org/10.1007/s44192-024-00072-7",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38806961",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11133272"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC11133272",
+    "country": "Australia",
+    "domains": [],
+    "setting": "OHCA",
+    "design": "Prospective cohort",
+    "normalizedAuthors": [
+      "Kovoor JG",
+      "Santhosh S",
+      "Stretton B",
+      "Tan S",
+      "Gouldooz H",
+      "Moorthy S",
+      "Pietris J",
+      "Hannemann C",
+      "Yu LK",
+      "Johnson R",
+      "Reddi BA",
+      "Gupta AK",
+      "Wagner M",
+      "Page GJ",
+      "Kovoor P",
+      "Bastiampillai T",
+      "Maddocks I",
+      "Perry SW",
+      "Wong M",
+      "Licinio J",
+      "Bacchi S"
     ],
     "isAbstractTruncated": false
   },
@@ -2333,6 +2779,84 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "38533974",
+    "pmid": "38533974",
+    "doi": "10.1161/JAHA.123.034024",
+    "title": "Return to Work After Refractory Out-of-Hospital Cardiac Arrest in Patients Managed With or Without Extracorporeal Cardiopulmonary Resuscitation: A Nationwide Register-Based Study.",
+    "authors": [
+      "Emilie Gregers",
+      "Kristian Kragholm",
+      "Louise Linde",
+      "Sivagowry Rasalingam Mørk",
+      "Jo Bønding Andreasen",
+      "Christian Juhl Terkelsen",
+      "Jens Flensted Lassen",
+      "Jacob Eifer Møller",
+      "Helle Laugesen",
+      "Morten Smerup",
+      "Jesper Kjærgaard",
+      "Peter Hasse Møller-Sørensen",
+      "Lene Holmvang",
+      "Christian Torp-Pedersen",
+      "Christian Hassager",
+      "Helle Søholm"
+    ],
+    "journal": "Journal of the American Heart Association",
+    "year": 2024,
+    "date": "2024-03-27",
+    "abstract": "BACKGROUND: Extracorporeal cardiopulmonary resuscitation (ECPR) is increasingly used for refractory out-of-hospital cardiac arrest (OHCA). However, survivors managed with ECPR are at risk of poor functional status. The purpose of this study was to investigate return to work (RTW) after refractory OHCA.\nMETHODS AND RESULTS: Of 44 360 patients with OHCA in the period of 2011 to 2020, this nationwide registry-based study included 805 patients with refractory OHCA in the working age (18-65 years) who were employed before OHCA (2% of the total OHCA cohort). Demographics, prehospital characteristics, status at hospital arrival, employment status, and survival were retrieved through the Danish national registries. Sustainable RTW was defined as RTW for ≥6 months without any long sick leave relapses. Median follow-up time was 4.1 years. ECPR and standard advanced cardiovascular life support were applied in 136 and 669 patients, respectively. RTW 1 year after OHCA was similar (39% versus 54%;=0.2) and sustainable RTW was high in both survivors managed with ECPR and survivors managed with standard advanced cardiovascular life support (83% versus 85%;>0.9). Younger age and shorter length of hospitalization were associated with RTW in multivariable Cox analysis, whereas ECPR was not.\nCONCLUSIONS: In refractory OHCA-patients employed prior to OHCA, approximately 1 out of 2 patients were employed after 1 year with no difference between patients treated with ECPR or standard advanced cardiovascular life support. Younger age and shorter length of hospitalization were associated with RTW while ECPR was not.",
+    "links": {
+      "doi": "https://doi.org/10.1161/JAHA.123.034024",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38533974",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11179786"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC11179786",
+    "mesh": [
+      "Humans",
+      "Adolescent",
+      "Young Adult",
+      "Adult",
+      "Middle Aged",
+      "Aged",
+      "Out-of-Hospital Cardiac Arrest",
+      "Return to Work",
+      "Extracorporeal Membrane Oxygenation",
+      "Hospitals",
+      "Cardiopulmonary Resuscitation",
+      "Retrospective Studies"
+    ],
+    "country": "Department of Cardiology Rigshospitalet Copenhagen Denmark",
+    "corrCountryCode": "DK",
+    "corrCountryName": "Denmark",
+    "domains": [
+      "Participation"
+    ],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Gregers E",
+      "Kragholm K",
+      "Linde L",
+      "Mørk SR",
+      "Andreasen JB",
+      "Terkelsen CJ",
+      "Lassen JF",
+      "Møller JE",
+      "Laugesen H",
+      "Smerup M",
+      "Kjærgaard J",
+      "Møller-Sørensen PH",
+      "Holmvang L",
+      "Torp-Pedersen C",
+      "Hassager C",
+      "Søholm H"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "38548009",
     "pmid": "38548009",
     "doi": "10.1016/j.resuscitation.2024.110188",
@@ -2382,6 +2906,48 @@
       "Ellard DR",
       "Perkins GD",
       "Haywood KL"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "39010273",
+    "pmid": "39010273",
+    "doi": "10.1097/JCN.0000000000001119",
+    "title": "The Lived Experience of Cardiac Arrest Survivors: A Scoping Review.",
+    "authors": [
+      "Mohamed Toufic El Hussein",
+      "Simreen Dhaliwal",
+      "Jonah Hakkola"
+    ],
+    "journal": "The Journal of cardiovascular nursing",
+    "year": 2024,
+    "date": "2024-07-16",
+    "abstract": "BACKGROUND: Survival rates after cardiac arrest have steadily increased over the past few decades because of the adoption of cardiopulmonary resuscitation, public access to automated external defibrillators, and an increase in public education on how to perform cardiopulmonary resuscitation. The lived experiences of post-cardiac arrest survival have been underexplored. The themes that resulted from the analysis in this scoping review can inform clinical practice and propose strategies to improve the patients' quality of life.\nOBJECTIVE: The objective of this scoping review was to map out qualitative literature that explores the lived experience of individuals who have survived cardiac arrest.\nMETHOD: In this scoping review, the authors examined peer-reviewed qualitative studies identified in the PubMed, CINAHL, and MEDLINE databases. Arksey and O'Malley's methodological framework for conducting a scoping study was followed.\nRESULTS: The search yielded 174 articles, with 16 meeting inclusion criteria for this scoping review. Initially, 14 articles were selected, and 2 additional articles were identified through references. Themes extracted from these 16 articles include the need for support and information, emotional challenges, and acceptance of a new reality.\nCONCLUSION: Cardiac arrest survivors often experience loss of control, vulnerability, and insecurity. These emotional changes can be significant and may include physical challenges, cognitive impairments, and psychological distress, which can cause individuals to reevaluate their perspectives on life and accept a new reality, potentially leading to changes in their future outlook.",
+    "links": {
+      "doi": "https://doi.org/10.1097/JCN.0000000000001119",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/39010273"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Survivors",
+      "Heart Arrest",
+      "Quality of Life",
+      "Cardiopulmonary Resuscitation",
+      "Qualitative Research"
+    ],
+    "domains": [
+      "Cognitive",
+      "Qol"
+    ],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Hussein MTE",
+      "Dhaliwal S",
+      "Hakkola J"
     ],
     "isAbstractTruncated": false
   },
@@ -3247,6 +3813,132 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "37693335",
+    "pmid": "37693335",
+    "doi": "10.1016/j.resplu.2023.100460",
+    "title": "Long-term follow-up of cardiac arrest survivors: Protocol of the DESAC (Devenir des survivants d'Arrets Cardiaques) study, a French multicentric prospective cohort.",
+    "authors": [
+      "F Dumas",
+      "W Bougouin",
+      "M C Perier",
+      "N Marin",
+      "C Goulenok",
+      "A Vieillard-Baron",
+      "J L Diehl",
+      "S Legriel",
+      "N Deye",
+      "P Cronier",
+      "S Ricôme",
+      "F Chemouni",
+      "A Mekontso Dessap",
+      "F Beganton",
+      "E Marijon",
+      "X Jouven",
+      "J P Empana",
+      "A Cariou"
+    ],
+    "journal": "Resuscitation plus",
+    "year": 2023,
+    "date": "2023-08-31",
+    "abstract": "BACKGROUND: While the short-term prognosis of cardiac arrest patients - nearly 250,000 new cases per year in Europe - has been extensively studied, less is known regarding the mid and long-term outcome of survivors.\nOBJECTIVE: The aim of the DESAC study is to describe mid- and long-term survival rate and functional status of cardiac arrest survivors, and to assess the influence of pre and intra hospital therapeutic strategies on these two outcomes.\nMETHODS: Between Jul 2015 and Oct 2018, adult patients over 18 years who were discharged alive from any intensive care units (public and private hospitals) in the Ile-de-France area (Paris and suburbs, France) after a non-traumatic cardiac arrest were screened for participation in this multicentric study. Survivors were included after they signed (or the proxies) an informed consent before discharge during initial hospitalisation. We calculated that including 600 patients in total would allow an 80% power to demonstrate a 2 years survival rate difference of 10% between patients who did and those who did not receive therapeutic hypothermia after resuscitation. Pre- and in-hospital data related to the circumstances surrounding the event and to the therapeutic interventions (such as cardio-pulmonary resuscitation, defibrillation, emergent coronary revascularization, neuroprotective therapeutics) were collected. After discharge, patients were interviewed at 3 months, 6 months and every year thereafter for a minimum follow-up of 26 months and a maximum follow-up of 48 months. Information on vital status, occurrence of cardiovascular events, medications and a comprehensive assessment of the functional status (qualitive of life as assessed by the Short-Form General Health Survey (SF36) scale, activities of daily living (ADL) scale, neurological Cerebral Performance Categories (CPC) and Overall Performance Categories (OPC) scales, socio-professional activities) were collected at follow-up interviews.\nDISCUSSION: The DESAC study should provide important information regarding several dimensions of the mid and long-term prognosis of cardiac arrest survivors and on the benefit (and potentially harm) of early therapeutic strategies.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resplu.2023.100460",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/37693335",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10491722"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC10491722",
+    "country": "France",
+    "domains": [],
+    "setting": "IHCA",
+    "design": "Prospective cohort",
+    "normalizedAuthors": [
+      "Dumas F",
+      "Bougouin W",
+      "Perier MC",
+      "Marin N",
+      "Goulenok C",
+      "Vieillard-Baron A",
+      "Diehl JL",
+      "Legriel S",
+      "Deye N",
+      "Cronier P",
+      "Ricôme S",
+      "Chemouni F",
+      "Dessap AM",
+      "Beganton F",
+      "Marijon E",
+      "Jouven X",
+      "Empana JP",
+      "Cariou A"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "36933881",
+    "pmid": "36933881",
+    "doi": "10.1016/j.resuscitation.2023.109768",
+    "title": "Long-term function, quality of life and healthcare utilization among survivors of pediatric out-of-hospital cardiac arrest.",
+    "authors": [
+      "Meredith R Hickson",
+      "Madeline Winters",
+      "Nina H Thomas",
+      "Monique M Gardner",
+      "Matthew P Kirschen",
+      "Vinay Nadkarni",
+      "Robert Berg",
+      "Beth S Slomine",
+      "Neethi P Pinto",
+      "Alexis Topjian"
+    ],
+    "journal": "Resuscitation",
+    "year": 2023,
+    "date": "2023-03-17",
+    "abstract": "BACKGROUND: Survival following pediatric out-of-hospital cardiac arrest (OHCA) has improved over the past 2 decades but data on survivors' long-term outcomes are limited. We aimed to evaluate long-term outcomes in pediatric OHCA survivors more than one year after cardiac arrest.\nMETHODS: OHCA survivors <18 years old who received post-cardiac arrest care in the PICU at a single center between 2008-2018 were included. Parents of patients <18 years and patients ≥18 years at least one year after cardiac arrest completed a telephone interview. We assessed neurologic outcome (Pediatric Cerebral Performance Category [PCPC]), activities of daily living (Pediatric Glasgow Outcomes Scale-Extended, Functional Status Scale (FSS)), HRQL (Pediatric Quality of Life Core and Family Impact Modules), and healthcare utilization. Unfavorable neurologic outcome was defined as PCPC > 1 or worsening from pre-arrest baseline to discharge.\nFINDINGS: Forty four patients were evaluable. Follow-up occurred at a median of 5.6 years [IQR 4.4, 8.9] post-arrest. Median age at arrest was 5.3 [1.3,12.6] years; median CPR duration was 5 [1.5, 7] minutes. Survivors with unfavorable outcome at discharge had worse FSS Sensory and Motor Function scores and higher rates of rehabilitation service utilization. Parents of survivors with unfavorable outcome reported greater disruption to family functioning. Healthcare utilization and educational support requirements were common among all survivors.\nCONCLUSIONS: Survivors of pediatric OHCA with unfavorable outcome at discharge have more impaired function multiple years post-arrest. Survivors with favorable outcome may experience impairments and significant healthcare needs not fully captured by the PCPC at hospital discharge.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2023.109768",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36933881",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10267669"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC10267669",
+    "mesh": [
+      "Child",
+      "Humans",
+      "Adolescent",
+      "Out-of-Hospital Cardiac Arrest",
+      "Quality of Life",
+      "Activities of Daily Living",
+      "Cardiopulmonary Resuscitation",
+      "Patient Acceptance of Health Care",
+      "Survivors"
+    ],
+    "country": "United States",
+    "domains": [
+      "Qol"
+    ],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Hickson MR",
+      "Winters M",
+      "Thomas NH",
+      "Gardner MM",
+      "Kirschen MP",
+      "Nadkarni V",
+      "Berg R",
+      "Slomine BS",
+      "Pinto NP",
+      "Topjian A"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "37703007",
     "pmid": "37703007",
     "doi": "10.1001/jamacardio.2023.2934",
@@ -3316,6 +4008,67 @@
       "Zwisler A",
       "Torp-Pedersen C",
       "Kragholm K"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "36509229",
+    "pmid": "36509229",
+    "doi": "10.1093/ehjqcco/qcac084",
+    "title": "Need for home care or nursing home admission after myocardial infarction complicated by cardiogenic shock and/or out-of-hospital cardiac arrest.",
+    "authors": [
+      "Marie D Lauridsen",
+      "Rasmus Rørth",
+      "Jawad H Butt",
+      "Jarl E Strange",
+      "Morten Schmidt",
+      "Søren L Kristensen",
+      "Kristian Kragholm",
+      "Søren P Johnsen",
+      "Jacob E Møller",
+      "Christian Hassager",
+      "Lars Køber",
+      "Emil L Fosbøl"
+    ],
+    "journal": "European heart journal. Quality of care & clinical outcomes",
+    "year": 2023,
+    "date": "2023-11-02",
+    "abstract": "AIMS: Myocardial infarction (MI) with cardiogenic shock (CS) and/or out-of-hospital cardiac arrest (OHCA) are conditions with potential loss of autonomy. In patients with MI, the association between CS and OHCA and need for home care or nursing home admission was examined.\nMETHODS AND RESULTS: Danish nationwide registries identified patients with MI (2008-19), who prior to the event lived at home without home care and discharged alive. One-year cumulative incidences and hazard ratios (HRs) were reported for home care need or nursing home admission, a composite proxy for disability in activities of daily living (ADL), along with all-cause mortality. The study population consisted of 67 109 patients with MI (by groups: -OHCA/-CS: 63 644; -OHCA/+CS: 1776; +OHCA/-CS: 968; and +OHCA/+CS: 721). The 1-year cumulative incidences of home care/nursing home were 7.1% for patients who survived to discharge with -OHCA/-CS, 20.9% for -OHCA/+CS, 5.4% for +OHCA/-CS, and 8.2% for those with +OHCA/+CS. The composite outcome was driven by home care. With the -OHCA/-CS as reference, the adjusted HRs for home care/nursing home were 2.86 (95% CI: 2.57-3.19) for patients with -OHCA/+CS; 1.31 (95% CI: 1.00-1.73) for + OHCA/-CS; and 2.18 (95% CI: 1.68-2.82) for those with +OHCA/+CS. The 1-year cumulative mortality were 5.1% for patients with -OHCA/-CS, 9.8% for -OHCA/+CS, 3.0% for +OHCA/-CS, and 3.4% for those with +OHCA/+CS.\nCONCLUSION: In patients discharged alive after a MI, CS, and to a lesser degree OHCA were associated with impaired ADL with a two-fold higher 1-year incidence of home care or nursing home admission compared with MI patients without CS or OHCA.",
+    "links": {
+      "doi": "https://doi.org/10.1093/ehjqcco/qcac084",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36509229"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Shock, Cardiogenic",
+      "Out-of-Hospital Cardiac Arrest",
+      "Activities of Daily Living",
+      "Myocardial Infarction",
+      "Nursing Homes",
+      "Home Care Services"
+    ],
+    "country": "Denmark",
+    "corrCountryCode": "DK",
+    "corrCountryName": "Denmark",
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Lauridsen MD",
+      "Rørth R",
+      "Butt JH",
+      "Strange JE",
+      "Schmidt M",
+      "Kristensen SL",
+      "Kragholm K",
+      "Johnsen SP",
+      "Møller JE",
+      "Hassager C",
+      "Køber L",
+      "Fosbøl EL"
     ],
     "isAbstractTruncated": false
   },
@@ -3420,6 +4173,44 @@
       "Caplan R",
       "Agarwal S",
       "Dastidar JG"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "36702337",
+    "pmid": "36702337",
+    "doi": "10.1016/j.resuscitation.2023.109701",
+    "title": "Post-resuscitation care following cardiac arrest in intensive care units: A French national survey.",
+    "authors": [
+      "Kahaia de Longeaux",
+      "Pierre Bailly"
+    ],
+    "journal": "Resuscitation",
+    "year": 2023,
+    "date": "2023-01-23",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2023.109701",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36702337"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Heart Arrest",
+      "Intensive Care Units",
+      "Resuscitation",
+      "Cardiopulmonary Resuscitation",
+      "Hypothermia, Induced"
+    ],
+    "country": "France",
+    "domains": [],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Longeaux KD",
+      "Bailly P"
     ],
     "isAbstractTruncated": false
   },
@@ -3690,6 +4481,69 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "36892781",
+    "pmid": "36892781",
+    "doi": "10.1007/s10865-023-00405-x",
+    "title": "The relationship between mindfulness and enduring somatic threat severity in long-term cardiac arrest survivors.",
+    "authors": [
+      "Alexander M Presciutti",
+      "Sarah M Bannon",
+      "Jolin B Yamin",
+      "Mary M Newman",
+      "Robert A Parker",
+      "Jonathan Elmer",
+      "Ona Wu",
+      "Michael W Donnino",
+      "Sarah M Perman",
+      "Ana-Maria Vranceanu"
+    ],
+    "journal": "Journal of behavioral medicine",
+    "year": 2023,
+    "date": "2023-03-09",
+    "abstract": "BACKGROUND: Cardiac arrest (CA) survivors experience continuous exposures to potential traumas though chronic cognitive, physical and emotional sequelae and enduring somatic threats (ESTs) (i.e., recurring somatic traumatic reminders of the event). Sources of ESTs can include the daily sensation of an implantable cardioverter defibrillator (ICD), ICD-delivered shocks, pain from rescue compressions, fatigue, weakness, and changes in physical function. Mindfulness, defined as non-judgmental present-moment awareness, is a teachable skill that might help CA survivors cope with ESTs. Here we describe the severity of ESTs in a sample of long-term CA survivors and explore the cross-sectional relationship between mindfulness and severity of ESTs.\nMETHODS: We analyzed survey data of long-term CA survivors who were members of the Sudden Cardiac Arrest Foundation (collected 10-11/2020). We assessed ESTs using 4 cardiac threat items from the Anxiety Sensitivity Index-revised (items range from 0 \"very little\" to 4 \"very much\") which we summed to create a score reflecting total EST burden (range 0-16). We assessed mindfulness using the Cognitive and Affective Mindfulness Scale-Revised. First, we summarized the distribution of EST scores. Second, we used linear regression to describe the relationship between mindfulness and EST severity adjusting for age, gender, time since arrest, COVID-19-related stress, and loss of income due to COVID.\nRESULTS: We included 145 CA survivors (mean age: 51 years, 52% male, 93.8% white, mean time since arrest: 6 years, 24.1% scored in the upper quarter of EST severity). Greater mindfulness (β: -30, p = 0.002), older age (β: -0.30, p = 0.01) and longer time since CA (β: -0.23, p = 0.005) were associated with lower EST severity. Male sex was also associated with greater EST severity (β: 0.21, p = 0.009).\nCONCLUSION: ESTs are common among CA survivors. Mindfulness may be a protective skill that CA survivors use to cope with ESTs. Future psychosocial interventions for the CA population should consider using mindfulness as a core skill to reduce ESTs.",
+    "links": {
+      "doi": "https://doi.org/10.1007/s10865-023-00405-x",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36892781",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9995732"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC9995732",
+    "mesh": [
+      "Humans",
+      "Male",
+      "Middle Aged",
+      "Female",
+      "Mindfulness",
+      "COVID-19",
+      "Heart Arrest",
+      "Anxiety",
+      "Survivors"
+    ],
+    "country": "United States",
+    "domains": [
+      "Cognitive",
+      "Psychological"
+    ],
+    "setting": "Mixed",
+    "design": "Cross-sectional study",
+    "normalizedAuthors": [
+      "Presciutti AM",
+      "Bannon SM",
+      "Yamin JB",
+      "Newman MM",
+      "Parker RA",
+      "Elmer J",
+      "Wu O",
+      "Donnino MW",
+      "Perman SM",
+      "Vranceanu A"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "37088268",
     "pmid": "37088268",
     "doi": "10.1016/j.resuscitation.2023.109805",
@@ -3949,6 +4803,55 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "36751345",
+    "pmid": "36751345",
+    "doi": "10.1177/17511437211055899",
+    "title": "Critical illness-related cardiac arrest: Protocol for an investigation of the incidence and outcome of cardiac arrest within intensive care units in the United Kingdom.",
+    "authors": [
+      "Robert Darnell",
+      "Christopher Newell",
+      "Julia Edwards",
+      "Emma Gendall",
+      "David Harrison",
+      "Stefan Sprinckmoller",
+      "Paul Mouncey",
+      "Doug Gould",
+      "Matt Thomas"
+    ],
+    "journal": "Journal of the Intensive Care Society",
+    "year": 2022,
+    "date": "2022-03-13",
+    "abstract": "Critical illness-related cardiac arrest (CIRCA) as a distinct entity is not well described epidemiologically. There is currently a knowledge gap regarding how many occur in the UK or the impact on patient outcome. The CIRCA study is a prospective multi-centre observational cohort study of patients in the United Kingdom experiencing a cardiac arrest while in a Critical Care Unit embedded in the Case Mix Programme and National Cardiac Arrest Audit. The duration of data collection is 12 months, with surviving patients and family members receiving questionnaire follow-up at 90 days, 180 days and 12 months. This paper describes the protocol for the CIRCA study which received favourable ethical opinion from South Central - Berkshire Research Ethics Committee and approval from the Health Research Authority. Study registration is on clinicaltrials.gov (NCT04219384).",
+    "links": {
+      "doi": "https://doi.org/10.1177/17511437211055899",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36751345",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9679899"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC9679899",
+    "country": "United Kingdom",
+    "corrCountryCode": "GB",
+    "corrCountryName": "United Kingdom",
+    "domains": [],
+    "setting": "Mixed",
+    "design": "Prospective cohort",
+    "normalizedAuthors": [
+      "Darnell R",
+      "Newell C",
+      "Edwards J",
+      "Gendall E",
+      "Harrison D",
+      "Sprinckmoller S",
+      "Mouncey P",
+      "Gould D",
+      "Thomas M"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "36455704",
     "pmid": "36455704",
     "doi": "10.1016/j.resuscitation.2022.11.005",
@@ -4192,6 +5095,94 @@
       "Finn J",
       "Bray J",
       "International Liaison Committee on Resuscitation (ILCOR) Education IATBLSAALSTF"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "35729429",
+    "pmid": "35729429",
+    "doi": "10.1007/s00392-022-02044-9",
+    "title": "German Cardiac Arrest Registry: rationale and design of G-CAR.",
+    "authors": [
+      "Janine Pöss",
+      "Christoph Sinning",
+      "Isabelle Schreiner",
+      "Christian Apfelbacher",
+      "Karl-Philipp Drewitz",
+      "Nadine Hösler",
+      "Steffen Schneider",
+      "Burkert Pieske",
+      "Bernd W Böttiger",
+      "Sebastian Ewen",
+      "Harm Wienbergen",
+      "Malte Kelm",
+      "Daniel Bock",
+      "Tobias Graf",
+      "Christoph Adler",
+      "Jochen Dutzmann",
+      "Wulf Knie",
+      "Martin Orban",
+      "Uwe Zeymer",
+      "Guido Michels",
+      "Holger Thiele",
+      "G-CAR Investigators"
+    ],
+    "journal": "Clinical research in cardiology : official journal of the German Cardiac Society",
+    "year": 2022,
+    "date": "2022-06-21",
+    "abstract": "BACKGROUND: In Germany, 70,000-100,000 persons per year suffer from out-of-hospital cardiac arrest (OHCA). Despite medical progress, survival rates with good neurological outcome remain low. For many important clinical issues, no or only insufficient evidence from randomised trials is available. Therefore, a systemic and standardised acquisition of the treatment course and of the outcome of OHCA patients is warranted.\nSTUDY DESIGN: The German Cardiac Arrest Registry (G-CAR) is an observational, prospective, multicentre registry. It will determine the characteristics, initial treatment strategies, invasive procedures, revascularisation therapies and the use of mechanical circulatory support devices with a focus on extracorporeal cardiopulmonary resuscitation. A special feature is the prospective 12-month follow-up evaluating mortality, neurological outcomes and several patient-reported outcomes in the psychosocial domain (health-related quality of life, cognitive impairment, depression/anxiety, post-traumatic stress disorder and social reintegration). In a pilot phase of 24 months, 15 centres will include approximately 400 consecutive OHCA patients ≥ 18 years. Parallel to and after the pilot phase, scaling up of G-CAR to a national level is envisaged.\nCONCLUSION: G-CAR is the first national registry including a long-term follow-up for adult OHCA patients. Primary aim is a better understanding of the determinants of acute and long-term outcomes with the perspective of an optimised treatment.\nTRIAL REGISTRY: NCT05142124. German Cardiac Arrest Registry (G-CAR).",
+    "links": {
+      "doi": "https://doi.org/10.1007/s00392-022-02044-9",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/35729429",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10050030"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC10050030",
+    "mesh": [
+      "Adult",
+      "Humans",
+      "Prospective Studies",
+      "Treatment Outcome",
+      "Quality of Life",
+      "Extracorporeal Membrane Oxygenation",
+      "Cardiopulmonary Resuscitation",
+      "Out-of-Hospital Cardiac Arrest",
+      "Registries"
+    ],
+    "country": "Germany",
+    "domains": [
+      "Cognitive",
+      "Psychological",
+      "Qol"
+    ],
+    "setting": "OHCA",
+    "design": "Prospective cohort",
+    "normalizedAuthors": [
+      "Pöss J",
+      "Sinning C",
+      "Schreiner I",
+      "Apfelbacher C",
+      "Drewitz K",
+      "Hösler N",
+      "Schneider S",
+      "Pieske B",
+      "Böttiger BW",
+      "Ewen S",
+      "Wienbergen H",
+      "Kelm M",
+      "Bock D",
+      "Graf T",
+      "Adler C",
+      "Dutzmann J",
+      "Knie W",
+      "Orban M",
+      "Zeymer U",
+      "Michels G",
+      "Thiele H",
+      "Investigators G"
     ],
     "isAbstractTruncated": false
   },
@@ -4489,6 +5480,61 @@
       "Ong MEH",
       "Chong S",
       "Ho AFW"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "36193751",
+    "pmid": "36193751",
+    "doi": "10.1161/CIRCOUTCOMES.122.009042",
+    "title": "Long-Term Outcomes for Out-of-Hospital Cardiac Arrest in Elderly Patients: An Analysis of Cardiac Arrest Registry to Enhance Survival Data Linked to Medicare Files.",
+    "authors": [
+      "Paul S Chan",
+      "Bryan McNally",
+      "Anping Chang",
+      "Saket Girotra",
+      "Rabab Al-Araji",
+      "Minaz Mawani",
+      "Ki Ok Ahn",
+      "Robert Merritt"
+    ],
+    "journal": "Circulation. Cardiovascular quality and outcomes",
+    "year": 2022,
+    "date": "2022-10-04",
+    "abstract": "BACKGROUND: Most studies on out-of-hospital cardiac arrest have primarily focused on in-hospital or short-term survival. Little is known about long-term outcomes and resource use among survivors of out-of-hospital cardiac arrest.\nMETHODS: In this observationsl study, we describe overall long-term outcomes for patients from the national Cardiac Arrest Registry to Enhance Survival linked to Medicare files to create the Cardiac Arrest Registry to Enhance Survival: Mortality, Events, and Costs for Cardiac Arrest survivors dataset. Cardiac Arrest Registry to Enhance Survival data between 2013 and 2019 were linked to Medicare data using probabilistic matching algorithms. Overall long-term mortality, readmissions, and index hospitalization costs are reported for the overall cohort.\nRESULTS: Among 56 425 patients who were 65 years of age or older in Cardiac Arrest Registry to Enhance Survival who survived to hospital admission, 26 875 (47.6%) were successfully linked to Medicare files. Mean (SD) cost of the index hospitalization was $23 262$24 199 and the median cost was $14 636 (interquartile range, $9930-$30 033). Overall, 8676 (32.3%) survived to hospital discharge with 38.0% discharged home, 11.8% to hospice care, and the remaining 50.2% to other inpatient, skilled nursing care, or rehabilitation facilities. Mortality after discharge was initially high (27.0% at 3 months) and then increased gradually, with 1- and 3-year mortality of 37.1% and 50.1%, respectively. During the first year, 40.1% were readmitted at least once, with 19.7% readmitted on > 1 occasion.\nCONCLUSIONS: The Cardiac Arrest Registry to Enhance Survival: Mortality, Events, and Costs for Cardiac Arrest survivors registry includes rich data on postdischarge outcomes and resource utilization. Use of this dataset will enable future investigations on the long-term effectiveness, costs, and cost-effectiveness of various interventions for out-of-hospital cardiac arrest in elderly patients.",
+    "links": {
+      "doi": "https://doi.org/10.1161/CIRCOUTCOMES.122.009042",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36193751",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9694664"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC9694664",
+    "mesh": [
+      "Humans",
+      "Aged",
+      "United States",
+      "Out-of-Hospital Cardiac Arrest",
+      "Patient Discharge",
+      "Medicare",
+      "Aftercare",
+      "Registries",
+      "Retrospective Studies"
+    ],
+    "country": "R.M.)",
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Chan PS",
+      "McNally B",
+      "Chang A",
+      "Girotra S",
+      "Al-Araji R",
+      "Mawani M",
+      "Ahn KO",
+      "Merritt R"
     ],
     "isAbstractTruncated": false
   },
@@ -4935,6 +5981,45 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "35434669",
+    "pmid": "35434669",
+    "doi": "10.1016/j.resplu.2022.100230",
+    "title": "Survival and neurological outcome after out-of-hospital cardiac arrest treated with and without mechanical circulatory support.",
+    "authors": [
+      "Sivagowry Rasalingam Mørk",
+      "Morten Thingemann Bøtker",
+      "Steffen Christensen",
+      "Mariann Tang",
+      "Christian Juhl Terkelsen"
+    ],
+    "journal": "Resuscitation plus",
+    "year": 2022,
+    "date": "2022-04-06",
+    "abstract": "AIM: The aim of this study was to describe the survival and neurological outcome in patients with OHCA treated with and without mechanical circulatory support (MCS).\nMETHODS: This was a retrospective observational cohort study on patients with OHCA admitted to Aarhus University Hospital, Denmark, between January 2015 and December 2019. Kaplan-Meier estimates were used to evaluate 30-day and 30-180-day survival. Cox regression analysis was used to assess the association between covariates and one-year mortality.\nRESULTS: Among 1,015 patients admitted, 698 achieved return of spontaneous circulation (ROSC) before admission, 101 patients with refractory OHCA received mechanical circulatory support (MCS) and the remaining 216 patients with refractory OHCA did not receive MCS treatment. Survival to hospital discharge was 47% (478/1015). Good neurological outcome defined as Cerebral Performance Categories 1-2 were seen among 92% (438/478) of the patients discharged from hospital. Median low-flow was 15 [8-22] minutes in the ROSC group and 105 [94-123] minutes in the MCS group. Mortality rates were high within the first 30 days, however; 30-180-day survival in patients discharged remained constant over time in both patients with ROSC on admission and patients admitted with MCS. Advanced age > 70 years (hazard ratio (HR) 1.98, 95% confidence interval (CI) 1.11-3.49), pulseless electrical activity (HR 2.39, 95% CI 1.25-4.60) and asystole HR 2.70, 95% CI 1.25-5.95) as initial rhythms were associated with one-year mortality in patients with ROSC.\nCONCLUSIONS: Short-term survival rates were high among patients with ROSC and patients receiving MCS. Among patients who survived to day 30, landmark analyses showed comparable 180-day survival in the two groups despite long low-flow times in the MCS group. Advanced age and initial non-shockable rhythms were independent predictors of one-year mortality in patients with ROSC on admission.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resplu.2022.100230",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/35434669",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9010695"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC9010695",
+    "country": "Denmark",
+    "domains": [],
+    "setting": "OHCA",
+    "design": "Retrospective cohort",
+    "normalizedAuthors": [
+      "Mørk SR",
+      "Bøtker MT",
+      "Christensen S",
+      "Tang M",
+      "Terkelsen CJ"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "35653245",
     "pmid": "35653245",
     "doi": "10.1097/MCC.0000000000000935",
@@ -5237,6 +6322,52 @@
       "Lamberg DN",
       "Thrysoe L",
       "Borregaard B"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "34223386",
+    "pmid": "34223386",
+    "doi": "10.1016/j.resplu.2021.100129",
+    "title": "A qualitative exploratory case series of patient and family experiences with ECPR for out-of-hospital cardiac arrest.",
+    "authors": [
+      "Brian Grunau",
+      "Katie Dainty",
+      "Ruth MacRedmond",
+      "Ken McDonald",
+      "Ayumi Sasaki",
+      "Aimee J Sarti",
+      "Sam D Shemie",
+      "Anson Cheung",
+      "John Gill"
+    ],
+    "journal": "Resuscitation plus",
+    "year": 2021,
+    "date": "2021-04-28",
+    "abstract": "OBJECTIVE: There is currently no existing data examining the opinions of patients and families after treatment with extracorporeal cardiopulmonary resuscitation (ECPR) for out-of-hospital cardiac arrest (OHCA). We sought to interview family members and patients to learn from their experiences and satisfaction with treatment.\nMETHODS: We contacted family members and survivors for all cases treated with ECPR for refractory OHCA at St. Paul's Hospital between January 2014 and July 2018. We performed semi-structured interviews with participants, specifically within the topics of: information sharing (including impressions of an ECPR informational pamphlet), prognostication, organ donation, and perceived value of ECPR. Due to low participant enrolment, we described all interviews in a narrative approach.\nRESULTS: Within the study period, there were 23 OHCAs treated with ECPR; two survivors and three family members agreed to participate. Participants were satisfied with the treatment provided, including information sharing and prognostication. There were mixed opinions about the best method of information-sharing (verbal vs written), as well as the timing of organ donation conversations. All participants believed ECPR for OHCA to be of high value.\nCONCLUSION: Patient's conveyed satisfaction with ECPR treatment, with mixed views on the best information sharing strategy. Further study is needed to define the optimal methods and timing for discussions of organ donation, especially for treatments of with a relatively low likelihood success.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resplu.2021.100129",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/34223386",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8244414"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC8244414",
+    "country": "Canada",
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Grunau B",
+      "Dainty K",
+      "MacRedmond R",
+      "McDonald K",
+      "Sasaki A",
+      "Sarti AJ",
+      "Shemie SD",
+      "Cheung A",
+      "Gill J"
     ],
     "isAbstractTruncated": false
   },
@@ -5874,6 +7005,56 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "33509184",
+    "pmid": "33509184",
+    "doi": "10.1186/s12910-021-00576-9",
+    "title": "Health data research on sudden cardiac arrest: perspectives of survivors and their next-of-kin.",
+    "authors": [
+      "Marieke A R Bak",
+      "Rens Veeken",
+      "Marieke T Blom",
+      "Hanno L Tan",
+      "Dick L Willems"
+    ],
+    "journal": "BMC medical ethics",
+    "year": 2021,
+    "date": "2021-01-28",
+    "abstract": "BACKGROUND: Consent for data research in acute and critical care is complex as patients become at least temporarily incapacitated or die. Existing guidelines and regulations in the European Union are of limited help and there is a lack of literature about the use of data from this vulnerable group. To aid the creation of a patient-centred framework for responsible data research in the acute setting, we explored views of patients and next-of-kin about the collection, storage, sharing and use of genetic and health-related data for observational research.\nMETHODS: We conducted qualitative interviews (n = 19) with Dutch sudden cardiac arrest survivors who donated clinical and socio-economic data and genetic samples to research. We also interviewed their next-of-kin. Topics were informed by ethics literature and we used scenario-sketches to aid discussion of complex issues.\nRESULTS: Sudden cardiac arrest survivors displayed limited awareness of their involvement in health data research and of the content of their given consent. We found that preferences regarding disclosure of clinically actionable genetic findings could change over time. When data collection and use were limited to the medical realm, patients trusted researchers to handle data responsibly without concern for privacy or other risks. There was no consensus as to whether deferred consent should be explicitly asked from survivors. If consent is asked, this would ideally be done a few months after the event when cognitive capacities have been regained. Views were divided about the need to obtain proxy consent for research with deceased patients' data. However, there was general support for the disclosure of potentially relevant post-mortem genetic findings to relatives.\nCONCLUSIONS: Sudden cardiac arrest patients' donation of data for research was grounded in trust in medicine overall, blurring the boundary between research and care. Our findings also highlight questions about the acceptability of a one-time consent and about responsibilities of patients, researchers and ethics committees. Finally, further normative investigation is needed regarding the (continued) use of participants' data after death, which is of particular importance in this setting. Our findings are thought to be of relevance for other acute and life-threatening illnesses as well.",
+    "links": {
+      "doi": "https://doi.org/10.1186/s12910-021-00576-9",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/33509184",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7844916"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC7844916",
+    "mesh": [
+      "Death, Sudden, Cardiac",
+      "Humans",
+      "Informed Consent",
+      "Research Personnel",
+      "Survivors",
+      "Trust"
+    ],
+    "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
+    "domains": [
+      "Cognitive"
+    ],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Bak MAR",
+      "Veeken R",
+      "Blom MT",
+      "Tan HL",
+      "Willems DL"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "34856490",
     "pmid": "34856490",
     "doi": "10.1016/j.jcrc.2021.11.008",
@@ -6145,6 +7326,85 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "34271127",
+    "pmid": "34271127",
+    "doi": "10.1016/j.resuscitation.2021.07.006",
+    "title": "Long-term survival and health-related quality of life after in-hospital cardiac arrest.",
+    "authors": [
+      "Marc Schluep",
+      "Sanne Elisabeth Hoeks",
+      "Michiel Blans",
+      "Bas van den Bogaard",
+      "Ankie Koopman-van Gemert",
+      "Cees Kuijs",
+      "Chris Hukshorn",
+      "Nardo van der Meer",
+      "Marco Knook",
+      "Trudy van Melsen",
+      "René Peters",
+      "Patrick Perik",
+      "Koen Simons",
+      "Gerben Spijkers",
+      "Wytze Vermeijden",
+      "Evert-Jan Wils",
+      "R J Robert Jan Stolker",
+      "H Rik Endeman"
+    ],
+    "journal": "Resuscitation",
+    "year": 2021,
+    "date": "2021-07-14",
+    "abstract": "INTRODUCTION: In-hospital cardiac arrest (IHCA) is an adverse event associated with high mortality. Because of the impact of IHCA more data is needed on incidence, outcomes and associated factors that are present prior to cardiac arrest. The aim was to assess one-year survival, patient-centred outcomes after IHCA and their associated pre-arrest factors.\nMETHODS: A multicentre prospective cohort study in 25 hospitals between January 1st 2017 and May 31st 2018. Patients ≥ 18 years receiving cardiopulmonary resuscitation (CPR) for IHCA were included. Data were collected using Utstein and COSCA-criteria, supplemented by pre-arrest Modified Rankin Scale (MRS, functional status) and morbidity through the Charlson Comorbidity Index (CCI). Main outcomes were survival, health-related quality of life (HRQoL, EuroQoL) and functional status (MRS) after one-year.\nRESULTS: A total of 713 patients were included, 64.5% was male, median age was 63 years (IQR 52-72) and 72.8% had a non-shockable rhythm, 394 (55.3%) achieved ROSC, 231 (32.4%) survived to hospital discharge and 198 (27.8%) survived one year after cardiac arrest. Higher pre-arrest MRS, age and CCI were associated with mortality. At one year, patients rated HRQoL 72/100 points on the EQ-VAS and 69.7% was functionally independent.\nCONCLUSION: One-year survival after IHCA in this study is 27.8%, which is relatively high compared to previous studies. Survival is associated with a patient's pre-arrest functional status and morbidity. HRQoL appears acceptable, however functional rehabilitation warrants attention. These findings provide a comprehensive insight in in-hospital cardiac arrest prognosis.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2021.07.006",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/34271127"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Aged",
+      "Cardiopulmonary Resuscitation",
+      "Female",
+      "Heart Arrest",
+      "Hospitals",
+      "Humans",
+      "Male",
+      "Middle Aged",
+      "Prospective Studies",
+      "Quality of Life"
+    ],
+    "country": "the Netherlands",
+    "corrCountryCode": "NL",
+    "corrCountryName": "the Netherlands",
+    "domains": [
+      "Qol"
+    ],
+    "setting": "IHCA",
+    "design": "Prospective cohort",
+    "normalizedAuthors": [
+      "Schluep M",
+      "Hoeks SE",
+      "Blans M",
+      "Bogaard BVD",
+      "Gemert AK",
+      "Kuijs C",
+      "Hukshorn C",
+      "Meer NVD",
+      "Knook M",
+      "Melsen TV",
+      "Peters R",
+      "Perik P",
+      "Simons K",
+      "Spijkers G",
+      "Vermeijden W",
+      "Wils E",
+      "Stolker RJRJ",
+      "Endeman HR"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "34389455",
     "pmid": "34389455",
     "doi": "10.1016/j.resuscitation.2021.07.043",
@@ -6306,6 +7566,58 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "34286310",
+    "pmid": "34286310",
+    "doi": "10.1016/j.resplu.2021.100148",
+    "title": "Partnering with survivors & families to determine research priorities for adult out-of-hospital cardiac arrest: A James Lind Alliance Priority Setting Partnership.",
+    "authors": [
+      "K N Dainty",
+      "M B Seaton",
+      "K Cowan",
+      "A Laupacis",
+      "P Dorian",
+      "M Douma",
+      "J Garner",
+      "J Goldstein",
+      "D Shire",
+      "D Sinclair",
+      "C Thurlow",
+      "C Vaillancourt"
+    ],
+    "journal": "Resuscitation plus",
+    "year": 2021,
+    "date": "2021-07-07",
+    "abstract": "BACKGROUND: Research priority setting in health care has historically been done by expert health care providers and researchers and has not involved patients, family or the public. Survivors & family members have been particularly absent from this process in the field of resuscitation research and specifically adult out of hospital cardiac arrest (OHCA). As such, we sought to conduct a priority setting exercise in partnership with survivors, lay responders and their families in order to ensure that their priorities were visible. We partnered with the James Lind Alliance (UK) and used their commonly used consensus methodology for Public Priority Setting Partnerships (PSPs) to identify research priorities that reflected the perspectives of all stakeholders.\nMETHODS: We used two rounds of public and health care professional surveys to create the initial priority lists. The initial survey collected open-ended questions while the second round consolidated the list of initial questions into a refined list for prioritization. This was done by reviewing existing evidence and thematic categorization by the multi-disciplinary steering committee. An in-person consensus workshop was conducted to come to consensus on the top ten priorities from all perspectives. The McMaster PPEET tool was used to measure engagement.\nRESULTS: The initial survey yielded more than 425 responses and 1450 \"questions\" from survivors and family members (18%), lay responders, health care providers and others. The second survey asked participants to rank a short list of 125 questions. The final top 25 questions were brought to the in-person meeting, and a top ten were selected through the JLA consensus process. The final list of top ten questions included how to improve the rate of lay responder CPR, what interventions used at the scene of an arrest can improve resuscitation and survival, how survival can be improved in rural areas of Canada, what resuscitation medications are most effective, what care patient's family members need, what post-discharge support is needed for survivors, how communication should work for everyone involved with a cardiac arrest, what factors best predict neurologically intact survival, whether biomarkers/genetic tests are effective in predicting OHCA and more research on the short and long-term psycho-social impacts of OHCA on survivors. The PPEET showed overwhelmingly positive results for the patient and family engagement experience during the final workshop.\nCONCLUSIONS: This inclusive research priority setting provides essential information for those doing resuscitation research internationally. The results provide a guide for priority areas of research and should drive our community to focus on questions that matter to survivors and their families in our work. In particular the Canadian Resuscitation Outcomes Consortium will be incorporating the top ten list into its strategic plan for the future.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resplu.2021.100148",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/34286310",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8274337"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC8274337",
+    "country": "Canada",
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Dainty KN",
+      "Seaton MB",
+      "Cowan K",
+      "Laupacis A",
+      "Dorian P",
+      "Douma M",
+      "Garner J",
+      "Goldstein J",
+      "Shire D",
+      "Sinclair D",
+      "Thurlow C",
+      "Vaillancourt C"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "34826580",
     "pmid": "34826580",
     "doi": "10.1016/j.resuscitation.2021.11.023",
@@ -6361,6 +7673,63 @@
       "Ong MEH",
       "Ng QX",
       "Ho AFW"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "34380539",
+    "pmid": "34380539",
+    "doi": "10.1186/s13049-021-00931-0",
+    "title": "Survival and long-term outcomes following in-hospital cardiac arrest in a Swiss university hospital: a prospective observational study.",
+    "authors": [
+      "Alexander Fuchs",
+      "Dominic Käser",
+      "Lorenz Theiler",
+      "Robert Greif",
+      "Jürgen Knapp",
+      "Joana Berger-Estilita"
+    ],
+    "journal": "Scandinavian journal of trauma, resuscitation and emergency medicine",
+    "year": 2021,
+    "date": "2021-08-11",
+    "abstract": "BACKGROUND: Incidence of in-hospital cardiac arrest is reported to be 0.8 to 4.6 per 1,000 patient admissions. Patient survival to hospital discharge with favourable functional and neurological status is around 21-30%. The Bern University Hospital is a tertiary medical centre in Switzerland with a cardiac arrest team that is available 24 h per day, 7 days per week. Due to lack of central documentation of cardiac arrest team interventions, the incidence, outcomes and survival rates of cardiac arrests in the hospital are unknown. Our aim was to record all cardiac arrest team interventions over 1 year, and to analyse the outcome and survival rates of adult patients after in-hospital cardiac arrests.\nMETHODS: We conducted a prospective single-centre observational study that recorded all adult in-hospital cardiac arrest team interventions over 1 year, using an Utstein-style case report form. The primary outcome was 30-day survival after in-hospital cardiac arrest. Secondary outcomes were return of spontaneous circulation, neurological status (after return of spontaneous circulation, after 24 h, after 30 days, after 1 and 5 years), according to the Glasgow Outcomes Scale, and functional status at 30 days and 1 year, according to the Short-form-12 Health Survey.\nRESULTS: The cardiac arrest team had 146 interventions over the study year, which included 60 non-life-threatening alarms (41.1%). The remaining 86 (58.9%) acute life-threatening situations included 68 (79.1%) as patients with cardiac arrest. The mean age of these cardiac arrest patients was 68 ± 13 years, with a male predominance (51/68; 75.0%). Return of spontaneous circulation was recorded in 49 patients (72.1%). Over one-third of the cardiac arrest patients (27/68) were alive after 30 days with favourable neurological outcome. The patients who survived the first year lived also to 5 years after the event with favourable neurological and functional status.\nCONCLUSIONS: The in-hospital cardiac arrest incidence on a large tertiary Swiss university hospital was 1.56 per 1000 patient admissions. After a cardiac arrest, about a third of the patients survived to 5 years with favourable neurological and functional status. Alarms unrelated to life-threatening situations are common and need to be taken into count within a low-threshold alarming system.\nTRIAL REGISTRATION: The trial was registered in clinicaltrials.gov (NCT02746640).",
+    "links": {
+      "doi": "https://doi.org/10.1186/s13049-021-00931-0",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/34380539",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8359113"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC8359113",
+    "mesh": [
+      "Adult",
+      "Aged",
+      "Aged, 80 and over",
+      "Cardiopulmonary Resuscitation",
+      "Female",
+      "Heart Arrest",
+      "Hospitals, University",
+      "Humans",
+      "Male",
+      "Middle Aged",
+      "Prospective Studies",
+      "Survival Rate",
+      "Switzerland",
+      "Treatment Outcome"
+    ],
+    "country": "Switzerland",
+    "domains": [],
+    "setting": "IHCA",
+    "design": "Prospective cohort",
+    "normalizedAuthors": [
+      "Fuchs A",
+      "Käser D",
+      "Theiler L",
+      "Greif R",
+      "Knapp J",
+      "Berger-Estilita J"
     ],
     "isAbstractTruncated": false
   },
@@ -6729,6 +8098,48 @@
       "Fisher PM",
       "Knudsen GM",
       "Stenbæk DS"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "32898368",
+    "pmid": "32898368",
+    "doi": "10.11124/JBISRIR-D-19-00291",
+    "title": "Experiences of family members of patients treated with targeted temperature management post cardiac arrest: a qualitative systematic review protocol.",
+    "authors": [
+      "Susan Morris",
+      "Lisa Keeping-Burke",
+      "Alison Manley"
+    ],
+    "journal": "JBI evidence synthesis",
+    "year": 2020,
+    "date": "2020-08",
+    "abstract": "OBJECTIVE: The objective of this review is to evaluate the experiences of family members of patients who receive targeted temperature management following the return of spontaneous circulation after a cardiac arrest.\nINTRODUCTION: Since 2002, targeted temperature management has become an international standard of care for the preservation of neurological status for patients following a cardiac arrest and who remain comatose. During this process, survivors are placed into a mild hypothermic state with their body temperature maintained at 32°C to 36°C for a minimum of 24 hours. It is during this time that family members experience the uncertainty of whether their loved one will survive, or if any negative long-term sequelae will be experienced. While much is known about the physical application and management of targeted temperature management, less is known about the psychosocial aspects of this treatment.\nINCLUSION CRITERIA: This review will consider qualitative studies that address the experiences of family members of adult patients who have received targeted temperature management following a cardiac arrest.\nMETHODS: CINAHL, ProQuest Nursing and Allied Health Source, PsycINFO, PubMed (MEDLINE), Scopus, Sociological Abstracts, and Web of Science will be searched for relevant studies. Studies published in English and French from 2002 onward will be considered. Two reviewers will independently appraise studies and extract qualitative data using the JBI standardized critical appraisal and extraction instruments. Findings from the review will be categorized according to similarity in meaning, and categories subjected to a meta-aggregation to produce a single comprehensive set of synthesized findings.\nSYSTEMATIC REVIEW REGISTRATION NUMBER: PROSPERO CRD42020142942.",
+    "links": {
+      "doi": "https://doi.org/10.11124/JBISRIR-D-19-00291",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/32898368"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Adult",
+      "Family",
+      "Heart Arrest",
+      "Humans",
+      "Hypothermia, Induced",
+      "Qualitative Research",
+      "Review Literature as Topic",
+      "Systematic Reviews as Topic"
+    ],
+    "country": "Canada",
+    "domains": [],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Morris S",
+      "Keeping-Burke L",
+      "Manley A"
     ],
     "isAbstractTruncated": false
   },
@@ -7527,6 +8938,163 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "31785373",
+    "pmid": "31785373",
+    "doi": "10.1016/j.resuscitation.2019.11.011",
+    "title": "Frailty and associated outcomes and resource utilization following in-hospital cardiac arrest.",
+    "authors": [
+      "Shannon M Fernando",
+      "Daniel I McIsaac",
+      "Bram Rochwerg",
+      "Deborah J Cook",
+      "Sean M Bagshaw",
+      "John Muscedere",
+      "Laveena Munshi",
+      "Jerry P Nolan",
+      "Jeffrey J Perry",
+      "James Downar",
+      "Chintan Dave",
+      "Peter M Reardon",
+      "Peter Tanuseputro",
+      "Kwadwo Kyeremanteng"
+    ],
+    "journal": "Resuscitation",
+    "year": 2019,
+    "date": "2019-11-27",
+    "abstract": "BACKGROUND: In-hospital cardiac arrest (IHCA) is common and associated with high mortality. Frailty is increasingly recognized as a predictor of worse prognosis among critically ill patients, but its association with outcomes and resource utilization following IHCA is unknown.\nMETHODS: We performed a retrospective analysis (2013-2016) of a prospectively collected registry from two hospitals of consecutive hospitalized adult patients with IHCA occurring on the hospital wards. We defined frailty using the Clinical Frailty Scale (CFS) score ≥5. CFS scores were based on validated medical review criteria. The primary outcome is hospital mortality. Secondary outcomes include return of spontaneous circulation (ROSC), discharge to long-term care, and hospital costs. We used multivariable logistic regression to adjust for known confounders.\nRESULTS: We included 477 patients, and 124 (26.0%) had frailty. Frailty was associated with increased odds of hospital death (adjusted odds ratio [aOR]: 2.91 [95% confidence interval [CI]: 2.37-3.48) and discharge to long-term care (aOR 1.94 [95% CI: 1.57-2.32]). Compared with patients without frailty, patients with frailty had decreased odds of ROSC following IHCA (aOR 0.63 [95% CI: 0.41-0.93]). No difference in mean total costs was demonstrated between patients with and without frailty ($50,799 vs. $45,849). Frail patients did have higher cost-per-survivor ($947,546 vs. $161,550).\nCONCLUSIONS: Frail individuals who experience an IHCA are more likely to die in hospital or be discharged to long-term care, and less likely to achieve ROSC in comparison with individuals who are not frail. The hospital costs per-survivor of IHCA are increased when frailty is present.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2019.11.011",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/31785373"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Aged",
+      "Canada",
+      "Cardiopulmonary Resuscitation",
+      "Costs and Cost Analysis",
+      "Critical Care Outcomes",
+      "Critical Illness",
+      "Female",
+      "Frailty",
+      "Heart Arrest",
+      "Hospital Mortality",
+      "Hospitalization",
+      "Humans",
+      "Long-Term Care",
+      "Male",
+      "Middle Aged",
+      "Prognosis",
+      "Return of Spontaneous Circulation",
+      "Risk Factors"
+    ],
+    "country": "Canada",
+    "domains": [],
+    "setting": "IHCA",
+    "design": "Prospective cohort",
+    "normalizedAuthors": [
+      "Fernando SM",
+      "McIsaac DI",
+      "Rochwerg B",
+      "Cook DJ",
+      "Bagshaw SM",
+      "Muscedere J",
+      "Munshi L",
+      "Nolan JP",
+      "Perry JJ",
+      "Downar J",
+      "Dave C",
+      "Reardon PM",
+      "Tanuseputro P",
+      "Kyeremanteng K"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "31706964",
+    "pmid": "31706964",
+    "doi": "10.1016/j.resuscitation.2019.10.020",
+    "title": "Functional outcomes associated with varying levels of targeted temperature management after out-of-hospital cardiac arrest - An INTCAR2 registry analysis.",
+    "authors": [
+      "Jesper Johnsson",
+      "Josefine Wahlström",
+      "Josef Dankiewicz",
+      "Martin Annborn",
+      "Sachin Agarwal",
+      "Allison Dupont",
+      "Sune Forsberg",
+      "Hans Friberg",
+      "Robert Hand",
+      "Karen G Hirsch",
+      "Teresa May",
+      "John A McPherson",
+      "Michael R Mooney",
+      "Nainesh Patel",
+      "Richard R Riker",
+      "Pascal Stammet",
+      "Eldar Søreide",
+      "David B Seder",
+      "Niklas Nielsen"
+    ],
+    "journal": "Resuscitation",
+    "year": 2019,
+    "date": "2019-11-09",
+    "abstract": "INTRODUCTION: Targeted temperature management (TTM) after out-of-hospital cardiac arrest (OHCA) has been recommended in international guidelines since 2005. The TTM-trial published in 2013 showed no difference in survival or neurological outcome for patients randomised to 33 °C or 36 °C, and many hospitals have changed practice. The optimal utilization of TTM is still debated. This study aimed to analyse if a difference in temperature goal was associated with outcome in an unselected international registry population.\nMETHODS: This is a retrospective observational study based on a prospective registry - the International Cardiac Arrest Registry 2. Patients were categorized as receiving TTM in the lower range at 32-34 °C (TTM-low) or at 35-37 °C (TTM-high). Primary outcome was good functional status defined as cerebral performance category (CPC) of 1-2 at hospital discharge and secondary outcome was adverse events related to TTM. A logistic regression model was created to evaluate the independent effect of temperature by correcting for clinical and demographic factors associated with outcome.\nRESULTS: Of 1710 patients included, 1242 (72,6%) received TTM-low and 468 (27,4%) TTM-high. In patients receiving TTM-low, 31.3% survived with good outcome compared to 28.8% in the TTM-high group. There was no significant association between temperature and outcome (p = 0.352). In analyses adjusted for baseline differences the OR for a good outcome with TTM-low was 1.27, 95% CI (0.94-1.73). Haemodynamic instability leading to discontinuation of TTM was more common in TTM-low.\nCONCLUSIONS: No significant difference in functional outcome at hospital discharge was found in patients receiving lower- versus higher targeted temperature management.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2019.10.020",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/31706964"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Body Temperature",
+      "Cardiopulmonary Resuscitation",
+      "Female",
+      "Functional Status",
+      "Humans",
+      "Hypothermia, Induced",
+      "International Cooperation",
+      "Male",
+      "Middle Aged",
+      "Neurologic Examination",
+      "Neuroprotection",
+      "Out-of-Hospital Cardiac Arrest",
+      "Outcome and Process Assessment, Health Care",
+      "Registries",
+      "Retrospective Studies"
+    ],
+    "country": "Sweden",
+    "domains": [],
+    "setting": "OHCA",
+    "design": "Prospective cohort",
+    "normalizedAuthors": [
+      "Johnsson J",
+      "Wahlström J",
+      "Dankiewicz J",
+      "Annborn M",
+      "Agarwal S",
+      "Dupont A",
+      "Forsberg S",
+      "Friberg H",
+      "Hand R",
+      "Hirsch KG",
+      "May T",
+      "McPherson JA",
+      "Mooney MR",
+      "Patel N",
+      "Riker RR",
+      "Stammet P",
+      "Søreide E",
+      "Seder DB",
+      "Nielsen N"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "31664859",
     "pmid": "31664859",
     "doi": "10.1080/02699052.2019.1680866",
@@ -7633,6 +9201,71 @@
       "Mebazaa A",
       "Deye N",
       "investigators FS"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "31857141",
+    "pmid": "31857141",
+    "doi": "10.1016/j.resuscitation.2019.12.006",
+    "title": "Out-of-hospital cardiac arrest: 30-day survival and 1-year risk of anoxic brain damage or nursing home admission according to consciousness status at hospital arrival.",
+    "authors": [
+      "Kathrine B Sondergaard",
+      "Signe Riddersholm",
+      "Mads Wissenberg",
+      "Steen Moller Hansen",
+      "Carlo Alberto Barcella",
+      "Lena Karlsson",
+      "Kristian Bundgaard",
+      "Freddy K Lippert",
+      "Jesper Kjaergaard",
+      "Gunnar H Gislason",
+      "Fredrik Folke",
+      "Christian Torp-Pedersen",
+      "Kristian Kragholm"
+    ],
+    "journal": "Resuscitation",
+    "year": 2019,
+    "date": "2019-12-17",
+    "abstract": "AIM: To investigate the association between consciousness status at hospital arrival and long-term outcomes in out-of-hospital cardiac arrest (OHCA) patients.\nMETHODS: OHCAs between 18-100 years of age were identified from the Danish Cardiac Arrest Registry during 2005-2014. Patients with return of spontaneous circulation (ROSC) or ongoing cardiopulmonary resuscitation (CPR) at hospital arrival were included. Thirty-day survival was evaluated using Kaplan-Meier estimates. Risk of anoxic brain damage or nursing home admission and return to work among 30-day survivors were evaluated using Aalen-Johansen estimates and cause-specific Cox regression.\nRESULTS: Upon hospital arrival of 13,953 OHCA patients, 776 (5.6%) had ROSC and were conscious (Glasgow Coma Score [GCS]>8), 5205 (37.3%) had ROSC, but were comatose (GCS ≤ 8), and 7972 (57.1%) had ongoing CPR. Thirty-day survival according to status at hospital arrival among patients that were conscious, comatose, or had ongoing CPR was 89.0% (95% confidence interval [CI] 86.8%-91.2%), 39.0% (95% CI 37.6%-40.3%), and 1.2% (95% CI 1.0%-1.4%), respectively. Among 30-day survivors, 1-year risks of new onset anoxic brain damage or nursing home admission according to consciousness status were 2.4% (95% CI 1.2%-3.6%), 12.9% (95% CI 11.4%-14.3%), and 19.4% (95% CI 11.3%-27.4%), respectively. Among 30-day working-age survivors, more than 65% in each group returned to work within 5 years.\nCONCLUSION: Consciousness status at hospital arrival was strongly associated with 30-day survival in OHCA patients. Among 30-day survivors, a minority was diagnosed with anoxic brain damage or admitted to a nursing home and the majority returned to work independent of consciousness status at hospital arrival.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2019.12.006",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/31857141"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Cardiopulmonary Resuscitation",
+      "Child, Preschool",
+      "Consciousness",
+      "Emergency Medical Services",
+      "Hospitals",
+      "Humans",
+      "Hypoxia, Brain",
+      "Nursing Homes",
+      "Out-of-Hospital Cardiac Arrest"
+    ],
+    "country": "Denmark",
+    "domains": [
+      "Participation"
+    ],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Sondergaard KB",
+      "Riddersholm S",
+      "Wissenberg M",
+      "Hansen SM",
+      "Barcella CA",
+      "Karlsson L",
+      "Bundgaard K",
+      "Lippert FK",
+      "Kjaergaard J",
+      "Gislason GH",
+      "Folke F",
+      "Torp-Pedersen C",
+      "Kragholm K"
     ],
     "isAbstractTruncated": false
   },
