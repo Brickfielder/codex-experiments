@@ -7,6 +7,8 @@ import { isInCurrentMonth } from '~/utils/dates';
 import type { Paper } from '~/utils/types';
 
 const typedPapers = papers as Paper[];
+const getPublicationTimestamp = (paper: Paper) =>
+  new Date(paper.date ?? `${paper.year}-01-01`).getTime();
 const browseHref = getBrowseUrl();
 const browseResultsHref = `${browseHref}#papers`;
 const getFilterHref = (filters: { domain?: string; quick?: string }) => {
@@ -27,7 +29,9 @@ const stats = [
   { label: 'Scope', value: 'Global' }
 ];
 const topicSuggestions = ['Cognition', 'Anxiety', 'Caregivers'];
-const recentPapers = typedPapers.slice(0, 3);
+const recentPapers = [...typedPapers]
+  .sort((a, b) => getPublicationTimestamp(b) - getPublicationTimestamp(a))
+  .slice(0, 3);
 const domainCards = [
   {
     title: 'Cognition',
@@ -226,14 +230,8 @@ We retrieve studies through a structured, pre-defined search strategy applied ac
       </aside>
 
       <div class="lg:col-span-8">
-        <div class="flex items-center justify-between mb-6">
+        <div class="mb-6">
           <h2 class="text-2xl font-bold text-slate-900">Recent Publications</h2>
-          <select
-            class="text-sm border-none bg-transparent font-semibold text-slate-600 focus:ring-0 cursor-pointer"
-          >
-            <option>Sort by: Newest</option>
-            <option>Sort by: Relevance</option>
-          </select>
         </div>
 
         <div class="space-y-6">
