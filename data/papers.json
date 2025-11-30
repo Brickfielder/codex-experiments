@@ -2527,6 +2527,47 @@
     "country": "United Kingdom"
   },
   {
+    "id": "36781826",
+    "pmid": "36781826",
+    "doi": "10.1007/s43678-023-00464-8",
+    "title": "Caring for the invisible and forgotten: a qualitative document analysis and experience-based co-design project to improve the care of families experiencing out-of-hospital cardiac arrest.",
+    "authors": [
+      "Tess Loch",
+      "Ian R Drennan",
+      "Jason E Buick",
+      "Danielle Mercier",
+      "Peter G Brindley",
+      "Mark MacKenzie",
+      "Thilo Kroll",
+      "Kate Frazer",
+      "Matthew J Douma",
+      "Family Centred Cardiac Arrest Care Project"
+    ],
+    "journal": "CJEM",
+    "year": 2023,
+    "date": "2023-02-13",
+    "abstract": "OBJECTIVES: The objectives of this project were to collect and analyze clinical governance documents related to family-centred care and cardiac arrest care in Canadian EMS organizations; and to improve the family-centredness of out-of-hospital cardiac arrest care through experience-based co-design.\nMETHODS: We conducted qualitative document analysis of Canadian EMS clinical governance documents related to family-centred and cardiac arrest care, combining elements of content and thematic analysis methods. We then used experience-based co-design to develop a family-centred out-of-hospital cardiac arrest care policy and procedure template.\nRESULTS: Thirty-five Canadian EMS organizations responded to our requests, representing service area coverage for 80% of the Canadian population. Twenty documents were obtained for review and six overarching themes were identified: addressing family in event of in-home death, importance of family, family member escort, provider discretion and family presence discouraged. Informed by our qualitative analysis we then co-designed a policy and procedure template was created that prioritizes patient care while promotes family-centredness.\nCONCLUSIONS: There were few directives to support family-centred care by Canadian EMS organizations. A family-centred out-of-hospital cardiac arrest care policy and procedure template was developed using experience-based co-design to assist EMS organizations improve the family-centredness of out-of-hospital cardiac arrest care.",
+    "links": {
+      "doi": "https://doi.org/10.1007/s43678-023-00464-8",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/36781826",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9924888"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC9924888",
+    "mesh": [
+      "Humans",
+      "Cardiopulmonary Resuscitation",
+      "Out-of-Hospital Cardiac Arrest",
+      "Emergency Medical Services",
+      "Document Analysis",
+      "Canada"
+    ],
+    "country": "Canada. Matthew.douma@ucdconnect.ie"
+  },
+  {
     "id": "35801906",
     "pmid": "35801906",
     "doi": "10.1093/eurjcn/zvac056",
