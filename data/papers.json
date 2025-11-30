@@ -481,33 +481,6 @@
     }
   },
   {
-    "id": "41160233",
-    "pmid": "41160233",
-    "doi": "10.1007/s11948-025-00559-8",
-    "title": "Hidden Agents, Explicit Obligations: A Linguistic Analysis of AI Ethics Guidelines.",
-    "authors": [
-      "Tricia A Griffin",
-      "Roos Goorman",
-      "Brian P Green",
-      "Jos V M Welie"
-    ],
-    "journal": "Science and engineering ethics",
-    "year": 2025,
-    "date": "2025-10-29",
-    "abstract": "UNLABELLED: Since 2013, many organizations, governments, and coalitions have issued ethics guidelines aimed at achieving ethically sound artificial intelligence (AI). The literature evaluating these guidelines has so far focused more onis in them (e.g., principles) than onis expected to enact them (e.g., developers). We argue that ethical agency in AI Ethics guidelines has been under-scrutinized in the literature, and we seek here to fill that gap. This study relies on transitivity analysis to evaluate 87 operational ethics guidelines for the representation of moral agents and their agency. We identified normative key words, their linguistic function, and agency attribution in 6,935 statements. Our findings reveal 11 distinct agents, with deployers, developers, and AI systems being the most frequently invoked. However, the ethical agency attributed to developers and deployers was overwhelmingly implied, while the tasks assigned to them were more often normative than descriptive. That the agency of the two most powerful agents in AI development is so often hidden in ethics guidelines reveals that the challenges associated with implementing AI ethics guidelines does not stem merely from the “principles to practice” problem, but from a more deeply rooted issue regarding how guideline authors conceive of ethical agency. We evaluate the findings through the dual lenses of agent backgrounding and agent suppression and conclude with advice for authors of ethics guidelines.\nSUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1007/s11948-025-00559-8.",
-    "links": {
-      "doi": "https://doi.org/10.1007/s11948-025-00559-8",
-      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41160233",
-      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12572076"
-    },
-    "flags": {
-      "open_access": true,
-      "has_fulltext": true
-    },
-    "pmcid": "PMC12572076",
-    "country": "The Netherlands"
-  },
-  {
     "id": "40499675",
     "pmid": "40499675",
     "doi": "10.1016/j.resuscitation.2025.110672",
