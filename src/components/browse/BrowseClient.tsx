@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'preact/hooks';
 import {
   applySearch,
   buildFacets,
+  createFuse,
   defaultSearchState,
   parseStateFromUrl,
   serializeStateToUrl,
@@ -127,9 +128,10 @@ interface Props {
 }
 
 export default function BrowseClient({ papers }: Props) {
+  const fuse = useMemo(() => createFuse(papers), [papers]);
   const facets = useMemo(() => buildFacets(papers), [papers]);
   const [state, setState] = useSearchState(papers);
-  const visiblePapers = useMemo(() => applySearch(papers, state), [papers, state]);
+  const visiblePapers = useMemo(() => applySearch(papers, fuse, state), [papers, fuse, state]);
   const currentYear = useMemo(() => new Date().getFullYear(), []);
   const yearRange = useMemo(() => {
     const years = Object.keys(facets.years).map((y) => Number.parseInt(y, 10));
