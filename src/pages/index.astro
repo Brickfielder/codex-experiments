@@ -195,6 +195,15 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
               ))
             }
           </div>
+          <div class="mt-4">
+            <a
+              href={browseHref}
+              class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-500"
+            >
+              Go to Repository
+              <span aria-hidden="true" class="text-base">&rarr;</span>
+            </a>
+          </div>
         </div>
 
         <div class="bg-slate-900 rounded-2xl p-6 text-white shadow-lg">
