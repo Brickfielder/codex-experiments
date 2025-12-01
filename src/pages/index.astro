@@ -10,15 +10,13 @@ import type { Paper } from '~/utils/types';
 const typedPapers = papers as Paper[];
 const getPublicationTimestamp = (paper: Paper) =>
   new Date(paper.date ?? `${paper.year}-01-01`).getTime();
-const browseHrefUrl = new URL(getBrowseUrl());
-const browseHref = browseHrefUrl.pathname.endsWith('/')
-  ? browseHrefUrl.pathname
-  : `${browseHrefUrl.pathname}/`;
+const browseHref = getBrowseUrl();
+const normalizedBrowseHref = browseHref.endsWith('/') ? browseHref : `${browseHref}/`;
 const buildBrowseHref = (query?: string) => {
   const params = new URLSearchParams();
   if (query) params.set('q', query);
   const serialized = params.toString();
-  return `${browseHref}${serialized ? `?${serialized}` : ''}#papers`;
+  return `${normalizedBrowseHref}${serialized ? `?${serialized}` : ''}#papers`;
 };
 const browseResultsHref = buildBrowseHref();
 const aboutHref = `${getAboutUrl()}#search-strategy`;
@@ -197,7 +195,7 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
           </div>
           <div class="mt-4">
             <a
-              href={browseHref}
+              href={normalizedBrowseHref}
               class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-500"
             >
               Go to Repository
