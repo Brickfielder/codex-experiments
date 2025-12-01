@@ -1,11 +1,5 @@
 import { useMemo, useState } from 'preact/hooks';
-import {
-  applySearch,
-  createFuse,
-  defaultSearchState,
-  serializeStateToUrl,
-  type SearchState
-} from '~/utils/search';
+import { applySearch, createFuse, defaultSearchState } from '~/utils/search';
 import { getPaperUrl, truncateAuthors } from '~/utils/format';
 import type { Paper } from '~/utils/types';
 
@@ -20,22 +14,15 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
   return null;
 };
 
-const toScopedUrl = (href: string): URL => {
-  try {
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'http://localhost';
-    return new URL(href, origin);
-  } catch {
-    return new URL('http://localhost');
-  }
-};
-
-const buildBrowseLink = (baseWithHash: string, query: string, defaults: SearchState): string => {
+const buildBrowseLink = (baseWithHash: string, query: string): string => {
   const [base, hash] = baseWithHash.split('#');
-  const scoped = toScopedUrl(base);
-  const state = { ...defaults, query: query.trim() };
-  const serialized = serializeStateToUrl(state, scoped);
+  const params = new URLSearchParams();
+  if (query.trim()) {
+    params.set('q', query.trim());
+  }
+  const serialized = params.toString();
   const anchor = hash ? `#${hash}` : '';
-  return `${serialized.pathname}${serialized.search}${anchor}`;
+  return `${base}${serialized ? `?${serialized}` : ''}${anchor}`;
 };
 
 export default function HomeSearchClient({ papers, browseResultsHref }: HomeSearchClientProps) {
@@ -49,10 +36,7 @@ export default function HomeSearchClient({ papers, browseResultsHref }: HomeSear
     return filtered.slice(0, 5);
   }, [defaults, fuse, papers, query]);
 
-  const browseLink = useMemo(
-    () => buildBrowseLink(browseResultsHref, query, defaults),
-    [browseResultsHref, defaults, query]
-  );
+  const browseLink = useMemo(() => buildBrowseLink(browseResultsHref, query), [browseResultsHref, query]);
 
   return (
     <div class="relative z-10 space-y-4">
