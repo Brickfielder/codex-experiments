@@ -11,10 +11,6 @@ import {
 import type { Paper, SearchState } from '~/utils/types';
 import { getPaperUrl, truncateAuthors } from '~/utils/format';
 
-interface Props {
-  papers: Paper[];
-}
-
 const useSearchState = (papers: Paper[]): [SearchState, (next: SearchState) => void] => {
   const defaults = useMemo(() => defaultSearchState(papers), [papers]);
   const [state, setState] = useState<SearchState>(() => {
@@ -38,11 +34,104 @@ const useSearchState = (papers: Paper[]): [SearchState, (next: SearchState) => v
 const toggleValue = (values: string[], value: string): string[] =>
   values.includes(value) ? values.filter((v) => v !== value) : [...values, value];
 
+interface PaperCardProps {
+  paper: Paper;
+}
+
+const PaperCard = ({ paper }: PaperCardProps) => {
+  const { display, remaining } = truncateAuthors(paper.normalizedAuthors);
+
+  return (
+    <article
+      key={paper.id}
+      class="group rounded-3xl border border-white/70 bg-white/95 p-6 shadow-xl ring-1 ring-indigo-50 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-800/80 dark:bg-slate-900 dark:ring-slate-800/60"
+    >
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h3 class="text-lg font-semibold text-slate-900 transition group-hover:text-indigo-600 dark:text-slate-100">
+            <a href={getPaperUrl(paper)}>{paper.title}</a>
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300">
+            {display}
+            {remaining.length > 0 && (
+              <details class="inline">
+                <summary class="ml-1 cursor-pointer text-blue-600 dark:text-blue-400">+{remaining.length} more</summary>
+                <span class="ml-2 inline text-slate-600 dark:text-slate-300">{remaining.join(', ')}</span>
+              </details>
+            )}
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-sm text-slate-500 dark:text-slate-300">
+          <span>{paper.journal}</span>
+          <span aria-hidden="true">•</span>
+          <span>{paper.year}</span>
+        </div>
+      </div>
+      <details class="mt-3 rounded-2xl border border-indigo-50/70 bg-indigo-50/40 p-3 transition open:shadow-sm dark:border-indigo-900/60 dark:bg-indigo-900/10">
+        <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-indigo-700 transition hover:text-indigo-800 dark:text-indigo-200 dark:hover:text-indigo-100">
+          <span>Abstract</span>
+          <span class="text-xs font-bold uppercase tracking-wide text-indigo-500 dark:text-indigo-200">{'▼'}</span>
+        </summary>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-200">
+          {paper.abstract}
+          {paper.isAbstractTruncated && <span class="ml-1 text-xs uppercase text-orange-600">(Abstract truncated)</span>}
+        </p>
+      </details>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {(paper.domains ?? []).map((domain) => (
+          <span
+            key={domain}
+            class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-200"
+          >
+            {domain}
+          </span>
+        ))}
+      </div>
+      <div class="mt-5 flex flex-wrap gap-2 text-sm">
+        {paper.links.pubmed && (
+          <a
+            class="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700 transition hover:border-indigo-200 hover:bg-indigo-100 dark:border-indigo-500/40 dark:bg-indigo-900/20 dark:text-indigo-200"
+            href={paper.links.pubmed}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PubMed
+          </a>
+        )}
+        {paper.links.doi && (
+          <a
+            class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
+            href={paper.links.doi}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DOI
+          </a>
+        )}
+        {paper.links.pmc && (
+          <a
+            class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
+            href={paper.links.pmc}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PMC
+          </a>
+        )}
+      </div>
+    </article>
+  );
+};
+
+interface Props {
+  papers: Paper[];
+}
+
 export default function BrowseClient({ papers }: Props) {
   const fuse = useMemo(() => createFuse(papers), [papers]);
   const facets = useMemo(() => buildFacets(papers), [papers]);
   const [state, setState] = useSearchState(papers);
-  const results = useMemo(() => applySearch(papers, fuse, state), [papers, fuse, state]);
+  const visiblePapers = useMemo(() => applySearch(papers, fuse, state), [papers, fuse, state]);
   const currentYear = useMemo(() => new Date().getFullYear(), []);
   const yearRange = useMemo(() => {
     const years = Object.keys(facets.years).map((y) => Number.parseInt(y, 10));
@@ -243,7 +332,7 @@ export default function BrowseClient({ papers }: Props) {
           <div class="flex flex-col gap-3 rounded-3xl border border-indigo-100/80 bg-white/95 p-5 shadow-xl ring-1 ring-indigo-50 backdrop-blur sm:flex-row sm:items-center sm:justify-between dark:border-slate-800 dark:bg-slate-900 dark:ring-slate-800/80">
             <div>
               <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100">
-                {results.length} papers
+                {visiblePapers.length} papers
               </h2>
               <p class="text-sm text-slate-600 dark:text-slate-300">
                 Sorted by relevance, then year (newest first)
@@ -258,97 +347,9 @@ export default function BrowseClient({ papers }: Props) {
             </button>
           </div>
           <div class="space-y-4">
-            {results.map((paper) => {
-              const { display, remaining } = truncateAuthors(paper.normalizedAuthors);
-              return (
-                <article
-                  key={paper.id}
-                  class="group rounded-3xl border border-white/70 bg-white/95 p-6 shadow-xl ring-1 ring-indigo-50 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-800/80 dark:bg-slate-900 dark:ring-slate-800/60"
-                >
-                  <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 class="text-lg font-semibold text-slate-900 transition group-hover:text-indigo-600 dark:text-slate-100">
-                        <a href={getPaperUrl(paper)}>{paper.title}</a>
-                      </h3>
-                      <p class="text-sm text-slate-600 dark:text-slate-300">
-                        {display}
-                        {remaining.length > 0 && (
-                          <details class="inline">
-                            <summary class="ml-1 cursor-pointer text-blue-600 dark:text-blue-400">
-                              +{remaining.length} more
-                            </summary>
-                            <span class="ml-2 inline text-slate-600 dark:text-slate-300">
-                              {remaining.join(', ')}
-                            </span>
-                          </details>
-                        )}
-                      </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-sm text-slate-500 dark:text-slate-300">
-                      <span>{paper.journal}</span>
-                      <span aria-hidden="true">•</span>
-                      <span>{paper.year}</span>
-                    </div>
-                  </div>
-                  <details class="mt-3 rounded-2xl border border-indigo-50/70 bg-indigo-50/40 p-3 transition open:shadow-sm dark:border-indigo-900/60 dark:bg-indigo-900/10">
-                    <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-indigo-700 transition hover:text-indigo-800 dark:text-indigo-200 dark:hover:text-indigo-100">
-                      <span>Abstract</span>
-                      <span class="text-xs font-bold uppercase tracking-wide text-indigo-500 dark:text-indigo-200">{'▼'}</span>
-                    </summary>
-                    <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-200">
-                      {paper.abstract}
-                      {paper.isAbstractTruncated && (
-                        <span class="ml-1 text-xs uppercase text-orange-600">
-                          (Abstract truncated)
-                        </span>
-                      )}
-                    </p>
-                  </details>
-                  <div class="mt-4 flex flex-wrap gap-2">
-                    {(paper.domains ?? []).map((domain) => (
-                      <span
-                        key={domain}
-                        class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-200"
-                      >
-                        {domain}
-                      </span>
-                    ))}
-                  </div>
-                  <div class="mt-5 flex flex-wrap gap-2 text-sm">
-                    {paper.links.pubmed && (
-                      <a
-                        class="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700 transition hover:border-indigo-200 hover:bg-indigo-100 dark:border-indigo-500/40 dark:bg-indigo-900/20 dark:text-indigo-200"
-                        href={paper.links.pubmed}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        PubMed
-                      </a>
-                    )}
-                    {paper.links.doi && (
-                      <a
-                        class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
-                        href={paper.links.doi}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        DOI
-                      </a>
-                    )}
-                    {paper.links.pmc && (
-                      <a
-                        class="inline-flex items-center gap-2 rounded-xl border border-slate-200/80 bg-white/70 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-indigo-200 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200"
-                        href={paper.links.pmc}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        PMC
-                      </a>
-                    )}
-                  </div>
-                </article>
-              );
-            })}
+            {visiblePapers.map((paper) => (
+              <PaperCard key={paper.id} paper={paper} />
+            ))}
           </div>
         </section>
       </div>
