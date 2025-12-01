@@ -132,7 +132,6 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
       </div>
       <form
         class="relative flex flex-col gap-3 bg-white rounded-2xl p-3 shadow-xl sm:flex-row sm:items-center sm:gap-0 sm:p-2"
-        id="homepage-search-form"
         action={browseResultsHref}
         method="get"
       >
@@ -167,25 +166,6 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
           ))
         }
       </div>
-      <script is:inline>
-        const browseBase = {JSON.stringify(browseHref)};
-        const homepageForm = document.getElementById('homepage-search-form');
-        const homepageInput = document.getElementById('homepage-search');
-
-        const buildHomepageTarget = (query) => {
-          const params = new URLSearchParams();
-          if (query) params.set('q', query);
-          const serialized = params.toString();
-          return `${browseBase}${serialized ? `?${serialized}` : ''}#papers`;
-        };
-
-        homepageForm?.addEventListener('submit', (event) => {
-          if (!(homepageInput instanceof HTMLInputElement)) return;
-          event.preventDefault();
-          const destination = buildHomepageTarget(homepageInput.value.trim());
-          window.location.href = destination;
-        });
-      </script>
     </div>
   </Fragment>
 
