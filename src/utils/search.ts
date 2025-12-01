@@ -16,17 +16,18 @@ const fuseOptions: IFuseOptions<Paper> = {
   includeScore: true,
   keys: [
     { name: 'title', weight: 3 },
-    { name: 'abstract', weight: 2 },
+    { name: 'abstract', weight: 4 },
     'keywords',
     'authors',
     'journal'
   ],
-  threshold: 0.35,
+  threshold: 0.2,
   ignoreLocation: true,
+  minMatchCharLength: 3,
   useExtendedSearch: true
 };
 
-export const createFuse = (papers: Paper[]): Fuse<Paper> => new Fuse(papers, fuseOptions);
+export const createFuse = (papers: Paper[]): Fuse<Paper> => new Fuse(papers, { ...fuseOptions });
 
 const withinYearRange = (paper: Paper, years: [number, number]) =>
   paper.year >= years[0] && paper.year <= years[1];
