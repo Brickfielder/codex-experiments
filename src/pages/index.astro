@@ -1,15 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeSearchClient from '../components/HomeSearchClient.tsx';
 import papers from '../../data/papers.normalized.json';
 import { getPaperUrl } from '~/utils/format';
-import { getAboutUrl, getBrowseUrl } from '~/utils/siteUrls';
+import { getAboutUrl } from '~/utils/siteUrls';
 import { isInCurrentMonth } from '~/utils/dates';
 import type { Paper } from '~/utils/types';
 
 const typedPapers = papers as Paper[];
 const getPublicationTimestamp = (paper: Paper) =>
   new Date(paper.date ?? `${paper.year}-01-01`).getTime();
-const browseHref = getBrowseUrl();
+const basePath = import.meta.env.BASE_URL ?? '/';
+const browseHref = `${basePath}${basePath.endsWith('/') ? '' : '/'}browse/`;
 const buildBrowseHref = (query?: string) => {
   const params = new URLSearchParams();
   if (query) params.set('q', query);
@@ -130,28 +132,7 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
         class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl opacity-25 group-hover:opacity-50 blur transition duration-500"
       >
       </div>
-      <form
-        class="relative flex flex-col gap-3 bg-white rounded-2xl p-3 shadow-xl sm:flex-row sm:items-center sm:gap-0 sm:p-2"
-        action={browseResultsHref}
-        method="get"
-      >
-        <div class="relative w-full flex-1 sm:pl-2">
-          <label class="sr-only" htmlFor="homepage-search">Search papers</label>
-          <input
-            id="homepage-search"
-            name="q"
-            type="search"
-            class="w-full flex-1 p-3 md:p-4 outline-none text-slate-900 placeholder-slate-400 rounded-xl border border-slate-100"
-            placeholder="Search for fatigue, cognition, return to work..."
-          />
-        </div>
-        <button
-          class="w-full bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 transition shadow-lg sm:w-auto"
-          type="submit"
-        >
-          Search
-        </button>
-      </form>
+      <HomeSearchClient client:load papers={typedPapers} browseResultsHref={browseResultsHref} />
 
       <div class="mt-4 flex flex-wrap justify-center gap-2 text-sm text-slate-300">
         <span>Try:</span>
