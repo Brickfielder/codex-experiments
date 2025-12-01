@@ -1,5 +1,8 @@
 const REPO_BASE_URL = 'https://github.com/Brickfielder/codex-experiments';
-const SITE_BASE_URL = 'https://brickfielder.github.io/codex-experiments';
+
+const SITE_BASE_URL = ensureTrailingSlash(
+  import.meta.env.SITE ?? import.meta.env.BASE_URL ?? '/'
+);
 
 const ensureTrailingSlash = (value: string): string => (value.endsWith('/') ? value : `${value}/`);
 
