@@ -3,18 +3,15 @@ import preact from '@astrojs/preact';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
-const repository = process.env.GITHUB_REPOSITORY?.split('/') ?? [];
-const [owner, repoName] = repository;
-
 const rawBase = process.env.ASTRO_BASE ?? '/';
 const normalizedBase =
   rawBase === '/' ? '/' : `/${rawBase.replace(/^\/+/, '').replace(/\/+$/, '')}`;
 
+const DEFAULT_SITE = 'https://caresearchhub.org';
+
 const site =
   process.env.ASTRO_SITE ??
-  (owner && repoName
-    ? `https://${owner}.github.io${normalizedBase === '/' ? '' : normalizedBase}`
-    : 'http://localhost:3000');
+  (process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : DEFAULT_SITE);
 
 export default defineConfig({
   site,
