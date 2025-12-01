@@ -6,7 +6,7 @@ import tailwind from '@astrojs/tailwind';
 const repository = process.env.GITHUB_REPOSITORY?.split('/') ?? [];
 const [owner, repoName] = repository;
 
-const rawBase = process.env.ASTRO_BASE ?? (repoName ? `/${repoName}` : '/');
+const rawBase = process.env.ASTRO_BASE ?? '/';
 const normalizedBase =
   rawBase === '/' ? '/' : `/${rawBase.replace(/^\/+/, '').replace(/\/+$/, '')}`;
 
