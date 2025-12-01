@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'preact/hooks';
-import { applySearch, createFuse, defaultSearchState } from '~/utils/search';
+import { applySearch, defaultSearchState } from '~/utils/search';
 import { getPaperUrl, truncateAuthors } from '~/utils/format';
 import type { Paper } from '~/utils/types';
 
@@ -26,15 +26,14 @@ const buildBrowseLink = (baseWithHash: string, query: string): string => {
 };
 
 export default function HomeSearchClient({ papers, browseResultsHref }: HomeSearchClientProps) {
-  const fuse = useMemo(() => createFuse(papers), [papers]);
   const defaults = useMemo(() => defaultSearchState(papers), [papers]);
   const [query, setQuery] = useState<string>('');
 
   const results = useMemo(() => {
     const state = { ...defaults, query };
-    const filtered = applySearch(papers, fuse, state);
+    const filtered = applySearch(papers, state);
     return filtered.slice(0, 5);
-  }, [defaults, fuse, papers, query]);
+  }, [defaults, papers, query]);
 
   const browseLink = useMemo(() => buildBrowseLink(browseResultsHref, query), [browseResultsHref, query]);
 

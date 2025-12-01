@@ -1,5 +1,4 @@
 import Fuse from 'fuse.js';
-import type { IFuseOptions } from 'fuse.js';
 import type { Paper, SearchState } from './types';
 
 export const QUICK_FILTERS: Record<string, string[]> = {
@@ -12,18 +11,24 @@ export const QUICK_FILTERS: Record<string, string[]> = {
   'Family/Key Supporter': ['caregiver', 'family', 'supporter']
 };
 
-const fuseOptions: IFuseOptions<Paper> = {
-  includeScore: true,
+const fuseOptions: Fuse.IFuseOptions<Paper> = {
   keys: [
-    { name: 'title', weight: 3 },
-    { name: 'abstract', weight: 2 },
-    'keywords',
-    'authors',
-    'journal'
+    { name: 'title', weight: 0.5 },
+    { name: 'abstract', weight: 0.3 },
+    { name: 'keywords', weight: 0.15 },
+    { name: 'authors', weight: 0.03 },
+    { name: 'journal', weight: 0.02 }
   ],
-  threshold: 0.35,
-  ignoreLocation: true,
-  useExtendedSearch: true
+  includeScore: true,
+  includeMatches: true,
+  shouldSort: true,
+  useExtendedSearch: true,
+
+  // Stricter matching to improve precision
+  threshold: 0.25,
+  distance: 200,
+  ignoreLocation: false,
+  minMatchCharLength: 3
 };
 
 export const createFuse = (papers: Paper[]): Fuse<Paper> => new Fuse(papers, fuseOptions);
@@ -31,10 +36,7 @@ export const createFuse = (papers: Paper[]): Fuse<Paper> => new Fuse(papers, fus
 const withinYearRange = (paper: Paper, years: [number, number]) =>
   paper.year >= years[0] && paper.year <= years[1];
 
-const matchesFilter = (paper: Paper, state: SearchState): boolean => {
-  if (!withinYearRange(paper, state.years)) {
-    return false;
-  }
+const matchesFacetFilters = (paper: Paper, state: SearchState): boolean => {
   if (state.domains.length && !paper.domains?.some((domain) => state.domains.includes(domain))) {
     return false;
   }
@@ -50,30 +52,112 @@ const matchesFilter = (paper: Paper, state: SearchState): boolean => {
   if (state.journals.length && !state.journals.includes(paper.journal)) {
     return false;
   }
-  if (state.quickFilter) {
-    const terms = QUICK_FILTERS[state.quickFilter] ?? [];
-    if (!terms.length) return true;
-    const text =
-      `${paper.title} ${paper.abstract} ${(paper.keywords ?? []).join(' ')} ${(paper.domains ?? []).join(' ')}`.toLowerCase();
-    return terms.some((term) => text.includes(term.toLowerCase()));
-  }
   return true;
 };
 
-export const applySearch = (papers: Paper[], fuse: Fuse<Paper>, state: SearchState): Paper[] => {
-  const base = state.query
-    ? fuse.search(state.query).map((item) => ({ paper: item.item, score: item.score ?? 1 }))
-    : papers.map((paper) => ({ paper, score: 1 }));
+const matchesQuickFilters = (paper: Paper, state: SearchState): boolean => {
+  if (!state.quickFilter) {
+    return true;
+  }
+  const terms = QUICK_FILTERS[state.quickFilter] ?? [];
+  if (!terms.length) return true;
+  const text =
+    `${paper.title} ${paper.abstract} ${(paper.keywords ?? []).join(' ')} ${(paper.domains ?? []).join(' ')}`.toLowerCase();
+  return terms.some((term) => text.includes(term.toLowerCase()));
+};
 
-  const filtered = base.filter(({ paper }) => matchesFilter(paper, state));
-  return filtered
-    .sort((a, b) => {
-      if (a.score === b.score) {
-        return b.paper.year - a.paper.year;
-      }
-      return a.score - b.score;
-    })
-    .map(({ paper }) => paper);
+function buildExtendedQuery(raw: string): string {
+  const tokens = raw
+    .trim()
+    .split(/\s+/)
+    .filter((t) => t.length >= 3);
+
+  if (!tokens.length) return raw.trim();
+
+  // `'token` = "include" operator in Fuse extended search
+  // Joined with spaces = logical AND across tokens
+  return tokens.map((t) => `'${t.toLowerCase()}`).join(' ');
+}
+
+function searchWithFallback(fuse: Fuse<Paper>, rawQuery: string, limit = 200) {
+  const strictQuery = buildExtendedQuery(rawQuery);
+  let results = fuse.search(strictQuery, { limit });
+
+  // If strict extended search returns nothing, fall back to plain fuzzy
+  if (!results.length) {
+    results = fuse.search(rawQuery, { limit });
+  }
+
+  return results;
+}
+
+function isGoodMatch(result: Fuse.FuseResult<Paper>): boolean {
+  const score = result.score ?? 1;
+
+  // Drop very weak matches even if they technically clear the Fuse threshold
+  if (score > 0.35) return false;
+
+  // If we have match metadata, require that at least one match is
+  // in a "content" field (title, abstract, keywords)
+  if (result.matches && result.matches.length) {
+    const hasContentMatch = result.matches.some(
+      (m) => m.key === 'title' || m.key === 'abstract' || m.key === 'keywords'
+    );
+
+    if (!hasContentMatch) {
+      // Hit only in authors/journal -> treat as noise for general queries
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function scoreThenYearThenTitle(
+  a: Fuse.FuseResult<Paper>,
+  b: Fuse.FuseResult<Paper>
+): number {
+  const sa = a.score ?? 1;
+  const sb = b.score ?? 1;
+  if (sa !== sb) return sa - sb;
+
+  const ya = a.item.year ?? 0;
+  const yb = b.item.year ?? 0;
+  if (ya !== yb) return yb - ya; // newer first
+
+  return a.item.title.localeCompare(b.item.title);
+}
+
+function sortByYearThenTitleDesc(papers: Paper[]): Paper[] {
+  return [...papers].sort((a, b) => {
+    const ya = a.year ?? 0;
+    const yb = b.year ?? 0;
+    if (ya !== yb) return yb - ya; // newer first
+    return a.title.localeCompare(b.title);
+  });
+}
+
+export const applySearch = (allPapers: Paper[], state: SearchState): Paper[] => {
+  const query = state.query?.trim() ?? '';
+
+  const candidates = allPapers.filter((paper) => {
+    if (!withinYearRange(paper, state.years)) return false;
+    if (!matchesFacetFilters(paper, state)) return false;
+    if (!matchesQuickFilters(paper, state)) return false;
+    return true;
+  });
+
+  if (!query) {
+    return sortByYearThenTitleDesc(candidates);
+  }
+
+  const fuse = new Fuse(candidates, fuseOptions);
+  const searchResults = searchWithFallback(fuse, query, 200);
+  const goodResults = searchResults.filter(isGoodMatch);
+
+  return goodResults
+    .sort(scoreThenYearThenTitle)
+    .map((r) => r.item);
 };
 
 export interface FacetBuckets {
