@@ -10,7 +10,10 @@ import type { Paper } from '~/utils/types';
 const typedPapers = papers as Paper[];
 const getPublicationTimestamp = (paper: Paper) =>
   new Date(paper.date ?? `${paper.year}-01-01`).getTime();
-const browseHref = getBrowseUrl();
+const browseHrefUrl = new URL(getBrowseUrl());
+const browseHref = browseHrefUrl.pathname.endsWith('/')
+  ? browseHrefUrl.pathname
+  : `${browseHrefUrl.pathname}/`;
 const buildBrowseHref = (query?: string) => {
   const params = new URLSearchParams();
   if (query) params.set('q', query);
