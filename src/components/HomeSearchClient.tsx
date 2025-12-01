@@ -49,8 +49,10 @@ export default function HomeSearchClient({ papers, browseResultsHref }: HomeSear
           />
         </div>
         <button
-          class="w-full rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-slate-800 sm:w-auto"
+          class="w-full rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-lg transition sm:w-auto cursor-not-allowed opacity-60"
           type="submit"
+          disabled
+          aria-disabled="true"
         >
           Quick Search
         </button>
