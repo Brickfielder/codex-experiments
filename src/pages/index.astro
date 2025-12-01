@@ -21,13 +21,6 @@ const buildBrowseHref = (query?: string) => {
   return `${browseHref}${serialized ? `?${serialized}` : ''}#papers`;
 };
 const browseResultsHref = buildBrowseHref();
-const getFilterHref = (filters: { domain?: string; quick?: string }) => {
-  const params = new URLSearchParams();
-  if (filters.domain) params.append('domain', filters.domain);
-  if (filters.quick) params.append('quick', filters.quick);
-  const query = params.toString();
-  return query ? `${browseHref}?${query}#papers` : browseResultsHref;
-};
 const aboutHref = `${getAboutUrl()}#search-strategy`;
 const totalPapers = typedPapers.length;
 const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year), 0);
@@ -182,10 +175,10 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
           <div class="grid gap-3">
             {
               domainCards.map((card) => (
-                <a
+                <button
+                  type="button"
                   key={card.title}
-                  href={getFilterHref({ quick: card.quickFilter })}
-                  class="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200"
+                  class="group flex w-full items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200 text-left"
                 >
                   <div
                     class={`w-10 h-10 rounded-full flex items-center justify-center text-xl transition transform group-hover:scale-110 group-hover:animate-bounce animate-pulse ${card.colorClasses}`}
@@ -198,7 +191,7 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
                     </h3>
                     <p class="text-xs text-slate-500 mt-1">{card.description}</p>
                   </div>
-                </a>
+                </button>
               ))
             }
           </div>
