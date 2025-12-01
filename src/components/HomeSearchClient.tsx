@@ -14,17 +14,6 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
   return null;
 };
 
-const buildBrowseLink = (baseWithHash: string, query: string): string => {
-  const [base, hash] = baseWithHash.split('#');
-  const params = new URLSearchParams();
-  if (query.trim()) {
-    params.set('q', query.trim());
-  }
-  const serialized = params.toString();
-  const anchor = hash ? `#${hash}` : '';
-  return `${base}${serialized ? `?${serialized}` : ''}${anchor}`;
-};
-
 export default function HomeSearchClient({ papers, browseResultsHref }: HomeSearchClientProps) {
   const fuse = useMemo(() => createFuse(papers), [papers]);
   const defaults = useMemo(() => defaultSearchState(papers), [papers]);
@@ -36,7 +25,7 @@ export default function HomeSearchClient({ papers, browseResultsHref }: HomeSear
     return filtered.slice(0, 5);
   }, [defaults, fuse, papers, query]);
 
-  const browseLink = useMemo(() => buildBrowseLink(browseResultsHref, query), [browseResultsHref, query]);
+  const repositoryLink = 'https://brickfielder.github.io/codex-experiments/browse/';
 
   return (
     <div class="relative z-10 space-y-4">
@@ -63,7 +52,7 @@ export default function HomeSearchClient({ papers, browseResultsHref }: HomeSear
           class="w-full rounded-xl bg-slate-900 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-slate-800 sm:w-auto"
           type="submit"
         >
-          Search
+          Quick Search
         </button>
       </form>
 
@@ -71,8 +60,8 @@ export default function HomeSearchClient({ papers, browseResultsHref }: HomeSear
         <div class="rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-lg">
           <div class="mb-3 flex items-center justify-between">
             <p class="text-sm font-semibold text-slate-700">Top matches</p>
-            <a class="text-xs font-semibold text-indigo-600 hover:text-indigo-800" href={browseLink}>
-              Open in full browse view →
+            <a class="text-xs font-semibold text-indigo-600 hover:text-indigo-800" href={repositoryLink}>
+              Go to repository →
             </a>
           </div>
           {results.length === 0 ? (
