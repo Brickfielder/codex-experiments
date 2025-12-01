@@ -48,14 +48,14 @@ const domainCards = [
     description: 'Screening, memory, executive function.',
     emoji: '🧠',
     colorClasses: 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white',
-    href: 'https://brickfielder.github.io/codex-experiments/browse/?years=2019%3A2025&q=cognitive'
+    quickFilter: 'Cognitive'
   },
   {
     title: 'Emotional',
     description: 'Depression, anxiety, PTSD, fatigue.',
     emoji: '❤️',
     colorClasses: 'bg-pink-50 text-pink-600 group-hover:bg-pink-600 group-hover:text-white',
-    href: 'https://brickfielder.github.io/codex-experiments/browse/?years=2019%3A2025&q=psychological'
+    quickFilter: 'Psychological'
   },
   {
     title: 'Quality of Life',
@@ -63,21 +63,21 @@ const domainCards = [
     emoji: '🌱',
     colorClasses:
       'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white',
-    href: 'https://brickfielder.github.io/codex-experiments/browse/?years=2019%3A2025&q=QoL'
+    quickFilter: 'QoL'
   },
   {
     title: 'Return to Work',
     description: 'Vocational outcomes and participation.',
     emoji: '💼',
     colorClasses: 'bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white',
-    href: 'https://brickfielder.github.io/codex-experiments/browse/?years=2019%3A2025&q=work'
+    quickFilter: 'Return to Work'
   },
   {
     title: 'Family/Key Supporter',
     description: 'Caregiver burden, needs, and wellbeing.',
     emoji: '👪',
     colorClasses: 'bg-violet-50 text-violet-600 group-hover:bg-violet-600 group-hover:text-white',
-    href: 'https://brickfielder.github.io/codex-experiments/browse/?years=2019%3A2025&q=family'
+    quickFilter: 'Family/Key Supporter'
   }
 ];
 
@@ -184,7 +184,7 @@ const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } |
               domainCards.map((card) => (
                 <a
                   key={card.title}
-                  href={card.href}
+                  href={getFilterHref({ quick: card.quickFilter })}
                   class="group flex items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200"
                 >
                   <div
