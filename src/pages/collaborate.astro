@@ -11,6 +11,7 @@ const { people = [], meta } = collaboratorData as {
   people: Collaborator[];
   meta: { updated_at?: string };
 };
+const hasPeople = people.length > 0;
 const totalCountries = new Set(people.map((person) => person.country)).size;
 const highlightedTags = [
   'cognition',
@@ -81,6 +82,14 @@ const networkStats = [
 
   <section class="-mt-12 -mx-4 px-4 pb-10 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
     <div class="mx-auto max-w-6xl">
+      <div class="mb-6 rounded-3xl border border-amber-200 bg-amber-50 p-6 text-amber-900 shadow-lg">
+        <p class="text-xs font-semibold uppercase tracking-[0.3em]">Consent pause</p>
+        <p class="mt-2 text-base">
+          The collaborator map and directory are temporarily offline while we gather explicit consent
+          from everyone listed. No collaborator details are displayed until we have confirmed
+          permission to publish them.
+        </p>
+      </div>
       <div
         class="flex flex-col gap-6 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-200/80"
       >
@@ -117,93 +126,110 @@ const networkStats = [
   </section>
 
   <section class="space-y-12 px-4 pb-12 pt-0 sm:px-6 lg:px-8">
-    <section
-      id="map"
-      class="space-y-6 rounded-3xl border border-white/70 bg-white/95 p-8 shadow-xl"
-    >
-      <header class="space-y-3">
-        <p class="text-sm font-semibold uppercase tracking-[0.4em] text-indigo-600">Global map</p>
-        <h2 class="text-3xl font-semibold text-slate-900">
-          Where survivorship and co-survivorship work is happening
-        </h2>
-        <p class="text-base text-slate-600">
-          Explore who is working on survivorship around the world. Filter by specialty or use the
-          directory to focus on names, organisations, job roles, and countries.
-        </p>
-      </header>
-      <div class="flex flex-wrap gap-3">
-        {
-          filters.map((filter) => (
-            <span
-              key={filter.slug}
-              class={`rounded-full border px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] ${highlightedTags.includes(filter.slug) ? 'border-indigo-200 bg-indigo-50 text-indigo-700' : 'border-slate-200 bg-white text-slate-500'}`}
-            >
-              {filter.label}
-            </span>
-          ))
-        }
-      </div>
-      <CollaboratorMap client:only="preact" people={people} />
-    </section>
+    {hasPeople ? (
+      <Fragment>
+        <section
+          id="map"
+          class="space-y-6 rounded-3xl border border-white/70 bg-white/95 p-8 shadow-xl"
+        >
+          <header class="space-y-3">
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-indigo-600">Global map</p>
+            <h2 class="text-3xl font-semibold text-slate-900">
+              Where survivorship and co-survivorship work is happening
+            </h2>
+            <p class="text-base text-slate-600">
+              Explore who is working on survivorship around the world. Filter by specialty or use the
+              directory to focus on names, organisations, job roles, and countries.
+            </p>
+          </header>
+          <div class="flex flex-wrap gap-3">
+            {
+              filters.map((filter) => (
+                <span
+                  key={filter.slug}
+                  class={`rounded-full border px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] ${highlightedTags.includes(filter.slug) ? 'border-indigo-200 bg-indigo-50 text-indigo-700' : 'border-slate-200 bg-white text-slate-500'}`}
+                >
+                  {filter.label}
+                </span>
+              ))
+            }
+          </div>
+          <CollaboratorMap client:only="preact" people={people} />
+        </section>
 
-    <section
-      id="directory"
-      class="space-y-6 rounded-3xl border border-white/70 bg-white/95 p-8 shadow-xl"
-    >
-      <header class="space-y-3">
-        <p class="text-sm font-semibold uppercase tracking-[0.4em] text-indigo-600">Directory</p>
-        <h2 class="text-3xl font-semibold text-slate-900">Researchers & collaborators</h2>
-        <div class="space-y-3 text-base text-slate-600">
-          <p>
-            This growing network brings together researchers, clinicians, and survivor-led groups
-            who are advancing long-term survivorship after cardiac arrest. Each card highlights two
-            things:
-          </p>
-          <ul class="list-disc space-y-2 pl-6">
-            <li>
-              <strong>"What I can offer"</strong> – specific resources, datasets, expertise, or services
-              others may find useful.
-            </li>
-            <li>
-              <strong>"Looking to collaborate on"</strong> – areas where you’d welcome partners, data
-              sharing, co-design, or methodological support.
-            </li>
-          </ul>
-          <p>
-            These short entries help people spot synergy quickly and build collaborations that would
-            be hard to find otherwise.
-          </p>
-          <details class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm">
-            <summary class="cursor-pointer text-base font-semibold text-slate-800">
-              Examples of “What I can offer”
-            </summary>
-            <ul class="mt-3 list-disc space-y-1 pl-6">
-              <li>Follow-up registry with 6–12 month outcomes</li>
-              <li>Post-arrest rehabilitation pathway (MoCA, EQ-5D, HADS)</li>
-              <li>Access to survivor peer networks for co-design</li>
-              <li>Qualitative methods expertise; experience running sub-studies</li>
-              <li>AI tools for semi-automated literature screening</li>
-            </ul>
-          </details>
-          <details class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm">
-            <summary class="cursor-pointer text-base font-semibold text-slate-800">
-              Examples of “Looking to collaborate on”
-            </summary>
-            <ul class="mt-3 list-disc space-y-1 pl-6">
-              <li>Harmonising PRO measures across sites</li>
-              <li>Multinational follow-up datasets</li>
-              <li>Co-designing support pathways for survivors and relatives</li>
-              <li>Linking acute and long-term datasets</li>
-              <li>Developing digital resources for survivorship</li>
-            </ul>
-          </details>
-        </div>
-        <p class="text-base text-slate-600">
-          Search by name, organisation, tags, or country.
+        <section
+          id="directory"
+          class="space-y-6 rounded-3xl border border-white/70 bg-white/95 p-8 shadow-xl"
+        >
+          <header class="space-y-3">
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-indigo-600">Directory</p>
+            <h2 class="text-3xl font-semibold text-slate-900">Researchers & collaborators</h2>
+            <div class="space-y-3 text-base text-slate-600">
+              <p>
+                This growing network brings together researchers, clinicians, and survivor-led groups
+                who are advancing long-term survivorship after cardiac arrest. Each card highlights two
+                things:
+              </p>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>
+                  <strong>"What I can offer"</strong> – specific resources, datasets, expertise, or services
+                  others may find useful.
+                </li>
+                <li>
+                  <strong>"Looking to collaborate on"</strong> – areas where you’d welcome partners, data
+                  sharing, co-design, or methodological support.
+                </li>
+              </ul>
+              <p>
+                These short entries help people spot synergy quickly and build collaborations that would
+                be hard to find otherwise.
+              </p>
+              <details class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm">
+                <summary class="cursor-pointer text-base font-semibold text-slate-800">
+                  Examples of “What I can offer”
+                </summary>
+                <ul class="mt-3 list-disc space-y-1 pl-6">
+                  <li>Follow-up registry with 6–12 month outcomes</li>
+                  <li>Post-arrest rehabilitation pathway (MoCA, EQ-5D, HADS)</li>
+                  <li>Access to survivor peer networks for co-design</li>
+                  <li>Qualitative methods expertise; experience running sub-studies</li>
+                  <li>AI tools for semi-automated literature screening</li>
+                </ul>
+              </details>
+              <details class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm">
+                <summary class="cursor-pointer text-base font-semibold text-slate-800">
+                  Examples of “Looking to collaborate on”
+                </summary>
+                <ul class="mt-3 list-disc space-y-1 pl-6">
+                  <li>Harmonising PRO measures across sites</li>
+                  <li>Multinational follow-up datasets</li>
+                  <li>Co-designing support pathways for survivors and relatives</li>
+                  <li>Linking acute and long-term datasets</li>
+                  <li>Developing digital resources for survivorship</li>
+                </ul>
+              </details>
+            </div>
+            <p class="text-base text-slate-600">
+              Search by name, organisation, tags, or country.
+            </p>
+          </header>
+          <CollaboratorDirectory client:load people={people} />
+        </section>
+      </Fragment>
+    ) : (
+      <section class="space-y-4 rounded-3xl border border-white/70 bg-white/95 p-8 text-slate-800 shadow-xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.4em] text-amber-600">Directory paused</p>
+        <h2 class="text-3xl font-semibold text-slate-900">No collaborators are currently listed</h2>
+        <p class="text-base text-slate-700">
+          We have temporarily removed all collaborator entries until each person confirms consent to be
+          shown here. If you previously shared your details and would like them restored, or if you want
+          to add a new consented entry, please email
+          <a class="font-semibold text-indigo-700 underline" href="mailto:ohcacare@gmail.com"
+            >ohcacare@gmail.com</a
+          >.
         </p>
-      </header>
-      <CollaboratorDirectory client:load people={people} />
-    </section>
+      </section>
+    )}
 
     <section
       class="rounded-3xl border border-indigo-100 bg-indigo-50/70 p-8 text-indigo-900 shadow-lg"
