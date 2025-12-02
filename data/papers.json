@@ -290,6 +290,50 @@
     "country": "United Kingdom"
   },
   {
+    "id": "40211320",
+    "pmid": "40211320",
+    "doi": "10.1186/s40359-025-02648-6",
+    "title": "Development of the DANish Cognitive Screen for Cardiac Arrest Survivors (DANcSCA).",
+    "authors": [
+      "Anders Wieghorst",
+      "Vicky L Joshi",
+      "Lars Evald",
+      "Tonny E Andersen",
+      "Britt Borregaard",
+      "Jørgen Feldbæk Nielsen",
+      "Morten Tjørnlund",
+      "Ann-Dorthe Zwisler"
+    ],
+    "journal": "BMC psychology",
+    "year": 2025,
+    "date": "2025-04-10",
+    "abstract": "BACKGROUND: Cognitive deficits are prevalent among cardiac arrest survivors, yet there is no consensus on standardised screening methods. Hence, a novel screening tool is needed to assist healthcare professionals in determining the necessity of further assessment or rehabilitation. This paper reports on the development process of a cognitive screening for cardiac arrest survivors and makes recommendations for timing and how to communicate the results.\nMETHODS: Based on an iterative process that included clinical observations and roundtable discussions, we underwent a four-phase development process grounded in the GUIDED guidelines (Duncan E, BMJ Open 10:e033516, 2020).\nRESULTS: During the first phase, we explored the cognitive after-effects of cardiac arrest, focusing on potentially affected cognitive functions, suitable tests, and cognitive rehabilitation needs. The second phase included developing a pen-and-paper neuropsychological screening battery, which proved too resource-intensive due to its reliance on neuropsychologists. Consequently, in the third phase, we transitioned to a tablet-based screening tool. The fourth phase involved proof of concept, assessing whether we had developed a feasible cognitive screening for cardiac arrest survivors that could be implemented in hospital departments and rehabilitation settings. For this procedure, we determined that the appropriate time for screening is six to eight weeks after hospital discharge, with screening results categorised as: 'no concerns,' 'need for further assessment,' and 'need for specialised rehabilitation. The screening, appropriate timing for its administration, and communication of results are presented.\nCONCLUSION: We have successfully developed and reported a digital screening for cognitive deficits following cardiac arrest. This approach has the potential to enable systematic screening of all cardiac arrest survivors.",
+    "links": {
+      "doi": "https://doi.org/10.1186/s40359-025-02648-6",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40211320",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11984037"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC11984037",
+    "mesh": [
+      "Humans",
+      "Heart Arrest",
+      "Cognitive Dysfunction",
+      "Survivors",
+      "Neuropsychological Tests",
+      "Female",
+      "Male",
+      "Denmark",
+      "Middle Aged",
+      "Aged",
+      "Mass Screening"
+    ],
+    "country": "Denmark"
+  },
+  {
     "id": "40409672",
     "pmid": "40409672",
     "doi": "10.1016/j.resuscitation.2025.110653",
@@ -412,6 +456,26 @@
       "Anxiety"
     ],
     "country": "the Netherlands"
+  },
+  {
+    "id": "10.1016/s0300-9572(25)00402-2",
+    "doi": "10.1016/s0300-9572(25)00402-2",
+    "title": "Experiences and Aftercare Needs of Bystanders Involved in Out-of-Hospital Cardiopulmonary Resuscitation",
+    "authors": [
+      "Vicky Joshi",
+      "Gareth Clegg"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00402-2"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    }
   },
   {
     "id": "40597994",
@@ -947,6 +1011,32 @@
     "country": "Sweden"
   },
   {
+    "id": "40419080",
+    "pmid": "40419080",
+    "doi": "10.1016/j.resuscitation.2025.110658",
+    "title": "Recovery after rescue: The green shoots of bystander aftercare.",
+    "authors": [
+      "Vicky L Joshi",
+      "Anna Marie Moe Øvstebø",
+      "Thomas Werner Lindner",
+      "Gareth Clegg",
+      "Conrad Arnfinn Bjørshol"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-05-24",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2025.110658",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40419080"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "country": "Norway"
+  },
+  {
     "id": "40561517",
     "pmid": "40561517",
     "doi": "10.1093/ehjacc/zuaf092",
@@ -1087,6 +1177,33 @@
     },
     "pmcid": "PMC12155715",
     "country": "Italy"
+  },
+  {
+    "id": "41297707",
+    "pmid": "41297707",
+    "doi": "10.1016/j.ijcard.2025.134043",
+    "title": "The role of in-hospital traumatic distress after out-of-hospital cardiac arrest in later fatigue, sleep quality, and health-related quality of life.",
+    "authors": [
+      "Vicky L Joshi",
+      "Frederik Dornonville de la Cour",
+      "Dea Siggaard Stenbæk",
+      "Britt Borregaard",
+      "Christian Hassager",
+      "Mette Kirstine Wagner"
+    ],
+    "journal": "International journal of cardiology",
+    "year": 2025,
+    "date": "2025-11-24",
+    "abstract": "AIM: To investigate potential in-hospital cognitive and psychopathological factors associated with fatigue three months after out-of-hospital cardiac arrest (OHCA).\nMETHODS: This was a multicenter prospective cohort study conducted across three heart centers in Denmark. While in-hospital, OHCA survivors were screened for cognitive impairment using the Montreal Cognitive Assessment, self-reported symptoms of anxiety and depression using the Hospital Anxiety and Depression Scale, and traumatic distress using the Impact of Event Scale - Revised. At three-month follow-up, fatigue severity was assessed with the Fatigue Severity Scale (FSS). FSS ≥ 4 indicates clinically important fatigue. Logistic regression models were applied.\nRESULTS: Overall, 173 survivors were included (mean age 63.1 ± 11.7 years). At follow-up, the median FSS score was 3.2 points (IQR 2-9) and 42 % of survivors presented with clinically important fatigue (FSS ≥ 4). Those with fatigue were more often female, had longer hospital stays, reported greater in-hospital symptoms of anxiety, depression and traumatic distress, poorer sleep quality and health-related quality of life at follow-up. In the multivariable regression model, including age, sex, length of stay, anxiety, depression, traumatic distress and sleep quality, only traumatic distress was independently associated with FSS ≥ 4 (OR 4.6, 95 % CI: 1.5-14.7, p = 0.009).\nCONCLUSION: More than a third of OHCA survivors self-reported fatigue at three-month follow-up. In-hospital symptoms of traumatic distress were associated with higher odds of fatigue. While these findings underscore the potential value of early identification of traumatic distress, further research is needed to evaluate the benefits of screening and to identify interventions to support recovery after cardiac arrest.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.ijcard.2025.134043",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41297707"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "country": "Denmark"
   },
   {
     "id": "40648804",
@@ -4714,6 +4831,42 @@
     "country": "Switzerland"
   },
   {
+    "id": "35150773",
+    "pmid": "35150773",
+    "doi": "10.1016/j.resuscitation.2022.02.002",
+    "title": "Promising results from a residential rehabilitation intervention focused on fatigue and the secondary psychological and physical consequences of cardiac arrest: The SCARF feasibility study.",
+    "authors": [
+      "Vicky L Joshi",
+      "Lars Hermann Tang",
+      "Young Joo Kim",
+      "Mette Kirstine Wagner",
+      "Jørgen Feldbæk Nielsen",
+      "Morten Tjoernlund",
+      "Ann-Dorthe Zwisler"
+    ],
+    "journal": "Resuscitation",
+    "year": 2022,
+    "date": "2022-02-09",
+    "abstract": "AIMS: This study investigated the feasibility and potential effect of SCARF (Survivors of Cardiac ARest focused on Fatigue) a multidisciplinary residential rehabilitation intervention focused on fatigue and the secondary psychological and physical consequences of cardiac arrest (CA).\nMETHODS: This was a prospective one-armed feasibility study. Six progression criteria were identified related to the feasibility of the intervention and viability of a future effect study in terms of: participant recruitment (1), participant retention (2,3,4), and completeness of outcomes (5,6). Data on participant/clinician satisfaction with the intervention was also collected along with self-reported outcomes: fatigue, quality of life, anxiety, depression, function and disability, and physical activity (at baseline, 12 weeks and 6 months) and physical capacity (baseline and 12 weeks).\nRESULTS: Four progression criteria were met including retention (87.5%) and completion of baseline outcomes (97.5%). Two criteria were not met: recruitment rate was 2.9 participants per month (estimated rate needed 6.1) and completion of final outcomes was 65% (estimated proportion needed 75%). Participant/clinician satisfaction with the intervention was high. Three months after the SCARF intervention small to moderate effect size changes of r = 0.18-0.46 were found for self-reported fatigue, quality of life, anxiety, depression, function and disability and for two of the physical capacity tests (d = 0.46-0.52).\nCONCLUSION: SCARF was found to be a feasible intervention with high participant/clinician satisfaction, high participant retention and the possible potential to improve self-reported and physical capacity outcomes. Procedures for study recruitment and collection of final outcomes should be modified before a fully powered randomised controlled trial is conducted.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2022.02.002",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/35150773"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Fatigue",
+      "Feasibility Studies",
+      "Heart Arrest",
+      "Humans",
+      "Prospective Studies",
+      "Quality of Life"
+    ],
+    "country": "Denmark"
+  },
+  {
     "id": "35861822",
     "pmid": "35861822",
     "doi": "10.1161/JAHA.121.025713",
@@ -5385,6 +5538,44 @@
       "open_access": false,
       "has_fulltext": true
     }
+  },
+  {
+    "id": "34475160",
+    "pmid": "34475160",
+    "doi": "10.1136/bmjopen-2020-047251",
+    "title": "Effectiveness of rehabilitation interventions on the secondary consequences of surviving a cardiac arrest: a systematic review and meta-analysis.",
+    "authors": [
+      "Vicky L Joshi",
+      "Jan Christensen",
+      "Esben Lejsgaard",
+      "Rod S Taylor",
+      "Ann Dorthe Zwisler",
+      "Lars H Tang"
+    ],
+    "journal": "BMJ open",
+    "year": 2021,
+    "date": "2021-09-02",
+    "abstract": "AIM: The aim of this systematic review was to assess the effectiveness of rehabilitation interventions on the secondary physical, neurological and psychological consequences of cardiac arrest (CA) for adult survivors.\nMETHODS: A literature search of electronic databases (MEDLINE, Allied and Complementary Medicine Database, Cumulative Index to Nursing and Allied Health Literature, Excerpta Medica database, Psychological Information Database, Web of Science and Cochrane Central Register of Controlled trials) was conducted for randomised controlled trials (RCTs) and observational studies up to 18 April 2021. The primary outcome was health-related quality of life (HRQoL) and main secondary outcome was neurological function with additional secondary outcomes being survival, rehospitalisation, safety (serious and non-serious adverse events), psychological well-being, fatigue, exercise capacity and physical capacity. Two authors independently screened studies for eligibility, extracted data and assessed risk of bias.\nRESULTS: Three RCTs and 11 observational studies were included (total 721 participants). Study duration ranged from 8 weeks to 2 years. Pooled data from two RCTs showed low-quality evidence for no effect on physical HRQoL (standardised mean difference (SMD) 0.19, (95% CI: -0.09 to 0.47)) and no effect on mental HRQoL (SMD 0.27 (95% CI: -0.01 to 0.55)).Regarding secondary outcomes, very low-quality evidence was found for improvement in neurological function associated with inpatient rehabilitation for CA survivors with acquired brain injury (SMD 0.71, (95% CI: 0.45 to 0.96)) from five observational studies. Two small observational studies found exercise-based rehabilitation interventions to be safe for CA survivors, reporting no serious or non-serious events.\nCONCLUSIONS: Given the overall low quality of evidence, this review cannot determine the effectiveness of rehabilitation interventions for CA survivors on HRQoL, neurological function or other included outcomes, and recommend further high-quality studies be conducted. In the interim, existing clinical guidelines on rehabilitation provision after CA should be followed to meet the high burden of secondary consequences suffered by CA survivors.\nPROSPERO REGISTRATION NUMBER: CRD42018110129.",
+    "links": {
+      "doi": "https://doi.org/10.1136/bmjopen-2020-047251",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/34475160",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8413927"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC8413927",
+    "mesh": [
+      "Adult",
+      "Exercise Therapy",
+      "Fatigue",
+      "Heart Arrest",
+      "Humans",
+      "Quality of Life",
+      "Survivors"
+    ],
+    "country": "Denmark"
   },
   {
     "id": "33577966",
@@ -6982,6 +7173,32 @@
       "Treatment Outcome"
     ],
     "country": "Sweden"
+  },
+  {
+    "id": "34223329",
+    "pmid": "34223329",
+    "doi": "10.1016/j.resplu.2020.100057",
+    "title": "Subjective factors of depressive symptoms, ambulation, pain, and fatigue are associated with physical activity participation in cardiac arrest survivors with fatigue.",
+    "authors": [
+      "Young Joo Kim",
+      "Vicky Joshi",
+      "Qiang Wu"
+    ],
+    "journal": "Resuscitation plus",
+    "year": 2020,
+    "date": "2020-12-15",
+    "abstract": "AIM: This study aimed to examine the associations between participation in physical activities and objective and subjective factors modifiable by rehabilitation in cardiac arrest survivors with fatigue.\nMETHODS: Participants in a clinical feasibility study (N = 19) completed several subjective (patient-reported) and objective outcome measures on one occasion only. The associations between an individual's level of participation in physical activities (Participation Objective Participation Subjective) and their levels of cognition (Computer Assessment of Mild Cognitive Impairment), body movement (Keitel Functional Test), depressive symptoms (Center for Epidemiologic Studies Depression Scale), ambulation and pain (Health Utilities Index Mark 3), and fatigue impact (Modified Fatigue Impact Scale) were explored. Pearson's correlation coefficientwas calculated for all associations, except for body movement (Spearman's correlation coefficient).\nRESULTS: As hypothesized, we found weak-to-moderate, positive associations between participation in physical activities and objective factors of cognition ( = 0.370) and body movement ( = 0.414) and a subjective factor of ambulation ability ( = 0.501). We found moderate, negative associations between participation in physical activities and subjective factors of depressive symptoms (=-0.590), pain (=-0.495), physical fatigue impact (=-0.629), cognitive fatigue impact (=-0.591), and psychosocial fatigue impact (=-0.557).\nCONCLUSION: The moderate, negative and positive associations between participation in physical activities and subjective factors suggest that subjective complaints of depressive symptoms, ambulation ability, pain, and fatigue impact may be important factors when seeking to improve participation in physical activities. In particular, addressing physical and cognitive endurance as well as perceptions of fatigue may hold the key to increasing physical activity in cardiac arrest survivors with fatigue.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resplu.2020.100057",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/34223329",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8244480"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC8244480",
+    "country": "United States"
   },
   {
     "id": "32078390",
