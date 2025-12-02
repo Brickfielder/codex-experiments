@@ -1,3 +1,4 @@
+import type { ComponentChildren } from 'preact';
 import { useEffect, useMemo, useState } from 'preact/hooks';
 import {
   applySearch,
@@ -189,6 +190,27 @@ export default function BrowseClient({ papers }: Props) {
     </ul>
   );
 
+  const FacetSection = ({
+    title,
+    children,
+    defaultOpen = true
+  }: {
+    title: string;
+    children: ComponentChildren;
+    defaultOpen?: boolean;
+  }) => (
+    <details
+      class="rounded-2xl border border-indigo-100/70 bg-indigo-50/40 p-3 transition open:bg-white/90 open:shadow-sm dark:border-slate-800 dark:bg-slate-900/60 dark:open:bg-slate-900"
+      open={defaultOpen}
+    >
+      <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-700 transition hover:text-indigo-700 dark:text-slate-200 dark:hover:text-indigo-200">
+        <span>{title}</span>
+        <span class="text-xs font-bold uppercase tracking-wide text-indigo-500 dark:text-indigo-200">{'▼'}</span>
+      </summary>
+      <div class="mt-3">{children}</div>
+    </details>
+  );
+
   const quickFilterButtons = Object.keys(QUICK_FILTERS).map((label) => {
     const isActive = state.quickFilter === label;
     const base =
@@ -301,30 +323,25 @@ export default function BrowseClient({ papers }: Props) {
               </div>
             </div>
 
-            <div>
-              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Domain</p>
+            <FacetSection title="Domain">
               {buildFacetList(facets.domains, state.domains, 'domains')}
-            </div>
+            </FacetSection>
 
-            <div>
-              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Setting</p>
+            <FacetSection title="Setting">
               {buildFacetList(facets.settings, state.settings, 'settings')}
-            </div>
+            </FacetSection>
 
-            <div>
-              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Design</p>
+            <FacetSection title="Design">
               {buildFacetList(facets.designs, state.designs, 'designs')}
-            </div>
+            </FacetSection>
 
-            <div>
-              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Country</p>
+            <FacetSection title="Country">
               {buildFacetList(facets.countries, state.countries, 'countries')}
-            </div>
+            </FacetSection>
 
-            <div>
-              <p class="mb-2 text-sm font-semibold text-slate-700 dark:text-slate-200">Journal</p>
+            <FacetSection title="Journal">
               {buildFacetList(facets.journals, state.journals, 'journals')}
-            </div>
+            </FacetSection>
           </div>
         </aside>
 
