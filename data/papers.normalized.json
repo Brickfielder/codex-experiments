@@ -120,6 +120,51 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "10.1016/s0300-9572(25)00768-3",
+    "doi": "10.1016/s0300-9572(25)00768-3",
+    "title": "Are Out-of-Hospital Cardiac Arrest Survivors Being Effectively Rehabilitated? A Scoping Review on Rehabilitation Delivery after Out-of-Hospital Cardiac Arrest",
+    "authors": [
+      "Abigail Jia Ai Low",
+      "Dhruv Praveen",
+      "Vanessa Yap",
+      "Kenneth Loi",
+      "Mette Kirstine Wagner",
+      "Bo Gregers Winkel",
+      "Sachin Agarwal",
+      "Marco Mion",
+      "Marcus Eng Hock Ong",
+      "Fahad Javaid Siddiqui",
+      "Shir Lynn Lim"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00768-3"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Low AJA",
+      "Praveen D",
+      "Yap V",
+      "Loi K",
+      "Wagner MK",
+      "Winkel BG",
+      "Agarwal S",
+      "Mion M",
+      "Ong MEH",
+      "Siddiqui FJ",
+      "Lim SL"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "39970976",
     "pmid": "39970976",
     "doi": "10.1016/j.resuscitation.2025.110550",
@@ -752,6 +797,49 @@
       "Petersson N",
       "Zwisler A",
       "Borregaard B"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "10.1016/s0300-9572(25)00712-9",
+    "doi": "10.1016/s0300-9572(25)00712-9",
+    "title": "Feasibility of a Centralized Sub-Regional System for Screening Non-Physical Disability and Quality of Life in Out-of-Hospital Cardiac Arrest Survivors - The REVIVE Project",
+    "authors": [
+      "Alice Mandrini",
+      "Marco Mion",
+      "Roberto Primi",
+      "Sara Bendotti",
+      "Alessia Currao",
+      "Leila Ulmanova",
+      "Pierluigi Politi",
+      "Simone Savastano",
+      "Enrico Baldi"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00712-9"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "domains": [
+      "Qol"
+    ],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Mandrini A",
+      "Mion M",
+      "Primi R",
+      "Bendotti S",
+      "Currao A",
+      "Ulmanova L",
+      "Politi P",
+      "Savastano S",
+      "Baldi E"
     ],
     "isAbstractTruncated": false
   },
@@ -1510,6 +1598,47 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "10.1016/s0300-9572(25)00399-5",
+    "doi": "10.1016/s0300-9572(25)00399-5",
+    "title": "Self-Reported Physical Exercise and Perceived Exertion in Out-of-Hospital Cardiac Arrest Survivors",
+    "authors": [
+      "Katarina Heimburg",
+      "Erik Blennow Nordström",
+      "Anders M. Grejs",
+      "Thomas R. Keeble",
+      "Johannes Lorentzson",
+      "Marco Mion",
+      "Niklas Nielsen",
+      "Åsa Tornberg",
+      "Gisela Lilja"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00399-5"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Heimburg K",
+      "Nordström EB",
+      "Grejs AM",
+      "Keeble TR",
+      "Lorentzson J",
+      "Mion M",
+      "Nielsen N",
+      "Tornberg Å",
+      "Lilja G"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "40561517",
     "pmid": "40561517",
     "doi": "10.1093/ehjacc/zuaf092",
@@ -1764,6 +1893,200 @@
       "Borregaard B",
       "Hassager C",
       "Wagner MK"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "40543803",
+    "pmid": "40543803",
+    "doi": "10.1016/j.resuscitation.2025.110687",
+    "title": "They survived - Now what? The case for integrated recovery pathways for cardiac arrest survivors.",
+    "authors": [
+      "Marco Mion",
+      "Vicky L Joshi",
+      "Paul Swindell",
+      "Thomas R Keeble",
+      "10 Years Together Conference HCP-track Faculty"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-06-19",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2025.110687",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40543803"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "country": "United Kingdom",
+    "domains": [],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Mion M",
+      "Joshi VL",
+      "Swindell P",
+      "Keeble TR",
+      "Faculty 1YTCH"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "40523597",
+    "pmid": "40523597",
+    "doi": "10.1016/j.resuscitation.2025.110685",
+    "title": "Time for consensus: establishing core outcomes meaningful to survivors of out-of-hospital cardiac arrest.",
+    "authors": [
+      "Marco Mion",
+      "Vicky L Joshi"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-06-14",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2025.110685",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40523597"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "country": "United Kingdom",
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Mion M",
+      "Joshi VL"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "10.1016/s0300-9572(25)00405-8",
+    "doi": "10.1016/s0300-9572(25)00405-8",
+    "title": "Translating Guidelines into Practice: A Multicentre Audit of the Implementation of ERC Survivorship and Follow-Up Recommendations after Cardiac Arrest",
+    "authors": [
+      "Marco Mion",
+      "Meadbh Keenan",
+      "Alice Steadman",
+      "Savannah Murray-Mendes",
+      "Shirley Morrison",
+      "Claudine Keelan",
+      "Nikos Gorgoraptis",
+      "Nilesh Pareek",
+      "Jean Davis",
+      "Uzma Sajjad",
+      "Thomas Keeble"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00405-8"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "domains": [],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Mion M",
+      "Keenan M",
+      "Steadman A",
+      "Murray-Mendes S",
+      "Morrison S",
+      "Keelan C",
+      "Gorgoraptis N",
+      "Pareek N",
+      "Davis J",
+      "Sajjad U",
+      "Keeble T"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "10.1016/s0300-9572(25)00554-4",
+    "doi": "10.1016/s0300-9572(25)00554-4",
+    "title": "Two-Year Outcomes after Out-of-Hospital Cardiac Arrest: Hypothermia versus Normothermia",
+    "authors": [
+      "Malin Hultgren",
+      "Erik Blennow Nordström",
+      "Susann Ullén",
+      "Niklas Nielsen",
+      "Josef Dankiewicz",
+      "Katarina Heimburg",
+      "Jan Bělohlávek",
+      "Mattias Bohm",
+      "Alain Cariou",
+      "Glenn Eastwood",
+      "Hans Friberg",
+      "Anders Grejs",
+      "Naomi Hammond",
+      "Matthias Hänggi",
+      "Juraj Hrečko",
+      "Manuela Iten",
+      "Janus Christian Jakobsen",
+      "Thomas Keeble",
+      "Christoph Leithner",
+      "Helena Levin",
+      "Marco Mion",
+      "Marion Moseby-Knappe",
+      "Christian Rylander",
+      "Manoj Saxena",
+      "Claudia Schrag",
+      "Matthew Thomas",
+      "Matt Wise",
+      "Paul Young",
+      "Tobias Cronberg",
+      "Gisela Lilja"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00554-4"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Hultgren M",
+      "Nordström EB",
+      "Ullén S",
+      "Nielsen N",
+      "Dankiewicz J",
+      "Heimburg K",
+      "Bělohlávek J",
+      "Bohm M",
+      "Cariou A",
+      "Eastwood G",
+      "Friberg H",
+      "Grejs A",
+      "Hammond N",
+      "Hänggi M",
+      "Hrečko J",
+      "Iten M",
+      "Jakobsen JC",
+      "Keeble T",
+      "Leithner C",
+      "Levin H",
+      "Mion M",
+      "Moseby-Knappe M",
+      "Rylander C",
+      "Saxena M",
+      "Schrag C",
+      "Thomas M",
+      "Wise M",
+      "Young P",
+      "Cronberg T",
+      "Lilja G"
     ],
     "isAbstractTruncated": false
   },

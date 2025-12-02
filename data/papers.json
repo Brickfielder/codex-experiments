@@ -83,6 +83,35 @@
     "corrCountryName": "United Kingdom"
   },
   {
+    "id": "10.1016/s0300-9572(25)00768-3",
+    "doi": "10.1016/s0300-9572(25)00768-3",
+    "title": "Are Out-of-Hospital Cardiac Arrest Survivors Being Effectively Rehabilitated? A Scoping Review on Rehabilitation Delivery after Out-of-Hospital Cardiac Arrest",
+    "authors": [
+      "Abigail Jia Ai Low",
+      "Dhruv Praveen",
+      "Vanessa Yap",
+      "Kenneth Loi",
+      "Mette Kirstine Wagner",
+      "Bo Gregers Winkel",
+      "Sachin Agarwal",
+      "Marco Mion",
+      "Marcus Eng Hock Ong",
+      "Fahad Javaid Siddiqui",
+      "Shir Lynn Lim"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00768-3"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    }
+  },
+  {
     "id": "39970976",
     "pmid": "39970976",
     "doi": "10.1016/j.resuscitation.2025.110550",
@@ -538,6 +567,33 @@
     "abstract": "Abstract Background Surviving an out-of-hospital cardiac arrest (OHCA) might can lead to long-term consequences, including fatigue, reduced quality of life, and mental health challenges. Although these factors impact daily activities, the influence of fatigue across specific age groups is currently unknown. Purpose The objective of this study was to describe the proportion and severity of fatigue, and to investigate the association between age groups (18-64 and +65 years) and fatigue, adjusted for socio-demographic-, clinical-, and self-reported outcomes. Methods This study is based on data from a national cross-sectional survey, the DANish Cardiac Survivorship (DANCAS) survey. OHCA survivors aged ≥18 years and alive at 30 days post-OHCA were included. In the current study, the following self-reported outcome measures were included: Modified Fatigue Impact Scale, MFIS (measuring fatigue), Hospital Anxiety and Depression Scale, HADS (measuring symptoms of anxiety, HADS-A and depression HADS-D), WHO Disability Assessment Schedule, WHODAS 2.0 (measuring disability). Descriptive statistics were used to describe socio-demographic-, clinical- and self-reported outcomes across the two age groups. A simple (unadjusted) and two adjusted linear regression models (Model 1, adjusted for socio-demographic and clinical characteristics, Model 2 further adjusted for HADS-A, HADS-D and WHODAS) were used to investigate the association between age groups and fatigue, reported as regression coefficients β and 95% confidence intervals (CI). Results In total, n=1236 responding survivors were included in the study, with a median age of 67 years (interquartile range, IQR 57-74) divided into the two age groups: 18-64 years n=551, 65+ years n=685. Across the population, 81% were men. Younger survivors reported significantly higher (worse) levels of fatigue (median 19 IQR 6-38) compared to older survivors (median 13 IQR 5-28), in addition to worse scores on HADS-A, HADS-D and WHODAS 2.0. The regression analyses revealed that being in the younger age group was significantly associated with an increase in fatigue scores in both adjusted models (Model 1 β 4.80 95% CI 2.63;6.98, Model 2 β 1.57 95% CI 0.22;2.92), Table 1. Conclusion Younger OHCA survivors reported statistically significantly worse levels of fatigue compared to older survivors, along with worse self-reported anxiety, depression and disability. Younger age was significantly associated with fatigue in adjusted models, although the inclusion of self-reported outcome measures reduced the strength of the association, highlighting their influence on fatigue. These findings demonstrate the importance of addressing age-specific challenges in rehabilitation- and support programs, in addition to emphasizing that fatigue following OHCA is a complexconcept influenced by multiple psychosocial and clinical factors.Table 1",
     "links": {
       "doi": "https://doi.org/10.1093/eurjcn/zvaf122.133"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    }
+  },
+  {
+    "id": "10.1016/s0300-9572(25)00712-9",
+    "doi": "10.1016/s0300-9572(25)00712-9",
+    "title": "Feasibility of a Centralized Sub-Regional System for Screening Non-Physical Disability and Quality of Life in Out-of-Hospital Cardiac Arrest Survivors - The REVIVE Project",
+    "authors": [
+      "Alice Mandrini",
+      "Marco Mion",
+      "Roberto Primi",
+      "Sara Bendotti",
+      "Alessia Currao",
+      "Leila Ulmanova",
+      "Pierluigi Politi",
+      "Simone Savastano",
+      "Enrico Baldi"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00712-9"
     },
     "flags": {
       "open_access": true,
@@ -1037,6 +1093,33 @@
     "country": "Norway"
   },
   {
+    "id": "10.1016/s0300-9572(25)00399-5",
+    "doi": "10.1016/s0300-9572(25)00399-5",
+    "title": "Self-Reported Physical Exercise and Perceived Exertion in Out-of-Hospital Cardiac Arrest Survivors",
+    "authors": [
+      "Katarina Heimburg",
+      "Erik Blennow Nordström",
+      "Anders M. Grejs",
+      "Thomas R. Keeble",
+      "Johannes Lorentzson",
+      "Marco Mion",
+      "Niklas Nielsen",
+      "Åsa Tornberg",
+      "Gisela Lilja"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00399-5"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    }
+  },
+  {
     "id": "40561517",
     "pmid": "40561517",
     "doi": "10.1093/ehjacc/zuaf092",
@@ -1204,6 +1287,132 @@
       "has_fulltext": false
     },
     "country": "Denmark"
+  },
+  {
+    "id": "40543803",
+    "pmid": "40543803",
+    "doi": "10.1016/j.resuscitation.2025.110687",
+    "title": "They survived - Now what? The case for integrated recovery pathways for cardiac arrest survivors.",
+    "authors": [
+      "Marco Mion",
+      "Vicky L Joshi",
+      "Paul Swindell",
+      "Thomas R Keeble",
+      "10 Years Together Conference HCP-track Faculty"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-06-19",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2025.110687",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40543803"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "country": "United Kingdom"
+  },
+  {
+    "id": "40523597",
+    "pmid": "40523597",
+    "doi": "10.1016/j.resuscitation.2025.110685",
+    "title": "Time for consensus: establishing core outcomes meaningful to survivors of out-of-hospital cardiac arrest.",
+    "authors": [
+      "Marco Mion",
+      "Vicky L Joshi"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-06-14",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2025.110685",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40523597"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "country": "United Kingdom"
+  },
+  {
+    "id": "10.1016/s0300-9572(25)00405-8",
+    "doi": "10.1016/s0300-9572(25)00405-8",
+    "title": "Translating Guidelines into Practice: A Multicentre Audit of the Implementation of ERC Survivorship and Follow-Up Recommendations after Cardiac Arrest",
+    "authors": [
+      "Marco Mion",
+      "Meadbh Keenan",
+      "Alice Steadman",
+      "Savannah Murray-Mendes",
+      "Shirley Morrison",
+      "Claudine Keelan",
+      "Nikos Gorgoraptis",
+      "Nilesh Pareek",
+      "Jean Davis",
+      "Uzma Sajjad",
+      "Thomas Keeble"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00405-8"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    }
+  },
+  {
+    "id": "10.1016/s0300-9572(25)00554-4",
+    "doi": "10.1016/s0300-9572(25)00554-4",
+    "title": "Two-Year Outcomes after Out-of-Hospital Cardiac Arrest: Hypothermia versus Normothermia",
+    "authors": [
+      "Malin Hultgren",
+      "Erik Blennow Nordström",
+      "Susann Ullén",
+      "Niklas Nielsen",
+      "Josef Dankiewicz",
+      "Katarina Heimburg",
+      "Jan Bělohlávek",
+      "Mattias Bohm",
+      "Alain Cariou",
+      "Glenn Eastwood",
+      "Hans Friberg",
+      "Anders Grejs",
+      "Naomi Hammond",
+      "Matthias Hänggi",
+      "Juraj Hrečko",
+      "Manuela Iten",
+      "Janus Christian Jakobsen",
+      "Thomas Keeble",
+      "Christoph Leithner",
+      "Helena Levin",
+      "Marco Mion",
+      "Marion Moseby-Knappe",
+      "Christian Rylander",
+      "Manoj Saxena",
+      "Claudia Schrag",
+      "Matthew Thomas",
+      "Matt Wise",
+      "Paul Young",
+      "Tobias Cronberg",
+      "Gisela Lilja"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-10",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/s0300-9572(25)00554-4"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    }
   },
   {
     "id": "40648804",
