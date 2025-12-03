@@ -601,6 +601,33 @@
     }
   },
   {
+    "id": "10.59707/hymraucj9253",
+    "doi": "10.59707/hymraucj9253",
+    "title": "From Scene to Survival: Anesthetic and Critical Care Insights into Out-of-Hospital Cardiac Arrest Outcomes",
+    "authors": [
+      "Mariam Nofal",
+      "Jorgeat Haddad",
+      "Batool Qura’an",
+      "Suad Abukhousa",
+      "Basel Elqadah",
+      "Ahssan Rashid",
+      "Anas Hamdan",
+      "Mousa Alaqrabawi",
+      "Mohammad Abu-Jeyyab"
+    ],
+    "journal": "High Yield Medical Reviews",
+    "year": 2025,
+    "date": "2025-12-01",
+    "abstract": "Out-of-hospital cardiac arrest (OHCA) occurs when the heart pauses to function outside of a medical facility. The high mortality rate persists despite advancements in resuscitation research, rendering it a significant global public health issue. To substantially reduce mortality associated with OHCA, a comprehensive understanding of all management phases—pre-hospital, in-hospital, and post-discharge—is essential. Pre-hospital factors, such as community socioeconomic level, bystander cardiopulmonary resuscitation (CPR), and access to defibrillators, are essential for early survival. In-hospital variables, like the accessibility of round-the-clock cardiac interventional treatments and structured emergency reception systems, can affect outcomes. Post-discharge survival mostly depends on patient adherence to medical and lifestyle interventions, psychological support, and rehabilitation programs. This assessment consolidates information about the factors influencing the management of OHCA and identifies critical issues and opportunities within the Jordanian healthcare system.",
+    "links": {
+      "doi": "https://doi.org/10.59707/hymraucj9253"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    }
+  },
+  {
     "id": "40499675",
     "pmid": "40499675",
     "doi": "10.1016/j.resuscitation.2025.110672",
