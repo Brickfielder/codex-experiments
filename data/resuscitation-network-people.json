@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2025-02-10",
+    "updated_at": "2025-12-04",
     "fields": [
       "id",
       "name",
@@ -21,5 +21,22 @@
       "looking_to_collaborate_on"
     ]
   },
-  "people": []
+  "people": [
+    {
+      "name": "Vicky Joshi",
+      "email": "Vicky.Joshi@gcu.ac.uk",
+      "role": "Research Fellow, Lecturer in Physiotherapy",
+      "org": "Glasgow Caledonian University, Glasgow, Scotland, UK",
+      "city": "Glasgow",
+      "country": "United Kingdom",
+      "lat": 55.86,
+      "lng": -4.251,
+      "research_areas": "Survivor and family aftercare, bystander support, complex intervention development",
+      "research_keywords": "Research, interventions, survivors, family, bystanders, implementation",
+      "offer": "Experience in cardiac arrest aftercare research, intervention development, qualitative, mixed-methods research, grant writing support",
+      "looking_to_collaborate_on": "Intervention development, implementation initiatives, information/education for health-care professionals, bystander support research",
+      "id": "vicky-joshi",
+      "updated_at": "2025-12-04"
+    }
+  ]
 }
