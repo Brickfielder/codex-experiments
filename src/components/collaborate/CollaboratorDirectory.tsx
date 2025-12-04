@@ -69,7 +69,7 @@ const CollaboratorDirectory = ({ people }: CollaboratorDirectoryProps) => {
         </label>
         <a
           className="inline-flex items-center justify-center rounded-2xl bg-rose-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-500"
-          href="mailto:ohcacare@gmail.com?subject=Add%20me%20to%20the%20OHCA%20survivorship%20map"
+          href="mailto:hello@caresearchhub.org?subject=Add%20me%20to%20the%20OHCA%20survivorship%20map"
         >
           Add your entry
         </a>
