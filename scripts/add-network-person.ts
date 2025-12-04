@@ -97,15 +97,26 @@ const writeDataset = (filePath: string, dataset: ResuscitationNetworkDataset) =>
 };
 
 const geocode = async (city: string, country: string): Promise<{ lat: number; lng: number }> => {
-  const query = encodeURIComponent(`${city}, ${country}`);
-  const url = `https://geocode.maps.co/search?q=${query}&format=json&limit=1`;
+  const url = new URL('https://geocode.maps.co/search');
+  const apiKey = process.env.GEOCODE_API_KEY?.trim();
+  url.searchParams.set('q', `${city}, ${country}`);
+  url.searchParams.set('format', 'json');
+  url.searchParams.set('limit', '1');
+  if (apiKey) {
+    url.searchParams.set('api_key', apiKey);
+  }
+
   const response = await fetch(url, {
     headers: {
       'User-Agent': 'resuscitation-network-updater/1.0 (+https://github.com/resuscitation/repo)'
     }
   });
   if (!response.ok) {
-    throw new Error(`Failed to geocode location (${response.status} ${response.statusText}).`);
+    const hint =
+      response.status === 401
+        ? ' Ensure GEOCODE_API_KEY is configured with a valid geocode.maps.co API key.'
+        : '';
+    throw new Error(`Failed to geocode location (${response.status} ${response.statusText}).${hint}`);
   }
   const payload = (await response.json()) as Array<{ lat?: string; lon?: string }>;
   if (!payload.length) {
