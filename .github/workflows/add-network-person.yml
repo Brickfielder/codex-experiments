@@ -27,6 +27,16 @@ on:
         description: 'Country'
         required: true
         type: string
+      lat:
+        description: 'Latitude (optional override)'
+        required: false
+        type: string
+        default: ''
+      lng:
+        description: 'Longitude (optional override)'
+        required: false
+        type: string
+        default: ''
       research_areas:
         description: 'Research areas (optional)'
         required: false
@@ -77,6 +87,15 @@ jobs:
 
       - run: npm ci
 
+      - name: Check geocode API token availability
+        env:
+          GEOCODE_API_KEY: ${{ secrets.GEOCODE_API_KEY }}
+        run: |
+          if [ -z "$GEOCODE_API_KEY" ]; then
+            echo "::warning::The GEOCODE_API_KEY secret is not configured. The geocode.maps.co service now requires an API key."
+            echo "::notice::Add a geocode.maps.co API key as GEOCODE_API_KEY to avoid 401 errors when creating new entries."
+          fi
+
       - name: Prepare metadata
         id: meta
         run: |
@@ -94,12 +113,21 @@ jobs:
           PERSON_ORG: ${{ inputs.org }}
           PERSON_CITY: ${{ inputs.city }}
           PERSON_COUNTRY: ${{ inputs.country }}
+          PERSON_LAT: ${{ inputs.lat }}
+          PERSON_LNG: ${{ inputs.lng }}
           PERSON_RESEARCH_AREAS: ${{ inputs.research_areas }}
           PERSON_RESEARCH_KEYWORDS: ${{ inputs.research_keywords }}
           PERSON_OFFER: ${{ inputs.offer }}
           PERSON_LOOKING_TO_COLLABORATE_ON: ${{ inputs.looking_to_collaborate_on }}
+          GEOCODE_API_KEY: ${{ secrets.GEOCODE_API_KEY }}
         run: |
           set -euo pipefail
+          if [ -n "$PERSON_LAT" ] || [ -n "$PERSON_LNG" ]; then
+            if [ -z "$PERSON_LAT" ] || [ -z "$PERSON_LNG" ]; then
+              echo "::error::Both latitude and longitude must be provided when supplying manual coordinates."
+              exit 1
+            fi
+          fi
           npm run add:network-person -- \
             --name "$PERSON_NAME" \
             --email "$PERSON_EMAIL" \
@@ -107,6 +135,8 @@ jobs:
             --org "$PERSON_ORG" \
             --city "$PERSON_CITY" \
             --country "$PERSON_COUNTRY" \
+            ${PERSON_LAT:+--lat "$PERSON_LAT"} \
+            ${PERSON_LNG:+--lng "$PERSON_LNG"} \
             --research_areas "$PERSON_RESEARCH_AREAS" \
             --research_keywords "$PERSON_RESEARCH_KEYWORDS" \
             --offer "$PERSON_OFFER" \
