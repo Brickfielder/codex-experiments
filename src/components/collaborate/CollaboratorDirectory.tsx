@@ -24,6 +24,7 @@ const normalize = (value: string | undefined | null): string =>
 const CollaboratorDirectory = ({ people }: CollaboratorDirectoryProps) => {
   const [query, setQuery] = useState('');
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
 
   const tags = useMemo(() => {
     const tagSet = new Set<string>();
@@ -53,6 +54,18 @@ const CollaboratorDirectory = ({ people }: CollaboratorDirectoryProps) => {
       return haystack.includes(normalizedQuery);
     });
   }, [people, query, activeTag]);
+
+  const toggleExpanded = (id: string) => {
+    setExpandedIds((current) => {
+      const next = new Set(current);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
 
   return (
     <div className="space-y-6">
@@ -115,56 +128,70 @@ const CollaboratorDirectory = ({ people }: CollaboratorDirectoryProps) => {
                 <h4 className="text-lg font-semibold text-slate-900">{person.name}</h4>
                 <p className="text-sm text-slate-600">{person.role}</p>
               </div>
-              {person.country ? (
-                <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700">
-                  {person.country}
-                </span>
-              ) : null}
-            </div>
-            <p className="mt-3 text-sm text-slate-600">{person.org}</p>
-            <p className="mt-1 text-sm text-slate-500">
-              {[person.city, person.country].filter(Boolean).join(', ')}
-            </p>
-            {person.interests ? (
-              <p className="mt-3 text-sm text-slate-600">{person.interests}</p>
-            ) : null}
-            {person.research_areas ? (
-              <div className="mt-3 space-y-1">
-                <p className="text-sm font-semibold text-slate-700">Research areas</p>
-                <p className="text-sm text-slate-600">{person.research_areas}</p>
-              </div>
-            ) : null}
-            {person.research_keywords ? (
-              <div className="mt-3 space-y-1">
-                <p className="text-sm font-semibold text-slate-700">Key words for your research area</p>
-                <p className="text-sm text-slate-600">{person.research_keywords}</p>
-              </div>
-            ) : null}
-            {person.offer ? (
-              <div className="mt-3 space-y-1">
-                <p className="text-sm font-semibold text-slate-700">What I can offer</p>
-                <p className="text-sm text-slate-600">{person.offer}</p>
-              </div>
-            ) : null}
-            {person.looking_to_collaborate_on ? (
-              <div className="mt-3 space-y-1">
-                <p className="text-sm font-semibold text-slate-700">Looking to collaborate on</p>
-                <p className="text-sm text-slate-600">{person.looking_to_collaborate_on}</p>
-              </div>
-            ) : null}
-            {person.tags?.length ? (
-              <div className="mt-3 flex flex-wrap gap-2">
-                {person.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold capitalize text-slate-600"
-                  >
-                    {tag.replace(/-/g, ' ')}
+              <div className="flex flex-col items-end gap-2 sm:flex-row sm:items-center sm:gap-3">
+                {person.country ? (
+                  <span className="rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700">
+                    {person.country}
                   </span>
-                ))}
+                ) : null}
+                <button
+                  type="button"
+                  onClick={() => toggleExpanded(person.id)}
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-700 transition hover:border-indigo-200 hover:text-indigo-700"
+                >
+                  {expandedIds.has(person.id) ? 'Hide details' : 'Show details'}
+                  <span aria-hidden="true">{expandedIds.has(person.id) ? '–' : '+'}</span>
+                </button>
+              </div>
+            </div>
+            {expandedIds.has(person.id) ? (
+              <div className="mt-4 space-y-3 border-t border-slate-100 pt-4">
+                <p className="text-sm text-slate-600">{person.org}</p>
+                <p className="text-sm text-slate-500">
+                  {[person.city, person.country].filter(Boolean).join(', ')}
+                </p>
+                {person.interests ? (
+                  <p className="text-sm text-slate-600">{person.interests}</p>
+                ) : null}
+                {person.research_areas ? (
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-slate-700">Research areas</p>
+                    <p className="text-sm text-slate-600">{person.research_areas}</p>
+                  </div>
+                ) : null}
+                {person.research_keywords ? (
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-slate-700">Key words for your research area</p>
+                    <p className="text-sm text-slate-600">{person.research_keywords}</p>
+                  </div>
+                ) : null}
+                {person.offer ? (
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-slate-700">What I can offer</p>
+                    <p className="text-sm text-slate-600">{person.offer}</p>
+                  </div>
+                ) : null}
+                {person.looking_to_collaborate_on ? (
+                  <div className="space-y-1">
+                    <p className="text-sm font-semibold text-slate-700">Looking to collaborate on</p>
+                    <p className="text-sm text-slate-600">{person.looking_to_collaborate_on}</p>
+                  </div>
+                ) : null}
+                {person.tags?.length ? (
+                  <div className="flex flex-wrap gap-2">
+                    {person.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold capitalize text-slate-600"
+                      >
+                        {tag.replace(/-/g, ' ')}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+                <p className="text-xs text-slate-400">Updated {person.updated_at ?? '—'}</p>
               </div>
             ) : null}
-            <p className="mt-4 text-xs text-slate-400">Updated {person.updated_at ?? '—'}</p>
           </article>
         ))}
       </div>
