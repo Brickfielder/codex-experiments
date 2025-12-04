@@ -23,6 +23,22 @@
   },
   "people": [
     {
+      "name": "Alexander Presciutti",
+      "email": "APRESCIUTTI@mgh.harvard.edu",
+      "role": "Clinical Psychologist",
+      "org": "United States - Harvard Medical School and Massachusetts General Hospital",
+      "city": "Boston",
+      "country": "United States",
+      "lat": 42.361,
+      "lng": -71.057,
+      "research_areas": "Behavioral science",
+      "research_keywords": "Research, behavioral, family, survivorship, caregivers",
+      "offer": "Intervention development, qualitative and mixed methods, access to peer networks,",
+      "looking_to_collaborate_on": "All initiatives that better quality of survivorship in both survivors and impacted loved ones",
+      "id": "alexander-presciutti",
+      "updated_at": "2025-12-04"
+    },
+    {
       "name": "Marco Mion",
       "email": "m.mion@nhs.net",
       "role": "Principal Clinical Psychologist - Honorary Clinical Lecturer, Anglia Ruskin University",
