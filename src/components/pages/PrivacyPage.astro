@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { ui, defaultLang } from '../../i18n/ui';
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+
+const contactEmail = 'hello@caresearchhub.org';
+---
+
+<BaseLayout
+  title={t['privacy.title']}
+  description={t['privacy.description']}
+  lang={lang}
+>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+    <div
+      class="space-y-6 rounded-3xl border border-white/70 bg-white/95 p-8 shadow-2xl ring-1 ring-indigo-100 backdrop-blur"
+    >
+      <p
+        class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1 text-sm font-semibold text-indigo-700"
+      >
+        {t['privacy.commitment']}
+      </p>
+      <h1 class="text-4xl font-semibold tracking-tight text-slate-900">{t['privacy.title']}</h1>
+      <div class="prose prose-slate max-w-none text-base leading-relaxed">
+        <p>
+          {t['privacy.p1']}
+        </p>
+        <p>{t['privacy.p2']}</p>
+        <ul class="list-disc space-y-2 pl-6">
+          <li>{t['privacy.li1']}</li>
+          <li>
+            {t['privacy.li2']}
+          </li>
+          <li>{t['privacy.li3']}</li>
+          <li>
+            {t['privacy.li4']}
+          </li>
+          <li>{t['privacy.li5']}</li>
+          <li>{t['privacy.li6']}</li>
+          <li>{t['privacy.li7']}</li>
+        </ul>
+        <p>
+          {t['privacy.p3']}
+        </p>
+        <p>
+          {t['privacy.p4']}
+        </p>
+        <p>
+          {t['privacy.p5']} {contactEmail}
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

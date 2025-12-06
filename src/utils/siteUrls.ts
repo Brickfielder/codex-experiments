@@ -1,3 +1,5 @@
+import { defaultLang } from '../i18n/ui';
+
 const ensureTrailingSlash = (value: string): string => (value.endsWith('/') ? value : `${value}/`);
 
 const joinUrl = (base: string, path = ''): string => {
@@ -57,12 +59,17 @@ export const parsePaperSlug = (slug: string): string => decodePaperSlug(slug);
 export const repoBaseUrl = REPO_BASE_URL;
 export const siteBaseUrl = SITE_BASE_URL;
 
-export const getBrowseUrl = (): string => joinUrl(SITE_BASE_URL, 'browse');
-export const getAboutUrl = (): string => joinUrl(SITE_BASE_URL, 'about');
-export const getHeatmapUrl = (): string => joinUrl(SITE_BASE_URL, 'heatmap');
-export const getCollaborateUrl = (): string => joinUrl(SITE_BASE_URL, 'collaborate');
-export const getOngoingStudiesUrl = (): string => joinUrl(SITE_BASE_URL, 'ongoing-studies');
-export const getSiteUrl = (path = ''): string => joinUrl(SITE_BASE_URL, path);
+const getLocalizedBase = (lang?: string) => {
+  if (!lang || lang === defaultLang) return SITE_BASE_URL;
+  return joinUrl(SITE_BASE_URL, lang);
+}
+
+export const getBrowseUrl = (lang?: string): string => joinUrl(getLocalizedBase(lang), 'browse');
+export const getAboutUrl = (lang?: string): string => joinUrl(getLocalizedBase(lang), 'about');
+export const getHeatmapUrl = (lang?: string): string => joinUrl(getLocalizedBase(lang), 'heatmap');
+export const getCollaborateUrl = (lang?: string): string => joinUrl(getLocalizedBase(lang), 'collaborate');
+export const getOngoingStudiesUrl = (lang?: string): string => joinUrl(getLocalizedBase(lang), 'ongoing-studies');
+export const getSiteUrl = (path = '', lang?: string): string => joinUrl(getLocalizedBase(lang), path);
 export const getPaperSlug = (paperId: string): string => encodePaperId(paperId);
 export const getPaperPermalink = (paperId: string): string =>
   joinUrl(SITE_BASE_URL, `paper/${getPaperSlug(paperId)}`);
