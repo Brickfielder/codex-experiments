@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CollaboratorMap from '../collaborate/CollaboratorMap';
+import CollaboratorDirectory from '../collaborate/CollaboratorDirectory';
+import collaboratorData from '../../../data/resuscitation-network-people.json';
+import type { Collaborator } from '~/utils/types';
+import { Fragment } from 'preact';
+import HeroCard from '../HeroCard';
+import { ui, defaultLang } from '../../i18n/ui';
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+
+const { people = [], meta } = collaboratorData as {
+  people: Collaborator[];
+  meta: { updated_at?: string };
+};
+const hasPeople = people.length > 0;
+const totalCountries = new Set(people.map((person) => person.country)).size;
+const highlightedTags = [
+  'cognition',
+  'psychological-support',
+  'quality-of-life',
+  'return-to-work',
+  'family'
+];
+
+const filters = [
+  { label: 'Cognition', slug: 'cognition' },
+  { label: 'Psychological support', slug: 'psychological-support' },
+  { label: 'Quality of life', slug: 'quality-of-life' },
+  { label: 'Return to work', slug: 'return-to-work' },
+  { label: 'Family & co-survivors', slug: 'family' },
+  { label: 'Registry analyses', slug: 'registry' }
+];
+
+const qaItems = [
+  {
+    question: 'Why was the map of survivorship created?',
+    answer:
+      'To connect survivors, co-survivors, clinicians, and researchers working on life after OHCA. Visibility reduces duplication, speeds collaboration, and supports guideline and service development.'
+  },
+  {
+    question: 'What does the map show?',
+    answer:
+      'Pins for people and groups active in survivorship: research labs, clinical services, survivor-led organisations. Each pin links to a profile covering role, institution, country/region, and a short summary.'
+  },
+  {
+    question: 'What is the content and sources on which the map is based?',
+    answer:
+      'Primarily self-submitted entries reviewed by editors, plus publicly available information from institutional pages, publications, and conference programmes. Each entry notes the source and last update.'
+  },
+  {
+    question: 'How can I make an entry on the map myself?',
+    answer:
+      'Use the “Add your entry” button to send details or submit a pull request for data/resuscitation-network-people.json. The editors check scope and consent, then publish the update.'
+  }
+];
+const networkStats = [
+  { label: 'Collaborators', value: people.length.toLocaleString() },
+  { label: 'Countries', value: totalCountries.toLocaleString() },
+  { label: 'Last update', value: meta?.updated_at ?? '—' }
+];
+---
+
+<BaseLayout
+  title={t['collaborate.title']}
+  description={t['collaborate.description']}
+  lang={lang}
+>
+  <Fragment slot="hero">
+    <div class="relative left-1/2 w-screen -translate-x-1/2 px-4 sm:px-6 lg:px-8">
+      <HeroCard
+        eyebrow="COLLABORATOR HUB"
+        title={[
+          { text: 'Connecting the people improving life' },
+          {
+            text: 'after cardiac arrest',
+            gradient: true
+          }
+        ]}
+        subtitle="Discover researchers, clinicians, survivors, and co-survivors. Find collaborators, share ideas, and accelerate survivorship science and services across borders."
+        variant="slate"
+      />
+    </div>
+  </Fragment>
+
+  <section class="-mt-12 -mx-4 px-4 pb-10 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+    <div class="mx-auto max-w-6xl">
+      <div
+        class="flex flex-col gap-6 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-200/80"
+      >
+        <div
+          class="flex flex-col gap-4 border-b border-slate-100 px-6 pt-6 pb-4 md:flex-row md:items-center md:justify-between"
+        >
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+              Network snapshot
+            </p>
+            <p class="text-sm text-slate-500">Updated {meta?.updated_at ?? '—'}</p>
+          </div>
+          <span
+            class="inline-flex items-center gap-2 rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700"
+          >
+            <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Live feed
+          </span>
+        </div>
+        <div class="grid gap-4 px-6 pb-6 md:grid-cols-3">
+          {
+            networkStats.map((stat) => (
+              <div class="rounded-2xl bg-slate-50 p-4 text-center shadow-sm" key={stat.label}>
+                <div class="text-3xl font-bold text-slate-900">{stat.value}</div>
+                <div class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  {stat.label}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="space-y-12 px-4 pb-12 pt-0 sm:px-6 lg:px-8">
+    {hasPeople ? (
+      <Fragment>
+        <section
+          id="map"
+          class="space-y-6 rounded-3xl border border-white/70 bg-white/95 p-8 shadow-xl"
+        >
+          <header class="space-y-3">
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-indigo-600">Global map</p>
+            <h2 class="text-3xl font-semibold text-slate-900">
+              Where survivorship and co-survivorship work is happening
+            </h2>
+            <p class="text-base text-slate-600">
+              Explore who is working on survivorship around the world. Filter by specialty or use the
+              directory to focus on names, organisations, job roles, and countries.
+            </p>
+          </header>
+          <div class="flex flex-wrap gap-3">
+            {
+              filters.map((filter) => (
+                <span
+                  key={filter.slug}
+                  class={`rounded-full border px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] ${highlightedTags.includes(filter.slug) ? 'border-indigo-200 bg-indigo-50 text-indigo-700' : 'border-slate-200 bg-white text-slate-500'}`}
+                >
+                  {filter.label}
+                </span>
+              ))
+            }
+          </div>
+          <CollaboratorMap client:only="preact" people={people} />
+        </section>
+
+        <section
+          id="directory"
+          class="space-y-6 rounded-3xl border border-white/70 bg-white/95 p-8 shadow-xl"
+        >
+          <header class="space-y-3">
+            <p class="text-sm font-semibold uppercase tracking-[0.4em] text-indigo-600">Directory</p>
+            <h2 class="text-3xl font-semibold text-slate-900">Researchers & collaborators</h2>
+            <div class="space-y-3 text-base text-slate-600">
+              <p>
+                This growing network brings together researchers, clinicians, and survivor-led groups
+                who are advancing long-term survivorship after cardiac arrest. Each card highlights two
+                things:
+              </p>
+              <ul class="list-disc space-y-2 pl-6">
+                <li>
+                  <strong>"What I can offer"</strong> – specific resources, datasets, expertise, or services
+                  others may find useful.
+                </li>
+                <li>
+                  <strong>"Looking to collaborate on"</strong> – areas where you’d welcome partners, data
+                  sharing, co-design, or methodological support.
+                </li>
+              </ul>
+              <p>
+                These short entries help people spot synergy quickly and build collaborations that would
+                be hard to find otherwise.
+              </p>
+              <details class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm">
+                <summary class="cursor-pointer text-base font-semibold text-slate-800">
+                  Examples of “What I can offer”
+                </summary>
+                <ul class="mt-3 list-disc space-y-1 pl-6">
+                  <li>Follow-up registry with 6–12 month outcomes</li>
+                  <li>Post-arrest rehabilitation pathway (MoCA, EQ-5D, HADS)</li>
+                  <li>Access to survivor peer networks for co-design</li>
+                  <li>Qualitative methods expertise; experience running sub-studies</li>
+                  <li>AI tools for semi-automated literature screening</li>
+                </ul>
+              </details>
+              <details class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-sm">
+                <summary class="cursor-pointer text-base font-semibold text-slate-800">
+                  Examples of “Looking to collaborate on”
+                </summary>
+                <ul class="mt-3 list-disc space-y-1 pl-6">
+                  <li>Harmonising PRO measures across sites</li>
+                  <li>Multinational follow-up datasets</li>
+                  <li>Co-designing support pathways for survivors and relatives</li>
+                  <li>Linking acute and long-term datasets</li>
+                  <li>Developing digital resources for survivorship</li>
+                </ul>
+              </details>
+            </div>
+            <p class="text-base text-slate-600">
+              Search by name, organisation, tags, or country.
+            </p>
+          </header>
+          <CollaboratorDirectory client:load people={people} />
+        </section>
+      </Fragment>
+    ) : (
+      <section class="space-y-4 rounded-3xl border border-white/70 bg-white/95 p-8 text-slate-800 shadow-xl">
+        <p class="text-sm font-semibold uppercase tracking-[0.4em] text-amber-600">Directory paused</p>
+        <h2 class="text-3xl font-semibold text-slate-900">No collaborators are currently listed</h2>
+        <p class="text-base text-slate-700">
+          We have temporarily removed all collaborator entries until each person confirms consent to be
+          shown here. If you previously shared your details and would like them restored, or if you want
+          to add a new consented entry, please email
+          <a class="font-semibold text-indigo-700 underline" href="hello@caresearchhub.org"
+            >hello@caresearchhub.org</a
+          >.
+        </p>
+      </section>
+    )}
+
+    <section
+      class="rounded-3xl border border-indigo-100 bg-indigo-50/70 p-8 text-indigo-900 shadow-lg"
+    >
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.4em]">Call for entries</p>
+          <h3 class="mt-3 text-2xl font-semibold">Are you active in survivorship research?</h3>
+          <p class="mt-2 text-base text-indigo-800">
+            If you cannot find yourself on the map, email your name, role, organisation, city &
+            country, tags or keywords, a short summary of your work, plus two lines for “What I can
+            offer” and “Looking to collaborate on.” We will review the scope and publish your entry.
+          </p>
+        </div>
+        <a
+          class="inline-flex items-center justify-center rounded-2xl bg-rose-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-500"
+          href="mailto:hello@caresearchhub.org?subject=Add%20me%20to%20the%20OHCA%20survivorship%20map"
+        >
+          Add yourself to the map
+        </a>
+      </div>
+    </section>
+
+    <section id="qa" class="space-y-6 rounded-3xl border border-white/70 bg-white/95 p-8 shadow-xl">
+      <header class="space-y-3">
+        <p class="text-sm font-semibold uppercase tracking-[0.4em] text-indigo-600">
+          Questions & answers
+        </p>
+        <h2 class="text-3xl font-semibold text-slate-900">Map scope and stewardship</h2>
+        <p class="text-base text-slate-600">
+          This list does not claim to be complete, nor can accuracy or topicality be guaranteed.
+        </p>
+      </header>
+      <div class="space-y-4">
+        {
+          qaItems.map((item) => (
+            <details
+              key={item.question}
+              class="rounded-2xl border border-slate-200 bg-white p-4 text-slate-700 shadow-sm"
+            >
+              <summary class="cursor-pointer text-base font-semibold text-slate-900">
+                {item.question}
+              </summary>
+              <p class="mt-2 text-sm text-slate-600">{item.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="rounded-3xl border border-slate-200 bg-slate-900 p-8 text-slate-100 shadow-xl">
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold">Data and stewardship</h2>
+        <p class="text-base text-slate-300">
+          Data notice: entries are published with consent; removal or edit requests are honoured.
+          Contact <a class="text-white underline" href="mailto:hello@caresearchhub.org"
+            >hello@caresearchhub.org</a
+          >.
+        </p>
+        <p class="text-sm text-slate-400">
+          Content licensed CC BY 4.0 unless noted. Source data: <code
+            class="rounded bg-slate-800 px-2 py-1 text-xs"
+            >data/resuscitation-network-people.json</code
+          >.
+        </p>
+      </div>
+    </section>
+  </section>
+</BaseLayout>

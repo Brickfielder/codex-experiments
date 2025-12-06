@@ -7,22 +7,55 @@ import {
   getOngoingStudiesUrl,
   getSiteUrl
 } from '~/utils/siteUrls';
+import { languages, ui, defaultLang } from '~/i18n/ui';
 import '../styles/global.css';
+
 const {
   title = 'Cardiac Arrest Research Hub',
-  description = 'Knowledge hub for survivorship after cardiac arrest'
+  description = 'Knowledge hub for survivorship after cardiac arrest',
+  lang = defaultLang
 } = Astro.props;
-const homeHref = getSiteUrl();
-const browseHref = getBrowseUrl();
-const aboutHref = getAboutUrl();
-const heatmapHref = getHeatmapUrl();
-const privacyHref = getSiteUrl('privacy');
-const collaborateHref = getCollaborateUrl();
-const ongoingStudiesHref = getOngoingStudiesUrl();
+
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+
+const homeHref = getSiteUrl('', lang);
+const browseHref = getBrowseUrl(lang);
+const aboutHref = getAboutUrl(lang);
+const heatmapHref = getHeatmapUrl(lang);
+const privacyHref = getSiteUrl('privacy', lang);
+const collaborateHref = getCollaborateUrl(lang);
+const ongoingStudiesHref = getOngoingStudiesUrl(lang);
+
+const currentPath = Astro.url.pathname;
+const getPathForLang = (targetLang: string) => {
+  // Simple replacement for now, assuming structure /lang/... or /...
+  // If current lang is default (en) and we switch to fr, we need to prepend /fr
+  // If current lang is fr and we switch to en, we need to remove /fr
+  // If current lang is fr and we switch to es, we need to replace /fr with /es
+
+  // Note: This logic assumes prefixDefaultLocale: false
+
+  const segments = currentPath.split('/').filter(Boolean);
+  const firstSegment = segments[0];
+
+  const isCurrentLangDefault = lang === defaultLang;
+  const isTargetLangDefault = targetLang === defaultLang;
+
+  if (isCurrentLangDefault) {
+     if (isTargetLangDefault) return currentPath;
+     return `/${targetLang}${currentPath === '/' ? '' : currentPath}`;
+  } else {
+     // current path starts with /lang
+     const pathWithoutLang = segments.slice(1).join('/');
+     if (isTargetLangDefault) return `/${pathWithoutLang}`;
+     return `/${targetLang}/${pathWithoutLang}`;
+  }
+};
+
 ---
 
 <!doctype html>
-<html lang="en" class="min-h-full">
+<html lang={lang} class="min-h-full">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -47,7 +80,7 @@ const ongoingStudiesHref = getOngoingStudiesUrl();
       href="#main"
       class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-md focus:bg-teal-600 focus:px-3 focus:py-2 focus:text-white"
     >
-      Skip to content
+      {t['nav.skip']}
     </a>
     <header class="relative isolate overflow-hidden bg-slate-900 text-white">
       <div class="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/95 to-slate-950">
@@ -69,13 +102,31 @@ const ongoingStudiesHref = getOngoingStudiesUrl();
               class="hidden items-center gap-6 text-sm font-medium text-white md:flex"
               aria-label="Primary"
             >
-              <a class="text-white transition hover:text-teal-200" href={homeHref}>Home</a>
-              <a class="text-white transition hover:text-teal-200" href={aboutHref}>About the Team</a>
-              <a class="text-white transition hover:text-teal-200" href={browseHref}>Browse</a>
-              <a class="text-white transition hover:text-teal-200" href={collaborateHref}>Collaborate</a>
-              <a class="text-white transition hover:text-teal-200" href={heatmapHref}>Research Heat Map</a>
-              <a class="text-white transition hover:text-teal-200" href={ongoingStudiesHref}>Ongoing Studies</a>
+              <a class="text-white transition hover:text-teal-200" href={homeHref}>{t['nav.home']}</a>
+              <a class="text-white transition hover:text-teal-200" href={aboutHref}>{t['nav.about']}</a>
+              <a class="text-white transition hover:text-teal-200" href={browseHref}>{t['nav.browse']}</a>
+              <a class="text-white transition hover:text-teal-200" href={collaborateHref}>{t['nav.collaborate']}</a>
+              <a class="text-white transition hover:text-teal-200" href={heatmapHref}>{t['nav.heatmap']}</a>
+              <a class="text-white transition hover:text-teal-200" href={ongoingStudiesHref}>{t['nav.ongoing']}</a>
             </div>
+
+             <!-- Language Switcher Desktop -->
+            <div class="hidden md:flex items-center gap-2 ml-4">
+              {Object.entries(languages).map(([l, label]) => (
+                <a
+                  href={getPathForLang(l)}
+                  class={`text-xs font-medium px-2 py-1 rounded transition ${
+                    lang === l
+                      ? 'bg-white/20 text-white'
+                      : 'text-slate-400 hover:text-white hover:bg-white/10'
+                  }`}
+                  aria-label={`Switch to ${label}`}
+                >
+                  {l.toUpperCase()}
+                </a>
+              ))}
+            </div>
+
             <button
               class="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 p-2 text-white shadow-inner transition hover:border-teal-200 md:hidden"
               type="button"
@@ -112,19 +163,19 @@ const ongoingStudiesHref = getOngoingStudiesUrl();
       <div class="mx-auto max-w-7xl px-6 text-center lg:px-8">
         <div class="text-2xl mb-4">💙</div>
         <p class="text-sm text-slate-500 dark:text-slate-300">
-          © {new Date().getFullYear()} Cardiac Arrest Research Hub. Built for open science.
+          © {new Date().getFullYear()} {t['footer.copyright']}
         </p>
         <div
           class="mt-6 flex justify-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-200"
         >
-          <a class="transition hover:text-teal-600" href={aboutHref}>About the Team</a>
+          <a class="transition hover:text-teal-600" href={aboutHref}>{t['nav.about']}</a>
           <a
             class="transition hover:text-teal-600"
             href="mailto:hello@caresearchhub.org"
           >
-            Contact
+            {t['footer.contact']}
           </a>
-          <a class="transition hover:text-teal-600" href={privacyHref}>Privacy</a>
+          <a class="transition hover:text-teal-600" href={privacyHref}>{t['footer.privacy']}</a>
         </div>
       </div>
     </footer>
@@ -159,12 +210,30 @@ const ongoingStudiesHref = getOngoingStudiesUrl();
           </button>
         </div>
         <div class="flex flex-col divide-y divide-white/10">
-          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={homeHref}>Home</a>
-          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={aboutHref}>About the Team</a>
-          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={browseHref}>Browse</a>
-          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={collaborateHref}>Collaborate</a>
-          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={heatmapHref}>Research Heat Map</a>
-          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={ongoingStudiesHref}>Ongoing Studies</a>
+          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={homeHref}>{t['nav.home']}</a>
+          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={aboutHref}>{t['nav.about']}</a>
+          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={browseHref}>{t['nav.browse']}</a>
+          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={collaborateHref}>{t['nav.collaborate']}</a>
+          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={heatmapHref}>{t['nav.heatmap']}</a>
+          <a class="px-1 py-3 text-left text-white transition hover:text-teal-200" href={ongoingStudiesHref}>{t['nav.ongoing']}</a>
+        </div>
+         <!-- Language Switcher Mobile -->
+        <div class="mt-4 border-t border-white/10 pt-4">
+            <span class="text-xs font-medium text-slate-400 block mb-2 px-1">Language</span>
+            <div class="flex flex-wrap gap-2 px-1">
+              {Object.entries(languages).map(([l, label]) => (
+                <a
+                  href={getPathForLang(l)}
+                  class={`text-sm px-2 py-1 rounded transition ${
+                     lang === l
+                      ? 'bg-white/20 text-white'
+                      : 'text-slate-400 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
         </div>
       </div>
     </nav>
