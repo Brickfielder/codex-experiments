@@ -319,6 +319,52 @@
     "country": "United Kingdom"
   },
   {
+    "id": "41329006",
+    "pmid": "41329006",
+    "doi": "10.1002/jgc4.70145",
+    "title": "Development and acceptability of a support intervention for families after sudden cardiac death in the young.",
+    "authors": [
+      "Laura Yeates",
+      "Amy Baker",
+      "Karen Gardner",
+      "Natalie Stewart",
+      "Laura Catto",
+      "Judy Do",
+      "Sue Timbs",
+      "Felicity Leslie",
+      "Christopher Semsarian",
+      "Belinda Gray",
+      "Leesa Adlard",
+      "Jodie Ingles"
+    ],
+    "journal": "Journal of genetic counseling",
+    "year": 2025,
+    "date": "2025-12",
+    "abstract": "Sudden cardiac death (SCD) in the young (<35 years) can be due to an inherited cardiovascular condition. The impact of SCD on the surviving family is significant, with high rates of symptoms of posttraumatic stress and prolonged grief. Using stakeholder codesign we developed COPE-SCD, an online community supporting families after SCD. The intervention includes a website and four online support sessions (general information on SCD, navigating uncertainty, coping with grief and loss both individually and as a family). Here, we aim to develop content and assess the acceptability of the COPE-SCD intervention. Participants were recruited from the Genetic Heart Disease Clinic, Royal Prince Alfred Hospital, Sydney, Australia and EndUCD.org, a patient organization. Website and online session content were developed. Demographic and psychological measures were collected at baseline. \"Think aloud\" interviews were conducted to assess the website. Online sessions were assessed with post-session questionnaires and qualitative interviews. Both interview schedules and questionnaires were mapped to seven constructs of the Theoretical Framework of Acceptability. Interviews from both arms of the study were analyzed using a deductive framework analysis. Six \"think aloud\" interviews were conducted to assess the website, including feedback on content and layout. Twelve participants, in two groups, completed the four online sessions. Overall, participants liked both parts of the COPE-SCD intervention, particularly the opportunity for peer support. They found the intervention acceptable when considering the seven constructs of the theoretical framework of acceptability. Further work is needed to assess the effectiveness of the intervention as it is implemented into clinical practice. The COPE-SCD intervention provides a new resource for genetic counselors and other healthcare professionals supporting families after SCD.",
+    "links": {
+      "doi": "https://doi.org/10.1002/jgc4.70145",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41329006"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Death, Sudden, Cardiac",
+      "Female",
+      "Male",
+      "Adult",
+      "Family",
+      "Adaptation, Psychological",
+      "Social Support",
+      "Young Adult"
+    ],
+    "country": "Australia",
+    "corrCountryCode": "GB",
+    "corrCountryName": "United Kingdom"
+  },
+  {
     "id": "40211320",
     "pmid": "40211320",
     "doi": "10.1186/s40359-025-02648-6",
@@ -627,6 +673,61 @@
       "has_fulltext": true
     },
     "country": "Jordan"
+  },
+  {
+    "id": "41212202",
+    "pmid": "41212202",
+    "doi": "10.1007/s00134-025-08185-5",
+    "title": "Impact of frailty on mortality, functional outcome, and health status after out-of-hospital cardiac arrest: insights from the TTM2-trial.",
+    "authors": [
+      "Sara Göbel Andertun",
+      "Anne Wissendorff-Ekdahl",
+      "Susann Ullén",
+      "Tobias Cronberg",
+      "Hans Friberg",
+      "Janus Christian Jakobsen",
+      "Erik Blennow Nordström",
+      "Katarina Heimburg",
+      "Alain Cariou",
+      "Anders Morten Grejs",
+      "Matthias Haenggi",
+      "Jan Hovdenes",
+      "Chiara Robba",
+      "Christian Rylander",
+      "Fabio Silvio Taccone",
+      "Matt P Wise",
+      "Paul J Young",
+      "Niklas Nielsen",
+      "Gisela Lilja"
+    ],
+    "journal": "Intensive care medicine",
+    "year": 2025,
+    "date": "2025-11-10",
+    "abstract": "PURPOSE: To explore the association of frailty with mortality, functional outcome, and health status after out-of-hospital cardiac arrest.\nMETHODS: This is a cohort-based secondary analysis of the Targeted Hypothermia versus Targeted Normothermia after out-of-hospital cardiac arrest (TTM2) trial, an international, prospective, multicentre study. Frailty was assessed using the Clinical Frailty Scale (1-9): fit (1-3), prefrail (4), frail (5), and severely frail (6-9). Main outcomes were mortality and poor functional outcome (modified Rankin Scale 4-6) at 6 and 24 months. Additional outcomes included neuroprognostication, withdrawal-of-life-sustaining-therapies (WLST), functional decline (retrospectively reported pre-arrest versus 6 month Glasgow Outcome Scale Extended score), health status (EQ-5D-5L, EQ-VAS), and life satisfaction at 6 and 24 months.\nRESULTS: Of 1861 participants, 240 (13%) were prefrail, and 188 (10%) were frail or severely frail. Mortality and poor functional outcome increased significantly with greater frailty. Compared to fit participants, adjusted ORs (95% CI) for 6 month mortality were: prefrail 2.7 (1.8-3.8), frail 3.7 (1.9-7.1), and severely frail 8.9 (4.2-18.7); and poor functional outcome: prefrail 2.9 (1.9-4.2), frail 3.9 (1.9-8.1), and severely frail 35.4 (8.4-148.8). Severely frail participants underwent neuroprognostication less often (p < 0.001), while WLST was more common in the prefrail, frail and severely frail (p < 0.001). Prefrail and frail survivors tended to report more frequent functional decline and lower health status, though with individual variation.\nCONCLUSION: Frailty was associated with a significantly increased risk of mortality and poor functional outcome after out-of-hospital cardiac arrest. Findings suggest more frequent functional decline and lower overall health status in frail survivors.\nTRIAL REGISTRATION: NCT02908308.",
+    "links": {
+      "doi": "https://doi.org/10.1007/s00134-025-08185-5",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41212202",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12678506"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC12678506",
+    "mesh": [
+      "Humans",
+      "Male",
+      "Female",
+      "Aged",
+      "Frailty",
+      "Out-of-Hospital Cardiac Arrest",
+      "Prospective Studies",
+      "Health Status",
+      "Middle Aged",
+      "Aged, 80 and over",
+      "Functional Status"
+    ],
+    "country": "Sweden"
   },
   {
     "id": "40499675",
@@ -979,6 +1080,41 @@
     },
     "pmcid": "PMC12002988",
     "country": "Singapore"
+  },
+  {
+    "id": "41260716",
+    "pmid": "41260716",
+    "doi": "10.1016/j.ccc.2025.08.013",
+    "title": "Postcardiac Arrest Care Clinics and Multidisciplinary Outpatient Follow Up.",
+    "authors": [
+      "Rachel Beekman",
+      "Kenia Lucey",
+      "Joanna Gray",
+      "Kaile Neuschatz",
+      "Jeremy J Moeller",
+      "Emily J Gilmore"
+    ],
+    "journal": "Critical care clinics",
+    "year": 2025,
+    "date": "2025-10-03",
+    "abstract": "Cardiac arrest survivorship is an evolving field focusing on long-term recovery, encompassing physical, cognitive, and psychological health. Despite increased survival rates, many survivors face challenges such as cognitive impairment, emotional distress, mobility issues, and caregiver burden. Current follow-up care has limited structured screening and multidisciplinary support. A pilot recovery program at a single center demonstrated high rates of cognitive impairment and readmissions, highlighting the need for comprehensive post-intensive care unit clinics, nurse navigation, and targeted interventions. Key research priorities include long-term outcome studies, rehabilitation strategies, telemedicine, caregiver support, and cost-effectiveness analyses to optimize survivor care and improve quality of life.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.ccc.2025.08.013",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41260716"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Heart Arrest",
+      "Aftercare",
+      "Survivors",
+      "Quality of Life",
+      "Male"
+    ],
+    "country": "United States"
   },
   {
     "id": "40491773",
