@@ -26,6 +26,13 @@ export default defineConfig({
     })
   ],
   output: 'static',
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'es', 'it'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   experimental: {
     contentLayer: false
   }

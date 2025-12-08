@@ -1,0 +1,338 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomeSearchClient from '../HomeSearchClient.tsx';
+import papers from '../../../data/papers.normalized.json';
+import { getPaperUrl } from '~/utils/format';
+import { getAboutUrl, getBrowseUrl } from '~/utils/siteUrls';
+import { isInCurrentMonth } from '~/utils/dates';
+import type { Paper } from '~/utils/types';
+import { ui, defaultLang } from '../../i18n/ui';
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+
+const typedPapers = papers as Paper[];
+const getPublicationTimestamp = (paper: Paper) =>
+  new Date(paper.date ?? `${paper.year}-01-01`).getTime();
+const browseHrefUrl = new URL(getBrowseUrl(lang));
+const browseHref = browseHrefUrl.pathname.endsWith('/')
+  ? browseHrefUrl.pathname
+  : `${browseHrefUrl.pathname}/`;
+const buildBrowseHref = (query?: string) => {
+  const params = new URLSearchParams();
+  if (query) params.set('q', query);
+  const serialized = params.toString();
+  return `${browseHref}${serialized ? `?${serialized}` : ''}#papers`;
+};
+const browseResultsHref = buildBrowseHref();
+const aboutHref = `${getAboutUrl(lang)}#search-strategy`;
+const totalPapers = typedPapers.length;
+const latestYear = typedPapers.reduce((max, paper) => Math.max(max, paper.year), 0);
+const newThisMonth = typedPapers.filter((paper) => isInCurrentMonth(paper.date)).length;
+const stats = [
+  { label: 'Total Papers', value: totalPapers.toLocaleString() },
+  { label: 'Latest Pub', value: latestYear },
+  { label: 'New This Month', value: newThisMonth },
+  { label: 'Scope', value: 'Global' }
+];
+const topicSuggestions = ['Cognition', 'Anxiety', 'Caregivers'];
+const recentPapers = [...typedPapers]
+  .sort((a, b) => getPublicationTimestamp(b) - getPublicationTimestamp(a))
+  .slice(0, 3);
+const domainCards = [
+  {
+    title: 'Cognition',
+    description: 'Screening, memory, executive function.',
+    emoji: '🧠',
+    colorClasses: 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white',
+    quickFilter: 'Cognitive'
+  },
+  {
+    title: 'Emotional',
+    description: 'Depression, anxiety, PTSD, fatigue.',
+    emoji: '❤️',
+    colorClasses: 'bg-pink-50 text-pink-600 group-hover:bg-pink-600 group-hover:text-white',
+    quickFilter: 'Psychological'
+  },
+  {
+    title: 'Quality of Life',
+    description: 'Return to work, social participation.',
+    emoji: '🌱',
+    colorClasses:
+      'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white',
+    quickFilter: 'QoL'
+  },
+  {
+    title: 'Return to Work',
+    description: 'Vocational outcomes and participation.',
+    emoji: '💼',
+    colorClasses: 'bg-amber-50 text-amber-600 group-hover:bg-amber-500 group-hover:text-white',
+    quickFilter: 'Return to Work'
+  },
+  {
+    title: 'Family/Key Supporter',
+    description: 'Caregiver burden, needs, and wellbeing.',
+    emoji: '👪',
+    colorClasses: 'bg-violet-50 text-violet-600 group-hover:bg-violet-600 group-hover:text-white',
+    quickFilter: 'Family/Key Supporter'
+  }
+];
+
+const formatBadges = (paper: Paper): string[] => {
+  const pool = paper.domains?.length ? paper.domains : (paper.mesh ?? paper.keywords ?? []);
+  return pool.slice(0, 3);
+};
+
+const getPrimaryExternalLink = (paper: Paper): { href: string; label: string } | null => {
+  if (paper.links?.pubmed) {
+    return { href: paper.links.pubmed, label: 'PubMed' };
+  }
+  if (paper.links?.doi) {
+    return { href: paper.links.doi, label: 'DOI' };
+  }
+  return null;
+};
+---
+
+<BaseLayout
+  title={t['index.title']}
+  description={t['index.description']}
+  lang={lang}
+>
+  <Fragment slot="hero">
+    <section class="landing-hero">
+      <div class="landing-hero__text">
+        <p class="landing-hero__eyebrow">{t['index.eyebrow']}</p>
+
+        <h1 class="landing-hero__title hero-title">
+          <span class="block">{t['index.h1.1']}</span>
+          <span
+            class="block text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 via-cyan-200 to-purple-200"
+          >
+            {t['index.h1.2']}
+          </span>
+        </h1>
+
+        <div class="landing-hero__mission">
+          <h2 class="landing-hero__mission-title">{t['index.mission.title']}</h2>
+          <p class="landing-hero__mission-body">
+            {t['index.mission.body']}
+          </p>
+        </div>
+
+        <p class="landing-hero__description">
+          Mapping the evidence that tells us what life looks like after survival, with a focus on
+          cognitive, psychological, social, and quality-of-life outcomes.
+        </p>
+      </div>
+    </section>
+    <div class="max-w-2xl mx-auto relative group">
+      <div
+        class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl opacity-25 group-hover:opacity-50 blur transition duration-500"
+      >
+      </div>
+      <HomeSearchClient client:load papers={typedPapers} browseResultsHref={browseResultsHref} />
+
+      <div class="mt-4 flex flex-wrap justify-center gap-2 text-sm text-slate-300">
+        <span>Try:</span>
+        {
+          topicSuggestions.map((topic) => (
+            <a
+              href={buildBrowseHref(topic)}
+              class="hover:text-teal-300 border-b border-dotted border-slate-600 hover:border-teal-300"
+            >
+              {topic}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </Fragment>
+
+  <section
+    class="-mt-12 -mx-6 divide-x divide-slate-100 overflow-hidden rounded-b-[2.5rem] border-b border-slate-200 bg-white shadow-2xl lg:-mx-8"
+  >
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+      {
+        stats.map((item) => (
+          <div class="py-6 text-center" key={item.label}>
+            <div class="text-3xl font-bold text-slate-900">{item.value}</div>
+            <div class="text-xs font-semibold uppercase text-slate-400 tracking-widest mt-1">
+              {item.label}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="py-12 lg:py-16">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
+      <aside class="lg:col-span-4 space-y-8">
+        <div>
+          <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <span class="w-1 h-6 bg-teal-500 rounded-full"></span>
+            Research Domains
+          </h2>
+          <p class="text-sm text-slate-500 mt-2 mb-4">Filter by primary outcome domains.</p>
+
+          <div class="grid gap-3">
+            {
+              domainCards.map((card) => (
+                <button
+                  type="button"
+                  key={card.title}
+                  class="group flex w-full items-start gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-200 hover:-translate-y-0.5 transition duration-200 text-left"
+                >
+                  <div
+                    class={`w-10 h-10 rounded-full flex items-center justify-center text-xl transition transform group-hover:scale-110 group-hover:animate-bounce animate-pulse ${card.colorClasses}`}
+                  >
+                    {card.emoji}
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-slate-900 group-hover:text-indigo-600">
+                      {card.title}
+                    </h3>
+                    <p class="text-xs text-slate-500 mt-1">{card.description}</p>
+                  </div>
+                </button>
+              ))
+            }
+          </div>
+          <div class="mt-4">
+            <a
+              href={browseHref}
+              class="inline-flex items-center gap-2 text-sm font-semibold text-teal-600 hover:text-teal-500"
+            >
+              Go to Repository
+              <span aria-hidden="true" class="text-base">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 rounded-2xl p-6 text-white shadow-lg">
+          <h3 class="font-semibold mb-2">How we build this</h3>
+          <p class="text-sm text-slate-300 leading-relaxed mb-4">
+We retrieve studies through a structured, pre-defined search strategy applied across PubMed, CINAHL, and Web of Science.
+          </p>
+          <a
+            href={aboutHref}
+            class="text-sm font-medium text-teal-300 hover:text-teal-200 flex items-center gap-1"
+          >
+            Read methodology <span class="text-lg">&rarr;</span>
+          </a>
+        </div>
+      </aside>
+
+      <div class="lg:col-span-8">
+        <div class="mb-6">
+          <h2 class="text-2xl font-bold text-slate-900">{t['index.recent_pubs']}</h2>
+        </div>
+
+        <div class="space-y-6">
+          {
+            recentPapers.map((paper) => {
+              const badges = formatBadges(paper);
+              const primaryLink = getPrimaryExternalLink(paper);
+              return (
+                <article
+                  class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition group"
+                  key={paper.id}
+                >
+                  <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+                    <div class="flex items-center gap-2">
+                      <span class="font-bold text-slate-700 bg-slate-100 px-2 py-1 rounded">
+                        {paper.journal}
+                      </span>
+                      <span>{paper.year}</span>
+                    </div>
+                    <span class="uppercase tracking-wider font-semibold text-slate-400">
+                      {paper.country || 'Global'}
+                    </span>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-slate-900 mb-2 leading-tight group-hover:text-teal-600 transition">
+                    <a href={getPaperUrl(paper)}>{paper.title}</a>
+                  </h3>
+
+                  <p class="text-sm text-slate-600 mb-4">{paper.normalizedAuthors.join(', ')}</p>
+
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    {badges.length === 0 ? (
+                      <span class="px-2 py-1 rounded-md bg-slate-50 text-slate-600 text-xs font-medium border border-slate-100">
+                        Evidence
+                      </span>
+                    ) : (
+                      badges.map((badge) => (
+                        <span
+                          class="px-2 py-1 rounded-md bg-slate-50 text-slate-600 text-xs font-medium border border-slate-100"
+                          key={`${paper.id}-${badge}`}
+                        >
+                          {badge}
+                        </span>
+                      ))
+                    )}
+                  </div>
+
+                  <details class="group/abstract">
+                    <summary class="flex items-center gap-2 text-sm font-semibold text-teal-600 cursor-pointer select-none hover:text-teal-800 transition">
+                      <span class="block group-open/abstract:hidden">Read abstract</span>
+                      <span class="hidden group-open/abstract:block">Hide abstract</span>
+                      <svg
+                        class="w-4 h-4 transition-transform group-open/abstract:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </summary>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed space-y-2">
+                      {paper.abstract ? (
+                        <p>{paper.abstract}</p>
+                      ) : (
+                        <p class="text-slate-500">No abstract provided.</p>
+                      )}
+                    </div>
+                  </details>
+
+                  <div class="mt-5 flex items-center gap-4 pt-4 border-t border-slate-100">
+                    <a
+                      class="text-sm font-bold text-slate-900 hover:underline"
+                      href={getPaperUrl(paper)}
+                    >
+                      View Full Details
+                    </a>
+                    {primaryLink && (
+                      <a
+                        class="text-sm font-medium text-slate-500 hover:text-blue-600 flex items-center gap-1"
+                        href={primaryLink.href}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {primaryLink.label}
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </article>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
