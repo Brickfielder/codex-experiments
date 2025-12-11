@@ -54,6 +54,20 @@
       "updated_at": "2025-12-11"
     },
     {
+      "name": "Kristin Alm-Kruse",
+      "email": "kellings@ous-hf.no",
+      "role": "Researcher",
+      "org": "Norwegian National Centre for Prehospital Emergency Medicine (NAKOS), Division of Prehospital services and the Department of Research and Development, Division of Emergencies and Critical Care. Oslo University Hospital, Norway",
+      "city": "Oslo",
+      "country": "Norway",
+      "lat": 59.91,
+      "lng": 10.73,
+      "research_areas": "have focused my research on out-of-hospital cardiac arrest (OHCA) patients, with a primary focus lately on rehabilitation and quality of life. My work also encompasses data quality, ECPR, development of health and comorbidities, healthcare use, prodromal symptoms and therapeutic hypothermia.",
+      "research_keywords": "Rehabilitation, quality of life, epidemiology, data quality, ECPR, health development, comorbidities, healthcare use, hypothermia.",
+      "id": "kristin-alm-kruse",
+      "updated_at": "2025-12-11"
+    },
+    {
       "name": "Marco Mion",
       "email": "m.mion@nhs.net",
       "role": "Principal Clinical Psychologist - Honorary Clinical Lecturer, Anglia Ruskin University",
