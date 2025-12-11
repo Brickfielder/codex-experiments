@@ -188,6 +188,16 @@ const CollaboratorDirectory = ({ people }: CollaboratorDirectoryProps) => {
                     <p className="text-sm text-slate-600">{person.looking_to_collaborate_on}</p>
                   </div>
                 ) : null}
+                {person.email ? (
+                  <p className="text-sm text-slate-600">
+                    <a
+                      className="font-semibold text-indigo-700 hover:text-indigo-600"
+                      href={`mailto:${person.email}`}
+                    >
+                      {person.email}
+                    </a>
+                  </p>
+                ) : null}
                 {person.tags?.length ? (
                   <div className="flex flex-wrap gap-2">
                     {person.tags.map((tag) => (
