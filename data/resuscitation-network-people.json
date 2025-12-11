@@ -39,6 +39,22 @@
       "updated_at": "2025-12-04"
     },
     {
+      "name": "Conrad Bjørshol",
+      "email": "conrad.arnfinn.bjorshol@sus.no",
+      "role": "Senior researcher at RAKOS Professor at the University of Bergen, Medical Faculty Consultant in Anaesthesiology at Stavanger University Hospital",
+      "org": "University of Bergen, Stavanger University Hospital",
+      "city": "Stavanger",
+      "country": "Norway",
+      "lat": 58.97,
+      "lng": 5.73,
+      "research_areas": "Cardiac arrest, bystander follow-up, simulation, patient safety, CPR guidelines",
+      "research_keywords": "Cardiac arrest, bystander follow-up, simulation, patient safety, CPR guidelines",
+      "offer": "Experience from emergency medicine, bystander follow-up, simulation research, supervision, improvement projects",
+      "looking_to_collaborate_on": "Evidence for bystander follow-up, long-term outcomes for bystanders, RCTs, implementation challenges and successes",
+      "id": "conrad-bj-rshol",
+      "updated_at": "2025-12-11"
+    },
+    {
       "name": "Fredrik Folke",
       "email": "fredrik.folke@regionh.dk",
       "role": "Clinical Professor, MD, PhD  Head of Research, Copenhagen Emergency Medical Services, Denmark  Senior Consultant, Department of Cardiology, Herlev Gentofte University Hospital, Denmark",
