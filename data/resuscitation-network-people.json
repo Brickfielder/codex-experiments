@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2025-12-04",
+    "updated_at": "2025-12-11",
     "fields": [
       "id",
       "name",
@@ -37,6 +37,21 @@
       "looking_to_collaborate_on": "All initiatives that better quality of survivorship in both survivors and impacted loved ones",
       "id": "alexander-presciutti",
       "updated_at": "2025-12-04"
+    },
+    {
+      "name": "Fredrik Folke",
+      "email": "fredrik.folke@regionh.dk",
+      "role": "Clinical Professor, MD, PhD  Head of Research, Copenhagen Emergency Medical Services, Denmark  Senior Consultant, Department of Cardiology, Herlev Gentofte University Hospital, Denmark",
+      "org": "Copenhagen Emergency Medical Services, Denmark and Herlev Gentofte University Hospital, Denmark",
+      "city": "Copenhagen",
+      "country": "Denmark",
+      "lat": 55.67,
+      "lng": 12.56,
+      "research_keywords": "Out-of-hospital cardiac arrest (OHCA), resuscitation, in-hospital cardiac arrest, emergency medicine, prehospital triage and treatment",
+      "offer": "·        Acces to our Danish national Cardiac Arrest Registry since 2001 with more than 85,000 OHCAs.  ·        Reserach experience within post-arrest quality of life studies, registry based and using questionnaires  ·        Qualitative methods with Phd-students running sub-studies  ·        Experience of in-patient cardiac arrest care",
+      "looking_to_collaborate_on": "·        Multinational cardiac arrest follow-up datasets, survival and quality of life, return to work  ·        Collaboration on long term survival and quality of life for OHCA survivors according to fragility status  ·        Co-designing support pathways for survivors and relatives  ·        Linking acute and long-term cardiac arrest datasets",
+      "id": "fredrik-folke",
+      "updated_at": "2025-12-11"
     },
     {
       "name": "Marco Mion",
