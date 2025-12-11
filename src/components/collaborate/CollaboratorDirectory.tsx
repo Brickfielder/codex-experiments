@@ -1,3 +1,4 @@
+import type { JSX } from 'preact';
 import { useMemo, useState } from 'preact/hooks';
 import type { Collaborator } from '~/utils/types';
 
@@ -68,9 +69,17 @@ const CollaboratorDirectory = ({ people }: CollaboratorDirectoryProps) => {
     });
   };
 
+  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    setQuery((current) => current.trim());
+  };
+
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-4 rounded-3xl border border-slate-200/70 bg-white/90 p-6 shadow-lg md:flex-row md:items-center">
+      <form
+        className="flex flex-col gap-4 rounded-3xl border border-slate-200/70 bg-white/90 p-6 shadow-lg md:flex-row md:items-center"
+        onSubmit={handleSubmit}
+      >
         <label className="flex-1 text-sm font-semibold text-slate-600">
           <span className="sr-only">Search collaborators</span>
           <input
@@ -81,13 +90,14 @@ const CollaboratorDirectory = ({ people }: CollaboratorDirectoryProps) => {
             className="mt-1 w-full rounded-2xl border-2 border-slate-200 bg-white px-5 py-3 text-base text-slate-800 shadow-inner focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100"
           />
         </label>
-        <a
-          className="inline-flex items-center justify-center rounded-2xl bg-rose-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-rose-500"
-          href="mailto:hello@caresearchhub.org?subject=Add%20me%20to%20the%20OHCA%20survivorship%20map"
+        <button
+          type="submit"
+          className="inline-flex items-center justify-center rounded-2xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+          aria-label="Search collaborators"
         >
-          Add your entry
-        </a>
-      </div>
+          Search
+        </button>
+      </form>
       <div className="flex flex-wrap gap-3">
         <button
           className={`rounded-full border px-4 py-1 text-sm font-medium transition ${
