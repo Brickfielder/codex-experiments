@@ -3828,6 +3828,48 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "39839826",
+    "pmid": "39839826",
+    "doi": "10.1016/j.resplu.2024.100852",
+    "title": "Reply to: Sex-specific health-related quality of life in survivors of cardiac arrest.",
+    "authors": [
+      "Matthew Potter",
+      "Neil Magee",
+      "Eleni Aliki Nikolopoulou",
+      "Uzma Sajjad",
+      "Thomas R Keeble",
+      "Marco Mion"
+    ],
+    "journal": "Resuscitation plus",
+    "year": 2024,
+    "date": "2024-12-21",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resplu.2024.100852",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/39839826",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11745946"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC11745946",
+    "country": "United Kingdom",
+    "domains": [
+      "Qol"
+    ],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Potter M",
+      "Magee N",
+      "Nikolopoulou EA",
+      "Sajjad U",
+      "Keeble TR",
+      "Mion M"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "38797387",
     "pmid": "38797387",
     "doi": "10.1016/j.resuscitation.2024.110253",
@@ -4026,6 +4068,44 @@
       "Torp-Pedersen C",
       "Hassager C",
       "Søholm H"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "39185281",
+    "pmid": "39185281",
+    "doi": "10.1016/j.resplu.2024.100736",
+    "title": "Sex-specific health-related quality of life in survivors of cardiac arrest.",
+    "authors": [
+      "Kaitlyn Ghassemi",
+      "Kyndaron Reinier",
+      "Sumeet S Chugh",
+      "Faye L Norby"
+    ],
+    "journal": "Resuscitation plus",
+    "year": 2024,
+    "date": "2024-08-06",
+    "abstract": "Survival after out-of-hospital cardiac arrest (OHCA) remains low, although the number of survivors is increasing, and survivors are living longer. With increasing long-term survival, there is a need to understand health-related quality of life (HRQoL) measures. Although there are current recommendations for measuring HRQoL in OHCA survivors, there is significant heterogeneity in assessment timing and the measurement tools used to quantify HRQoL outcomes, making the interpretation and comparison of HRQoL difficult. Identifying groups of survivors of OHCA with poor HRQoL measures could be used for targeted intervention studies. Sex differences in OHCA resuscitation characteristics, post-cardiac arrest treatment, and short-term survival outcomes are well-documented, although variability in study methods and statistical adjustments appear to affect study results and conclusions. It is unclear whether sex differences exist in HRQoL among OHCA survivors and if study methods and statistical adjustment for patient characteristics or arrest circumstances impact the results. In this narrative review article, we provide an overview of the assessment of HRQoL and the main domains of HRQoL. We summarize the literature regarding sex differences in HRQoL in OHCA survivors. Few multivariable-adjusted studies reported HRQoL sex differences and there was significant heterogeneity in study size, timing of assessment, and domains measured and reported. What is reported suggests females have worse HRQoL than males, especially in the domains of physical function and mental health, but results should be interpreted with caution. Lastly, we discuss the challenges of a non-uniform approach to measurement and future directions for assessing and improving HRQoL in OHCA survivors.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resplu.2024.100736",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/39185281",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11343050"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC11343050",
+    "country": "United States",
+    "domains": [
+      "Qol"
+    ],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Ghassemi K",
+      "Reinier K",
+      "Chugh SS",
+      "Norby FL"
     ],
     "isAbstractTruncated": false
   },
