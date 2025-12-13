@@ -674,7 +674,9 @@
     "flags": {
       "open_access": true,
       "has_fulltext": true
-    }
+    },
+    "corrCountryCode": "DK",
+    "corrCountryName": "Denmark"
   },
   {
     "id": "10.1016/s0300-9572(25)00712-9",
@@ -1998,7 +2000,9 @@
     "flags": {
       "open_access": true,
       "has_fulltext": true
-    }
+    },
+    "corrCountryCode": "GB",
+    "corrCountryName": "United Kingdom"
   },
   {
     "id": "38452994",
@@ -3065,7 +3069,9 @@
     "flags": {
       "open_access": false,
       "has_fulltext": false
-    }
+    },
+    "corrCountryCode": "DK",
+    "corrCountryName": "Denmark"
   },
   {
     "id": "10.1161/circ.148.suppl_1.159",

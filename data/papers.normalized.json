@@ -928,6 +928,9 @@
       "open_access": true,
       "has_fulltext": true
     },
+    "corrCountryCode": "DK",
+    "corrCountryName": "Denmark",
+    "country": "Denmark",
     "domains": [
       "Psychological",
       "Qol"
@@ -2914,6 +2917,9 @@
       "open_access": true,
       "has_fulltext": true
     },
+    "corrCountryCode": "GB",
+    "corrCountryName": "United Kingdom",
+    "country": "United Kingdom",
     "domains": [
       "Psychological"
     ],
@@ -4407,6 +4413,9 @@
       "open_access": false,
       "has_fulltext": false
     },
+    "corrCountryCode": "DK",
+    "corrCountryName": "Denmark",
+    "country": "Denmark",
     "domains": [
       "Psychological",
       "Qol"
