@@ -1,5 +1,9 @@
 import type { RawPaper } from './types';
 
+const CROSSREF_USER_AGENT =
+  process.env.CROSSREF_USER_AGENT ??
+  'OHCA-Survivorship-Repo/1.0 (+https://github.com/brickfielder/codex-experiments)';
+
 const COUNTRY_ALIASES: { code: string; name: string; aliases: string[] }[] = [
   // Existing
   {
@@ -103,7 +107,7 @@ async function fetchCrossrefWork(doi: string): Promise<CrossrefWork | null> {
   const url = `https://api.crossref.org/works/${encodeURIComponent(doi)}`;
   const res = await fetch(url, {
     headers: {
-      'User-Agent': 'ohca-survivorship-repo/1.0 (mailto:your-email@example.com)'
+      'User-Agent': CROSSREF_USER_AGENT
     }
   });
   if (!res.ok) {
@@ -114,10 +118,29 @@ async function fetchCrossrefWork(doi: string): Promise<CrossrefWork | null> {
   return json.message as CrossrefWork;
 }
 
-// New: always pick the *last* author.
-function pickLastAuthor(authors: CrossrefAuthor[] | undefined): CrossrefAuthor | null {
+function inferCountryFromAuthors(
+  authors: CrossrefAuthor[] | undefined
+): { code: string; name: string } | null {
   if (!authors || authors.length === 0) return null;
-  return authors[authors.length - 1];
+
+  const authorsWithAffiliation = authors.filter(
+    (author) => author.affiliation && author.affiliation.length > 0
+  );
+  if (!authorsWithAffiliation.length) return null;
+
+  // Prefer the last author first (likely the corresponding author), then walk forwards.
+  const ordered = [
+    authorsWithAffiliation[authorsWithAffiliation.length - 1],
+    ...authorsWithAffiliation.slice(0, -1)
+  ];
+
+  for (const author of ordered) {
+    const affText = author.affiliation?.map((a) => a.name).join('; ');
+    const inferred = inferCountryFromAffiliationText(affText);
+    if (inferred) return inferred;
+  }
+
+  return null;
 }
 
 export async function enrichCountryForPaper(record: RawPaper): Promise<RawPaper> {
@@ -130,13 +153,7 @@ export async function enrichCountryForPaper(record: RawPaper): Promise<RawPaper>
       return record;
     }
 
-    const lastAuthor = pickLastAuthor(work.author);
-    if (!lastAuthor || !lastAuthor.affiliation || lastAuthor.affiliation.length === 0) {
-      return record;
-    }
-
-    const affText = lastAuthor.affiliation.map((a) => a.name).join('; ');
-    const inferred = inferCountryFromAffiliationText(affText);
+    const inferred = inferCountryFromAuthors(work.author);
     if (!inferred) return record;
 
     return {
