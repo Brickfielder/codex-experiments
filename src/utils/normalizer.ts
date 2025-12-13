@@ -172,11 +172,15 @@ export const normalizeRecords = (papers: RawPaper[]): NormalizedPaper[] => {
       const design = inferDesign(paper) ?? paper.design;
       const country = sanitizeCountry(paper.country) ?? paper.country;
       const correctedCountry = applyCountryCorrections(country);
-      const effectiveCountry = correctedCountry?.corrCountryName ?? country;
+      const corrCountryCode = paper.corrCountryCode ?? correctedCountry?.corrCountryCode;
+      const corrCountryName = paper.corrCountryName ?? correctedCountry?.corrCountryName;
+      const effectiveCountry = corrCountryName ?? country;
       return {
         ...paper,
         country: effectiveCountry,
-        ...(correctedCountry ?? {}),
+        ...(corrCountryCode || corrCountryName
+          ? { corrCountryCode, corrCountryName }
+          : correctedCountry ?? {}),
         domains,
         setting,
         design,

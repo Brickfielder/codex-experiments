@@ -569,7 +569,7 @@
       "Social Support",
       "Young Adult"
     ],
-    "country": "Australia",
+    "country": "United Kingdom",
     "corrCountryCode": "GB",
     "corrCountryName": "United Kingdom",
     "domains": [],
@@ -1383,7 +1383,7 @@
       "Survivors",
       "Multicenter Studies as Topic"
     ],
-    "country": "Australia",
+    "country": "United Kingdom",
     "corrCountryCode": "GB",
     "corrCountryName": "United Kingdom",
     "domains": [
@@ -3207,9 +3207,9 @@
       "Prospective Studies",
       "Executive Function"
     ],
-    "country": "the Netherlands",
+    "country": "Netherlands",
     "corrCountryCode": "NL",
-    "corrCountryName": "the Netherlands",
+    "corrCountryName": "Netherlands",
     "domains": [
       "Cognitive"
     ],
@@ -4467,6 +4467,7 @@
     },
     "corrCountryCode": "FR",
     "corrCountryName": "France",
+    "country": "France",
     "domains": [],
     "setting": "Mixed",
     "design": "Prospective cohort",
@@ -4572,9 +4573,9 @@
       "Anxiety",
       "Survivors"
     ],
-    "country": "Republic of Korea",
+    "country": "South Korea",
     "corrCountryCode": "KR",
-    "corrCountryName": "Republic of Korea",
+    "corrCountryName": "South Korea",
     "domains": [
       "Psychological"
     ],
@@ -7358,7 +7359,7 @@
       "has_fulltext": true
     },
     "pmcid": "PMC9457161",
-    "country": "Singapore",
+    "country": "United Kingdom",
     "corrCountryCode": "GB",
     "corrCountryName": "United Kingdom",
     "domains": [
@@ -10052,6 +10053,7 @@
     },
     "corrCountryCode": "JP",
     "corrCountryName": "Japan",
+    "country": "Japan",
     "domains": [
       "Cognitive",
       "Qol"
@@ -10261,6 +10263,7 @@
     },
     "corrCountryCode": "IE",
     "corrCountryName": "Ireland",
+    "country": "Ireland",
     "domains": [],
     "setting": "Mixed",
     "design": "Prospective cohort",
@@ -11215,6 +11218,7 @@
     },
     "corrCountryCode": "AU",
     "corrCountryName": "Australia",
+    "country": "Australia",
     "domains": [],
     "setting": "Mixed",
     "normalizedAuthors": [

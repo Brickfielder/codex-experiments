@@ -17,6 +17,7 @@
     "merge": "tsx scripts/merge.ts",
     "add:paper": "tsx scripts/add-paper.ts",
     "add:network-person": "tsx scripts/add-network-person.ts",
+    "enrich:countries": "tsx scripts/enrich-missing-countries.ts",
     "prep:update": "npm run validate && npm run normalize",
     "lighthouse": "lhci autorun",
     "changelog": "tsx scripts/changelog.ts"
