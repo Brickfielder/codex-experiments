@@ -1031,6 +1031,35 @@
     "isAbstractTruncated": false
   },
   {
+    "id": "10.3384/9789181181531",
+    "doi": "10.3384/9789181181531",
+    "title": "Insights into Cognitive Function in Survivors of Cardiac Arrest",
+    "authors": [
+      "Karin Larsson"
+    ],
+    "journal": "Linköping University Medical Dissertations",
+    "year": 2025,
+    "date": "2025-12-12",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.3384/9789181181531"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": true
+    },
+    "corrCountryCode": "GB",
+    "corrCountryName": "United Kingdom",
+    "domains": [
+      "Cognitive"
+    ],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Larsson K"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "40499675",
     "pmid": "40499675",
     "doi": "10.1016/j.resuscitation.2025.110672",
