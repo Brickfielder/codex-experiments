@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2025-12-11",
+    "updated_at": "2025-12-14",
     "fields": [
       "id",
       "name",
@@ -68,6 +68,22 @@
       "looking_to_collaborate_on": "·        Multinational cardiac arrest follow-up datasets, survival and quality of life, return to work  ·        Collaboration on long term survival and quality of life for OHCA survivors according to fragility status  ·        Co-designing support pathways for survivors and relatives  ·        Linking acute and long-term cardiac arrest datasets",
       "id": "fredrik-folke",
       "updated_at": "2025-12-11"
+    },
+    {
+      "name": "Johan Israelsson",
+      "email": "johan.israelsson@regionkalmar.se",
+      "role": "Reg. Nurse, Resuscitation Coordinator, Associate Professor",
+      "org": "Sweden, Region Kalmar County, Linneaus University, Swedish Resuscitation Council",
+      "city": "Kalmar",
+      "country": "Sweden",
+      "lat": 56.66,
+      "lng": 16.36,
+      "research_areas": "Cardiac arrest, Post-arrest care and follow-up, Peer support, Health-related Quality of Life",
+      "research_keywords": "Heart Arrest, Health, Quality of Life",
+      "offer": "Follow-up registry with 6 outcomes Post-arrest rehabilitation clinic/pathway experience Experience of writing and implementing national guidelines Experience of working with peer support networks Experience of registry studies, quantitative methods Experience of in-hospital cardiac arrest",
+      "looking_to_collaborate_on": "Developing, testing and harmonising patient-reported outcome measures Co-designing interventions and support pathways for survivors and co-survivors Developing digital resources for survivorship and co-survivorship            Any questions please just let me or Marco know.",
+      "id": "johan-israelsson",
+      "updated_at": "2025-12-14"
     },
     {
       "name": "Kirstie Haywood",
