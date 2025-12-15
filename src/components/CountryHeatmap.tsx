@@ -8,11 +8,25 @@ type Paper = {
   corrCountryName?: string;
 };
 
+const COUNTRY_NORMALIZATION: Record<string, string> = {
+  'republic of singapore': 'Singapore',
+  'singapore, singapore': 'Singapore',
+  sg: 'Singapore'
+};
+
+function normalizeCountryName(rawCountry: string): string {
+  const trimmed = rawCountry.trim();
+  if (!trimmed) return '';
+
+  const normalized = COUNTRY_NORMALIZATION[trimmed.toLowerCase()];
+  return normalized ?? trimmed;
+}
+
 function aggregateByCountry(papers: Paper[]) {
   const counts = new Map<string, number>();
 
   for (const p of papers) {
-    const country = (p.corrCountryName || p.country || '').trim();
+    const country = normalizeCountryName(p.corrCountryName || p.country || '');
     if (!country) continue;
 
     counts.set(country, (counts.get(country) ?? 0) + 1);
