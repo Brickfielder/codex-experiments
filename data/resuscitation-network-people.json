@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2025-12-14",
+    "updated_at": "2025-12-16",
     "fields": [
       "id",
       "name",
@@ -37,6 +37,22 @@
       "looking_to_collaborate_on": "All initiatives that better quality of survivorship in both survivors and impacted loved ones",
       "id": "alexander-presciutti",
       "updated_at": "2025-12-04"
+    },
+    {
+      "name": "Anders Wieghorst",
+      "email": "anders.wieghorst@rsyd.dk",
+      "role": "Clinical Psychologist and postdoc",
+      "org": "Department of Cardiology and Department of Cardiology, Pulmonary and Vascular Surgery, Odense University Hospital, Denmark",
+      "city": "Odense",
+      "country": "Denmark",
+      "lat": 55.38,
+      "lng": 10.45,
+      "research_areas": "Development of digital cognitive screening after cardiac arrest (DANcSCA)  Development and evaluation of “Life after Cardiac Arrest” (LiCA)  Mental fatigue after cardiac arrest",
+      "research_keywords": "Out-of-hospital cardiac arrest; digital cognitive screening; cognitive deficits after cardiac arrest; psychoeducational intervention; mental fatigue; rehabilitation; long-term outcomes",
+      "offer": "Development and validation of cognitive screening tools  Clinical and research expertise in cognitive deficits and mental fatigue after out-of-hospital cardiac arrest  Interdisciplinary collaboration across clinical and academic settings",
+      "looking_to_collaborate_on": "Data on cognitive deficits after out-of-hospital cardiac arrest  Efficacy of cognitive screening tools  Development and evaluation of interventions targeting cognitive difficulties and mental fatigue",
+      "id": "anders-wieghorst",
+      "updated_at": "2025-12-16"
     },
     {
       "name": "Anna Marie Moe Øvstebø",
