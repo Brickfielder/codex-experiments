@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2025-12-16",
+    "updated_at": "2025-12-20",
     "fields": [
       "id",
       "name",
@@ -85,6 +85,22 @@
       "looking_to_collaborate_on": "Evidence for bystander follow-up, long-term outcomes for bystanders, RCTs, implementation challenges and successes",
       "id": "conrad-bj-rshol",
       "updated_at": "2025-12-11"
+    },
+    {
+      "name": "Enrico Baldi",
+      "email": "enrico.baldi@unipv.it",
+      "role": "MD, PhD - Cardiologist, EP Specialist",
+      "org": "Fondazione IRCCS Policlinico San Matteo, Pavia, Italy",
+      "city": "Pavia",
+      "country": "Italy",
+      "lat": 45.19,
+      "lng": 9.159,
+      "research_areas": "Cardiac arrest, resuscitation, ventricular arrhythmias",
+      "research_keywords": "Cardiac arrest, resuscitation, ventricular arrhythmias",
+      "offer": "I can offer my enthusiasm and expertise in OHCA research, including registry-based/follow-up studies on cognitive/QoL outcomes",
+      "looking_to_collaborate_on": "Any type of project linked to OHCA, especially on post-resuscitation care and survivorship",
+      "id": "enrico-baldi",
+      "updated_at": "2025-12-20"
     },
     {
       "name": "Fredrik Folke",
