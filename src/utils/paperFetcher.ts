@@ -7,7 +7,7 @@ const PUBMED_ESEARCH_ENDPOINT = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/e
 
 const CROSSREF_USER_AGENT =
   process.env.CROSSREF_USER_AGENT ??
-  'OHCA-Survivorship-Repo/1.0 (+https://github.com/brickfielder/codex-experiments)';
+  'OHCA-Survivorship-Repo/1.0 (+https://github.com/brickfielder/caresearchhub)';
 const PUBMED_TOOL_NAME = process.env.PUBMED_TOOL_NAME ?? 'ohca-survivorship-repo';
 const PUBMED_TOOL_EMAIL =
   process.env.PUBMED_TOOL_EMAIL ?? 'opensource@ohca-survivorship.example.com';

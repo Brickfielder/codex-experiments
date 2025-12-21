@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'preact/hooks';
 import { applySearch, createFuse, defaultSearchState } from '~/utils/search';
 import { getPaperUrl, truncateAuthors } from '~/utils/format';
+import { getBrowseUrl } from '~/utils/siteUrls';
 import type { Paper } from '~/utils/types';
 
 interface HomeSearchClientProps {
@@ -25,7 +26,7 @@ export default function HomeSearchClient({ papers, browseResultsHref }: HomeSear
     return filtered.slice(0, 5);
   }, [defaults, fuse, papers, query]);
 
-  const repositoryLink = 'https://brickfielder.github.io/codex-experiments/browse/';
+  const repositoryLink = getBrowseUrl();
 
   return (
     <div class="relative z-10 space-y-4">

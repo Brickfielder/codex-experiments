@@ -2,7 +2,7 @@ import type { RawPaper } from './types';
 
 const CROSSREF_USER_AGENT =
   process.env.CROSSREF_USER_AGENT ??
-  'OHCA-Survivorship-Repo/1.0 (+https://github.com/brickfielder/codex-experiments)';
+  'OHCA-Survivorship-Repo/1.0 (+https://github.com/brickfielder/caresearchhub)';
 
 const COUNTRY_ALIASES: { code: string; name: string; aliases: string[] }[] = [
   // Existing
