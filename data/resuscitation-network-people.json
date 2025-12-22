@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2025-12-20",
+    "updated_at": "2025-12-22",
     "fields": [
       "id",
       "name",
@@ -132,6 +132,22 @@
       "looking_to_collaborate_on": "Developing, testing and harmonising patient-reported outcome measures Co-designing interventions and support pathways for survivors and co-survivors Developing digital resources for survivorship and co-survivorship            Any questions please just let me or Marco know.",
       "id": "johan-israelsson",
       "updated_at": "2025-12-14"
+    },
+    {
+      "name": "Katarina Heimburg",
+      "email": "katarina.heimburg@med.lu.se",
+      "role": "Physiotherapist specialist in cardiovascular diseases and respiration,  PhD",
+      "org": "Working half-time with cardiac rehabilitation at the at Skane University Hospital in Sweden and half-time with research and teaching at the Lund University in Sweden.",
+      "city": "Lund",
+      "country": "Sweden",
+      "lat": 55.7,
+      "lng": 13.19,
+      "research_areas": "Working half-time with cardiac rehabilitation at the at Skane University Hospital in Sweden and half-time with research and teaching at the Lund University in Sweden.",
+      "research_keywords": "Physical activity, physical function, kinesiophobia, fatigue, cardiac arret, cardiac rehabilitation",
+      "offer": "Experience in cardiac rehabilitation and follow-up after cardiac arrest",
+      "looking_to_collaborate_on": "Collaboration and exchange of experience regarding cardiac rehabilitation and follow-up",
+      "id": "katarina-heimburg",
+      "updated_at": "2025-12-22"
     },
     {
       "name": "Kirstie Haywood",
