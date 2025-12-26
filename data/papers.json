@@ -1674,6 +1674,36 @@
     }
   },
   {
+    "id": "10.3390/jcm15010174",
+    "doi": "10.3390/jcm15010174",
+    "title": "Translating Guidelines into Practice: A Multicentre Audit of the Implementation of ERC Survivorship and Follow-Up Recommendations After Cardiac Arrest",
+    "authors": [
+      "Marco Mion",
+      "Meadbh Keenan",
+      "Alice Steadman",
+      "Shirley Morrison",
+      "Claudine Keelan",
+      "Nikos Gorgoraptis",
+      "Nilesh Pareek",
+      "Jean Davis",
+      "Uzma Sajjad",
+      "Thomas R. Keeble"
+    ],
+    "journal": "Journal of Clinical Medicine",
+    "year": 2025,
+    "date": "2025-12-25",
+    "abstract": "Background: Survivors of sudden cardiac arrest frequently experience long-lasting problems with fatigue, cognition and mood. European Resuscitation Council (ERC) guidelines recommend functional assessment of physical/non-physical issues prior to discharge, and systematic review within three months covering at least cognition, mood, fatigue, and support for patients and their families. How these recommendations are implemented and what barriers are encountered in routine care remains unknown. Methods: We conducted a multicentric, prospective 6-month audit across four tertiary cardiac-arrest centres in England where temporarily funded follow-up pathways were in place. Five operational criteria were developed based on ERC guidelines. Adherence was quantified, and reasons for non-completion were collected and mapped onto the Theoretical Domains Framework (TDF) to identify behavioural and contextual factors influencing implementation. Results: A total of 143 OHCA survivors were discharged alive. Pre-discharge assessments were offered to 116/143 patients (81%) but only completed in 81 (57%). Reasons for non-completion included early discharge, severe cognitive impairment and, less frequently, patient refusal. Of 132 survivors eligible for follow-up, 108 (82%) were contacted and 87 (66%) attended. Only 25% of follow-ups occurred within the recommended 3-month period (median 185 days, IQR 81–225). Among those seen, assessments were completed for cognition (44%), mood (52%), and fatigue (51%). Reasons for omission included patient refusal, clinical discretion, and time constraints. Survivors’ family members were invited in all cases, but only 45% attended. Conclusions: Adherence to guideline-recommended assessments was variable and dependent on local practices, resource limitations, and patient/clinician-related factors. Key barriers mapped to the TDF domains of ‘Environmental context and resources’, ‘Beliefs about consequences’ and ‘Social influences’. Structural policies excluding out-of-area and non-ICU patients, together with clinician judgement and patient engagement, were major determinants of implementation. These findings can guide targeted service development and support sustainable post-resuscitation care pathways.",
+    "links": {
+      "doi": "https://doi.org/10.3390/jcm15010174"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "corrCountryCode": "GB",
+    "corrCountryName": "United Kingdom"
+  },
+  {
     "id": "10.1016/s0300-9572(25)00554-4",
     "doi": "10.1016/s0300-9572(25)00554-4",
     "title": "Two-Year Outcomes after Out-of-Hospital Cardiac Arrest: Hypothermia versus Normothermia",
