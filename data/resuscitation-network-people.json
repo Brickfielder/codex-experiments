@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2025-12-23",
+    "updated_at": "2026-01-05",
     "fields": [
       "id",
       "name",
@@ -85,6 +85,22 @@
       "looking_to_collaborate_on": "Co-designing support pathways for survivors and relatives  •                        Developing digital resources for survivorship",
       "id": "annette-waldemar",
       "updated_at": "2025-12-22"
+    },
+    {
+      "name": "Bruce Irvine",
+      "email": "bruce.irvine2@nhs.scot",
+      "role": "Principal Clinical Psychologist",
+      "org": "Scotland - NHS Greater Glasgow and Clyde",
+      "city": "Glasgow",
+      "country": "United Kingdom",
+      "lat": 55.86,
+      "lng": -4.251,
+      "research_areas": "Health Psychology, stroke, cardiac arrest, Implantable cardiac devices and mental health",
+      "research_keywords": "Health psychology",
+      "offer": "post-arrest rehabilitation/pathway design experience, remote service model delivery",
+      "looking_to_collaborate_on": "co-design, methodological support, clinical health psychology projects",
+      "id": "bruce-irvine",
+      "updated_at": "2026-01-05"
     },
     {
       "name": "Conrad Bjørshol",
