@@ -125,6 +125,39 @@
     "corrCountryName": "United Kingdom"
   },
   {
+    "id": "10.1161/circ.152.suppl_3.sat903",
+    "doi": "10.1161/circ.152.suppl_3.sat903",
+    "title": "Abstract Sat903: Assessing Content Validity of EQ-5D-5L in Out-of-Hospital Cardiac Arrest Survivors: Cognitive Interviewing and Comparative Concept Mapping with HUI3 and SF-36",
+    "authors": [
+      "Pin Pin Pek",
+      "Phyo Thet Naing Win",
+      "Rahul Malhotra",
+      "Truls Ostbye",
+      "Andrew Fu Wah Ho",
+      "Shir Lynn Lim",
+      "Felix Maverick Rubillar Uy",
+      "Vui Kian Ho",
+      "Jia Min Chua",
+      "Ying Zi Oh",
+      "Kah Hua Peck",
+      "Marcus Ong",
+      "Nan Luo"
+    ],
+    "journal": "Circulation",
+    "year": 2025,
+    "date": "2025-11-04",
+    "abstract": "Background: The HUI3, SF-36, and EQ-5D-5L are generic instruments recommended for assessing out-of-hospital cardiac arrest (OHCA) survivors’ health-related quality of life (HRQoL). Furthermore, EQ-5D is included as an outcome in the Pan-Asian Resuscitation Outcomes Study. However, EQ-5D’s content validity has not been evaluated in this population. We evaluated EQ-5D-5L’s content validity from survivors’ and co-survivors’ perspectives and compared its content coverage against HUI3 and SF-36. Method: We conducted in-depth interviews with OHCA survivors and co-survivors at 1-12 months after survivors’ hospital discharge. Concept elicitation and cognitive interviews were conducted to identify HRQoL issues relevant to OHCA survivors and to evaluate the relevance, comprehensibility, and comprehensiveness of EQ-5D-5L, respectively. Thematic content analysis was applied to verbatim transcripts to derive themes/subthemes. Results: We interviewed ten survivors aged 34-74 years and eight co-survivors aged 38-73 years. 70% of survivors were males; 87.5% of co-survivors were females. Median (IQR) time from OHCA to interview was 4.6 (2.5–6.9) months. We identified 13 themes and 34 subthemes in the physical, mental, and social health domains. Emotional distress and limitations in leisure activities were reported by all survivors; problems with mobility and self-care were reported by majority of co-survivors. SF-36 demonstrated the highest content coverage, followed by EQ-5D, and HUI3. All participants found EQ-5D-5L to be relevant except for two co-survivors who felt that it was not relevant to survivors with poor/full recovery. Items were generally comprehensible except for anxiety/depression, which was interpreted as clinical depression (n=2). Key concepts suggested by participants to increase EQ-5D-5L’s comprehensiveness included access to support, cognition, social activities, and lifestyle factors. Conclusion: Mental and social health issues were commonly reported by OHCA survivors, while physical health issues were commonly reported by co-survivors. All three instruments did not demonstrate comprehensive coverage of OHCA survivors’ HRQoL; however, EQ-5D-5L, while being the briefest, showed greater coverage than HUI3. Although there is a need to supplement EQ-5D-5L with other instruments for assessment of OHCA survivors’ HRQoL, its relevance, comprehensibility, and brevity make it a suitable instrument for this population, particularly when respondent burden is a concern.",
+    "links": {
+      "doi": "https://doi.org/10.1161/circ.152.suppl_3.sat903"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "corrCountryCode": "GB",
+    "corrCountryName": "United Kingdom"
+  },
+  {
     "id": "10.1016/s0300-9572(25)00768-3",
     "doi": "10.1016/s0300-9572(25)00768-3",
     "title": "Are Out-of-Hospital Cardiac Arrest Survivors Being Effectively Rehabilitated? A Scoping Review on Rehabilitation Delivery after Out-of-Hospital Cardiac Arrest",
