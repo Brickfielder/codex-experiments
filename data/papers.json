@@ -1,5 +1,55 @@
 [
   {
+    "id": "41499113",
+    "pmid": "41499113",
+    "doi": "10.1001/jamanetworkopen.2025.52832",
+    "title": "Health-Related Quality of Life and Long-Term Survival After Cardiac Arrest.",
+    "authors": [
+      "Emelie Dillenbeck",
+      "Per Nordberg",
+      "Akil Awad",
+      "Johan Israelsson",
+      "Araz Rawshani",
+      "Kristofer Årestedt",
+      "Anders Bremer",
+      "Jacob Hollenberg",
+      "Therese Djärv",
+      "Leif Svensson",
+      "Martin Jonsson"
+    ],
+    "journal": "JAMA network open",
+    "year": 2026,
+    "date": "2026-01-02",
+    "abstract": "IMPORTANCE: Health-related quality of life (HRQOL) follow-up can increase knowledge of cardiac arrest outcomes from the patient's perspective. Whether HRQOL affects long-term survival is unknown.\nOBJECTIVE: To investigate whether HRQOL 3 to 6 months after cardiac arrest is associated with long-term survival.\nDESIGN, SETTING, AND PARTICIPANTS: This cohort study linked 5 national registers with nationwide coverage in Sweden across a 7-year period and included survivors of in-hospital cardiac arrest (IHCA) or out-of-hospital cardiac arrest (OHCA) between January 1, 2014, and December 31, 2019, with follow-up through June 30, 2021. Participants were adults surviving at least 90 days after IHCA or OHCA who completed follow-up EuroQoL 5-dimension 5-level (EQ-5D-5L) tool questionnaires. Analyses were performed December 2 to 20, 2024.\nEXPOSURES: EQ-5D-5L level sum score (LSS; sum of EQ-5D-5L dimensions, ranging from 5 [no problems] to 25 [extreme problems in all dimensions]), and the visual analog scale EQ VAS, 3 to 6 months after cardiac arrest.\nMAIN OUTCOME AND MEASURES: Long-term survival up to a maximum of 7 years among patients surviving IHCA and OHCA.\nRESULTS: In total, 2000 survivors of IHCA (median [IQR] age, 73 [65-80] years, 66% male) and 1108 survivors of OHCA (median [IQR] age, 69 [59-75] years, 77% male) were included. There were 475 deaths among patients with IHCA and 132 deaths among patients with OHCA. For patients with IHCA, the LSS distribution was 394 (20%) for LSS 5, 1034 (52%) for LSS 6 to 10, and 572 (29%) for LSS 11 to 25. For patients with OHCA, the LSS distribution was 299 (27%) for LSS 5, 637 (58%) for LSS 6 to 10, and 168 (15%) for LSS 11 to 25. In the IHCA population, LSS 11 to 25 had higher hazard of death compared with LSS 5 (adjusted hazard ratio [AHR], 2.50 [95% CI, 1.82-3.43]), whereas LSS 6 to 10 did not (AHR, 1.21 [95% CI, 0.88-1.65]). In OHCA, no associations were found between LSS categories and long-term survival (LSS 11-25 vs LSS 5: AHR, 1.41 [95% CI, 0.83-2.42]; LSS 6-10 vs LSS 5: AHR, 0.88 [95% CI, 0.56-1.39]). In both IHCA and OHCA, spline modeling using LSS and EQ VAS as continuous variables showed significant increases in hazards of death with poorer HRQOL, although the estimates in the OHCA population showed greater uncertainty.\nCONCLUSIONS AND RELEVANCE: In this cohort study of patients who survived beyond 90 days after IHCA or OHCA, poorer HRQOL reported with EQ-5D-5L scores 3 to 6 months after cardiac arrest was associated with reduced long-term survival in both groups, with greater uncertainty for OHCA estimates. HRQOL assessment may help guide follow-up care.",
+    "links": {
+      "doi": "https://doi.org/10.1001/jamanetworkopen.2025.52832",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41499113"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Quality of Life",
+      "Male",
+      "Female",
+      "Aged",
+      "Middle Aged",
+      "Sweden",
+      "Heart Arrest",
+      "Survivors",
+      "Registries",
+      "Out-of-Hospital Cardiac Arrest",
+      "Aged, 80 and over",
+      "Cohort Studies",
+      "Surveys and Questionnaires"
+    ],
+    "country": "Sweden",
+    "corrCountryCode": "SE",
+    "corrCountryName": "Sweden"
+  },
+  {
     "id": "10.1016/j.resplu.2025.101179",
     "doi": "10.1016/j.resplu.2025.101179",
     "title": "Physical, psychological, cognitive, social health outcomes, and health-related quality of life in out-of-hospital cardiac arrest survivors and co-survivors: 3-month outcomes from the Quality Cardiac Arrest Survivorship cohort study (QualiCAS)",
