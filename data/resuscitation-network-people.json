@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2026-01-05",
+    "updated_at": "2026-01-12",
     "fields": [
       "id",
       "name",
@@ -85,6 +85,22 @@
       "looking_to_collaborate_on": "Co-designing support pathways for survivors and relatives  •                        Developing digital resources for survivorship",
       "id": "annette-waldemar",
       "updated_at": "2025-12-22"
+    },
+    {
+      "name": "Bo Gregers Winkel",
+      "email": "Bo.winkel@regionh.dk",
+      "role": "Consultant cardiologist, head of cardiac arrest diagnostic work-up programme",
+      "org": "Rigshospitalet, Denmark",
+      "city": "Copenhagen",
+      "country": "Denmark",
+      "lat": 55.68,
+      "lng": 12.57,
+      "research_areas": "Sudden cardiac death, survivors of cadiac arrest; inherited cardiac diseases; genetic causes of cardiac disease. Idiopathic ventricular fibrillation, Rehabilitation, Ventricular arrhythmias",
+      "research_keywords": "Inherited cardiac diseases; Cardiac arrest; Sudden cardiac death; Arrhythmia syndromes",
+      "offer": "Follow-up registry with 6–12 month outcomes; Post-arrest rehabilitation clinic/pathway experience; Qualitative methods expertise; experience running sub-studies",
+      "looking_to_collaborate_on": "Harmonising patient-reported outcome measures across sites; Multinational cardiac arrest follow-up datasets; Co-designing support pathways for survivors and relatives; Linking acute and long-term cardiac arrest datasets",
+      "id": "bo-gregers-winkel",
+      "updated_at": "2026-01-12"
     },
     {
       "name": "Bruce Irvine",
