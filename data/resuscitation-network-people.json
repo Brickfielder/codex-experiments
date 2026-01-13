@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2026-01-12",
+    "updated_at": "2026-01-13",
     "fields": [
       "id",
       "name",
@@ -258,6 +258,22 @@
       "looking_to_collaborate_on": "International  registries focused on aftercare research; harmonising survivorship measures, datasets",
       "id": "marco-mion",
       "updated_at": "2025-12-04"
+    },
+    {
+      "name": "Mattias Bohm",
+      "email": "mattias.bohm@med.lu.se",
+      "role": "Critical care nurse, PhD",
+      "org": "ICU Malmö, Skåne University Hospital.",
+      "city": "Malmö",
+      "country": "Sweden",
+      "lat": 55.6,
+      "lng": 13,
+      "research_areas": "Health-related quality of life and caregiver burden",
+      "research_keywords": "Psychometrics; PROM; quality of life; caregiver burden",
+      "offer": "Experience in long-term follow-up research after cardiac arrest  Evaluation of instrument’s measurement properties with item response theory (Rasch Measurement Model).",
+      "looking_to_collaborate_on": "Developing robust methodology on how to better interpreting PROM data after cardiac arrest by integrating the survivor perspective with qualitative/mixed-method research.",
+      "id": "mattias-bohm",
+      "updated_at": "2026-01-13"
     },
     {
       "name": "Nikos Gorgoraptis",
