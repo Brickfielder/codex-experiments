@@ -212,7 +212,7 @@ main {
 .landing-hero__title {
   font-size: clamp(2.25rem, 3.5vw + 1rem, 3.25rem);
   line-height: 1.1;
-  font-weight: 400;
+  font-weight: 600;
   font-family: 'Inter var', system-ui, sans-serif;
   color: #ffffff;
   letter-spacing: -0.02em;
