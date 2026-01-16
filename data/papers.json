@@ -1,34 +1,5 @@
 [
   {
-    "id": "41525001",
-    "pmid": "41525001",
-    "doi": "10.1007/s42770-025-01843-2",
-    "title": "Bacillus spp. as phosphate-solubilizing bacteria for improved soil health indicators, decreased soilborne diseases and promoted growth in tomato.",
-    "authors": [
-      "Rania Aydi Ben Abdallah",
-      "Fatma Chahed",
-      "Souhir Abdelkrim",
-      "Hayfa Jabnoun-Khiareddine",
-      "Wissem Ben Dhia",
-      "Mejda Daami-Remadi"
-    ],
-    "journal": "Brazilian journal of microbiology : [publication of the Brazilian Society for Microbiology]",
-    "year": 2026,
-    "date": "2026-01-12",
-    "abstract": "UNLABELLED: The phosphate-solubilizing bacteria (PSB) can play a key role in converting unavailable phosphate to available form for root uptake as an environmentally friendly alternative to phosphate-based fertilizers. Fourspp. strains were assessed for their potential to boost soil health, promote tomato growth and fruit quality and reduce soilborne fungal diseases.SV30 was efficient in increasing by 55 and 18% the available phosphate level in soil and in tomato leaves, respectively. The soil bacterial population and alkaline phosphatase activity were significantly improved with the highest abundance induced by the strain SV30. The monitoring of growth parameters in sterilized soil experiment revealed that the four PSB strains enhanced the majority of tested parameters. Tomato plants variety ´Cencara´ grown under conventional planting trial and treated with SV4, SV30 and S42 strains were taller and showing more vigorous stem than untreated plants. Additionally, SV30 and S42 strains improved the maximum rooting extent and the root fresh weight by 24–37% and 28%, respectively. Concerning the soilborne fungal diseases, SV30 and S42 strains and BioBacbased onreduced the incidence of vascular wilting and root rot diseases by 23–63% and 37–58%, respectively. Furthermore, these two strains were effective in enhancing vitamin C content by 22–25% and the total soluble solids levels in fruits. This study clearly demonstrated the great implication of the selectedSV30 andS42 in the improvement of the majority of soil health, plant growth and fruit quality parameters in tomato crop.\nSUPPLEMENTARY INFORMATION: The online version contains supplementary material available at 10.1007/s42770-025-01843-2.",
-    "links": {
-      "doi": "https://doi.org/10.1007/s42770-025-01843-2",
-      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41525001",
-      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12796058"
-    },
-    "flags": {
-      "open_access": true,
-      "has_fulltext": true
-    },
-    "pmcid": "PMC12796058",
-    "country": "Tunisia"
-  },
-  {
     "id": "41499113",
     "pmid": "41499113",
     "doi": "10.1001/jamanetworkopen.2025.52832",
