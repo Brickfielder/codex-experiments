@@ -17,7 +17,7 @@
     "journal": "Resuscitation Plus",
     "year": 2026,
     "date": "2026-01",
-    "abstract": "",
+    "abstract": "Aim\nTo explore the construct validity of the ‘Experience in Close Relationships – Relationship Structures’-questionnaire (ECR-RS) in a population of out-of-hospital cardiac arrest (OHCA) survivors. Objectives were to (i) describe item- and scale-level response patterns, and (ii) evaluate the preliminary construct validity of the ECR-RS, including its dimensional (structural), known-groups, and convergent validity.\nMethods\nAn exploratory cross-sectional validation study, with OHCA survivors completing the ECR-RS, Hospital Anxiety and Depression Scale (HADS), and the mental health component from the Short Form-12 (SF-12 MCS) three months post- arrest. Descriptive statistics and floor/ceiling analyses were performed. Dimensional validity was assessed using response distribution patterns and exploratory factor analysis (EFA), followed by reliability using Cronbach’s άs. Known-group validity was tested using a priori hypotheses, Spearman’s correlations, and Mann-Whitney U tests. Convergent validity was evaluated by correlating ECR-RS total scores with HADS and SF-12 MCS.\nResults\nAmong 123 survivors (median age 59.9 years, 84 % male), ECR-RS total scores were low on both subscales and floor effects were observed at scale level (31 % for avoidant and 72 % for anxious attachment). EFA supported the expected two-factor structure, though item 4–6 showed poor loadings/cross-loadings. Internal consistency was acceptable (total scale Cronbach’s α = 0.88) and improved when problematic items were excluded. Known-group hypotheses were not supported. Anxious attachment correlated moderately with symptoms of anxiety and depression and was inversely correlated with mental health scores.\nConclusion\nThe ECR-RS demonstrated partial construct validity among OHCA survivors, but item-level inconsistencies and pronounced floor effects limit its utility. Findings highlight the need for a revised instrument better suited to post-cardiac arrest relational and psychological dynamics.",
     "links": {
       "doi": "https://doi.org/10.1016/j.resplu.2025.101209"
     },
@@ -25,6 +25,13 @@
       "open_access": true,
       "has_fulltext": true
     },
+    "keywords": [
+      "Resuscitation",
+      "Psychometric",
+      "Patient-reported outcome",
+      "Interpersonal relations",
+      "Cross-sectional study"
+    ],
     "domains": [],
     "setting": "OHCA",
     "normalizedAuthors": [
