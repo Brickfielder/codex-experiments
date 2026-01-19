@@ -893,6 +893,30 @@
     "country": "Jordan"
   },
   {
+    "id": "40081459",
+    "pmid": "40081459",
+    "doi": "10.1016/j.resuscitation.2025.110580",
+    "title": "Healing hearts and minds: The need for mental health support for co-survivors of cardiac arrest patients.",
+    "authors": [
+      "Charlotte Southern",
+      "Robert Greif",
+      "Cristian Abelairas-Gómez"
+    ],
+    "journal": "Resuscitation",
+    "year": 2025,
+    "date": "2025-03-11",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2025.110580",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40081459"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "country": "Spain"
+  },
+  {
     "id": "41212202",
     "pmid": "41212202",
     "doi": "10.1007/s00134-025-08185-5",
@@ -1672,6 +1696,45 @@
     "country": "United States"
   },
   {
+    "id": "40811046",
+    "pmid": "40811046",
+    "doi": "10.1080/10376178.2025.2545762",
+    "title": "The outcomes of cardiac rehabilitation in out-of-hospital cardiac arrest - a narrative review.",
+    "authors": [
+      "Kamal Nand Singh",
+      "Samantha Baird",
+      "Hirendra Nand Singh",
+      "Apil Gurung"
+    ],
+    "journal": "Contemporary nurse",
+    "year": 2025,
+    "date": "2025-08-14",
+    "abstract": "BACKGROUND: Out-of-hospital cardiac arrest survivors often face physical, cognitive, and psychosocial challenges that reduce health-related quality of life. While cardiac rehabilitation programs aim to aid recovery, their effectiveness in improving health-related quality of life for Out-of-hospital cardiac arrest survivors remains uncertain.\nAIM: This narrative review evaluates the impact of cardiac rehabilitation and tailored rehabilitation programs on the health-related quality of life of out-of-hospital cardiac arrest survivors during their first year of recovery.\nMETHODS: A literature review on cardiac rehabilitation was conducted using four databases (MEDLINE Complete, CINAHL, Scopus, and Embase). The review focused on studies published between 2014 and 2024. The inclusion criteria specified out-of-hospital cardiac arrest survivors aged eighteen years and older who were engaged in rehabilitation post-hospital discharge. A narrative review was conducted, adhering to the Joanna Briggs Institute guidelines. The database searches initially identified 365 articles, which were reduced to 347 after removing duplicates and non-English articles. Subsequent screening of titles and abstracts excluded 333 studies, leaving 57 full-text articles for further consideration. Ultimately, 14 studies were included.\nRESULTS: Traditional cardiac rehabilitation programs showed limited improvement in health-related quality of life, particularly in addressing cognitive and emotional needs. Tailored interventions, incorporating cognitive and emotional cardiac rehabilitation programs, multidisciplinary teams, and peer support, demonstrated better health-related quality of life outcomes, though physical health differences were minimal. Challenges in societal reintegration and return to work remained unaddressed by both approaches.\nCONCLUSION: Person-centred, evidence-based rehabilitation programs addressing cognitive, emotional, and societal challenges are essential for improving the health-related quality of life of out-of-hospital cardiac arrest survivors. Further research is needed to establish robust guidelines and optimise outcomes for this vulnerable population.",
+    "links": {
+      "doi": "https://doi.org/10.1080/10376178.2025.2545762",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/40811046"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Out-of-Hospital Cardiac Arrest",
+      "Quality of Life",
+      "Cardiac Rehabilitation",
+      "Middle Aged",
+      "Male",
+      "Adult",
+      "Female",
+      "Aged",
+      "Aged, 80 and over",
+      "Survivors",
+      "Treatment Outcome"
+    ],
+    "country": "Australia"
+  },
+  {
     "id": "40507392",
     "pmid": "40507392",
     "doi": "10.3390/jcm14113631",
@@ -2244,6 +2307,51 @@
     "country": "Sweden"
   },
   {
+    "id": "38750785",
+    "pmid": "38750785",
+    "doi": "10.1016/j.resuscitation.2024.110239",
+    "title": "Cost of out-of-hospital cardiac arrest survivors compared with matched control groups.",
+    "authors": [
+      "Lola Qvist Kristensen",
+      "Maurits W van Tulder",
+      "Hans Eiskjær",
+      "Lotte Sørensen",
+      "Bettina Wulff Risør",
+      "Lisa Gregersen Oestergaard"
+    ],
+    "journal": "Resuscitation",
+    "year": 2024,
+    "date": "2024-05-13",
+    "abstract": "INTRODUCTION: Societal costs of out-of-hospital cardiac arrest (OHCA) survivors may be extensive due to high health care utilization and sick leave. Knowledge of the costs of OHCA survivors may guide decision-makers to prioritize health resources.\nAIM: The aims of the study were to evaluate the costs of OHCA survivors from a societal perspective, and to compare these costs to the costs of individuals with non-cardiac arrest myocardial infarction (MI) and individuals with no cardiac disease (non-CD).\nMETHODS: From the Danish OHCA Registers, survivors, with a cardiac arrest between 2005-2018 were identified. Each case was assigned one MI control and one non-CD control, matched on gender and age. Based on register data, costs of healthcare utilization, sick leave, vocational rehabilitation, disability pension and other social benefits one year before event and five years after, were estimated.\nRESULTS: In total 5,646 OHCA survivors were identified with associated control groups. The mean costs for OHCA survivors during the 6-year period were €119,106 (95%CI: 116,297-121,916), with €83,472 (95%CI: 81,392-85,552) being healthcare costs. Mean costs of OHCA survivors were €49,132 higher than the MI-control group and €100,583 higher than the non-CD control group.\nCONCLUSIONS: Total costs of OHCA survivors were considerably higher than costs of MI- and non-CD controls. Hospital costs were highest during the first year after event, and work inability during the second to fifth year with sick leave and later disability pension as main burdens.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2024.110239",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38750785"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Out-of-Hospital Cardiac Arrest",
+      "Male",
+      "Female",
+      "Middle Aged",
+      "Denmark",
+      "Sick Leave",
+      "Aged",
+      "Survivors",
+      "Case-Control Studies",
+      "Health Care Costs",
+      "Registries",
+      "Myocardial Infarction",
+      "Adult",
+      "Patient Acceptance of Health Care",
+      "Cost of Illness"
+    ],
+    "country": "Denmark"
+  },
+  {
     "id": "10.1093/eurheartj/ehae666.3375",
     "doi": "10.1093/eurheartj/ehae666.3375",
     "title": "Differences in symptoms of anxiety and depression among out-of-hospital cardiac arrest survivors and their relatives, paired results from the DANCAS survey",
@@ -2394,6 +2502,29 @@
       "Multicenter Studies as Topic"
     ],
     "country": "Denmark"
+  },
+  {
+    "id": "10.12968/bjca.2024.0046",
+    "doi": "10.12968/bjca.2024.0046",
+    "title": "Experiences of known bystanders during out-of-hospital cardiac arrest: a scoping review and narrative synthesis",
+    "authors": [
+      "Lyndsey McCunnell",
+      "Mark Vann",
+      "Robyn Lotto"
+    ],
+    "journal": "British Journal of Cardiac Nursing",
+    "year": 2024,
+    "date": "2024-10-02",
+    "abstract": "Around 90% of cardiac arrests occur either at home or in the workplace. The provision of bystander cardiopulmonary resuscitation is associated with a threefold increase in survival. The emotional and psychological effects of these events on bystanders are often neglected, but can be particularly pronounced when the person experiencing the arrest is known to the bystander. This study aimed to synthesise the available literature exploring bystander experience following an out-of-hospital cardiac arrest, with a particular focus on bystanders who were known to the person experiencing the arrest. A scoping review was undertaken in line with Joanna Briggs Institute guidance. Three online databases – the Cumulative Index to Nursing and Allied Health Literature (CINAHL), Scopus and Medline – were searched on 5 May 2024, alongside a grey literature review. A total of 12 articles were included, presented in three categories: ‘response dynamics’, encompassing the immediate reactions and decision-making processes; ‘emotional fallout’, including the long-term psychological and emotional impact; and ‘moving on’, examining the requirements for both practical and emotional support in the aftermath of the event. The review indicated that there is limited literature exploring the needs of families following observation or involvement in the resuscitation of a known individual. While the emotional and psychological impact is clearly substantial, there is currently no structured support system available following the event. The need for ongoing support and care for families is highlighted.",
+    "links": {
+      "doi": "https://doi.org/10.12968/bjca.2024.0046"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": true
+    },
+    "corrCountryCode": "GB",
+    "corrCountryName": "United Kingdom"
   },
   {
     "id": "38583740",
@@ -2647,6 +2778,58 @@
     },
     "pmcid": "PMC11734221",
     "country": "Australia"
+  },
+  {
+    "id": "39368797",
+    "pmid": "39368797",
+    "doi": "10.1016/j.resuscitation.2024.110407",
+    "title": "Low physical activity level in out-of-hospital cardiac arrest survivors with obesity, mobility problems and cognitive impairment: Results from the TTM2 trial.",
+    "authors": [
+      "Katarina Heimburg",
+      "Erik Blennow Nordström",
+      "Josef Dankiewicz",
+      "Hans Friberg",
+      "Anders M Grejs",
+      "Matthias Hänggi",
+      "Thomas R Keeble",
+      "Hans Kirkegaard",
+      "Niklas Nielsen",
+      "Christian Rylander",
+      "Åsa B Tornberg",
+      "Susann Ullén",
+      "Matthew P Wise",
+      "Tobias Cronberg",
+      "Gisela Lilja"
+    ],
+    "journal": "Resuscitation",
+    "year": 2024,
+    "date": "2024-10-04",
+    "abstract": "AIMS: To describe the level of physical activity 6 months after an out-of-hospital cardiac arrest (OHCA) and to explore potential risk factors of a low level of physical activity.\nMETHODS: Post-hoc analyses of the international multicentre Targeted Hypothermia versus Targeted Normothermia after Out-of-Hospital Cardiac arrest (TTM2) trial. At 6 months, survivors at 61 sites in Europe, Australia and New Zeeland were invited to a follow-up. The participants answered two questions on self-reported physical activity. Answers were categorized as a low, moderate, or high level of physical activity and further dichotomized into a low versus moderate/high level of physical activity. Potential risk factors for a low level of physical activity were collected and investigated by univariable and multivariable logistic regression.\nRESULTS: At 6 months, 807 of 939 (86%) OHCA survivors answered the two questions of physical activity; 34% reported a low, 44% moderate and 22% high level of physical activity. Obesity (OR = 1.75, 95% CI 1.10-2.77, p = 0.018), mobility problems by EuroQol 5 dimensions 5 levels (OR = 1.73, 95% CI 1.06-2.84, p = 0.029), and cognitive impairment by Symbol Digit Modalities Test (OR = 1.78, 95% CI 1.13-2.82, p = 0.013) were significantly associated with a low level of physical activity in the multivariable analysis.\nCONCLUSION: One third of the OHCA survivors reported a low level of physical activity. Obesity, mobility problems, and cognitive impairment were associated with a low level of physical activity.\nGOV IDENTIFIER: NCT02908308.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2024.110407",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/39368797"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "mesh": [
+      "Humans",
+      "Out-of-Hospital Cardiac Arrest",
+      "Male",
+      "Female",
+      "Middle Aged",
+      "Obesity",
+      "Aged",
+      "Cognitive Dysfunction",
+      "Mobility Limitation",
+      "Survivors",
+      "Risk Factors",
+      "Exercise",
+      "Hypothermia, Induced",
+      "Cardiopulmonary Resuscitation"
+    ],
+    "country": "Sweden"
   },
   {
     "id": "39492967",
@@ -4048,6 +4231,77 @@
       "Emergency Medical Services"
     ],
     "country": "Switzerland"
+  },
+  {
+    "id": "37316865",
+    "pmid": "37316865",
+    "doi": "10.1186/s12873-023-00829-3",
+    "title": "Family & bystander experiences of emergency ambulance services care: a scoping review.",
+    "authors": [
+      "Eillish Satchell",
+      "Melissa Carey",
+      "Bridget Dicker",
+      "Haydn Drake",
+      "Merryn Gott",
+      "Tess Moeke-Maxwell",
+      "Natalie Anderson"
+    ],
+    "journal": "BMC emergency medicine",
+    "year": 2023,
+    "date": "2023-06-14",
+    "abstract": "BACKGROUND: Emergency ambulance personnel respond to a variety of incidents in the community, including medical, trauma and obstetric emergencies. Family and bystanders present on scene may provide first aid, reassurance, background information or even act as proxy decision-makers. For most people, involvement in any event requiring an emergency ambulance response is a stressful and salient experience. The aim of this scoping review is to identify and synthesise all published, peer-reviewed research describing family and bystanders' experiences of emergency ambulance care.\nMETHODS: This scoping review included peer-reviewed studies that reported on family or bystander experiences where emergency ambulance services responded. Five databases were searched in May 2022: Medline, CINAHL, Scopus, ProQuest Dissertation & Theses and PsycINFO. After de-duplication and title and abstract screening, 72 articles were reviewed in full by two authors for inclusion. Data analysis was completed using thematic synthesis.\nRESULTS: Thirty-five articles reporting heterogeneous research designs were included in this review (Qualitative = 21, Quantitative = 2, Mixed methods = 10, Evidence synthesis = 2). Thematic synthesis developed five key themes characterising family member and bystander experiences. In an emergency event, family members and bystanders described chaotic and unreal scenes and emotional extremes of hope and hopelessness. Communication with emergency ambulance personnel played a key role in family member and bystander experience both during and after an emergency event. It is particularly important to family members that they are present during emergencies not just as witnesses but as partners in decision-making. In the event of a death, family and bystanders want access to psychological post-event support.\nCONCLUSION: By incorporating patient and family-centred care into practice emergency ambulance personnel can influence the experience of family members and bystanders during emergency ambulance responses. More research is needed to explore the needs of diverse populations, particularly regarding differences in cultural and family paradigms as current research reports the experiences of westernised nuclear family experiences.",
+    "links": {
+      "doi": "https://doi.org/10.1186/s12873-023-00829-3",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/37316865",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10268421"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC10268421",
+    "mesh": [
+      "Female",
+      "Pregnancy",
+      "Humans",
+      "Ambulances",
+      "Emergencies",
+      "Emergency Medical Services",
+      "Family",
+      "Communication"
+    ],
+    "country": "New Zealand. na.anderson@auckland.ac.nz"
+  },
+  {
+    "id": "37287956",
+    "pmid": "37287956",
+    "doi": "10.1016/j.resplu.2023.100402",
+    "title": "Follow-up on volunteer responders dispatched for out-of-hospital cardiac arrests: Addressing the psychological and physical impact.",
+    "authors": [
+      "Astrid Rolin Kragh",
+      "Mads Tofte Gregers",
+      "Linn Andelius",
+      "Persia Shahriari",
+      "Sofie Kjærholm",
+      "Anders Korsgaard",
+      "Fredrik Folke",
+      "Carolina Malta Hansen"
+    ],
+    "journal": "Resuscitation plus",
+    "year": 2023,
+    "date": "2023-06-01",
+    "abstract": "INTRODUCTION: Smartphone technology is increasingly used to engage lay people as volunteer responders in resuscitation attempts. Attention has recently been drawn to how resuscitation attempts may impact bystanders. Attempting resuscitation in out-of-hospital cardiac arrests (OHCA) may be an overwhelming experience and, in some cases, difficult to cope with. We developed a volunteer responder follow-up program to systematically measure the psychological and physical impact on volunteer responders dispatched for OHCAs.\nMETHODS AND RESULTS: The nationwide Danish volunteer responder program dispatches volunteer responders for presumed cardiac arrests. 90 min after notification of a potential nearby cardiac arrest, all volunteer responders receive a survey, and are asked to self-report their mental state of mind after the event. The volunteer responders are also asked to disclose any physical injury they sustained in relation to the event. Volunteer responders who report severe mental effects are offered a defusing conversation by a trained nurse. Between 1 September 2017 and 31 December 2022, the Danish volunteer responder program has alerted 177,866 volunteer responders for 10,819 presumed cardiac arrest alerts. Of 177,866 alerted volunteers responders, 62,711 accepted the alarm. In the same period, 7,317 cancelled their registration. From January 2019 to 31 December 31 2022, a total of 535 volunteer responders were offered a defusing consultation.\nCONCLUSION: The Danish volunteer responder follow-up program is carried out to assess the psychological and physical risks of responding to a suspected OHCA. We suggest a survey-based method for systematic screening of volunteer responders that allow volunteer responders to report any physical injury or need of psychological follow-up. The person providing defusing should be a trained and experienced healthcare professional.",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resplu.2023.100402",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/37287956",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10242620"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC10242620",
+    "country": "Denmark"
   },
   {
     "id": "37818171",
