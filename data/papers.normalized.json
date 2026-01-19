@@ -33,8 +33,11 @@
       "Cross-sectional study"
     ],
     "country": "Denmark",
-    "domains": [],
+    "domains": [
+      "Psychological"
+    ],
     "setting": "OHCA",
+    "design": "Cross-sectional study",
     "normalizedAuthors": [
       "Hansen N",
       "Sivertsen CVTG",
@@ -1794,6 +1797,54 @@
       "Broström A",
       "Hagell P",
       "Årestedt K"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "41131609",
+    "pmid": "41131609",
+    "doi": "10.1186/s13054-025-05643-w",
+    "title": "One-year trajectory of psychological symptoms in families of out-of-hospital cardiac arrest patients.",
+    "authors": [
+      "Kasumi Shirasaki",
+      "Yohei Okada",
+      "Katsuhiro Horie",
+      "Tasuku Hada",
+      "Yu Watanabe",
+      "Nozomi Toya",
+      "Shutaro Isokawa",
+      "Toru Hifumi",
+      "Masaki Okajima",
+      "Norio Otani"
+    ],
+    "journal": "Critical care (London, England)",
+    "year": 2025,
+    "date": "2025-10-24",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1186/s13054-025-05643-w",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41131609",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12551261"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC12551261",
+    "country": "Japan",
+    "domains": [],
+    "setting": "OHCA",
+    "normalizedAuthors": [
+      "Shirasaki K",
+      "Okada Y",
+      "Horie K",
+      "Hada T",
+      "Watanabe Y",
+      "Toya N",
+      "Isokawa S",
+      "Hifumi T",
+      "Okajima M",
+      "Otani N"
     ],
     "isAbstractTruncated": false
   },
@@ -4729,6 +4780,69 @@
       "Hussein MTE",
       "Dhaliwal S",
       "Hakkola J"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
+    "id": "38303019",
+    "pmid": "38303019",
+    "doi": "10.1186/s13063-024-07911-6",
+    "title": "The ROCK trial-a multidisciplinary Rehabilitation intervention for sudden Out-of-hospital Cardiac arrest survivors focusing on return-to-worK: a pragmatic randomized controlled trial protocol.",
+    "authors": [
+      "Jan Christensen",
+      "Bo Gregers Winkel",
+      "Lilli Kirkeskov",
+      "Fredrik Folke",
+      "Matilde Winther-Jensen",
+      "Christine Eckhardt-Bentsen",
+      "Jesper Kjærgaard",
+      "Christian Hassager",
+      "Mette Kirstine Wagner"
+    ],
+    "journal": "Trials",
+    "year": 2024,
+    "date": "2024-02-01",
+    "abstract": "INTRODUCTION: Most cardiac arrest survivors are classified with mild to moderate cognitive impairment; roughly, 50% experience long-term neurocognitive impairment. Postarrest challenges complicate participation in society and are associated with social issues such as failure to resume social activities and impaired return to work. The effectiveness of rehabilitation interventions for out-of-hospital cardiac arrest survivors are sparsely described, but the body of evidence describes high probabilities of survivors not returning to work, returning to jobs with modified job descriptions, returning to part-time employment, and often in combination with extensive unmet rehabilitation needs. Hence, there is a need to develop and test a pragmatic individual targeted intervention to facilitate return to work (RTW) in survivors of OHCA. The overall aim of the ROCK trial is to evaluate the effectiveness of a comprehensive individually tailored multidisciplinary rehabilitation intervention for survivors of OHCA on RTW compared to usual care.\nMETHODS AND ANALYSIS: The ROCK trial is a two-arm parallel group multicentre investigator-initiated pragmatic randomized controlled superiority trial with primary endpoint measured 12 months after the cardiac arrest. Adult survivors who were part of the labour force prior to the OCHA and had at least 2 years until they are qualified to receive retirement state pensions are eligible for inclusion. Survivors will be randomized 1:1 to usual care group or usual care plus a comprehensive tailored rehabilitation intervention focusing on supporting RTW. After comprehensive assessment of individual rehabilitation needs, the intervention is ongoingly coordinated within a multidisciplinary rehabilitation team, and the intervention can be delivered for up until 12 months. Data for the primary outcome will be obtained from the national register on social transfer payments. The primary outcome will be analysed using logistic regression assessing RTW status at 12 months adjusting for the intervention and age at OHCA, sex, marital status, and occupation prior to OHCA.\nDISCUSSION: The ROCK trial is the first RCT to investigate the effectiveness of a rehabilitation intervention focusing on return to work after cardiac arrest.\nTRIAL REGISTRATION: ClinicalTrials.gov NCT05173740. Registered on May 2018.",
+    "links": {
+      "doi": "https://doi.org/10.1186/s13063-024-07911-6",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38303019",
+      "pmc": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10835971"
+    },
+    "flags": {
+      "open_access": true,
+      "has_fulltext": true
+    },
+    "pmcid": "PMC10835971",
+    "mesh": [
+      "Adult",
+      "Humans",
+      "Employment",
+      "Multicenter Studies as Topic",
+      "Out-of-Hospital Cardiac Arrest",
+      "Randomized Controlled Trials as Topic",
+      "Rehabilitation, Vocational",
+      "Return to Work",
+      "Survivors",
+      "Pragmatic Clinical Trials as Topic",
+      "Equivalence Trials as Topic"
+    ],
+    "country": "Denmark",
+    "domains": [
+      "Cognitive",
+      "Participation"
+    ],
+    "setting": "OHCA",
+    "design": "Randomized controlled trial",
+    "normalizedAuthors": [
+      "Christensen J",
+      "Winkel BG",
+      "Kirkeskov L",
+      "Folke F",
+      "Winther-Jensen M",
+      "Eckhardt-Bentsen C",
+      "Kjærgaard J",
+      "Hassager C",
+      "Wagner MK"
     ],
     "isAbstractTruncated": false
   },
