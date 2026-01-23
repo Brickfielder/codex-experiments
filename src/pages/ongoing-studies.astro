@@ -56,6 +56,35 @@ const basePathJson = JSON.stringify(normalizedBasePath);
       </div>
     </section>
 
+    <section class="space-y-4">
+      <div class="space-y-2">
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">
+          At a glance - observational studies
+        </h2>
+        <p class="text-slate-600 dark:text-slate-200">
+          Observational studies focused on survivorship assessment and recovery monitoring.
+        </p>
+      </div>
+      <div
+        class="overflow-x-auto rounded-2xl border border-slate-200 bg-white p-2 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+      >
+        <table class="table--studies text-sm leading-relaxed">
+          <thead class="text-left text-slate-500 dark:text-slate-300">
+            <tr>
+              <th>Study</th>
+              <th>Countries / setting</th>
+              <th>Target group</th>
+              <th>Main focus</th>
+              <th>Format</th>
+              <th>Status</th>
+              <th>Links</th>
+            </tr>
+          </thead>
+          <tbody id="observational-studies-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="space-y-6">
       <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">Study summaries</h2>
       <div id="studies-cards" class="space-y-6"></div>
