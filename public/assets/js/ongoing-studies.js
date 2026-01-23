@@ -16,6 +16,7 @@ async function loadOngoingStudies() {
     const studies = data.studies || [];
 
     const tableBody = document.querySelector('#studies-table-body');
+    const observationalTableBody = document.querySelector('#observational-studies-table-body');
     const cardsContainer = document.querySelector('#studies-cards');
     const metaUpdated = document.querySelector('#ongoing-studies-updated');
 
@@ -25,7 +26,10 @@ async function loadOngoingStudies() {
 
     studies.forEach((study) => {
       // ---- Table row ----
-      if (tableBody) {
+      const targetTableBody =
+        study.category === 'observational' ? observationalTableBody : tableBody;
+
+      if (targetTableBody) {
         const tr = document.createElement('tr');
 
         const studyLink = `<a href="#${study.id}">${study.short_name || study.name}</a>`;
@@ -45,7 +49,7 @@ async function loadOngoingStudies() {
           <td>${linksCell}</td>
         `;
 
-        tableBody.appendChild(tr);
+        targetTableBody.appendChild(tr);
       }
 
       // ---- Study card ----

@@ -119,6 +119,28 @@
         "study_page": "https://ctv.veeva.com/study/effects-of-an-online-support-programme-for-cardiac-arrest-survivors",
         "lay_summary": ""
       }
+    },
+    {
+      "id": "revive",
+      "short_name": "REVIVE",
+      "name": "REVIVE – From Survival to Holistic Recovery",
+      "status": "Protocol published (2025)",
+      "countries": ["Italy"],
+      "setting": ["Hospital discharge", "Follow-up clinics"],
+      "population": "Out-of-hospital cardiac arrest survivors with good neurological outcomes (CPC ≤2, mRS ≤3) in the Lombardia CARe registry",
+      "focus": ["Cognition", "Mental health", "Quality of life"],
+      "design": "Prospective multicentre observational evaluation",
+      "intervention": "Centralized screening system with psychological assessments and referral pathways for survivorship needs",
+      "comparator": "N/A (observational)",
+      "follow_up": "Assessments pre-discharge/within 15 days, then at 1, 3, 6, and 12 months",
+      "tags": ["Survivor", "Observational", "Screening", "Mental health"],
+      "category": "observational",
+      "links": {
+        "protocol": "",
+        "registry": "",
+        "study_page": "https://www.mdpi.com/2077-0383/14/11/3631",
+        "lay_summary": ""
+      }
     }
   ]
 }
