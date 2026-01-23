@@ -1,5 +1,35 @@
 [
   {
+    "id": "41570883",
+    "pmid": "41570883",
+    "doi": "10.1016/j.resuscitation.2026.110978",
+    "title": "Addressing fragmentation in cardiac arrest survivorship research: the Cardiac Arrest Research Hub.",
+    "authors": [
+      "Marco Mion",
+      "Vicky L Joshi"
+    ],
+    "journal": "Resuscitation",
+    "year": 2026,
+    "date": "2026-01-20",
+    "abstract": "",
+    "links": {
+      "doi": "https://doi.org/10.1016/j.resuscitation.2026.110978",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41570883"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "country": "United Kingdom",
+    "domains": [],
+    "setting": "Mixed",
+    "normalizedAuthors": [
+      "Mion M",
+      "Joshi VL"
+    ],
+    "isAbstractTruncated": false
+  },
+  {
     "id": "10.1016/j.resplu.2025.101209",
     "doi": "10.1016/j.resplu.2025.101209",
     "title": "Assessing adult attachment after out-of-hospital cardiac arrest: an exploratory analysis and construct validation of the ECR-RS",
