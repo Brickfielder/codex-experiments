@@ -89,6 +89,27 @@
       }
     },
     {
+      "id": "rt-ca",
+      "short_name": "RT-CA",
+      "name": "Recovering Together after Cardiac Arrest (RT-CA)",
+      "status": "Recruiting",
+      "countries": ["United States"],
+      "setting": ["Hospital (ICU/step-down)", "Hybrid (in-person + Zoom)", "Post-discharge"],
+      "population": "Adult cardiac arrest survivors and informal caregivers (dyads) with emotional distress",
+      "focus": ["Resilience", "Mindfulness", "Emotional distress", "Caregiver support"],
+      "design": "Single-masked, randomized, parallel-group pilot RCT",
+      "intervention": "RT-CA 1: six weekly 30-minute mind-body resilience sessions starting at bedside and continuing over Zoom",
+      "comparator": "RT-CA 2: one 30-minute bedside session reviewing psychosocial resources (minimally enhanced usual care)",
+      "follow_up": "Baseline, 6 weeks, and 3 months",
+      "tags": ["Survivor", "Caregiver", "Resilience", "Mindfulness", "Hybrid"],
+      "links": {
+        "protocol": "",
+        "registry": "https://clinicaltrials.gov/study/NCT07143357",
+        "study_page": "",
+        "lay_summary": ""
+      }
+    },
+    {
       "id": "effects-of-an-online-support-programme-for-cardiac-arrest-survivors-cardis",
       "short_name": "CARDIS",
       "name": "Effects of an Online Support Programme for Cardiac Arrest Survivors (CARDIS)",
