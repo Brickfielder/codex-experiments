@@ -151,6 +151,39 @@
     "country": "Singapore"
   },
   {
+    "id": "41565214",
+    "pmid": "41565214",
+    "doi": "10.1093/eurjcn/zvaf226",
+    "title": "Translation, cross-cultural adaptation, and psychometric properties of the Danish version of the Modified Caregiver Strain Index (M-CSI) among relatives of out-of-hospital cardiac arrest survivors.",
+    "authors": [
+      "Sofie Moesgaard Bruvik",
+      "Anne Sofie Hermansen",
+      "Vicky Joshi",
+      "Siri Rosenkilde",
+      "Sofie Møller",
+      "Trine B Rasmussen",
+      "Anders Wieghorst",
+      "Jan Christensen",
+      "Ann-Dorthe Zwisler",
+      "Britt Borregaard"
+    ],
+    "journal": "European journal of cardiovascular nursing",
+    "year": 2026,
+    "date": "2026-01-22",
+    "abstract": "AIMS: The Modified Caregiver Strain Index (M-CSI) is a 13-item instrument that measures caregiver strain among various populations. A Danish version is lacking, and the psychometric properties among relatives of out-of-hospital cardiac arrest (OHCA) survivors are unknown. This study aimed to translate, cross-culturally adapt, and evaluate the psychometric properties of the Danish version of the M-CSI in relatives of OHCA survivors.\nMETHODS AND RESULTS: The study used data from the national cross-sectional DANCAS (DANish Cardiac Arrest Survivorship) survey, where relatives of OHCA survivors completed the Danish versions of M-CSI, the Hospital Anxiety and Depression Scale (HADS), and the World Health Organisation's Five Well-being Index (WHO-5). The M-CSI was forward- and back-translated, pre-tested, and culturally adapted. Structural validity was examined with exploratory factor analysis (EFA) and construct validity was investigated using a priori hypothesis testing (known-groups validity) and correlations with the other instruments (convergent validity/overlapping constructs). The internal consistency reliability was assessed using Cronbach's α. In total, 561 relatives responded (response rate 45%), of which 88% were women, the median age was 64, and 24% reported caregiver strain (M-CSI ≥7). The EFA supported a one-factor structure. Based on the a priori hypotheses, it was confirmed that younger caregivers (<55 years) described more caregiver strain (effect size δ = 0.13; small). Correlations between M-CSI, HADS-A, HADS-D, and WHO-5 were moderate. Internal consistency was α = 0.90.\nCONCLUSION: The Danish version of the M-CSI demonstrated good structural validity, good internal consistency reliability, and good construct validity in relatives of OHCA survivors.",
+    "links": {
+      "doi": "https://doi.org/10.1093/eurjcn/zvaf226",
+      "pubmed": "https://pubmed.ncbi.nlm.nih.gov/41565214"
+    },
+    "flags": {
+      "open_access": false,
+      "has_fulltext": false
+    },
+    "country": "Denmark",
+    "corrCountryCode": "DK",
+    "corrCountryName": "Denmark"
+  },
+  {
     "id": "40241996",
     "pmid": "40241996",
     "doi": "10.1016/j.resplu.2025.100944",
