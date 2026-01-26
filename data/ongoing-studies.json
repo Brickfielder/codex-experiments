@@ -1,9 +1,42 @@
 {
   "meta": {
     "title": "Ongoing survivorship studies",
-    "updated_at": "2026-01-23"
+    "updated_at": "2026-01-26"
   },
   "studies": [
+    {
+      "id": "carousel",
+      "short_name": "CAROUSel",
+      "name": "CAROUSel – Development of a cardiac arrest aftercare intervention for survivors",
+      "status": "Ongoing development",
+      "countries": ["UK (Scotland)"],
+      "setting": [
+        "Inpatient",
+        "Post-discharge",
+        "Long-term follow-up",
+        "Stakeholder workshops"
+      ],
+      "population": "Cardiac arrest survivors, family members, and healthcare professionals in Scotland",
+      "focus": [
+        "Aftercare needs",
+        "Cognition",
+        "Mental health",
+        "Fatigue",
+        "Implementation planning"
+      ],
+      "design": "Multi-study intervention development (systematic review, registry analysis, mixed methods, focus groups, triangulation)",
+      "intervention": "Co-designed aftercare intervention prototype, programme theory, training materials, and implementation plan",
+      "comparator": "N/A (observational development)",
+      "follow_up": "Inpatient, post-discharge, and long-term timepoints",
+      "tags": ["Survivor", "Family", "Observational", "Aftercare", "Implementation"],
+      "category": "observational",
+      "links": {
+        "protocol": "",
+        "registry": "",
+        "study_page": "https://www.gcu.ac.uk/aboutgcu/universitynews/physio-researcher-is-first-ahp-to-be-awarded-cso-early-postdoctoral-fellowship",
+        "lay_summary": ""
+      }
+    },
     {
       "id": "enforcer",
       "short_name": "ENFORCER",
