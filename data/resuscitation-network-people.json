@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2026-01-13",
+    "updated_at": "2026-01-27",
     "fields": [
       "id",
       "name",
@@ -290,6 +290,22 @@
       "looking_to_collaborate_on": "Interventional/observational studies focused on diagnosis, treatment and prevention of cognitive impairment post cardiac arrest",
       "id": "nikos-gorgoraptis",
       "updated_at": "2025-12-23"
+    },
+    {
+      "name": "Rachel Beekman",
+      "email": "Rachel.Beekman@yale.edu",
+      "role": "Neurointensivist",
+      "org": "Yale University",
+      "city": "New Haven",
+      "country": "USA, Connecticut",
+      "lat": 41.31,
+      "lng": -72.92,
+      "research_areas": "Post-arrest prognostication, minimizing secondary brain injury, long-term outcomes and survivorship, transitions clinic",
+      "research_keywords": "Outcomes, prognostication, temperature control, hypoxic ischemic brain injury, survivorship",
+      "offer": "Large database of all arrest, post-arrest, prognostic, and outcomes data (>1,000 patients) + transitions clinic with IHCA/OHCA patients (2 years of data with 88 patients [to date] enrolled in transitions clinic (+inpatient screening for cognitive dysfunction prior to discharge)",
+      "looking_to_collaborate_on": "All of the above!",
+      "id": "rachel-beekman",
+      "updated_at": "2026-01-27"
     },
     {
       "name": "Robyn Lotto",
