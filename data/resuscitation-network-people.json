@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Resuscitation Network - People",
-    "updated_at": "2026-01-27",
+    "updated_at": "2026-01-28",
     "fields": [
       "id",
       "name",
@@ -117,6 +117,22 @@
       "looking_to_collaborate_on": "co-design, methodological support, clinical health psychology projects",
       "id": "bruce-irvine",
       "updated_at": "2026-01-05"
+    },
+    {
+      "name": "Claire Hawkes",
+      "email": "claire.hawkes@kcl.ac.uk",
+      "role": "Senior Lecturer",
+      "org": "Florence Nightingale Faculty of Nursing Midwifery and Palliative Care, King’s College London, UK",
+      "city": "London",
+      "country": "United Kingdom",
+      "lat": 51.5,
+      "lng": 0.12,
+      "research_areas": "Young people’s experiences at out-of-hospital resuscitation attempts  Co-survivorship  Out of hospital cardiac arrest epidemiology – part of the OHCAO Registry team.",
+      "research_keywords": "Out-of-hospital-cardiac arrest  CPR  Bystander  Lay rescuers  Ethnicity  Socioeconomic status  Child*  Young people  Survivor*",
+      "offer": "Experience in survivor research with young people  Working with minoritized communities  Methodological experience - mixed methods, trial process evaluation, qualitative methods, collaboration in research with members of the public (e.g. cardiac arrest survivors),   A national OHCA registry of the out-of-hospital care pathway",
+      "looking_to_collaborate_on": "Research with children and young people related to their experiences of resuscitation attempts, including developing digital resources   Inequality and inequity in survivorship and survivorship care provision and outcomes",
+      "id": "claire-hawkes",
+      "updated_at": "2026-01-28"
     },
     {
       "name": "Conrad Bjørshol",
